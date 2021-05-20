@@ -20,7 +20,8 @@ import routes from "routes.js";
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
 import bgImage from "../assets/img/advana-io-bg-01.jpg";
-import pillLogo from "../assets/img/advana-pill-logo.png";
+import fullLogo from "../assets/img/logo-full-white.png";
+//import pillLogo from "../assets/img/advana-pill-logo.png";
 
 let ps;
 
@@ -102,8 +103,8 @@ export default function Admin({ ...rest }) {
       <div className={classes.wrapper}>
         <Sidebar
           routes={routes}
-          logoText={"ADVANA.IO"}
-          logo={pillLogo}
+          logoText={""}
+          logo={fullLogo}
           image={image}
           handleDrawerToggle={handleDrawerToggle}
           open={mobileOpen}

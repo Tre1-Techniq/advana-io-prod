@@ -37,7 +37,7 @@ const headerLinksStyle = (theme) => ({
     padding: "0 !important",
   },
   navLink: {
-    color: "primary",
+    color: "inherit",
     backgroundColor: "transparent",
     position: "relative",
     padding: "0.5rem",
@@ -90,7 +90,6 @@ const headerLinksStyle = (theme) => ({
   },
   navLinkActive: {
     color: "inherit",
-    // backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
   icons: {
     width: "20px",

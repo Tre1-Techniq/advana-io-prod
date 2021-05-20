@@ -1,6 +1,11 @@
 import React from "react";
 import { createBrowserHistory } from "history";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
@@ -20,6 +25,7 @@ export default function App() {
       <Router history={hist}>
         <Switch>
           <Route path="/" exact component={LandingPage} />
+          <Redirect from="/home" to="/" />
         </Switch>
         <Switch>
           <Route path="/admin" component={Admin} />

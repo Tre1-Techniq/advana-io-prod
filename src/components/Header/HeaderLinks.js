@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Typography from "@material-ui/core/Typography";
 import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../advanaTheme";
 
@@ -25,23 +26,31 @@ export default function HeaderLinks(props) {
       <Box className={classes.navBarBox}>
         <List className={classes.list}>
           <ListItem className={classes.listItem}>
-            <Button className={classes.navBtn} color="primary" size="small">
-              <Link to="/"></Link>HOME
+            <Button className={classes.navLink} color="2e4094" size="small">
+              <Typography>
+                <Link to="#">HOME</Link>
+              </Typography>
             </Button>
           </ListItem>
           <ListItem className={classes.listItem}>
-            <Button className={classes.navBtn} color="primary" size="small">
-              <Link to="/products">products</Link>
+            <Button className={classes.navLink} color="2e4094" size="small">
+              <Typography>
+                <Link to="#">PRODUCTS</Link>
+              </Typography>
             </Button>
           </ListItem>
           <ListItem className={classes.listItem}>
-            <Button className={classes.navBtn} color="primary" size="small">
-              <Link to="/campaigns">CAMPAIGNS</Link>
+            <Button className={classes.navLink} color="2e4094" size="small">
+              <Typography>
+                <Link to="#">CAMPAIGNS</Link>
+              </Typography>
             </Button>
           </ListItem>
           <ListItem className={classes.listItem}>
-            <Button className={classes.navBtn} color="primary" size="small">
-              <Link to="/about">ABOUT</Link>
+            <Button className={classes.navLink} color="2e4094" size="small">
+              <Typography>
+                <Link to="#">ABOUT</Link>
+              </Typography>
             </Button>
           </ListItem>
         </List>

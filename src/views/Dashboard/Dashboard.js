@@ -1,24 +1,51 @@
 import React from "react";
+//import Amplify, { Auth } from "aws-amplify";
+import Amplify from "aws-amplify";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import awsconfig from "../../aws-exports";
+import Embed from "./Embed";
 
-// @material-ui/core
-//import { makeStyles } from "@material-ui/core/styles";
+Amplify.configure(awsconfig);
+
+//@material-ui/core
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+
 // core components
 import GridItem from "../../components/Grid/GridItem";
 import GridContainer from "../../components/Grid/GridContainer";
 
-///import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
+import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
 
-//const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles);
 
-export default function Dashboard() {
-  //const classes = useStyles();
+function Dashboard() {
+  const classes = useStyles();
   return (
     <div>
-      <GridContainer>
+      <GridContainer className={classes.gridContainer}>
         <GridItem xs={12} sm={12} md={12}>
-          DASHBOARD EMBED
+          <div>
+            <AmplifySignOut />
+            <Container maxWidth="md">
+              <Typography
+                variant="h4"
+                component="h1"
+                align="center"
+                color="textPrimary"
+                className={classes.title}
+                gutterBottom
+              >
+                Amazon QuickSight Embed
+              </Typography>
+              <Embed />
+            </Container>
+          </div>
         </GridItem>
       </GridContainer>
     </div>
   );
 }
+
+export default withAuthenticator(Dashboard);

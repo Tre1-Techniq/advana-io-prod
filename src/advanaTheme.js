@@ -40,17 +40,8 @@ advanaTheme.overrides = {
       borderRadius: 0,
       textTransform: "uppercase",
       border: "2px solid transparent",
-      "&:hover": {
-        backgroundColor: "transparent",
-        color: advanaTheme.palette.primary.main,
-        borderBottom: `2px solid ${indigo[700]}`,
-      },
-      "& + navLink:hover": {
-        backgroundColor: "transparent",
-        color: advanaTheme.palette.secondary.main,
-        borderBottom: `2px solid ${cyan[600]}`,
-      },
-      "& + navLink:focus": {
+      color: "disabled",
+      "&:hover,& .selected": {
         backgroundColor: "transparent",
         color: advanaTheme.palette.secondary.main,
         borderBottom: `2px solid ${cyan[600]}`,

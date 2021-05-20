@@ -88,7 +88,7 @@ export default function WorkSection() {
                 xs={12}
                 sm={12}
                 md={4}
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{ display: "flex", justifyContent: "space-evenly" }}
               >
                 <Button
                   variant="contained"
