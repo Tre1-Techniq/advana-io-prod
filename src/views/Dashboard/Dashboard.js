@@ -7,9 +7,9 @@ import Embed from "./Embed";
 
 Amplify.configure(awsconfig);
 
-//@material-ui/core
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
+// //@material-ui/core
+// import Typography from "@material-ui/core/Typography";
+// import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
@@ -27,20 +27,8 @@ function Dashboard() {
       <GridContainer className={classes.gridContainer}>
         <GridItem xs={12} sm={12} md={12}>
           <div>
+            <Embed />
             <AmplifySignOut />
-            <Container maxWidth="md">
-              <Typography
-                variant="h4"
-                component="h1"
-                align="center"
-                color="textPrimary"
-                className={classes.title}
-                gutterBottom
-              >
-                Amazon QuickSight Embed
-              </Typography>
-              <Embed />
-            </Container>
           </div>
         </GridItem>
       </GridContainer>
