@@ -12,6 +12,11 @@ const productStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
+  subtitle: {
+    color: "#848484",
+    textAlign: "left",
+    maxWidth: "475px",
+  },
   description: {
     color: "#999",
   },
@@ -28,6 +33,9 @@ const productStyle = {
   advanaStat: {
     display: "flex",
     justifyContent: "space-between",
+  },
+  heroImg: {
+    width: "100%",
   },
 };
 

@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { grey, indigo, cyan, orange } from "@material-ui/core/colors";
+import { grey, indigo, orange, cyan } from "@material-ui/core/colors";
 
 const advanaTheme = createMuiTheme({
   palette: {
@@ -7,10 +7,6 @@ const advanaTheme = createMuiTheme({
       main: indigo[700],
     },
     secondary: {
-      main: cyan[600],
-      contrastText: "#ffffff",
-    },
-    info: {
       main: orange[600],
       contrastText: "#ffffff",
     },
@@ -40,10 +36,9 @@ advanaTheme.overrides = {
       borderRadius: 0,
       textTransform: "uppercase",
       border: "2px solid transparent",
-      color: "disabled",
-      "&:hover,& .selected": {
+      "&:hover,&:focus": {
         backgroundColor: "transparent",
-        color: advanaTheme.palette.secondary.main,
+        color: cyan[600],
         borderBottom: `2px solid ${cyan[600]}`,
       },
     },
@@ -55,6 +50,18 @@ advanaTheme.overrides = {
         fontWeight: "700",
       },
     },
+    textSizeSmall: {
+      fontWeight: "400",
+      color: "#848484",
+    },
+    containedSecondary: {
+      "&:hover": {
+        backgroundColor: "transparent",
+        color: advanaTheme.palette.secondary.main,
+        border: `2px solid ${orange[600]}`,
+        fontWeight: "700",
+      },
+    },
     outlinedPrimary: {
       border: `2px solid ${indigo[700]}`,
       "&:hover": {
@@ -63,8 +70,13 @@ advanaTheme.overrides = {
         border: "2px solid transparent",
       },
     },
-    containedSecondary: {
-      fontWeight: 300,
+    outlinedSecondary: {
+      border: `2px solid ${orange[600]}`,
+      "&:hover": {
+        color: "#ffffff",
+        backgroundColor: `${orange[600]}`,
+        border: "2px solid transparent",
+      },
     },
   },
   MuiInputLabel: {

@@ -26,14 +26,29 @@ export default function StatsSection() {
         className={classes.advanaStatGrid}
         style={{ position: "relative", top: "-50px" }}
       >
-        <GridItem className={classes.advanaStat} xs={12} sm={12} md={4}>
-          <img style={{ width: "75%" }} src={statCustomers} />
+        <GridItem
+          style={{ display: "flex", justifyContent: "center" }}
+          xs={12}
+          sm={12}
+          md={4}
+        >
+          <img style={{ width: "70%" }} src={statCustomers} />
         </GridItem>
-        <GridItem className={classes.advanaStat} xs={12} sm={12} md={4}>
-          <img style={{ width: "75%" }} src={statLocations} />
+        <GridItem
+          style={{ display: "flex", justifyContent: "center" }}
+          xs={12}
+          sm={12}
+          md={4}
+        >
+          <img style={{ width: "70%" }} src={statLocations} />
         </GridItem>
-        <GridItem className={classes.advanaStat} xs={12} sm={12} md={4}>
-          <img style={{ width: "75%" }} src={statTransactions} />
+        <GridItem
+          style={{ display: "flex", justifyContent: "center" }}
+          xs={12}
+          sm={12}
+          md={4}
+        >
+          <img style={{ width: "70%" }} src={statTransactions} />
         </GridItem>
       </GridContainer>
     </ThemeProvider>

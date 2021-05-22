@@ -20,7 +20,7 @@ import routes from "routes.js";
 
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
-import bgImage from "../assets/img/advana-io-bg-02.jpg";
+import bgImage from "../assets/img/advana-io-bg-01.jpg";
 import fullLogo from "../assets/img/logo-full-white.png";
 //import pillLogo from "../assets/img/advana-pill-logo.png";
 

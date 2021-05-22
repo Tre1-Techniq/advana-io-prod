@@ -3,7 +3,7 @@ import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 
 const teamStyle = {
   section: {
-    padding: "70px 0",
+    paddingBottom: "70px",
     textAlign: "center",
   },
   title: {
@@ -13,17 +13,27 @@ const teamStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
+  teamGrid: {
+    borderRight: "1px solid #e4e4e4 !important",
+  },
   ...imagesStyle,
   itemGrid: {
     marginLeft: "auto",
     marginRight: "auto",
   },
-  cardTitle,
+  cardTitle: {
+    ...cardTitle,
+    fontSize: "1.125rem",
+    lineHeight: "1.5rem",
+    fontWeight: "400 !important",
+  },
   smallTitle: {
-    color: "#6c757d",
+    color: "#848484",
   },
   description: {
     color: "#999",
+    fontSize: "0.8rem",
+    lineHeight: "1rem",
   },
   justifyCenter: {
     justifyContent: "center !important",
@@ -41,6 +51,17 @@ const teamStyle = {
   },
   margin5: {
     margin: "5px",
+  },
+  grid: {
+    borderRight: "1px solid #e4e4e4",
+  },
+  teamCard: {
+    display: "flex",
+  },
+  tooltip: {
+    height: "50px",
+    position: "relative",
+    bottom: "0",
   },
 };
 

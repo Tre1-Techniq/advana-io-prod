@@ -11,10 +11,8 @@ import advanaTheme from "../../../advanaTheme";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-//import CustomInput from "components/CustomInput/CustomInput.js";
-//import Button from "components/CustomButtons/Button.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import styles from "assets/jss/material-kit-react/views/landingPageSections/contactSectionStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -23,86 +21,38 @@ export default function WorkSection() {
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.section}>
-        <GridContainer
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "100%",
-          }}
-        >
-          <GridItem cs={12} sm={12} md={8}>
-            <h1
-              className={classes.title}
-              style={{
-                width: "100%",
-                textAlign: "center",
-                marginBottom: "20px !important",
-              }}
-            >
+        <GridContainer className={classes.contactGrid}>
+          <GridItem cs={12} sm={12} md={12}>
+            <h1 className={classes.title}>
               Getting Started is Quick <span>{"&"}</span> Easy!
             </h1>
-            <h4
-              className={classes.subtitle}
-              style={{
-                color: "#848484",
-                textAlign: "center",
-                width: "100%",
-              }}
-            >
+            <h4 className={classes.subtitle}>
               Ut enim ad minima veniam, quis nostrum exercitationem ullam
               corporis suscipit laboriosam
             </h4>
-            <GridContainer>
-              {/* <form>
+            <br />
+            <GridContainer
+              className={classes.contactBtns}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                padding: "30px 100px",
+              }}
+            >
               <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true,
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true,
-                  }}
-                />
-              </GridItem>
-              <CustomInput
-                labelText="Your Message"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea,
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5,
-                }}
-              /> </form>*/}
-              <GridItem
-                xs={12}
-                sm={12}
-                md={4}
-                style={{ display: "flex", justifyContent: "space-evenly" }}
-              >
                 <Button
+                  className={classes.actionBtn}
                   variant="contained"
                   color="secondary"
-                  style={{ width: "225px" }}
                 >
                   BRANDS
                 </Button>
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
+              <GridItem>
                 <Button
+                  className={classes.actionBtn}
                   variant="contained"
                   color="secondary"
-                  style={{ width: "225px" }}
                 >
                   OPERATORS
                 </Button>

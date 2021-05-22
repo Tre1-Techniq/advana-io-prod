@@ -55,5 +55,9 @@ const footerStyle = {
     position: "relative",
     top: "3px",
   },
+  footer: {
+    background: "#fff !important",
+    height: "100px",
+  },
 };
 export default footerStyle;

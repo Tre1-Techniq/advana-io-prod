@@ -147,6 +147,10 @@ const headerStyle = {
     paddingLeft: "0",
     ...transition,
   },
+  navLogo: {
+    flex: "0",
+    width: "150px",
+  },
 };
 
 export default headerStyle;

@@ -33,8 +33,6 @@ import ContactSection from "./Sections/ContactSection";
 // Import Imges
 import advanaMap from "assets/img/advana-map.png";
 
-const dashboardRoutes = [];
-
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
@@ -45,8 +43,6 @@ export default function LandingPage(props) {
       <div className={classes.heroContainer}>
         <Header
           color="transparent"
-          routes={dashboardRoutes}
-          brand="Material Kit React"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -75,7 +71,7 @@ export default function LandingPage(props) {
                     color="primary"
                     to="/"
                   >
-                    <EventAvailableIcon style={{ marginRight: "10px" }} />
+                    <EventAvailableIcon className={classes.btnIcon} />
                     BOOK A DEMO
                   </Button>
                   <Button
@@ -84,8 +80,8 @@ export default function LandingPage(props) {
                     color="primary"
                     to="/"
                   >
-                    <ExitToAppIcon style={{ marginRight: "10px" }} />
-                    SIGN IN
+                    <ExitToAppIcon className={classes.btnIcon} />
+                    GET STARTED
                   </Button>
                 </Box>
               </GridItem>

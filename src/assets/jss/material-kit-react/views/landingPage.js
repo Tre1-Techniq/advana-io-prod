@@ -54,6 +54,9 @@ const landingPageStyle = {
   outlineBtn: {
     width: "175px",
   },
+  btnIcon: {
+    marginRight: "10px",
+  },
 };
 
 export default landingPageStyle;

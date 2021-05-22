@@ -4,6 +4,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
 
 // @material-ui/icons
 import DataUsageIcon from "@material-ui/icons/DataUsage";
@@ -20,7 +21,6 @@ import ExtensionIcon from "@material-ui/icons/Extension";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
@@ -57,43 +57,21 @@ export default function TeamSection() {
         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
         suscipit laboriosam
       </h4>
-      <div>
-        {/* <div>
-          <Typography>
-            <strong>Finibus Bonorum et Malorum</strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Typography>
-          <Typography>
-            <strong>Finibus Bonorum et Malorum</strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Typography>
-          <Typography>
-            <strong>Finibus Bonorum et Malorum</strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Typography>
-        </div> */}
+      <GridContainer>
         <GridContainer
           xs={12}
           sm={12}
-          md={8}
-          style={{ borderRight: "1px solid #848484" }}
+          md={6}
+          className={classes.teamGrid}
+          style={{ borderRight: "1px solid #e4e4e4" }}
         >
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img src={avatarBlank} alt="..." className={imageClasses} />
@@ -101,12 +79,12 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
-                Derek Meyer
+                Derek Myers
                 <br />
                 <small className={classes.smallTitle}>CEO</small>
               </h4>
@@ -122,13 +100,7 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <ExploreIcon />
-                  </Button>
+                  <ExploreIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -136,24 +108,20 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <MonetizationOnIcon />
-                  </Button>
+                  <MonetizationOnIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img src={avatarBlank} alt="..." className={imageClasses} />
@@ -161,9 +129,9 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 Mike Fischer
@@ -182,13 +150,9 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <MonetizationOnIcon />
-                  </Button>
+                  <MonetizationOnIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -196,24 +160,18 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <TimelineIcon />
-                  </Button>
+                  <TimelineIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img
@@ -226,9 +184,9 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 Nicole Springer
@@ -247,13 +205,9 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <TrendingUpIcon />
-                  </Button>
+                  <TrendingUpIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -261,24 +215,20 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <DataUsageIcon />
-                  </Button>
+                  <DataUsageIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img src={avatarBlank} alt="..." className={imageClasses} />
@@ -286,9 +236,9 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 Carlos Anderson
@@ -307,13 +257,7 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <CodeIcon />
-                  </Button>
+                  <CodeIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -321,24 +265,18 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <StorageIcon />
-                  </Button>
+                  <StorageIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img src={avatarBlank} alt="..." className={imageClasses} />
@@ -346,9 +284,9 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 Yue Wu
@@ -367,13 +305,7 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <SettingsIcon />
-                  </Button>
+                  <SettingsIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -381,24 +313,20 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <EqualizerIcon />
-                  </Button>
+                  <EqualizerIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
               <GridItem
                 xs={12}
                 sm={12}
                 md={8}
-                className={classes.itemGrid}
+                className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
                 <img
@@ -411,9 +339,9 @@ export default function TeamSection() {
               <h4
                 className={classes.cardTitle}
                 style={{
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   fontWeight: "300",
-                  lineHeight: "2rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 Ben DeVenezia
@@ -432,13 +360,9 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <ExtensionIcon />
-                  </Button>
+                  <ExtensionIcon
+                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                  />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -446,19 +370,63 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <CodeIcon />
-                  </Button>
+                  <CodeIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
-      </div>
+        <GridContainer
+          xs={12}
+          sm={12}
+          md={6}
+          style={{
+            padding: "50px",
+            textAlign: "left",
+            margin: "0 0 0 50px !important",
+            position: "relative",
+            top: "75px",
+          }}
+        >
+          <GridItem xs={12} sm={12} md={12}>
+            <Typography style={{ color: "#848484" }}>
+              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
+                Finibus Bonorum et Malorum
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </Typography>
+            <Typography style={{ color: "#848484" }}>
+              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
+                {" "}
+                Finibus Bonorum et Malorum
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </Typography>
+            <Typography style={{ color: "#848484" }}>
+              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
+                {" "}
+                Finibus Bonorum et Malorum
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </Typography>
+          </GridItem>
+        </GridContainer>
+      </GridContainer>
     </div>
   );
 }

@@ -35,9 +35,10 @@ const headerLinksStyle = (theme) => ({
   },
   listItemText: {
     padding: "0 !important",
+    display: "inline-flex",
   },
   navLink: {
-    color: "inherit",
+    color: "#848484",
     backgroundColor: "transparent",
     position: "relative",
     padding: "0.5rem",
@@ -89,7 +90,7 @@ const headerLinksStyle = (theme) => ({
     display: "inline-flex",
   },
   navLinkActive: {
-    color: "inherit",
+    color: "secondary",
   },
   icons: {
     width: "20px",
@@ -119,6 +120,18 @@ const headerLinksStyle = (theme) => ({
     alignItems: "center",
     justifyContent: "center",
     width: "80vw",
+  },
+  adminBtn: {
+    position: "relative",
+    right: "0",
+  },
+  btnIcon: {
+    marginRight: "10px",
+  },
+  headerNav: {
+    width: "90vw",
+    display: "inline-flex",
+    justifyContent: "center",
   },
 });
 

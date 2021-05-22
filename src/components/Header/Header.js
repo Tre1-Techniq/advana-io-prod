@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -23,8 +23,8 @@ const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  React.useEffect(() => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
     }
@@ -64,8 +64,8 @@ export default function Header(props) {
     [classes.fixed]: fixed,
   });
   const desktopLogo = (
-    <Link className={classes.navLogo} to="/">
-      <img src={fullLogo} />
+    <Link to="/">
+      <img src={fullLogo} className={classes.navLogo} />
     </Link>
   );
   // const mobileLogo = (
@@ -75,7 +75,10 @@ export default function Header(props) {
   // );
   return (
     <AppBar className={appBarClasses}>
-      <Toolbar className={classes.container}>
+      <Toolbar
+        className={classes.container}
+        style={{ position: "absolute", margin: "0 auto" }}
+      >
         {leftLinks !== undefined ? desktopLogo : null}
         <div className={classes.flex}>
           {leftLinks !== undefined ? (

@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+//import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
@@ -13,39 +14,42 @@ const useStyles = makeStyles(styles);
 export default function Footer(props) {
   const classes = useStyles();
   return (
-    <footer className={classes.footer}>
+    <footer
+      className={classes.footer}
+      style={{
+        height: "150px",
+        backgroundImage: "linear-gradient(to bottom right, #2e4094, #5ec6c3)",
+      }}
+    >
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="#" className={classes.block}>
+              <Link to="/home" className={classes.block}>
                 HOME
-              </a>
+              </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#" className={classes.block}>
+              <Link to="#products" className={classes.block}>
                 PRODUCTS
-              </a>
+              </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#" className={classes.block}>
+              <Link to="#campaigns" className={classes.block}>
                 CAMPAIGNS
-              </a>
+              </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#" className={classes.block}>
+              <Link to="#about" className={classes.block}>
                 ABOUT
-              </a>
+              </Link>
             </ListItem>
           </List>
         </div>
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a href="#" target="_self" className={classes.a}>
-              ADVANA.IO
-            </a>
-            , Powered by Sentry
+            <Link to="/home">ADVANA.IO</Link>, Powered by Sentry
           </span>
         </p>
       </div>

@@ -26,10 +26,8 @@ function Dashboard() {
     <div>
       <GridContainer className={classes.gridContainer}>
         <GridItem xs={12} sm={12} md={12}>
-          <div>
-            <Embed />
-            <AmplifySignOut />
-          </div>
+          <Embed />
+          <AmplifySignOut />
         </GridItem>
       </GridContainer>
     </div>

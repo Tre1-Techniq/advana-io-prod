@@ -1,7 +1,6 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -28,51 +27,27 @@ export default function ProductSection() {
       <div className={classes.productsSection}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
-            <img
-              style={{ width: "100%" }}
-              className={classes.heroImg}
-              src={heroProducts}
-            />
+            <img className={classes.heroImg} src={heroProducts} />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <h1
-              className={classes.title}
-              style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
+            <h1 className={classes.title}>
               Actionable Insights <span>{"Direct"}</span> <br />
               from the Point of Sale
             </h1>
-            <h4
-              className={classes.subtitle}
-              style={{
-                color: "#848484",
-                textAlign: "left",
-                paddingLeft: "50px",
-                maxWidth: "475px",
-              }}
-            >
+            <h4 className={classes.subtitle}>
               Only Advana connects billions of retail transactions to chart your
               path for hyper-growth
             </h4>
             <br />
-            <Box
-              className={classes.btnBox}
-              style={{
-                display: "flex",
-                justifyContent: "flex-start",
-                marginLeft: "50px",
-              }}
+            <Button
+              className={classes.solidBtn}
+              variant="contained"
+              color="primary"
+              to="/"
             >
-              <Button
-                className={classes.solidBtn}
-                variant="contained"
-                color="primary"
-                to="/"
-              >
-                LEARN MORE
-                <ChevronRightIcon style={{ marginLeft: "10px" }} />
-              </Button>
-            </Box>
+              LEARN MORE
+              <ChevronRightIcon style={{ marginLeft: "10px" }} />
+            </Button>
           </GridItem>
         </GridContainer>
       </div>

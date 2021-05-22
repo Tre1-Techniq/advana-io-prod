@@ -1,5 +1,4 @@
 import React from "react";
-import { createBrowserHistory } from "history";
 import {
   BrowserRouter as Router,
   Route,
@@ -17,12 +16,10 @@ import "assets/scss/material-kit-react.scss?v=1.10.0";
 import LandingPage from "./views/LandingPage/LandingPage";
 import Admin from "./layouts/Admin";
 
-var hist = createBrowserHistory();
-
 export default function App() {
   return (
     <ThemeProvider theme={advanaTheme}>
-      <Router history={hist}>
+      <Router>
         <Switch>
           <Route path="/" exact component={LandingPage} />
           <Redirect from="/home" to="/" />
