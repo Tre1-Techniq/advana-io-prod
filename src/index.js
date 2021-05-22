@@ -24,8 +24,6 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Redirect from="/home" to="/" />
-      </Switch>
-      <Switch>
         <Route path="/admin" component={Admin} />
       </Switch>
     </Router>
