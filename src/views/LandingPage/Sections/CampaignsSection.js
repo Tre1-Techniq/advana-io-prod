@@ -33,8 +33,7 @@ export default function CampaignsSection() {
           backgroundSize: "cover",
           width: "100vw",
           position: "relative",
-          left: "0",
-          marginLeft: "-100px",
+          left: "-100px",
           overflow: "hidden",
           padding: "50px",
         }}

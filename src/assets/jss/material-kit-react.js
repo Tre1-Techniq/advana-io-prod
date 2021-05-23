@@ -171,6 +171,16 @@ const title = {
   },
 };
 
+const subtitle = {
+  textDecoration: "none",
+  fontWeight: "300",
+  lineHeight: "1.5rem",
+  fontFamily: `"Roboto", sans-serif`,
+  fontSize: "1.2rem",
+  margin: "10px 0",
+  color: "#848484",
+};
+
 const cardTitle = {
   ...title,
   marginTop: ".625rem",
@@ -219,6 +229,7 @@ export {
   cardHeader,
   defaultBoxShadow,
   title,
+  subtitle,
   cardTitle,
   cardLink,
   cardSubtitle,
