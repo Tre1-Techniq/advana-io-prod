@@ -1,4 +1,4 @@
-import { container, title } from "assets/jss/material-kit-react";
+import { container, title, subtitle } from "assets/jss/material-kit-react";
 
 const landingPageStyle = {
   container: {
@@ -16,13 +16,13 @@ const landingPageStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
-  // subtitle: {
-  //   ...subtitle,
-  //   fontSize: "1.2rem",
-  //   maxWidth: "475px",
-  //   margin: "10px 0",
-  //   color: "#848484",
-  // },
+  subtitle: {
+    ...subtitle,
+    fontSize: "1.2rem",
+    maxWidth: "475px",
+    margin: "10px 0",
+    color: "#848484",
+  },
   main: {
     background: "#FFFFFF",
     position: "relative",

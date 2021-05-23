@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,6 +19,7 @@ import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
+  let history = useHistory();
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -45,7 +46,9 @@ export default function HeaderLinks(props) {
         </ListItem>
       </List>
       <Button
-        href="/admin"
+        onClick={() => {
+          history.push("/admin");
+        }}
         style={{ position: "absolute", right: "5vw", padding: "5px 8px" }}
         variant="contained"
         color="secondary"

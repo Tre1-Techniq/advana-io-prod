@@ -58,12 +58,15 @@ export default function TeamSection() {
         suscipit laboriosam
       </h4>
       <GridContainer>
-        <GridContainer
+        <GridItem
           xs={12}
           sm={12}
           md={6}
-          className={classes.teamGrid}
-          style={{ borderRight: "1px solid #e4e4e4" }}
+          style={{
+            display: "flex",
+            borderRight: "1px solid #e4e4e4",
+            marginTop: "50px",
+          }}
         >
           <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
             <Card plain>
@@ -361,7 +364,11 @@ export default function TeamSection() {
                   classes={{ tooltip: classes.tooltip }}
                 >
                   <ExtensionIcon
-                    style={{ margin: "0 20px", fill: "#2e4094" }}
+                    style={{
+                      margin: "0 20px",
+                      fill: "#2e4094",
+                      cursor: "pointer",
+                    }}
                   />
                 </Tooltip>
                 <Tooltip
@@ -375,8 +382,8 @@ export default function TeamSection() {
               </CardFooter>
             </Card>
           </GridItem>
-        </GridContainer>
-        <GridContainer
+        </GridItem>
+        <GridItem
           xs={12}
           sm={12}
           md={6}
@@ -425,7 +432,7 @@ export default function TeamSection() {
               </p>
             </Typography>
           </GridItem>
-        </GridContainer>
+        </GridItem>
       </GridContainer>
     </div>
   );

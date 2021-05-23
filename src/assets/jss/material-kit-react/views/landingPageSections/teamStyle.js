@@ -13,9 +13,6 @@ const teamStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
-  teamGrid: {
-    borderRight: "1px solid #e4e4e4 !important",
-  },
   ...imagesStyle,
   itemGrid: {
     marginLeft: "auto",
@@ -53,7 +50,7 @@ const teamStyle = {
     margin: "5px",
   },
   grid: {
-    borderRight: "1px solid #e4e4e4",
+    borderRight: "1px solid #e4e4e4 !important",
   },
   teamCard: {
     display: "flex",
