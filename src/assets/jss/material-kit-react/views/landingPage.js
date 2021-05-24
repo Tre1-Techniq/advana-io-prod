@@ -58,6 +58,9 @@ const landingPageStyle = {
   btnIcon: {
     marginRight: "10px",
   },
+  scrollTop: {
+    zIndex: "2000",
+  },
 };
 
 export default landingPageStyle;

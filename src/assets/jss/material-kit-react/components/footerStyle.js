@@ -5,7 +5,7 @@ const footerStyle = {
     color: "inherit",
     padding: "0.9375rem",
     fontWeight: "500",
-    fontSize: "12px",
+    fontSize: "10px",
     textTransform: "uppercase",
     borderRadius: "3px",
     textDecoration: "none",

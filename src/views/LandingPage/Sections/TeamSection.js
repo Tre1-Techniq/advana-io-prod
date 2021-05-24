@@ -25,6 +25,9 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
+// Import Images
+import dataGraphic from "../../../assets/img/data-pipeline-vector-graphic-01.jpg";
+
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
 import avatarBlank from "assets/img/faces/avatar-blank.jpg";
@@ -397,34 +400,19 @@ export default function TeamSection() {
         >
           <GridItem xs={12} sm={12} md={12}>
             <Typography style={{ color: "#848484" }}>
-              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
-                Finibus Bonorum et Malorum
-              </h4>
+              <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                Finibus Bonorum et Malorum?
+              </h3>
+              <img
+                src={dataGraphic}
+                style={{ width: "100%", margin: "20px 0" }}
+              />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </Typography>
-            <Typography style={{ color: "#848484" }}>
-              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
-                {" "}
-                Finibus Bonorum et Malorum
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </Typography>
-            <Typography style={{ color: "#848484" }}>
-              <h4 style={{ color: "#2e4094", fontWeight: "400" }}>
-                {" "}
-                Finibus Bonorum et Malorum
-              </h4>
-              <p>
+                <br /> <br />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
