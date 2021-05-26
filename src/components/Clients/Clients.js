@@ -1,5 +1,4 @@
 import React from "react";
-import "./sliderStyles.css";
 
 import {
   Carousel,
@@ -7,7 +6,11 @@ import {
   PreviousButton,
   NextButton,
 } from "react-slim-carousel";
-import "react-slim-carousel/dist/index.css";
+import "../../assets/css/sliderStyles.css";
+
+// Material UI Icons
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 // Image imports
 //import clif from "../../assets/img/partners/brands/partners-clif.png";
@@ -55,10 +58,11 @@ export default function Clients() {
 
   return (
     <CarouselProvider>
-      return (
       <div className="App">
-        <div className="slider-container" style={{ margin: "0 40px" }}>
-          <PreviousButton>&lt;</PreviousButton>
+        <div className="slider-container">
+          <div className="prevBtnContainer">
+            <PreviousButton><ArrowBackIosIcon className="prevNextSVG" /></PreviousButton>
+          </div>
           <Carousel
             autoPlay={true}
             autoSize={true}
@@ -79,10 +83,11 @@ export default function Clients() {
           >
             {slides}
           </Carousel>
-          <NextButton>&gt;</NextButton>
+          <div className="nextBtnContainer">
+            <NextButton><ArrowForwardIosIcon className="prevNextSVG" /></NextButton>
+          </div>
         </div>
       </div>
-      );
     </CarouselProvider>
   );
 }
