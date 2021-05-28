@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { AmplifyAuthenticator, AmplifySignUp, AmplifySignIn } from '@aws-amplify/ui-react';
+import { withStyles } from "@material-ui/core/styles";
 
 const Form = () => {
   return (
@@ -33,4 +35,14 @@ const Form = () => {
   );
 };
 
-export default Form;
+const useStyles = (theme) => ({
+  toast: {
+    display: 'flex',
+    top: theme.spacing(3),
+    left: "0px",
+    margin: "0 auto !important",
+    width: "40% !important",
+  },
+});
+
+export default withStyles(useStyles)(Form);

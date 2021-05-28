@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import Amplify, { Auth } from "aws-amplify";
+
+import awsconfig from "../aws-exports";
+
+Amplify.configure(awsconfig);
+
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
 // core components
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -68,7 +76,7 @@ export default function Admin({ ...rest }) {
     }
   };
   // initialize and destroy the PerfectScrollbar plugin
-  React.useEffect(() => {
+  useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
         suppressScrollX: true,
@@ -85,6 +93,22 @@ export default function Admin({ ...rest }) {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    AssessLoggedInState();
+  }, []);
+
+  const AssessLoggedInState = () => {
+    Auth.currentAuthenticatedUser().then(() => {
+      setIsLoggedIn(true);
+      console.log("Logged In: ", isLoggedIn);
+    }).catch(() => {
+      setIsLoggedIn(false);
+      console.log("Logged In: ", isLoggedIn);
+    })
+  }
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.wrapper}>
@@ -99,11 +123,11 @@ export default function Admin({ ...rest }) {
           {...rest}
         />
         <div className={classes.mainPanel} ref={mainPanel}>
-          <Navbar
+          {isLoggedIn ? (<><Navbar
             routes={routes}
             handleDrawerToggle={handleDrawerToggle}
             {...rest}
-          />
+          /></>) : ""}
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
           {getRoute() ? (
             <div className={classes.content}>
@@ -117,4 +141,4 @@ export default function Admin({ ...rest }) {
       </div>
     </ThemeProvider>
   );
-}
+};

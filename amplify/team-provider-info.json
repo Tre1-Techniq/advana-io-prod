@@ -1,0 +1,26 @@
+{
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-advanaio-test-134051-authRole",
+      "UnauthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-test-134051-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-test-134051-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-advanaio-test-134051-deployment",
+      "UnauthRoleName": "amplify-advanaio-test-134051-unauthRole",
+      "StackName": "amplify-advanaio-test-134051",
+      "StackId": "arn:aws:cloudformation:us-east-1:137317188003:stack/amplify-advanaio-test-134051/feb9b180-bff4-11eb-a892-0ef7f3f34731",
+      "AmplifyAppId": "d1tcwv3on1klum"
+    },
+    "categories": {
+      "auth": {
+        "advanaio239227e5": {}
+      },
+      "function": {
+        "getQuickSightDashboardEmbedURL": {
+          "deploymentBucketName": "amplify-advanaio-test-134051-deployment",
+          "s3Key": "amplify-builds/getQuickSightDashboardEmbedURL-35726f4a6b31782b362b-build.zip"
+        }
+      }
+    }
+  }
+}

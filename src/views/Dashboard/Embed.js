@@ -45,8 +45,8 @@ class Embed extends React.Component {
       },
     };
     const quicksight = await API.get(
-      "advanaio",
-      "/getQSDashEmbedURL",
+      "advanaQS",
+      "/getQuickSightDashboardEmbedURL",
       params
     );
     console.log(quicksight);
@@ -74,8 +74,7 @@ class Embed extends React.Component {
       <div>
         {this.state.loader && (
           <div className={classes.loading}>
-            {" "}
-            <CircularProgress />{" "}
+            <CircularProgress />
           </div>
         )}
         <div id="dashboardContainer"></div>

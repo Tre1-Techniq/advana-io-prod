@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Amplify, { Auth } from "aws-amplify";
+import { AmplifySignOut } from '@aws-amplify/ui-react';
 import awsconfig from "../../aws-exports";
-//import Embed from "./Embed";
+import Embed from "./Embed";
 
 Amplify.configure(awsconfig);
 
@@ -42,7 +43,7 @@ function Dashboard() {
 
   return (
     <div>
-      { isLoggedIn ? (<h1>Welcome! You are logged in.</h1>) : (<Form />) }
+      { isLoggedIn ? (<><h1>Welcome! You are logged in.</h1><Embed /><AmplifySignOut /></>) : (<Form />) }
     </div>
     
   );
