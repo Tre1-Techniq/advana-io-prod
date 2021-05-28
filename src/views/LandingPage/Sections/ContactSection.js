@@ -1,4 +1,5 @@
 import React from "react";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -9,8 +10,9 @@ import advanaTheme from "../../../advanaTheme";
 import Clients from "../../../components/Clients/Clients";
 
 // @material-ui/icons
-import VerifiedIcon from "@material-ui/icons/VerifiedUser";
-import WhereToVoteIcon from "@material-ui/icons/WhereToVote";
+//import VerifiedIcon from "@material-ui/icons/VerifiedUser";
+//import WhereToVoteIcon from "@material-ui/icons/WhereToVote";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
@@ -68,7 +70,7 @@ export default function WorkSection() {
                 padding: "30px 100px",
               }}
             >
-              <GridItem xs={12} sm={12} md={6}>
+              {/* <GridItem xs={12} sm={12} md={6}>
                 <Button
                   className={classes.actionBtn}
                   variant="contained"
@@ -86,6 +88,16 @@ export default function WorkSection() {
                 >
                   <WhereToVoteIcon style={{ marginRight: "10px" }} />
                   OPERATORS
+                </Button>
+              </GridItem> */}
+              <GridItem>
+                <Button href="/admin"
+                  className={classes.actionBtn}
+                  variant="contained"
+                  color="secondary"
+                >
+                  <AccountBoxIcon style={{ marginRight: "10px" }} />
+                  GET STARTED!
                 </Button>
               </GridItem>
             </GridContainer>

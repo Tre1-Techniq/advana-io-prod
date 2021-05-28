@@ -25,22 +25,22 @@ export default function HeaderLinks(props) {
     <ThemeProvider theme={advanaTheme}>
       <List className={classes.headerNav}>
         <ListItem className={classes.listItem}>
-          <Button href="#home" variant="text" color="primary" size="small">
+          <Button href="/" variant="text" color="primary" size="small">
             HOME
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="#products" variant="text" color="primary" size="small">
+          <Button href="/home#products" variant="text" color="primary" size="small">
             PRODUCTS
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="#campaigns" variant="text" color="primary" size="small">
+          <Button href="/home#campaigns" variant="text" color="primary" size="small">
             CAMPAIGNS
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="#about" variant="text" color="primary" size="small">
+          <Button href="/home#about" variant="text" color="primary" size="small">
             ABOUT
           </Button>
         </ListItem>

@@ -1,37 +1,51 @@
-import React from "react";
-//import Amplify, { Auth } from "aws-amplify";
-import Amplify from "aws-amplify";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import React, { useState, useEffect } from "react";
+import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "../../aws-exports";
-import Embed from "./Embed";
+//import Embed from "./Embed";
 
 Amplify.configure(awsconfig);
 
 // //@material-ui/core
 // import Typography from "@material-ui/core/Typography";
 // import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+//import { makeStyles } from "@material-ui/core/styles";
+//import { Button } from "@material-ui/core";
+
+import Form from "../Auth/Form";
 
 // core components
-import GridItem from "../../components/Grid/GridItem";
-import GridContainer from "../../components/Grid/GridContainer";
+// import GridItem from "../../components/Grid/GridItem";
+// import GridContainer from "../../components/Grid/GridContainer";
 
-import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
+// import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
 
 function Dashboard() {
-  const classes = useStyles();
+  //const classes = useStyles();
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    AssessLoggedInState();
+  }, []);
+
+  const AssessLoggedInState = () => {
+    Auth.currentAuthenticatedUser().then(() => {
+      setIsLoggedIn(true);
+      console.log("Logged In: ", isLoggedIn);
+    }).catch(() => {
+      setIsLoggedIn(false);
+      console.log("Logged In: ", isLoggedIn);
+    })
+  }
+
   return (
     <div>
-      <GridContainer className={classes.gridContainer}>
-        <GridItem xs={12} sm={12} md={12}>
-          <Embed />
-          <AmplifySignOut />
-        </GridItem>
-      </GridContainer>
+      { isLoggedIn ? (<h1>Welcome! You are logged in.</h1>) : (<Form />) }
     </div>
+    
   );
 }
 
-export default withAuthenticator(Dashboard);
+export default Dashboard;

@@ -4,7 +4,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
+//import Typography from "@material-ui/core/Typography";
 
 // @material-ui/icons
 import DataUsageIcon from "@material-ui/icons/DataUsage";
@@ -27,6 +27,10 @@ import CardFooter from "components/Card/CardFooter.js";
 
 // Import Images
 import dataGraphic from "../../../assets/img/data-pipeline-vector-graphic-01.jpg";
+import sentry from "assets/img/products/advana-product-sentry.png";
+import insight from "assets/img/products/advana-product-insight.png";
+import promote from "assets/img/products/advana-product-promote.png";
+import reach from "assets/img/products/advana-product-reach.png";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
@@ -395,11 +399,11 @@ export default function TeamSection() {
             textAlign: "left",
             margin: "0 0 0 50px !important",
             position: "relative",
-            top: "75px",
+            top: "25px",
           }}
         >
           <GridItem xs={12} sm={12} md={12}>
-            <Typography style={{ color: "#848484" }}>
+            <GridItem style={{ color: "#848484" }}>
               <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
                 Finibus Bonorum et Malorum?
               </h3>
@@ -418,7 +422,21 @@ export default function TeamSection() {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-            </Typography>
+            </GridItem>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
+            <GridItem xs={12} sm={6} md={3}>
+            <img src={sentry} style={{width: "100%", padding: "15px"}} />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+            <img src={insight} style={{width: "100%", padding: "15px"}} />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+            <img src={reach} style={{width: "100%", padding: "15px"}} />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+            <img src={promote} style={{width: "100%", padding: "15px"}} />
+            </GridItem>
           </GridItem>
         </GridItem>
       </GridContainer>

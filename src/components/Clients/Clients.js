@@ -61,7 +61,7 @@ export default function Clients() {
       <div className="App">
         <div className="slider-container">
           <div className="prevBtnContainer">
-            <PreviousButton><ArrowBackIosIcon className="prevNextSVG" /></PreviousButton>
+            <PreviousButton><ArrowBackIosIcon className="prevSVG" /></PreviousButton>
           </div>
           <Carousel
             autoPlay={true}
@@ -84,7 +84,7 @@ export default function Clients() {
             {slides}
           </Carousel>
           <div className="nextBtnContainer">
-            <NextButton><ArrowForwardIosIcon className="prevNextSVG" /></NextButton>
+            <NextButton><ArrowForwardIosIcon className="nextSVG" /></NextButton>
           </div>
         </div>
       </div>

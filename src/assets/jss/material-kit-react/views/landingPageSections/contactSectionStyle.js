@@ -40,7 +40,7 @@ const contactStyle = {
     borderTop: "1px solid #e4e4e4",
   },
   actionBtn: {
-    width: "150px",
+    width: "250px",
   },
   contactBtns: {
     display: "flex",

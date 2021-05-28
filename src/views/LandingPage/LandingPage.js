@@ -157,9 +157,9 @@ export default function LandingPage(props) {
         <div className={classes.main}>
           <div className={classes.container}>
             <StatsSection />
-            <ProductSection />
-            <CampaignsSection />
-            <TeamSection />
+            <ProductSection name="products" />
+            <CampaignsSection name="campaigns" />
+            <TeamSection name="about" />
             <ContactSection />
           </div>
           <ScrollTop

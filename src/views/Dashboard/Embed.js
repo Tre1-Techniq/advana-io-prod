@@ -45,8 +45,8 @@ class Embed extends React.Component {
       },
     };
     const quicksight = await API.get(
-      "advanaqs",
-      "/getQuickSightDashboardEmbedURL",
+      "advanaio",
+      "/getQSDashEmbedURL",
       params
     );
     console.log(quicksight);

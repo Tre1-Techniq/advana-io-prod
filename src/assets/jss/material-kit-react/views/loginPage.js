@@ -7,7 +7,7 @@ const signupPageStyle = {
     position: "relative",
     paddingTop: "20vh",
     color: "#FFFFFF",
-    paddingBottom: "200px",
+    paddingBottom: "225px",
   },
   cardHidden: {
     opacity: "0",
@@ -23,7 +23,7 @@ const signupPageStyle = {
     border: "0",
     alignItems: "center",
     "&:before": {
-      background: "rgba(0, 0, 0, 0.5)",
+      background: "transparent",
     },
     "&:before,&:after": {
       position: "absolute",
@@ -47,25 +47,36 @@ const signupPageStyle = {
   form: {
     margin: "0",
   },
+  formBody: {
+    display: "flex",
+  },
   cardHeader: {
     width: "auto",
     textAlign: "center",
     marginLeft: "20px",
     marginRight: "20px",
-    marginTop: "-40px",
+    marginTop: "10px !important",
+    boxShadow: "none !important",
+    borderRadius: "0 !important",
+    background: "transparent !important",
     padding: "20px 0",
     marginBottom: "15px",
+    borderBottom: "1px solid #e4e4e4",
+    "&>h4": {
+      marginBottom: "0",
+      fontSize: "2rem",
+      color: "#2e4094",
+      "&>span": {
+        color: "#68c3c8",
+      },
+    },
+    "&>p": {
+      fontSize: "1rem",
+      color: "#848484",
+    },
   },
-  socialIcons: {
-    maxWidth: "24px",
-    marginTop: "0",
-    width: "100%",
-    transform: "none",
-    left: "0",
-    top: "0",
-    height: "100%",
-    lineHeight: "41px",
-    fontSize: "20px",
+  headerLogo: {
+    width: "60px",
   },
   divider: {
     marginTop: "30px",
@@ -73,19 +84,20 @@ const signupPageStyle = {
     textAlign: "center",
   },
   cardFooter: {
-    paddingTop: "0rem",
+    paddingTop: "0.75rem",
     border: "0",
-    borderRadius: "6px",
+    borderRadius: "0",
     justifyContent: "center !important",
-  },
-  socialLine: {
-    marginTop: "1rem",
-    textAlign: "center",
-    padding: "0",
   },
   inputIconsColor: {
     color: "#495057",
   },
+  userType: {
+    marginTop: "20px",
+  },
+  labelRoot: {
+    fontSize: "0.8rem",
+  }
 };
 
 export default signupPageStyle;
