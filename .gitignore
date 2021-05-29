@@ -18,7 +18,7 @@
 .env.production.local
 
 # package-lock.json
-# gulpfile.js
+gulpfile.js
 # yarn.lock
 npm-debug.log*
 yarn-debug.log*
