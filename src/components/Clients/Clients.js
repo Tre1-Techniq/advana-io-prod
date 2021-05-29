@@ -1,3 +1,21 @@
+/*!
+
+=========================================================
+* Material Dashboard React - v1.10.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard-react
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
 import React from "react";
 
 import {
@@ -9,8 +27,8 @@ import {
 import "../../assets/css/sliderStyles.css";
 
 // Material UI Icons
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 // Image imports
 //import clif from "../../assets/img/partners/brands/partners-clif.png";
@@ -61,7 +79,9 @@ export default function Clients() {
       <div className="App">
         <div className="slider-container">
           <div className="prevBtnContainer">
-            <PreviousButton><ArrowBackIosIcon className="prevSVG" /></PreviousButton>
+            <PreviousButton>
+              <ArrowBackIosIcon className="prevSVG" />
+            </PreviousButton>
           </div>
           <Carousel
             autoPlay={true}
@@ -84,7 +104,9 @@ export default function Clients() {
             {slides}
           </Carousel>
           <div className="nextBtnContainer">
-            <NextButton><ArrowForwardIosIcon className="nextSVG" /></NextButton>
+            <NextButton>
+              <ArrowForwardIosIcon className="nextSVG" />
+            </NextButton>
           </div>
         </div>
       </div>
