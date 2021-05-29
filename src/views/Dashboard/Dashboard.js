@@ -34,10 +34,10 @@ function Dashboard() {
   const AssessLoggedInState = () => {
     Auth.currentAuthenticatedUser().then(() => {
       setIsLoggedIn(true);
-      console.log("Logged In: ", isLoggedIn);
+      console.log("User Logged In: ", isLoggedIn);
     }).catch(() => {
       setIsLoggedIn(false);
-      console.log("Logged In: ", isLoggedIn);
+      console.log("User Logged In: ", isLoggedIn);
     })
   }
 
