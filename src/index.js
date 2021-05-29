@@ -16,8 +16,6 @@ import "assets/scss/material-kit-react.scss?v=1.10.0";
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage";
 import Admin from "./layouts/Admin";
-//import SignUp from "../src/views/LoginPage/SignUp";
-//import GetStarted from "../src/views/LoginPage/GetStarted";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -27,7 +25,6 @@ ReactDOM.render(
         <Route path="/" exact component={LandingPage} />
         <Redirect from="/home" to="/" />
         <Route path="/admin" component={Admin} />
-        {/* <Route path="/signup" component={SignUp} /> */}
       </Switch>
     </Router>
   </ThemeProvider>,
