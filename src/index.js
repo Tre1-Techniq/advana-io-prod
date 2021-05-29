@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
 } from "react-router-dom";
 
 // Advana Color Theme
@@ -23,7 +22,6 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/" exact component={LandingPage} />
-        <Redirect from="/home" to="/" />
         <Route path="/admin" component={Admin} />
       </Switch>
     </Router>
