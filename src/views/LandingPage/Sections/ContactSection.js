@@ -14,6 +14,7 @@ The above copyright notice and this permission notice shall be included in all c
 */
 
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -41,6 +42,7 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/cont
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
+  let history = useHistory();
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -106,7 +108,10 @@ export default function WorkSection() {
                 </Button>
               </GridItem> */}
               <GridItem>
-                <Button href="/admin"
+                <Button
+                  onClick={() => {
+                    history.push("/signin");
+                  }}
                   className={classes.actionBtn}
                   variant="contained"
                   color="secondary"

@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "advanaioLambdaRoleb5890cf0",
+            "advanaioLambdaRole1415d134",
             {
               "Fn::Join": [
                 "",
                 [
-                  "advanaioLambdaRoleb5890cf0",
+                  "advanaioLambdaRole1415d134",
                   "-",
                   {
                     "Ref": "env"

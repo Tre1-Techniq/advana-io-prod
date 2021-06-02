@@ -1,9 +1,9 @@
-const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./app');
+import { createServer, proxy } from 'aws-serverless-express';
+import app from './app';
 
-const server = awsServerlessExpress.createServer(app);
+const server = createServer(app);
 
-exports.handler = (event, context) => {
+export function handler(event, context) {
   console.log(`EVENT: ${JSON.stringify(event)}`);
-  return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise;
-};
+  return proxy(server, event, context, 'PROMISE').promise;
+}

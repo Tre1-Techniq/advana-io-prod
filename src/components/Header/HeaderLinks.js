@@ -47,7 +47,7 @@ export default function HeaderLinks(props) {
       </List>
       <Button
         onClick={() => {
-          history.push("/admin");
+          history.push("/signin");
         }}
         style={{ position: "absolute", right: "5vw", padding: "5px 8px" }}
         variant="contained"

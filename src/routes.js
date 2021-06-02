@@ -17,16 +17,16 @@
 */
 
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 // core components/views for Admin layout
-import DashboardPage from "./views/Dashboard/Dashboard";
+import Dashboard from "./views/Dashboard/Dashboard";
 
 const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: Dashboard,
-    component: DashboardPage,
+    icon: DashboardIcon,
+    component: Dashboard,
     layout: "/admin",
   },
 ];

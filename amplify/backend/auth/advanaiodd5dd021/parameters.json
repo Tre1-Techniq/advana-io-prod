@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "advanaio39988cc1_identitypool_39988cc1",
+    "identityPoolName": "advanaiodd5dd021_identitypool_dd5dd021",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "advana39988cc1",
-    "userPoolName": "advanaio39988cc1_userpool_39988cc1",
+    "resourceNameTruncated": "advanadd5dd021",
+    "userPoolName": "advanaiodd5dd021_userpool_dd5dd021",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -18,8 +18,7 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email",
-        "name"
+        "email"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
@@ -29,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "advana39988cc1_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "advanadd5dd021_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "39988cc1",
-    "resourceName": "advanaio39988cc1",
+    "sharedId": "dd5dd021",
+    "resourceName": "advanaiodd5dd021",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -47,27 +46,8 @@
         ]
     },
     "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
-    "triggers": "{\n  \"CustomMessage\": [\n    \"verification-link\"\n  ]\n}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
-    "verificationBucketName": "advanaio39988cc1verificationbucket",
     "usernameCaseSensitive": false,
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "advanaio39988cc1CustomMessage",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
-    ]
+    "dependsOn": []
 }

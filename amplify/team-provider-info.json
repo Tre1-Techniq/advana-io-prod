@@ -1,32 +1,25 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-advanaio-dev-30355-authRole",
-      "UnauthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-dev-30355-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-dev-30355-authRole",
+      "AuthRoleName": "amplify-advanaio-dev-153749-authRole",
+      "UnauthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-dev-153749-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::137317188003:role/amplify-advanaio-dev-153749-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-advanaio-dev-30355-deployment",
-      "UnauthRoleName": "amplify-advanaio-dev-30355-unauthRole",
-      "StackName": "amplify-advanaio-dev-30355",
-      "StackId": "arn:aws:cloudformation:us-east-1:137317188003:stack/amplify-advanaio-dev-30355/2f345200-c065-11eb-90bc-0a6046b66d41",
-      "AmplifyAppId": "d2zs9w52mrhctm"
+      "DeploymentBucketName": "amplify-advanaio-dev-153749-deployment",
+      "UnauthRoleName": "amplify-advanaio-dev-153749-unauthRole",
+      "StackName": "amplify-advanaio-dev-153749",
+      "StackId": "arn:aws:cloudformation:us-east-1:137317188003:stack/amplify-advanaio-dev-153749/d482c140-c260-11eb-bfbd-0e258982388f",
+      "AmplifyAppId": "d3e632tabofvyv"
     },
     "categories": {
-      "function": {
-        "advanaio39988cc1CustomMessage": {
-          "REDIRECTURL": "https://www.advana.io/admin",
-          "EMAILSUBJECT": "Advana.io Email Verification",
-          "EMAILMESSAGE": "Click this link to confirm your email address:",
-          "deploymentBucketName": "amplify-advanaio-dev-30355-deployment",
-          "s3Key": "amplify-builds/advanaio39988cc1CustomMessage-527076726431482f6f44-build.zip"
-        },
-        "getQuickSightDashboardEmbedURL": {
-          "deploymentBucketName": "amplify-advanaio-dev-30355-deployment",
-          "s3Key": "amplify-builds/getQuickSightDashboardEmbedURL-4556596a444267747730-build.zip"
-        }
-      },
       "auth": {
-        "advanaio39988cc1": {}
+        "advanaiodd5dd021": {}
+      },
+      "function": {
+        "getQuickSightDashboardEmbedURL": {
+          "deploymentBucketName": "amplify-advanaio-dev-153749-deployment",
+          "s3Key": "amplify-builds/getQuickSightDashboardEmbedURL-4a674a6b384b5a4a4334-build.zip"
+        }
       }
     }
   }

@@ -14,10 +14,13 @@ The above copyright notice and this permission notice shall be included in all c
 */
 
 import React from "react";
+import { useHistory } from "react-router-dom";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
+
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+
 // @material-ui/core components
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -110,6 +113,7 @@ ScrollTop.propTypes = {
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
+  let history = useHistory();
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -153,10 +157,12 @@ export default function LandingPage(props) {
                     BOOK A DEMO
                   </Button>
                   <Button
+                    onClick={() => {
+                      history.push("/signin");
+                    }}
                     className={classes.outlineBtn}
                     variant="outlined"
                     color="primary"
-                    to="/"
                   >
                     <ExitToAppIcon className={classes.btnIcon} />
                     GET STARTED

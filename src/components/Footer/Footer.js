@@ -95,7 +95,7 @@ export default function Footer(props) {
             </ListItem>
           </List>
         </div>
-        <p
+        <div
           className={classes.right}
           style={{
             color: "#e4e4e4",
@@ -114,7 +114,7 @@ export default function Footer(props) {
               hyper-growth.
             </Typography>
           </span>
-        </p>
+        </div>
       </div>
     </footer>
   );

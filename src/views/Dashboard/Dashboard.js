@@ -17,53 +17,42 @@
 */
 
 import React, { useState, useEffect } from "react";
-import Amplify, { Auth } from "aws-amplify";
-import { AmplifySignOut } from '@aws-amplify/ui-react';
+import { useHistory } from "react-router-dom";
+import Amplify, { Auth } from 'aws-amplify';
+import Embed from './Embed';
 import awsconfig from "../../aws-exports";
-import Embed from "./Embed";
 
 Amplify.configure(awsconfig);
 
-// //@material-ui/core
-// import Typography from "@material-ui/core/Typography";
-// import Container from "@material-ui/core/Container";
-//import { makeStyles } from "@material-ui/core/styles";
-//import { Button } from "@material-ui/core";
-
-import Form from "../Auth/Form";
-
-// core components
-// import GridItem from "../../components/Grid/GridItem";
-// import GridContainer from "../../components/Grid/GridContainer";
-
-// import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
-
-//const useStyles = makeStyles(styles);
-
 function Dashboard() {
-  //const classes = useStyles();
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, updateUser] = useState(null);
+  let history = useHistory();
 
   useEffect(() => {
-    AssessLoggedInState();
-  }, []);
+    checkUser()
+  }, [])
 
-  const AssessLoggedInState = () => {
-    Auth.currentAuthenticatedUser().then(() => {
-      setIsLoggedIn(true);
-      console.log("User Logged In: ", isLoggedIn);
-    }).catch(() => {
-      setIsLoggedIn(false);
-      console.log("User Logged In: ", isLoggedIn);
-    })
+  async function checkUser() {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      updateUser(user)
+    } catch (err) {
+      console.log("User Auth Error: ", err)
+      updateUser(null)
+      history.push("/signin")
+    }
   }
 
   return (
-    <div>
-      { isLoggedIn ? (<><h1>Welcome! You are logged in.</h1><Embed /><AmplifySignOut /></>) : (<Form />) }
-    </div>
-    
+    <>
+      <Embed
+        user={user}
+      />
+      <button
+        onClick={() => { Auth.signOut().then(history.push("/signin")) }}
+      >Sign Out
+      </button>
+    </>
   );
 }
 
