@@ -31,13 +31,13 @@ import Clients from "../../../components/Clients/Clients";
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "../../../components/Grid/GridContainer.js";
+import GridItem from "../../../components/Grid/GridItem.js";
 
 // Import Images
 import backgroundIMG1 from "../../../assets/img/advana-io-bg-01.jpg";
 
-import styles from "assets/jss/material-kit-react/views/landingPageSections/contactSectionStyle.js";
+import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/contactSectionStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -110,7 +110,7 @@ export default function WorkSection() {
               <GridItem>
                 <Button
                   onClick={() => {
-                    history.push("/signin");
+                    history.push("/admin");
                   }}
                   className={classes.actionBtn}
                   variant="contained"

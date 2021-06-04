@@ -12,13 +12,13 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
-import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
+import AdminNavbarLinks from "../../components/Navbars/AdminNavbarLinks.js";
 
 // Advana Theme Overrides
 import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../advanaTheme";
 
-import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
 const useStyles = makeStyles(styles);
 

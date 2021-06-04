@@ -14,10 +14,10 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // Import Images
-import fullLogo from "assets/img/logo-full-grad.png";
+import fullLogo from "../../assets/img/logo-full-grad.png";
 //import pillLogo from "assets/img/advana-pill-logo.png";
 // core components
-import styles from "assets/jss/material-kit-react/components/headerStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
 
 const useStyles = makeStyles(styles);
 

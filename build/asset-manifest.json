@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dcfa5395.chunk.css",
+    "main.js": "/static/js/main.e403292f.chunk.js",
+    "main.js.map": "/static/js/main.e403292f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9b07923e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9b07923e.js.map",
+    "static/css/2.1881a404.chunk.css": "/static/css/2.1881a404.chunk.css",
+    "static/js/2.7d505813.chunk.js": "/static/js/2.7d505813.chunk.js",
+    "static/js/2.7d505813.chunk.js.map": "/static/js/2.7d505813.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.1881a404.chunk.css.map": "/static/css/2.1881a404.chunk.css.map",
+    "static/css/main.dcfa5395.chunk.css.map": "/static/css/main.dcfa5395.chunk.css.map",
+    "static/js/2.7d505813.chunk.js.LICENSE.txt": "/static/js/2.7d505813.chunk.js.LICENSE.txt",
+    "static/js/main.e403292f.chunk.js.LICENSE.txt": "/static/js/main.e403292f.chunk.js.LICENSE.txt",
+    "static/media/advana-io-bg-01.jpg": "/static/media/advana-io-bg-01.0cad3c7a.jpg",
+    "static/media/advana-io-bg-02.47b91d8e.jpg": "/static/media/advana-io-bg-02.47b91d8e.jpg",
+    "static/media/advana-map.499d69a9.png": "/static/media/advana-map.499d69a9.png",
+    "static/media/advana-product-insight.344946bb.png": "/static/media/advana-product-insight.344946bb.png",
+    "static/media/advana-product-promote.175d2443.png": "/static/media/advana-product-promote.175d2443.png",
+    "static/media/advana-product-reach.8c86b490.png": "/static/media/advana-product-reach.8c86b490.png",
+    "static/media/advana-product-sentry.cfdf0bf2.png": "/static/media/advana-product-sentry.cfdf0bf2.png",
+    "static/media/data-pipeline-vector-graphic-01.5ae20245.jpg": "/static/media/data-pipeline-vector-graphic-01.5ae20245.jpg",
+    "static/media/hero-campaigns.9f8b4713.png": "/static/media/hero-campaigns.9f8b4713.png",
+    "static/media/hero-products.fdb4302a.png": "/static/media/hero-products.fdb4302a.png",
+    "static/media/logo-full-grad.63371b41.png": "/static/media/logo-full-grad.63371b41.png",
+    "static/media/stats-customers.f7533370.png": "/static/media/stats-customers.f7533370.png",
+    "static/media/stats-locations.38bfd4f7.png": "/static/media/stats-locations.38bfd4f7.png",
+    "static/media/verified-badge.d612579f.png": "/static/media/verified-badge.d612579f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b07923e.js",
+    "static/css/2.1881a404.chunk.css",
+    "static/js/2.7d505813.chunk.js",
+    "static/css/main.dcfa5395.chunk.css",
+    "static/js/main.e403292f.chunk.js"
+  ]
+}

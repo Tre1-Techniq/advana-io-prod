@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "./advanaTheme";
 
-import "assets/scss/material-kit-react.scss?v=1.10.0";
+import "./assets/scss/material-kit-react.scss?v=1.10.0";
 
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage";

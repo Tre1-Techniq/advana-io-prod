@@ -32,9 +32,9 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import Navbar from "components/Navbars/Navbar.js";
-import Footer from "components/Footer/Footer.js";
-import Sidebar from "components/Sidebar/Sidebar.js";
+import Navbar from "../components/Navbars/Navbar.js";
+import Footer from "../components/Footer/Footer.js";
+import Sidebar from "../components/Sidebar/Sidebar.js";
 
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
@@ -42,9 +42,9 @@ import advanaTheme from "../advanaTheme";
 
 //import { indigo } from "@material-ui/core/colors";
 
-import routes from "routes.js";
+import routes from "../routes.js";
 
-import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
+import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
 import bgImage from "../assets/img/advana-io-bg-02.jpg";
 import fullLogo from "../assets/img/logo-full-white.png";

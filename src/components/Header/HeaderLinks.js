@@ -14,7 +14,7 @@ import advanaTheme from "../../advanaTheme";
 // @material-ui/icons
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -47,7 +47,7 @@ export default function HeaderLinks(props) {
       </List>
       <Button
         onClick={() => {
-          history.push("/signin");
+          history.push("/admin");
         }}
         style={{ position: "absolute", right: "5vw", padding: "5px 8px" }}
         variant="contained"

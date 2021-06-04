@@ -24,8 +24,8 @@ import { withStyles } from '@material-ui/core/styles';
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 
-//import QuickSightEmbedding from "amazon-quicksight-embedding-sdk";
-var QuickSightEmbedding = require("amazon-quicksight-embedding-sdk");
+import QuickSightEmbedding from "amazon-quicksight-embedding-sdk";
+//var QuickSightEmbedding = require("amazon-quicksight-embedding-sdk");
 
 const useStyles = theme => ({
   loading: {
@@ -102,7 +102,7 @@ class Embed extends React.Component {
 }
 
 Embed.propTypes = {
-    classes: PropTypes.any.isRequired,
+    classes: PropTypes.func,
 };
 
 export default withStyles(useStyles)(Embed);

@@ -16,43 +16,36 @@
 
 */
 
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Amplify, { Auth } from 'aws-amplify';
-import Embed from './Embed';
-import awsconfig from "../../aws-exports";
+import React, { useEffect } from 'react';
 
-Amplify.configure(awsconfig);
+//import QuickSightEmbedding from "amazon-quicksight-embedding-sdk";
+var QuickSightEmbedding = require("amazon-quicksight-embedding-sdk");
+
+var dashboard;
 
 function Dashboard() {
-  const [user, updateUser] = useState(null);
-  let history = useHistory();
 
   useEffect(() => {
-    checkUser()
-  }, [])
+    embedDashboard()
+  }, []);
 
-  async function checkUser() {
-    try {
-      const user = await Auth.currentAuthenticatedUser();
-      updateUser(user)
-    } catch (err) {
-      console.log("User Auth Error: ", err)
-      updateUser(null)
-      history.push("/signin")
-    }
+  function embedDashboard() {
+    const containerDiv = document.getElementById("embeddingContainer");
+    const options = {
+        // replace this dummy url with the one generated via embedding API
+        url: "https://advanaio.auth.us-east-1.amazoncognito.com/login?client_id=73sffcn2n7adduka1jllgvpuno&response_type=token&scope=openid+profile&redirect_uri=https://3ugpk5jw95.execute-api.us-east-1.amazonaws.com/dev/qs-dash-embed",  
+        container: containerDiv,
+        scrolling: "yes",
+        height: "700px",
+        width: "100%",
+        padding: "0",
+        footerPaddingEnabled: true
+    };
+    dashboard = QuickSightEmbedding.embedDashboard(options);
   }
 
   return (
-    <>
-      <Embed
-        user={user}
-      />
-      <button
-        onClick={() => { Auth.signOut().then(history.push("/signin")) }}
-      >Sign Out
-      </button>
-    </>
+      <div id="embeddingContainer" dashboard={dashboard}></div>
   );
 }
 

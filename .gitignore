@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build
+#/build
 
 # misc
 .DS_Store
@@ -27,6 +27,8 @@ npm-debug.log*
 # compiled css
 *.css
 
+jsonconfig.json
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -35,7 +37,7 @@ amplify/mock-data
 amplify/backend/amplify-meta.json
 amplify/backend/awscloudformation
 amplify/backend/.temp
-build/
+#build/
 dist/
 node_modules/
 aws-exports.js

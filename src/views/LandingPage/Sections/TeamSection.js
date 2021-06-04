@@ -34,22 +34,22 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import ExtensionIcon from "@material-ui/icons/Extension";
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+import GridContainer from "../../../components/Grid/GridContainer.js";
+import GridItem from "../../../components/Grid/GridItem.js";
+import Card from "../../../components/Card/Card.js";
+import CardBody from "../../../components/Card/CardBody.js";
+import CardFooter from "../../../components/Card/CardFooter.js";
 
 // Import Images
 import dataGraphic from "../../../assets/img/data-pipeline-vector-graphic-01.jpg";
-import sentry from "assets/img/products/advana-product-sentry.png";
-import insight from "assets/img/products/advana-product-insight.png";
-import promote from "assets/img/products/advana-product-promote.png";
-import reach from "assets/img/products/advana-product-reach.png";
+import sentry from "../../../assets/img/products/advana-product-sentry.png";
+import insight from "../../../assets/img/products/advana-product-insight.png";
+import promote from "../../../assets/img/products/advana-product-promote.png";
+import reach from "../../../assets/img/products/advana-product-reach.png";
 
-import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
+import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import avatarBlank from "assets/img/faces/avatar-blank.jpg";
+import avatarBlank from "../../../assets/img/faces/avatar-blank.jpg";
 
 const useStyles = makeStyles(styles);
 

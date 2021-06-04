@@ -39,14 +39,14 @@ import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 // core components
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
-import GridContainer from "components/Grid/GridContainer";
-import GridItem from "components/Grid/GridItem";
-import HeaderLinks from "components/Header/HeaderLinks";
-import Parallax from "components/Parallax/Parallax";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import GridContainer from "../../components/Grid/GridContainer";
+import GridItem from "../../components/Grid/GridItem";
+import HeaderLinks from "../../components/Header/HeaderLinks";
+import Parallax from "../../components/Parallax/Parallax";
 
-import styles from "assets/jss/material-kit-react/views/landingPage";
+import styles from "../../assets/jss/material-kit-react/views/landingPage";
 
 // Sections for this page
 import StatsSection from "./Sections/StatsSection";
@@ -56,7 +56,7 @@ import TeamSection from "./Sections/TeamSection";
 import ContactSection from "./Sections/ContactSection";
 
 // Import Imges
-import advanaMap from "assets/img/advana-map.png";
+import advanaMap from "../../assets/img/advana-map.png";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -133,7 +133,7 @@ export default function LandingPage(props) {
           style={{ position: "absolute", top: "-50px" }}
           id="back-to-top-anchor"
         />
-        <Parallax image={require("assets/img/advana-io-bg-01.jpg").default}>
+        <Parallax image={require("../../assets/img/advana-io-bg-01.jpg").default}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={5}>
@@ -158,7 +158,7 @@ export default function LandingPage(props) {
                   </Button>
                   <Button
                     onClick={() => {
-                      history.push("/signin");
+                      history.push("/admin");
                     }}
                     className={classes.outlineBtn}
                     variant="outlined"

@@ -1,4 +1,4 @@
-import { title, container } from "assets/jss/material-kit-react.js";
+import { title, container } from "../../../material-kit-react.js";
 
 const contactStyle = {
   container: {

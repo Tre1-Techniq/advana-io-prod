@@ -22,8 +22,8 @@ import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "../../../components/Grid/GridContainer.js";
+import GridItem from "../../../components/Grid/GridItem.js";
 
 import statCustomers from "../../../assets/img/stats-customers.png";
 import statLocations from "../../../assets/img/stats-locations.png";
