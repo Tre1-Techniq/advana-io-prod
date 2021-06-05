@@ -110,7 +110,7 @@ export default function WorkSection() {
               <GridItem>
                 <Button
                   onClick={() => {
-                    history.push("/admin");
+                    history.push("/signin/");
                   }}
                   className={classes.actionBtn}
                   variant="contained"

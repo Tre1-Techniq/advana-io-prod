@@ -14,6 +14,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import * as serviceWorker from "./serviceWorker";
 
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
@@ -32,10 +33,12 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route path="/" exact component={LandingPage} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/admin" component={Admin} />
+          <Route path="/signin/" exact component={SignIn} />
+          <Route path="/admin/" exact component={Admin} />
         </Switch>
       </Router>
     </ThemeProvider>,
   rootElement
 );
+
+serviceWorker.unregister();

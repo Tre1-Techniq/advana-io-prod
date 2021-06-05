@@ -4,6 +4,7 @@
   "description": "advana.io Admin Portal",
   "private": true,
   "main": "src/index.js",
+  "homepage": "https://advana.io",
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.1",
     "@babel/core": "7.14.0",

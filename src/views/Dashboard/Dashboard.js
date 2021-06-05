@@ -32,7 +32,6 @@ function Dashboard() {
   function embedDashboard() {
     const containerDiv = document.getElementById("embeddingContainer");
     const options = {
-        // replace this dummy url with the one generated via embedding API
         url: "https://advanaio.auth.us-east-1.amazoncognito.com/login?client_id=73sffcn2n7adduka1jllgvpuno&response_type=token&scope=openid+profile&redirect_uri=https://3ugpk5jw95.execute-api.us-east-1.amazonaws.com/dev/qs-dash-embed",  
         container: containerDiv,
         scrolling: "yes",
