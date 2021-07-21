@@ -5,7 +5,7 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 // Material UI Core Components
 import TextField from '@material-ui/core/TextField';
@@ -32,7 +32,10 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '100%',
       padding: '5px 20px',
-      fontSize: 'medium',
+      fontSize: 'small',
+    },
+    '& .MuiInputBase-input': {
+      fontSize: 'small',
     },
     '& .MuiGrid-grid-lg-12': {
       display: 'flex',
@@ -57,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const initialFormState = {
-  username: '', email: '', password: '', authCode: "", formType: 'signUp'
+  username: '', email: '', password: '', authCode: "", formType: 'signIn'
 }
 
 function Form() {
@@ -66,7 +69,7 @@ function Form() {
 
   const classes = useStyles();
 
-  let history = useHistory()
+  let history = useHistory();
 
   useEffect(() => {
     checkUser(user)
@@ -77,7 +80,7 @@ function Form() {
     try {
       const user = await Auth.currentAuthenticatedUser();
       updateUser(user).then(
-        updateFormState(() => ({ ...formState, formType: "signedIn" }))
+      updateFormState(() => ({ ...formState, formType: "signedIn" }))
       )
     } catch (err) {
       updateUser(null)
@@ -108,7 +111,7 @@ function Form() {
       await Auth.confirmSignUp(username, authCode).then(
         updateFormState(() => ({ ...formState, formType: "signIn" }))
       ).then(
-        updateUser(null)
+        updateUser(user)
       )
     } catch (err) {
       console.log(err);
@@ -118,11 +121,8 @@ function Form() {
   async function signIn() {
     try {
       const { username, password } = formState
-      await Auth.signIn(username, password).then(
-        updateFormState(() => ({ ...formState, formType: "signedIn" }))
-      ).then(
-        updateUser(user)
-      )
+      await Auth.signIn(username, password)
+      history.push("/admin")
     } catch (err) {
       console.log(err);
     } 
@@ -157,18 +157,23 @@ function Form() {
         {
           formType === "signUp" && (
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
-                  <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Get Started with <span style={{color: '#68c3c8'}}>ADVANA</span></h3>
+              <Link to="/">
+                <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
+                    <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Get Started with <span style={{color: '#68c3c8'}}>ADVANA</span></h3>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Link>
               <Grid container>
+                <Grid item xs={12} md={12} lg={12}>
+                  <Typography color="primary" size="small" style={{margin: '0 0 10px 0', width: '100%', textAlign: 'center', position: 'relative', top: '20px', fontSize: '0.8rem', fontWeight: '400'}}>Fill in the form below:</Typography>
+                </Grid>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="username"
                     onChange={onChange}
-                    placeholder="username"
+                    placeholder="create a username *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
@@ -176,14 +181,14 @@ function Form() {
                     name="password"
                     type="password"
                     onChange={onChange}
-                    placeholder="password"
+                    placeholder="choose a password *"
                   />
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="email"
                     onChange={onChange}
-                    placeholder="email"
+                    placeholder="enter a valid email *"
                   />
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12}>
@@ -214,22 +219,28 @@ function Form() {
         {
           formType === "confirmSignUp" && (
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
-                  <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Enter your confirmation code</h3>
+              <Link to="/">
+                <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
+                    <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Enter your confirmation code</h3>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Link>
               <Grid container>
+                <Grid item xs={12} md={12} lg={12}>
+                  <Typography color="primary" size="small" style={{margin: '0 0 10px 0', width: '100%', textAlign: 'center', position: 'relative', top: '20px', fontSize: '0.8rem', fontWeight: '400'}}>Check your email for a Confirmation Code:</Typography>
+                </Grid>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="authCode"
                     onChange={onChange}
-                    placeholder="Confirmation Code"
+                    placeholder="Enter Your Confirmation Code *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
                   <Button
+                    style={{width: '100%', top: '20px', margin: '20px'}}
                     variant="contained"
                     color="secondary"
                     onClick={confirmSignUp}>
@@ -244,18 +255,20 @@ function Form() {
         {
           formType === "signIn" && (
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
-                  <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Get Started with <span style={{color: '#68c3c8'}}>ADVANA</span></h3>
+              <Link to="/">
+                <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
+                    <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Get Started with <span style={{color: '#68c3c8'}}>ADVANA</span></h3>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Link>
               <Grid container>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="username"
                     onChange={onChange}
-                    placeholder="username"
+                    placeholder="username *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
@@ -263,7 +276,7 @@ function Form() {
                     name="password"
                     type="password"
                     onChange={onChange}
-                    placeholder="password"
+                    placeholder="password *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
@@ -307,18 +320,20 @@ function Form() {
         {
           formType === "forgotPassword" && (
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
-                  <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Forgot your password?</h3>
+              <Link to="/">
+                <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
+                    <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Forgot your password?</h3>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Link>
               <Grid container>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="email"
                     onChange={onChange}
-                    placeholder="Enter your email"
+                    placeholder="Enter your registered email *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
@@ -362,25 +377,27 @@ function Form() {
         {
           formType === "forgotPasswordConfirm" && (
             <form className={classes.root} noValidate autoComplete="off">
-              <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
-                  <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Reset your password</h3>
+              <Link to="/">
+                <Grid style={{height: '135px', backgroundColor: '#e4e4e4'}} container>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <img src={pillLogo} style={{width: '60px', height: '60px', position: 'absolute', margin: '20px auto'}} />
+                    <h3 style={{position: 'relative', top: '70px', color: '#2e4094'}}>Reset your password</h3>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Link>
               <Grid container>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="authCode"
                     onChange={onChange}
-                    placeholder="Enter Conformation Code"
+                    placeholder="Enter Conformation Code *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
                   <TextField
                     name="password"
                     onChange={onChange}
-                    placeholder="Enter your new password"
+                    placeholder="Enter your new password *"
                   />
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
@@ -423,9 +440,10 @@ function Form() {
 
         {
           formType === "signedIn" && (
-              history.push("/admin")
-            )
-          }
+            updateUser(user),
+            history.push("/admin")
+          )
+        }
         </Grid>
       </Grid>
     </div>

@@ -19,7 +19,7 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     display: "block",
     width: "auto",
-    margin: "0",
+    margin: "0 25px",
     padding: "0",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
@@ -38,6 +38,35 @@ const headerLinksStyle = (theme) => ({
     display: "inline-flex",
   },
   navLink: {
+    color: "#848484",
+    backgroundColor: "transparent",
+    position: "relative",
+    padding: "0.5rem",
+    fontWeight: "300",
+    fontSize: "12px",
+    textTransform: "uppercase",
+    borderRadius: "0",
+    lineHeight: "20px",
+    textDecoration: "none",
+    margin: "0px",
+    display: "inline-flex",
+    "&:hover,&:focus": {
+      color: "secondary",
+      fontWeight: "700",
+      backgroundColor: "transparent",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "calc(100% - 30px)",
+      marginLeft: "15px",
+      marginBottom: "8px",
+      marginTop: "8px",
+      textAlign: "left",
+      "& > span:first-child": {
+        justifyContent: "flex-start",
+      },
+    },
+  },
+  dropdownLink: {
     color: "#848484",
     backgroundColor: "transparent",
     position: "relative",
@@ -101,14 +130,6 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     fontSize: "20px !important",
     marginRight: "4px",
-  },
-  dropdownLink: {
-    "&,&:hover,&:focus": {
-      color: "inherit",
-      textDecoration: "none",
-      display: "block",
-      padding: "10px 20px",
-    },
   },
   ...tooltip,
   marginRight5: {

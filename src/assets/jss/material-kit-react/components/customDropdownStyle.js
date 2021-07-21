@@ -1,7 +1,7 @@
 import {
   defaultFont,
-  primaryColor,
-  primaryBoxShadow,
+  // primaryColor,
+  // primaryBoxShadow,
   infoColor,
   infoBoxShadow,
   successColor,
@@ -12,16 +12,31 @@ import {
   dangerBoxShadow,
   roseColor,
   roseBoxShadow,
-} from "assets/jss/material-kit-react.js";
+} from "../../material-kit-react";
 
 const customDropdownStyle = (theme) => ({
   popperClose: {
     pointerEvents: "none",
   },
+  // dropdown: {
+  //   borderRadius: "3px",
+  //   border: "0",
+  //   boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+  //   top: "100%",
+  //   zIndex: "1000",
+  //   minWidth: "160px",
+  //   padding: "5px 0",
+  //   margin: "2px 0 0",
+  //   fontSize: "14px",
+  //   textAlign: "left",
+  //   listStyle: "none",
+  //   backgroundColor: "#fff",
+  //   backgroundClip: "padding-box",
+  // },
   dropdown: {
-    borderRadius: "3px",
+    borderRadius: "0",
     border: "0",
-    boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+    // boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
     top: "100%",
     zIndex: "1000",
     minWidth: "160px",
@@ -60,7 +75,7 @@ const customDropdownStyle = (theme) => ({
     transition: "all 150ms linear",
     display: "block",
     clear: "both",
-    fontWeight: "400",
+    fontWeight: "700",
     height: "fit-content",
     color: "#333",
     whiteSpace: "nowrap",
@@ -76,9 +91,10 @@ const customDropdownStyle = (theme) => ({
   },
   primaryHover: {
     "&:hover": {
-      backgroundColor: primaryColor,
-      color: "#FFFFFF",
-      ...primaryBoxShadow,
+      color: "secondary",
+      fontWeight: "700",
+      backgroundColor: "transparent",
+      // ...primaryBoxShadow,
     },
   },
   infoHover: {
@@ -163,6 +179,35 @@ const customDropdownStyle = (theme) => ({
   },
   noLiPadding: {
     padding: "0",
+  },
+  dropdownLink: {
+    color: "#848484",
+    backgroundColor: "transparent",
+    position: "relative",
+    padding: "0.5rem",
+    fontWeight: "700",
+    fontSize: "14px",
+    textTransform: "uppercase",
+    borderRadius: "0",
+    lineHeight: "20px",
+    textDecoration: "none",
+    margin: "0px",
+    display: "inline-flex",
+    "&:hover,&:focus": {
+      color: "secondary",
+      fontWeight: "700",
+      backgroundColor: "transparent",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "calc(100% - 30px)",
+      marginLeft: "15px",
+      marginBottom: "8px",
+      marginTop: "8px",
+      textAlign: "left",
+      "& > span:first-child": {
+        justifyContent: "flex-start",
+      },
+    },
   },
 });
 

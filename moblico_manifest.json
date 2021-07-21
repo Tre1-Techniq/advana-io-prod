@@ -1,0 +1,15 @@
+{
+    "fileLocations": [
+        {
+            "URIPrefixes": [
+                "https://s3.amazonaws.com/365.retail.exports/03-processed/campaigns/moblico/moblicoCycleMetrics.csv"
+            ]
+        }
+    ],
+    "globalUploadSettings": {
+        "format": "CSV",
+        "delimiter": ",",
+        "textqualifier": "'",
+        "containsHeader": "true"
+    }
+}

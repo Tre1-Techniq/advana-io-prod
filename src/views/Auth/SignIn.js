@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const initialFormState = {
-  username: '', email: '', password: '', authCode: "", formType: 'signIn'
+  username: '', email: '', password: '', authCode: "", formType: 'signUp'
 }
 
 function Form() {

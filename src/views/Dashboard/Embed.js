@@ -17,15 +17,16 @@
 */
 
 import React from 'react';
-import { API, Auth } from 'aws-amplify';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { withStyles } from '@material-ui/core/styles';
 
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 
-import QuickSightEmbedding from "amazon-quicksight-embedding-sdk";
+import { API, Auth } from 'aws-amplify';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { withStyles } from '@material-ui/core/styles';
+
 //var QuickSightEmbedding = require("amazon-quicksight-embedding-sdk");
+import * as QuickSightEmbedding from 'amazon-quicksight-embedding-sdk';
 
 const useStyles = theme => ({
   loading: {
@@ -49,7 +50,7 @@ class Embed extends React.Component {
     }
     
     getQuickSightDashboardEmbedURL = async () => {
-        const data = await Auth.currentSession();
+        const data = await Auth.currentSession(dashboard);
         const jwtToken = data.idToken.jwtToken;
         const payloadSub = data.idToken.payload.sub;
         const email = data.idToken.payload.email;
@@ -63,7 +64,7 @@ class Embed extends React.Component {
                 email: email
             }
         }
-        const quicksight = await API.get('quicksight', '/getQuickSightDashboardEmbedURL', params);
+        const quicksight = await API.get('qsDash', '/qsDashEmbedURL', params);
         console.log(quicksight);
         const containerDiv = document.getElementById("dashboardContainer");
         
@@ -73,18 +74,14 @@ class Embed extends React.Component {
             parameters: {
                 country: "United States"
             },
-            scrolling: "no",
+            scrolling: "yes",
             height: "700px",
             width: "100%",
             footerPaddingEnabled: true,
         };
-        const dashboard = QuickSightEmbedding.embedDashboard(options);
 
-        function onDashboardLoad() {
-          console.log("The dashboard is fully loaded...");
-        }
-
-        dashboard.on("load", onDashboardLoad);
+        //const dashboard = QuickSightEmbedding.embedDashboard(options);
+        const dashboard = QuickSightEmbedding(options);
         this.setState({ loader: false });
     };
     
@@ -95,14 +92,14 @@ class Embed extends React.Component {
                 { this.state.loader && (
                     <div className={classes.loading}> <CircularProgress /> </div>
                 )}
-                <div id="dashboardContainer"></div>
+                <div id="dashboardContainer" ></div>
             </div>
         );
     }
 }
 
 Embed.propTypes = {
-    classes: PropTypes.func,
+    classes: PropTypes.string,
 };
 
 export default withStyles(useStyles)(Embed);

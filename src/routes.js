@@ -21,7 +21,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 // core components/views for Admin layout
 import Dashboard from "./views/Dashboard/Dashboard";
 
-const dashboardRoutes = [
+const routes = [
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -31,4 +31,4 @@ const dashboardRoutes = [
   },
 ];
 
-export default dashboardRoutes;
+export default routes;

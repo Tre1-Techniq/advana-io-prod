@@ -1,4 +1,5 @@
 import { title } from "../../../../../assets/jss/material-kit-react.js";
+import imagesStyle from "../../../material-kit-react/imagesStyles.js";
 
 const productStyle = {
   section: {
@@ -12,10 +13,15 @@ const productStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
+  ...imagesStyle,
+  itemGrid: {
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
   subtitle: {
     color: "#848484",
     textAlign: "left",
-    maxWidth: "475px",
+    maxWidth: "600px",
   },
   description: {
     color: "#999",

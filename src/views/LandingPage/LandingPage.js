@@ -52,7 +52,7 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage";
 import StatsSection from "./Sections/StatsSection";
 import ProductSection from "./Sections/ProductSection";
 import CampaignsSection from "./Sections/CampaignsSection";
-import TeamSection from "./Sections/TeamSection";
+// import TeamSection from "./Sections/TeamSection";
 import ContactSection from "./Sections/ContactSection";
 
 // Import Imges
@@ -158,7 +158,7 @@ export default function LandingPage(props) {
                   </Button>
                   <Button
                     onClick={() => {
-                      history.push("/admin");
+                      history.push("/");
                     }}
                     className={classes.outlineBtn}
                     variant="outlined"
@@ -180,7 +180,7 @@ export default function LandingPage(props) {
             <StatsSection />
             <ProductSection name="products" />
             <CampaignsSection name="campaigns" />
-            <TeamSection name="about" />
+            {/* <TeamSection name="about" /> */}
             <ContactSection />
           </div>
           <ScrollTop

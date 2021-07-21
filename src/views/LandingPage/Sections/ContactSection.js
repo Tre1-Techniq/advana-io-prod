@@ -35,7 +35,7 @@ import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 
 // Import Images
-import backgroundIMG1 from "../../../assets/img/advana-io-bg-01.jpg";
+//import backgroundIMG1 from "../../../assets/img/advana-io-bg-01.jpg";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/contactSectionStyle.js";
 
@@ -52,7 +52,7 @@ export default function WorkSection() {
         sm={12}
         md={12}
         style={{
-          backgroundImage: `url(${backgroundIMG1})`,
+          // backgroundImage: `url(${backgroundIMG1})`,
           backgroundSize: "cover",
           width: "100vw",
           position: "relative",
@@ -74,10 +74,10 @@ export default function WorkSection() {
             <h1 className={classes.title}>
               Getting Started is Quick <span>{"&"}</span> Easy!
             </h1>
-            <h4 className={classes.subtitle}>
+            {/* <h4 className={classes.subtitle}>
               Ut enim ad minima veniam, quis nostrum exercitationem ullam
               corporis suscipit laboriosam
-            </h4>
+            </h4> */}
             <br />
             <GridContainer
               className={classes.contactBtns}
@@ -110,7 +110,7 @@ export default function WorkSection() {
               <GridItem>
                 <Button
                   onClick={() => {
-                    history.push("/signin/");
+                    history.push("#");
                   }}
                   className={classes.actionBtn}
                   variant="contained"

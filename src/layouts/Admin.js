@@ -18,11 +18,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Amplify from "aws-amplify";
+// import Amplify, { Auth } from "aws-amplify";
 
-import awsconfig from "../aws-exports";
+// import awsconfig from "../aws-exports";
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
@@ -52,6 +52,24 @@ import fullLogo from "../assets/img/logo-full-white.png";
 
 let ps;
 
+const switchRoutes = (
+  <Switch>
+    {routes.map((prop, key) => {
+      if (prop.layout === "/admin") {
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            component={prop.component}
+            key={key}
+          />
+        );
+      }
+      return null;
+    })}
+    <Redirect from="/admin" to="/admin/dashboard" />
+  </Switch>
+);
+
 const useStyles = makeStyles(styles);
 
 export default function Admin({ ...rest }) {
@@ -61,24 +79,6 @@ export default function Admin({ ...rest }) {
   const mainPanel = React.createRef();
   // states and functions
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const switchRoutes = (
-    <Switch>
-      {routes.map((prop, key) => {
-        if (prop.layout === "/admin") {
-          return (
-            <Route
-              path={prop.layout + prop.path}
-              component={prop.component}
-              key={key}
-            />
-          );
-        }
-        return null;
-      })}
-        <Redirect from="/admin" to="/admin/dashboard" />
-    </Switch>
-  );
 
   const color = "blue";
 
@@ -93,7 +93,7 @@ export default function Admin({ ...rest }) {
       setMobileOpen(false);
     }
   };
-  //initialize and destroy the PerfectScrollbar plugin
+  // initialize and destroy the PerfectScrollbar plugin
   useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
@@ -112,6 +112,21 @@ export default function Admin({ ...rest }) {
     };
   }, [mainPanel]);
 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // useEffect(() => {
+  //   AssessLoggedInState();
+  // }, []);
+
+  // const AssessLoggedInState = () => {
+  //   Auth.currentAuthenticatedUser().then(() => {
+  //     setIsLoggedIn(true);
+  //     console.log("Logged In: ", isLoggedIn);
+  //   }).catch(() => {
+  //     setIsLoggedIn(false);
+  //     console.log("Logged In: ", isLoggedIn);
+  //   })
+  // }
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.wrapper}>
@@ -144,4 +159,4 @@ export default function Admin({ ...rest }) {
       </div>
     </ThemeProvider>
   );
-}
+};

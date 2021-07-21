@@ -16,36 +16,26 @@
 
 */
 
-import React, { useEffect } from 'react';
+import React from 'react';
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
 
-//import QuickSightEmbedding from "amazon-quicksight-embedding-sdk";
-var QuickSightEmbedding = require("amazon-quicksight-embedding-sdk");
+// core components
+import GridItem from "../../components/Grid/GridItem";
+import GridContainer from "../../components/Grid/GridContainer";
 
-var dashboard;
+import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
+
+const useStyles = makeStyles(styles);
 
 function Dashboard() {
-
-  useEffect(() => {
-    embedDashboard()
-  }, []);
-
-  function embedDashboard() {
-    const containerDiv = document.getElementById("embeddingContainer");
-    const options = {
-        url: "https://advanaio.auth.us-east-1.amazoncognito.com/login?client_id=73sffcn2n7adduka1jllgvpuno&response_type=token&scope=openid+profile&redirect_uri=https://3ugpk5jw95.execute-api.us-east-1.amazonaws.com/dev/qs-dash-embed",  
-        container: containerDiv,
-        scrolling: "yes",
-        height: "700px",
-        width: "100%",
-        padding: "0",
-        footerPaddingEnabled: true
-    };
-    dashboard = QuickSightEmbedding.embedDashboard(options);
-  }
-
+  const classes = useStyles();
   return (
-      <div id="embeddingContainer" dashboard={dashboard}></div>
+    <GridContainer className={classes.gridContainer}>
+      <GridItem xs={12} sm={12} md={12}>
+        <h1>DASHBOARD</h1>
+      </GridItem>
+    </GridContainer>
   );
 }
-
 export default Dashboard;

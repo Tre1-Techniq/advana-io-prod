@@ -18,7 +18,7 @@ export default function Footer(props) {
     <footer
       className={classes.footer}
       style={{
-        top: "50px",
+        // top: "50px",
         height: "auto",
         width: "100%",
         position: "relative",
@@ -42,7 +42,7 @@ export default function Footer(props) {
             }}
           >
             <ListItem className={classes.inlineBlock}>
-              <Link to="/home" className={classes.block}>
+              <Link to="/" className={classes.block}>
                 <Typography
                   style={{
                     fontSize: "0.8rem",
@@ -55,7 +55,7 @@ export default function Footer(props) {
               </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <Link to="#products" className={classes.block}>
+              <Link to="#" className={classes.block}>
                 <Typography
                   style={{
                     fontSize: "0.8rem",
@@ -68,7 +68,7 @@ export default function Footer(props) {
               </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <Link to="#campaigns" className={classes.block}>
+              <Link to="#" className={classes.block}>
                 <Typography
                   style={{
                     fontSize: "0.8rem",
@@ -77,19 +77,6 @@ export default function Footer(props) {
                   }}
                 >
                   CAMPAIGNS
-                </Typography>
-              </Link>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <Link to="#about" className={classes.block}>
-                <Typography
-                  style={{
-                    fontSize: "0.8rem",
-                    fontFamily: `"Roboto", sans-serif`,
-                    fontWeight: "300",
-                  }}
-                >
-                  ABOUT
                 </Typography>
               </Link>
             </ListItem>

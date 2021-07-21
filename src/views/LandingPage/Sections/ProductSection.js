@@ -50,8 +50,7 @@ export default function ProductSection() {
               from the Point of Sale
             </h1>
             <h4 className={classes.subtitle}>
-              Only Advana connects billions of retail transactions to chart your
-              path for hyper-growth
+            Discover your purchase trends, velocity, market share, distribution, retail pricing and more with Sentry.
             </h4>
             <br />
             <Button

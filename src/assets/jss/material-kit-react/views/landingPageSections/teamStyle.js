@@ -13,6 +13,11 @@ const teamStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
+  subtitle: {
+    color: "#848484",
+    textAlign: "center",
+    maxWidth: "600px",
+  },
   ...imagesStyle,
   itemGrid: {
     marginLeft: "auto",

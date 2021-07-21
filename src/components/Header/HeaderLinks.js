@@ -13,6 +13,9 @@ import advanaTheme from "../../advanaTheme";
 
 // @material-ui/icons
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { Apps } from "@material-ui/icons";
+
+import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
 
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 
@@ -30,24 +33,41 @@ export default function HeaderLinks(props) {
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="/home#products" variant="text" color="primary" size="small">
-            PRODUCTS
-          </Button>
+          <CustomDropdown
+              noLiPadding
+              buttonText="PRODUCTS"
+              buttonProps={{
+                className: classes.dropdownLink,
+                color: "transparent",
+              }}
+              buttonIcon={Apps}
+              dropdownList={[
+                <Button href="/sentry" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                  SENTRY
+                </Button>,
+                <Button href="/insight" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                  INSIGHT
+                </Button>,
+                <Button href="/promote" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                  PROMOTE
+                </Button>,
+              ]}
+            />
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="/home#campaigns" variant="text" color="primary" size="small">
+          <Button href="#" variant="text" color="primary" size="small">
             CAMPAIGNS
           </Button>
         </ListItem>
-        <ListItem className={classes.listItem}>
+        {/* <ListItem className={classes.listItem}>
           <Button href="/home#about" variant="text" color="primary" size="small">
             ABOUT
           </Button>
-        </ListItem>
+        </ListItem> */}
       </List>
       <Button
         onClick={() => {
-          history.push("/admin");
+          history.push("/signin");
         }}
         style={{ position: "absolute", right: "5vw", padding: "5px 8px" }}
         variant="contained"
