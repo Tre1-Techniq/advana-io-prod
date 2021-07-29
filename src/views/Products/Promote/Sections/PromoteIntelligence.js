@@ -28,7 +28,6 @@ import advanaTheme from "../../../../advanaTheme";
 // Import Images
 import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
 import promoteIntelligence from "../../../../assets/img/products/promote/promote-intelligence.png";
-import verifiedBadge from "../../../../assets/img/verified-badge.png";
 // import awakeKPI01 from "../../../../assets/img/awake-kpi-01.png";
 // import awakeKPI02 from "../../../../assets/img/awake-kpi-02.png";
 
@@ -81,7 +80,7 @@ export default function PromoteIntelligence() {
               Fast moving consumer goods (FMCGs) thrive with Advana Promote helping you sell, earn, and profit faster than ever. With unmatched targeting capabilities, you’ll leave your competition ailing in the danger zone.
               </p>
               <h3 style={{ color: "#2e4094", fontWeight: "400", padding: "0 0 0 30px", height: "70px" }}>
-              Want more Insight? Go PRO <img src={verifiedBadge} style={{width: "100px", padding: "15px", position: "relative", bottom: "10px"}} />
+              Want more Insight? Go <span className={classes.badgePro}>PRO</span>
               </h3>
               <p style={{ padding: "0 0 0 30px" }}>
               In addition to our performance metrics Advana Promote PRO brings you enhanced insights with day part {"&"} basket analysis. Knowing when shoppers buy your products and what they’re buy it with will arm you with intel guaranteed to take your competition’s breath away.

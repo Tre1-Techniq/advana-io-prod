@@ -53,7 +53,7 @@ export default function InsightZombie() {
             <span>Get Rid of Slow-Moving SKUs</span>
             </h1>
             <h4 className={classes.subtitle}>
-            Yes, zombie brands are real, <a href="https://www.cnn.com/2020/07/21/business/coke-zombie-brands-coronavirus/index.html" target="_blank" rel="noreferrer">just ask this company</a>. Advana has the insights to help you remove the walking dead from your portfolio.
+            Yes, zombie brands are real, just ask <a href="https://www.cnn.com/2020/07/21/business/coke-zombie-brands-coronavirus/index.html" target="_blank" rel="noreferrer" className={classes.textLink}>this company</a>. Advana has the insights to help you remove the walking dead from your portfolio.
             </h4>
             <br />
             <Button

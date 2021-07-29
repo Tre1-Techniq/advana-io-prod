@@ -26,6 +26,7 @@ import LandingPage from "./views/LandingPage/LandingPage";
 import Sentry from './views/Products/Sentry/Sentry';
 import Insight from './views/Products/Insight/Insight';
 import Promote from './views/Products/Promote/Promote';
+import Campaigns from './views/Campaigns/Campaigns';
 import SignIn from "./views/Auth/SignIn";
 import Admin from "./layouts/Admin";
 
@@ -39,6 +40,7 @@ ReactDOM.render(
           <Route path="/sentry" exact component={Sentry} />
           <Route path="/insight" exact component={Insight} />
           <Route path="/promote" exact component={Promote} />
+          <Route path="/campaigns" exact component={Campaigns} />
           <Route path="/signin" exact component={SignIn} />
           <Route path="/admin" component={Admin} />
         </Switch>

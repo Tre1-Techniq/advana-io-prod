@@ -64,8 +64,8 @@ export default function WorkSection() {
         <GridContainer className={classes.contactGrid}>
           <GridItem xs={12} sm={12} md={12}>
             <h1 className={classes.title} style={{ textAlign: "center" }}>
-              <span>Trusted </span>
-              by Leading Brands {"&"} Retailers
+              <span>Connecting </span>
+              Leading Brands {"&"} Retailers
               <span> to Perform</span>
             </h1>
           </GridItem>

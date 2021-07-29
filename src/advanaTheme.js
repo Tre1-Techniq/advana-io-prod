@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import { grey, indigo, orange, cyan } from "@material-ui/core/colors";
 
-const advanaTheme = createMuiTheme({
+const advanaTheme = createTheme({
   palette: {
     primary: {
       main: indigo[700],

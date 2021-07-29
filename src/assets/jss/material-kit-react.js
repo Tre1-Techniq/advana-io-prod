@@ -46,7 +46,25 @@ const container = {
   //   maxWidth: "960px",
   // },
   // "@media (min-width: 1200px)": {
-  //   maxWidth: "1140px",
+  //   maxWidth: "90vw !important",
+  // },
+};
+const heroContainer = {
+  ...containerFluid,
+  position: "relative !important",
+  top: "0",
+  maxWidth: "90vw !important",
+  // "@media (min-width: 576px)": {
+  //   maxWidth: "540px",
+  // },
+  // "@media (min-width: 768px)": {
+  //   maxWidth: "720px",
+  // },
+  // "@media (min-width: 992px)": {
+  //   maxWidth: "960px",
+  // },
+  // "@media (min-width: 1200px)": {
+  //   maxWidth: "90vw !important",
   // },
 };
 
@@ -201,6 +219,7 @@ export {
   //variables
   drawerWidth,
   transition,
+  heroContainer,
   container,
   containerFluid,
   boxShadow,

@@ -43,6 +43,21 @@ const productStyle = {
   heroImg: {
     width: "100%",
   },
+  textLink: {
+    fontWeight: "bold",
+    color: "#2e4094",
+    textDecoration: "none",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
+  badgePro: {
+    color: "#fff",
+    backgroundColor: "#2e4094",
+    padding: "5px 8px",
+    borderRadius: "10px",
+  }
 };
 
 export default productStyle;

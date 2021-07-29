@@ -55,7 +55,7 @@ export default function HeaderLinks(props) {
             />
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="#" variant="text" color="primary" size="small">
+          <Button href="/campaigns" variant="text" color="primary" size="small">
             CAMPAIGNS
           </Button>
         </ListItem>
