@@ -56,7 +56,7 @@ export default function SentryAudience() {
             <Button
               className={classes.solidBtn}
               variant="contained"
-              color="disabled"
+              color="default"
               to="/"
             >
               COMING SOON!

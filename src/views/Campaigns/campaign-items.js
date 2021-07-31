@@ -74,10 +74,18 @@ const campaigns = [
       {
         id: "10",
         status: "Past",
-        alt: "P3 - Portable Protein Pack",
-        image: "https://advana-image-assets.s3.amazonaws.com/campaigns/p3/P3_V5+%26+Nano_15OFF.png",
-        title: "P3",
-        subtitle: "Portable Protein Pack"
+        alt: "VISA - Win a $100 Gift Card",
+        image: "https://advana-image-assets.s3.amazonaws.com/campaigns/visa/365Pay+Sweeps+(v5+Kiosk).jpg",
+        title: "VISA",
+        subtitle: "Win a $100 Gift Card"
+      },
+      {
+        id: "11",
+        status: "Past",
+        alt: "Papsi Zero Sugar - Zero Sugar Done Right",
+        image: "https://advana-image-assets.s3.amazonaws.com/campaigns/pepsi-zero-sugar/Offer_Pepsi+Zero+Sugar+(v5).png",
+        title: "Papsi Zero Sugar",
+        subtitle: "Zero Sugar Done Right"
       },
       {
         id: "12",
@@ -102,6 +110,14 @@ const campaigns = [
         image: "https://advana-image-assets.s3.amazonaws.com/campaigns/bubly/NSM_BUBLY_12ozCAN_1024x520.png",
         title: "bubly",
         subtitle: "No Calories No Sweeteners All Smiles"
+      },
+      {
+        id: "15",
+        status: "Past",
+        alt: "Belvita - Outlast Your Morning",
+        image: "https://advana-image-assets.s3.amazonaws.com/campaigns/belvita/belVita+v5.png",
+        title: "Belvita",
+        subtitle: "Outlast Your Morning"
       },
       {
         id: "16",
@@ -142,6 +158,14 @@ const campaigns = [
         image: "https://advana-image-assets.s3.amazonaws.com/campaigns/bai/Bai+(v5).png",
         title: "Bai",
         subtitle: "Get a Full Day's Serving of Flavor"
+      },
+      {
+        id: "21",
+        status: "Past",
+        alt: "Awake Chocloate - Chocolate & Caffeine Slay the Slump",
+        image: "https://advana-image-assets.s3.amazonaws.com/campaigns/awake-chocolate/Awake+Offer+(Landscape).png",
+        title: "Awake Chocloate",
+        subtitle: "Chocolate & Caffeine Slay the Slump"
       },
   ];
 
