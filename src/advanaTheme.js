@@ -17,9 +17,6 @@ advanaTheme.props = {
   MuiButton: {
     disableElevation: true,
   },
-  MuiInputLabel: {
-    shrink: false,
-  },
   MuiInput: {
     disableUnderline: true,
   },
@@ -29,13 +26,16 @@ advanaTheme.props = {
 };
 
 advanaTheme.overrides = {
+  MuiAppBar: {
+    width: "60vw"
+  },
   MuiButton: {
     root: {
       minWidth: "100px",
       padding: "10px 20px",
       borderRadius: 0,
       textTransform: "uppercase",
-      border: "2px solid transparent",
+      borderBottom: "2px solid transparent",
       "&:hover,&:focus": {
         backgroundColor: "transparent",
         color: cyan[600],
@@ -79,10 +79,13 @@ advanaTheme.overrides = {
       },
     },
   },
+  MuiFormControl: {
+    
+  },
   MuiInputLabel: {
     root: {
-      textTransform: "uppercase",
-      fontSize: "1.5rem",
+      textTransform: "none",
+      fontSize: "0.9rem",
     },
   },
   MuiInput: {
@@ -105,6 +108,9 @@ advanaTheme.overrides = {
       color: advanaTheme.palette.primary.main,
     },
   },
+  MuiListItem: {
+    
+  }
 };
 
 export default advanaTheme;

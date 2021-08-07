@@ -151,6 +151,9 @@ const headerStyle = {
     flex: "0",
     width: "150px",
   },
+  headerNavWrapper: {
+    width: "75vw",
+  }
 };
 
 export default headerStyle;

@@ -13,136 +13,144 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+
 
 // @material-ui/ icons
 import InfoIcon from '@material-ui/icons/Info';
-import SearchIcon from '@material-ui/icons/Search';
+import RefreshIcon from '@material-ui/icons/Refresh';
 
 // core components
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
 
-// data
-// import campaigns from "./campaign-items";
-
 // Styles
-import styles from "../../assets/jss/material-kit-react/views/campaignGrid";
+import { ThemeProvider, Button } from "@material-ui/core";
+import advanaTheme from "../../advanaTheme";
+import styles from "../../assets/jss/material-kit-react/views/campaignGridStyle";
 
 const useStyles = makeStyles(styles);
 
-const CampaignItems = ({campaigns, loading}) => {
+const CampaignItems = ({campaigns}) => {
     const classes = useStyles();
-    
-    const [q, setQ] = useState("");
-    const [searchParam] = useState(["status", "title"]);
-    const [filterParam, setFilterParam] = useState(["All"]);
 
-    function search(campaigns) {
-        return campaigns.filter((campaign) => {
-            if (campaign.status == filterParam) {
-                return searchParam.some((newCampaign) => {
-                    return (
-                        campaign[newCampaign]
-                            .toString()
-                            .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
-                    );
-                });
-            } else if (filterParam == "All") {
-                return searchParam.some((newCampaign) => {
-                    return (
-                        campaign[newCampaign]
-                            .toString()
-                            .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
-                    );
-                });
-            }
-        });
+    const [open, setOpen] = useState(false);
+    const [campaign, setCampaign] = useState({});
+    const [visible, setVisible] = useState(6);
+
+    const handleOpen = (campaign) => {
+        setCampaign(campaign);
+        setOpen(true);
     };
 
-    if (loading) {
-        return <h2>Loading...</h2>
-    }
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const showMoreItems = () => {
+        setVisible(prevValue => prevValue + 3);
+
+        const pageBottom = document.querySelector("#gridWrapper")
+
+        setTimeout(() => pageBottom.scrollIntoView({block: "end", behavior: "smooth"}), 100);
+    };
 
     return (
-        <div>
-            <GridContainer className={classes.filterInputs}>
-                <GridItem xs={12} sm={12} md={3}>
-                    <div className="search-wrapper">
-                        <Input
-                            startAdornment={
-                                <InputAdornment position="start">
-                                    <SearchIcon />
-                                </InputAdornment>   
-                            }
-                            type="search"
-                            name="search-form"
-                            id="search-form"
-                            className="search-input"
-                            placeholder="Search campaigns..."
-                            value={q}
-                            onChange={(e) => setQ(e.target.value)}
-                        />
-                    </div>
-                </GridItem>
-
-                <GridItem xs={12} sm={12} md={3}>
-                    <NativeSelect
-                        onChange={(event) => {
-                            setFilterParam(event.target.value);
-                        }}
-                        className={classes.selectFilter}
-                        name="status"
-                        value={filterParam}
-                        inputProps={{ 'aria-label': 'Campaign Status' }}
-                    >
-                        <option value="All">All</option>
-                        <option value="Current">Current</option>
-                        <option value="Past">Past</option>
-                    </NativeSelect>
-                </GridItem>
-            </GridContainer>
-            <GridContainer>
-                {search(campaigns).map(campaign => (
-                    <GridItem key={campaign.id} xs={12} sm={6} md={4}>
-                        <Card className={classes.root}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    alt={campaign.alt}
-                                    height="140"
-                                    image={campaign.image}
-                                    title={campaign.title}
-                                />
-                                <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {campaign.title}
-                                </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+        <ThemeProvider theme={advanaTheme}>
+            <div id="gridWrapper">
+                <GridContainer>
+                    {campaigns.slice(0, visible).map((campaign) => (
+                        <GridItem 
+                            classes={{
+                                root: classes.gridItem,
+                                img: classes.rootIMG
+                            }}
+                            key={campaign.id}
+                            xs={12} sm={6} md={4}
+                        >
+                            <Card id="campaignCard" className={classes.rootCard}>
+                                <CardActionArea
+                                    classes={{
+                                        root: classes.actionArea,
+                                        img: classes.cardIMG
+                                    }}
+                                    onClick={() => handleOpen(campaign)}>
+                                    <CardMedia
+                                        component="img"
+                                        alt={campaign.alt}
+                                        height="140"
+                                        image={campaign.image}
+                                        title={campaign.title}
+                                    />
+                                    <CardContent>
+                                    <Typography className={classes.cardTitle} gutterBottom variant="h5" component="h2" align="center">
+                                        {campaign.title}
+                                    </Typography>
+                                    <Typography className={classes.cardSubtitle} variant="body2" color="textSecondary" component="p" align="center">
                                         {campaign.subtitle}
                                     </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                <IconButton size="medium" color="primary" aria-label="More Information">
-                                    <InfoIcon />
-                                </IconButton>
-                            </CardActions>
-                        </Card>
-                    </GridItem>
-                ))}
-            </GridContainer>
-        </div>
+                                    </CardContent>
+                                </CardActionArea>
+                                <CardActions>
+                                    <IconButton
+                                        size="medium" 
+                                        color="primary" 
+                                        aria-label="More Information"
+                                        onClick={() => handleOpen(campaign)}
+                                    >
+                                        <InfoIcon />
+                                    </IconButton>
+                                </CardActions>
+                            </Card>
+                        </GridItem>
+                    ))}
+
+                    { visible >= 6 && visible < 21 ?
+                        <Button
+                            id="showMore"
+                            className={classes.loadMore}
+                            color="primary" 
+                            aria-label="Load More"
+                            onClick={showMoreItems}
+                        >
+                            <RefreshIcon style={{width: "50px", height: "50px", margin: "0 10px 0 0"}} />
+                            <span>LOAD MORE</span>
+                        </Button> : null
+                    }
+                    
+                    <Modal
+                        className={classes.modal}
+                        open={open}
+                        onClose={handleClose}
+                        closeAfterTransition
+                        BackdropComponent={Backdrop}
+                        BackdropProps={{
+                            timeout: 500,
+                            classes: {
+                                root: classes.modalBackdrop
+                            }
+                        }}
+                    >
+                        <Fade in={open}>
+                            <div className={classes.modalContent}>
+                                <img className={classes.modalIMG} src={campaign.image} />
+                                <h6 className={classes.modalTitle}>{campaign.title}</h6>
+                                <p className={classes.modalSubtitle}>{campaign.subtitle}</p>
+                            </div>
+                        </Fade>
+                    </Modal>
+                </GridContainer>
+            </div>
+
+        </ThemeProvider>
     )
 };
 
 CampaignItems.propTypes = {
     campaigns: PropTypes.array,
-    loading: PropTypes.bool
+    campaign: PropTypes.object,
 };
 
 export default CampaignItems

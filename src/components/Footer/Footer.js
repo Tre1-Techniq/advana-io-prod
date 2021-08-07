@@ -16,6 +16,7 @@ export default function Footer(props) {
   const classes = useStyles();
   return (
     <footer
+      id="footer"
       className={classes.footer}
       style={{
         // top: "50px",

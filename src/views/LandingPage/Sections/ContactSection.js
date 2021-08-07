@@ -13,11 +13,20 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
+//import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+// import { FormControl } from '@material-ui/core';
+// import { InputLabel } from '@material-ui/core';
+// import { FormHelperText } from '@material-ui/core';
+// import { Input } from '@material-ui/core';
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -42,8 +51,19 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
-  let history = useHistory();
+  //let history = useHistory();
   const classes = useStyles();
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div
@@ -109,9 +129,7 @@ export default function WorkSection() {
               </GridItem> */}
               <GridItem>
                 <Button
-                  onClick={() => {
-                    history.push("#");
-                  }}
+                  onClick={() => handleOpenBookIntro()}
                   className={classes.actionBtn}
                   variant="contained"
                   color="secondary"
@@ -119,6 +137,25 @@ export default function WorkSection() {
                   <AccountBoxIcon style={{ marginRight: "10px" }} />
                   GET STARTED!
                 </Button>
+                <Modal
+                  className={classes.modal}
+                  open={openBookIntro}
+                  onClose={handleCloseBookIntro}
+                  closeAfterTransition
+                  BackdropComponent={Backdrop}
+                  BackdropProps={{
+                      timeout: 500,
+                      classes: {
+                          root: classes.modalBackdrop
+                      }
+                  }}
+                >
+                  <Fade in={openBookIntro}>
+                      <div className={classes.modalBookIntro}>
+                        <h1>GET STARTED!</h1>
+                      </div>
+                  </Fade>
+                </Modal>
               </GridItem>
             </GridContainer>
           </GridItem>

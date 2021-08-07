@@ -24,6 +24,12 @@ import advanaTheme from "../../../../advanaTheme";
 // Import Images
 //import categorySentryFPO from "../../../../assets/img/products/sentry/sentry-fpo.png";
 import categorySentryFPO from "../../../../assets/img/products/sentry/sentry-category.png";
+// import energyDrink from "../../../../assets/img/icons/energy-drink.png";
+// import freshFoods from "../../../../assets/img/icons/fresh-foods.png";
+// import meatSnacks from "../../../../assets/img/icons/meat-snacks.png";
+// import mixedNuts from "../../../../assets/img/icons/mixed-nuts.png";
+// import potatoChips from "../../../../assets/img/icons/potato-chipsr.png";
+// import water from "../../../../assets/img/icons/water.png";
 
 // @material-ui/icons
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";

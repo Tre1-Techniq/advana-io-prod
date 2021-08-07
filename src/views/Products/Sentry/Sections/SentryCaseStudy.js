@@ -30,7 +30,7 @@ import Card from "../../../../components/Card/Card.js";
 
 // Import Images
 import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
-import awakeAd from "../../../../assets/img/awake-ad-01.jpg";
+import caseStudyAwake from "../../../../assets/img/products/sentry/sentry-case-study-awake.png";
 //import awakeKPI01 from "../../../../assets/img/awake-kpi-01.png";
 //import awakeKPI02 from "../../../../assets/img/awake-kpi-02.png";
 
@@ -82,8 +82,8 @@ export default function SentryCaseStudy() {
             Learn how Awake Chocolate uses Sentry to help operators stay in-stock and priced to win with their industry leading Awake Bites.
             </h4>
             <img
-              src={awakeAd}
-              style={{ width: "100%", margin: "20px 0", padding: "50px" }}
+              src={caseStudyAwake}
+              style={{ width: "100%", margin: "0", padding: "30px" }}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>

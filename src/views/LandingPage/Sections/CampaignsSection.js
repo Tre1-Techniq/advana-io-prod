@@ -17,6 +17,8 @@
 */
 
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -47,6 +49,7 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 const useStyles = makeStyles(styles);
 
 export default function CampaignsSection() {
+  let history = useHistory();
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -169,7 +172,9 @@ export default function CampaignsSection() {
                 className={classes.solidBtn}
                 variant="contained"
                 color="primary"
-                to="/"
+                onClick={() => {
+                  history.push('/promote');
+                }}
               >
                 LEARN MORE
                 <ChevronRightIcon style={{ marginLeft: "10px" }} />

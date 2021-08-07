@@ -1,13 +1,22 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useState } from "react";
 // react components for routing our app without refresh
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import { ThemeProvider, Button } from "@material-ui/core";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import { FormControl } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { FormHelperText } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 
 import advanaTheme from "../../advanaTheme";
 
@@ -22,8 +31,20 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  let history = useHistory();
+  //let history = useHistory();
   const classes = useStyles();
+
+  const [openSignIn, setOpenSignIn] = useState(false);
+
+  const handleOpenSignIn = () => {
+    console.log("OPEN SIGN IN!");
+    setOpenSignIn(true);
+  };
+
+  const handleCloseSignIn = () => {
+    setOpenSignIn(false);
+  };
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <List className={classes.headerNav}>
@@ -37,7 +58,7 @@ export default function HeaderLinks(props) {
               noLiPadding
               buttonText="PRODUCTS"
               buttonProps={{
-                className: classes.dropdownLink,
+                className: classes.customDropdown,
                 color: "transparent",
               }}
               buttonIcon={Apps}
@@ -55,7 +76,12 @@ export default function HeaderLinks(props) {
             />
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button href="/campaigns" variant="text" color="primary" size="small">
+          <Button
+            href="/campaigns"
+            variant="text"
+            color="primary"
+            size="small"
+          >
             CAMPAIGNS
           </Button>
         </ListItem>
@@ -64,18 +90,44 @@ export default function HeaderLinks(props) {
             ABOUT
           </Button>
         </ListItem> */}
+        <ListItem className={classes.listItem}>
+          <Button
+            onClick={() => handleOpenSignIn()}
+            variant="contained"
+            color="secondary"
+          >
+            <ExitToAppIcon className={classes.btnIcon} />
+            SIGN IN
+          </Button>
+        </ListItem>
       </List>
-      <Button
-        onClick={() => {
-          history.push("/signin");
-        }}
-        style={{ position: "absolute", right: "5vw", padding: "5px 8px" }}
-        variant="contained"
-        color="secondary"
+      
+      <Modal
+          className={classes.modal}
+          open={openSignIn}
+          onClose={handleCloseSignIn}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+              timeout: 500,
+              classes: {
+                  root: classes.modalBackdrop
+              }
+          }}
       >
-        <ExitToAppIcon className={classes.btnIcon} />
-        SIGN IN
-      </Button>
+        <Fade in={openSignIn}>
+            <div className={classes.modalSignIn}>
+              {/* <FormControl>
+                <InputLabel htmlFor="my-input">Form Entry</InputLabel>
+                <Input id="my-input" aria-describedby="my-helper-text" />
+                <FormHelperText id="my-helper-text">Helper text.</FormHelperText>
+              </FormControl> */}
+              <div className={classes.modalBookIntro}>
+                <h1>SIGN IN!</h1>
+              </div>
+            </div>
+        </Fade>
+      </Modal>
     </ThemeProvider>
   );
 }

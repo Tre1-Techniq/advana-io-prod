@@ -14,7 +14,7 @@ The above copyright notice and this permission notice shall be included in all c
 */
 
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+//import axios from 'axios';
 
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -25,11 +25,28 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
+//import Box from "@material-ui/core/Box";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import { FormControl } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { FormHelperText } from '@material-ui/core';
+import { Input } from '@material-ui/core';
+
+//import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+//import InputAdornment from '@material-ui/core/InputAdornment';
+
 import Parallax from "../../components/Parallax/Parallax";
 
 // @material-ui/lab components
-import Pagination from '@material-ui/lab/Pagination';
+//import Pagination from '@material-ui/lab/Pagination';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -40,6 +57,7 @@ import advanaTheme from "../../advanaTheme";
 //import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import LockOpenIcon from '@material-ui/icons/LockOpen';
+//import SearchIcon from '@material-ui/icons/Search';
 
 // core components
 import GridContainer from "../../components/Grid/GridContainer";
@@ -51,9 +69,10 @@ import HeaderLinks from "../../components/Header/HeaderLinks";
 // Import Images
 import campaignsPageHero from "../../assets/img/campaigns-page-hero.png";
 
+import campaignList from "./campaign-items";
 import CampaignItems from "./CampaignItems";
 
-import styles from "../../assets/jss/material-kit-react/views/campaignGrid";
+import styles from "../../assets/jss/material-kit-react/views/campaignGridStyle";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -108,31 +127,67 @@ export default function Campaigns(props) {
     const classes = useStyles();
     const { ...rest } = props;
 
+    const [q, setQ] = useState("");
+    const [searchParam] = useState(["status", "title"]);
+    const [filterParam, setFilterParam] = useState(["All"]);
+
     const [campaigns, setCampaigns] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(6);
+
+    const [openOptIn, setOpenOptIn] = useState(false);
+
+    //const [visible, setVisible] = useState(6);
 
     useEffect(() => {
-      const getCampaigns = async () => {
-        setLoading(true);
-        const res = await axios.get('campaign-list.json');
-        setCampaigns(res.data);
-        setLoading(false);
-      };
+      // const getCampaigns = async () => {
+      //   const res = await axios.get('./static/campaign-list.json');
+      //   setCampaigns(res.data);
+      // };
 
-      getCampaigns();
-    }, [currentPage]);
-    
-    const handleChange = (event, value) => {
-      setCurrentPage(value);
-      setCampaigns(currentCampaigns)
+      // getCampaigns(campaigns);
+      setCampaigns(campaignList);
+
+    }, []);
+
+    function search(campaigns) {
+      return campaigns.filter((campaign) => {
+          if (campaign.status == filterParam) {
+              return searchParam.some((newCampaign) => {
+                  return (
+                      campaign[newCampaign]
+                          .toString()
+                          .toLowerCase()
+                          .indexOf(q.toLowerCase()) > -1
+                  );
+              });
+          } else if (filterParam == "All") {
+              return searchParam.some((newCampaign) => {
+                  return (
+                      campaign[newCampaign]
+                          .toString()
+                          .toLowerCase()
+                          .indexOf(q.toLowerCase()) > -1
+                  );
+              });
+          }
+      });
     };
 
-    // Get Campaigns
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem  - itemsPerPage;
-    const currentCampaigns = campaigns.slice(indexOfFirstItem, indexOfLastItem);
+    const updateSearch = (value) => {
+      setQ(value);
+      setCampaigns(campaigns);
+    };
+
+    const resetSearch =() => {
+      setQ('');
+    };
+
+    const handleOpenOptIn = () => {
+      setOpenOptIn(true);
+    };
+
+    const handleCloseOptIn = () => {
+      setOpenOptIn(false);
+    };
     
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -159,16 +214,44 @@ export default function Campaigns(props) {
                     <h4 className={classes.subtitle}>
                     Join a campaign and check out our past results.
                     </h4>
-                    <GridItem xs={12} sm={12} md={12}>
+                    <GridItem
+                      classes={{
+                        root: classes.headerBtnWrapper,
+                      }}
+                      xs={12} sm={12} md={12}
+                    >
                       <Button
                         className={classes.solidBtn}
+                        onClick={() => handleOpenOptIn()}
                         variant="contained"
                         color="primary"
-                        to="/"
                       >
                         <LockOpenIcon className={classes.btnIcon} style={{marginRight: "20px"}} />
                         OPT-IN
                       </Button>
+                      <Modal
+                          className={classes.modal}
+                          open={openOptIn}
+                          onClose={handleCloseOptIn}
+                          closeAfterTransition
+                          BackdropComponent={Backdrop}
+                          BackdropProps={{
+                              timeout: 500,
+                              classes: {
+                                  root: classes.modalBackdrop
+                              }
+                          }}
+                      >
+                        <Fade in={openOptIn}>
+                            <div className={classes.modalOptIn}>
+                              <FormControl>
+                                <InputLabel htmlFor="my-input">Email address</InputLabel>
+                                <Input id="my-input" aria-describedby="my-helper-text" />
+                                <FormHelperText id="my-helper-text">We will never share your email.</FormHelperText>
+                              </FormControl>
+                            </div>
+                        </Fade>
+                      </Modal>
                     </GridItem>
                 </GridItem>
               <GridItem xs={12} sm={12} md={7}>
@@ -179,19 +262,53 @@ export default function Campaigns(props) {
         </Parallax>
         <div className={classes.main}>
           <div className={classes.container}>
-            <CampaignItems campaigns={currentCampaigns} loading={loading} />
 
             <GridItem xs={12} sm={12} md={12}>
-                <Box className={classes.pagination}>
-                    <Pagination 
-                        color="primary"
-                        limit={itemsPerPage}
-                        count={4} 
-                        page={currentPage} 
-                        onChange={handleChange}  
-                    />
-                </Box>
+              <h2 className={classes.filterHeader}>{filterParam} Campaigns</h2>
             </GridItem>
+
+            <div className={classes.filterWrapper}>
+              <div className={classes.filterContainer}>
+                    <GridItem xs={12} sm={12} md={4}>
+                        <div className={classes.filterSearch}>
+                          <Autocomplete
+                            options={search(campaigns)}
+                            getOptionLabel={(option) => option.title}
+                            renderInput={(params) => (
+                              <TextField
+                                className={classes.searchField}
+                                {...params}
+                                label="Search Campaigns..."
+                                variant="outlined"
+                                value={q}
+                                onChange={(e) => updateSearch(e.target.value)}
+                                onFocus={(e) => resetSearch(e.target.value)}
+                                onBlur={(e) => updateSearch(e.target.value)}
+                              />
+                            )}
+                          />
+                        </div>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={4}>
+                        <div className={classes.filterSelect}>
+                          <Select
+                              onChange={(e) => {
+                                  setFilterParam(e.target.value);
+                              }}
+                              className={classes.selectFilter}
+                              name="status"
+                              value={filterParam}
+                              inputProps={{ 'aria-label': 'Campaign Status' }}
+                          >
+                              <MenuItem value="All">All</MenuItem>
+                              <MenuItem value="Current">Current</MenuItem>
+                              <MenuItem value="Past">Past</MenuItem>
+                          </Select>
+                        </div>
+                      </GridItem>
+                </div>
+              </div>     
+            <CampaignItems id="campaigns" campaigns={search(campaigns)} />
           </div>
           <ScrollTop
             style={{ zIndex: "2000" }}
@@ -207,4 +324,4 @@ export default function Campaigns(props) {
       </div>
     </ThemeProvider>
   );
-}
+};

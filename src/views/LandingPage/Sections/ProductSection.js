@@ -16,6 +16,7 @@ The above copyright notice and this permission notice shall be included in all c
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -36,6 +37,7 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 const useStyles = makeStyles(styles);
 
 export default function ProductSection() {
+  let history = useHistory();
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -57,7 +59,9 @@ export default function ProductSection() {
               className={classes.solidBtn}
               variant="contained"
               color="primary"
-              to="/"
+              onClick={() => {
+                history.push('/sentry');
+              }}
             >
               LEARN MORE
               <ChevronRightIcon style={{ marginLeft: "10px" }} />

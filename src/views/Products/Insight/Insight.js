@@ -46,7 +46,7 @@ import GridItem from "../../../components/Grid/GridItem";
 import HeaderLinks from "../../../components/Header/HeaderLinks";
 import Parallax from "../../../components/Parallax/Parallax";
 
-import styles from "../../../assets/jss/material-kit-react/views/landingPage";
+import styles from "../../../assets/jss/material-kit-react/views/landingPageStyle";
 
 // Sections for this page
 import InsightOptimize from "./Sections/InsightOptimize";

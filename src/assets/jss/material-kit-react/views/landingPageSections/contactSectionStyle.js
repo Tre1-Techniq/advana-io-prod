@@ -47,6 +47,14 @@ const contactStyle = {
     justifyContent: "center",
     padding: "30px 100px",
   },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  modalBackdrop: {
+    backgroundColor: "rgba(0,0,0,0.9) !important",
+  },
 };
 
 export default contactStyle;

@@ -82,9 +82,9 @@
     {
       "id": 11,
       "status": "Past",
-      "alt": "Papsi Zero Sugar - Zero Sugar Done Right",
+      "alt": "Pepsi Zero Sugar - Zero Sugar Done Right",
       "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/pepsi-zero-sugar/Offer_Pepsi+Zero+Sugar+(v5).png",
-      "title": "Papsi Zero Sugar",
+      "title": "Pepsi Zero Sugar",
       "subtitle": "Zero Sugar Done Right"
     },
     {
@@ -147,7 +147,7 @@
       "id": 19,
       "status": "Past",
       "alt": "Core Water - Perfectly Balanced Water",
-      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/core-water/CORE+(v5).png",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/core-water/CORE-Water-1024.jpg",
       "title": "Core Water",
       "subtitle": "Perfectly Balanced Water"
     },
@@ -155,7 +155,7 @@
       "id": 20,
       "status": "Past",
       "alt": "Bai - Get a Full Day's Serving of Flavor",
-      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/bai/Bai+(v5).png",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/bai/Bai-1024.jpg",
       "title": "Bai",
       "subtitle": "Get a Full Day's Serving of Flavor"
     },
@@ -163,7 +163,7 @@
       "id": 21,
       "status": "Past",
       "alt": "Awake Chocloate - Chocolate & Caffeine Slay the Slump",
-      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/awake-chocolate/Awake+Offer+(Landscape).png",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/awake-chocolate/Awake-1024.jpg",
       "title": "Awake Chocloate",
       "subtitle": "Chocolate & Caffeine Slay the Slump"
     }

@@ -43,7 +43,7 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     padding: "0.5rem",
     fontWeight: "300",
-    fontSize: "12px",
+    fontSize: "0.8125rem",
     textTransform: "uppercase",
     borderRadius: "0",
     lineHeight: "20px",
@@ -66,23 +66,28 @@ const headerLinksStyle = (theme) => ({
       },
     },
   },
-  dropdownLink: {
+  customDropdown: {
     color: "#848484",
     backgroundColor: "transparent",
     position: "relative",
-    padding: "0.5rem",
-    fontWeight: "300",
-    fontSize: "12px",
+    fontWeight: "400",
+    fontSize: "0.8125rem",
+    fontFamily: "Roboto",
     textTransform: "uppercase",
     borderRadius: "0",
     lineHeight: "20px",
     textDecoration: "none",
     margin: "0px",
+    width: "100%",
     display: "inline-flex",
+    padding: "4px 5px",
     "&:hover,&:focus": {
-      color: "secondary",
-      fontWeight: "700",
-      backgroundColor: "transparent",
+      color: "#00acc1",
+      fontWeight: "400",
+      backgroundColor: "rgba(48, 63, 159, 0.04)",
+    },
+    "& > ul": {
+      backgroundColor: "rgba(255,255,255,0.5)",
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -91,7 +96,38 @@ const headerLinksStyle = (theme) => ({
       marginTop: "8px",
       textAlign: "left",
       "& > span:first-child": {
-        justifyContent: "flex-start",
+        justifyContent: "center",
+      },
+    },
+  },
+  dropdownLink: {
+    color: "#848484",
+    backgroundColor: "transparent",
+    position: "relative",
+    fontWeight: "400",
+    fontSize: "0.8125rem",
+    fontFamily: "Roboto",
+    textTransform: "uppercase",
+    borderRadius: "0",
+    lineHeight: "20px",
+    textDecoration: "none",
+    margin: "0px",
+    width: "100%",
+    display: "inline-flex",
+    padding: "4px 5px",
+    "&:hover,&:focus": {
+      color: "#00acc1",
+      fontWeight: "400",
+      backgroundColor: "rgba(48, 63, 159, 0.04)",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "calc(100% - 30px)",
+      marginLeft: "15px",
+      marginBottom: "8px",
+      marginTop: "8px",
+      textAlign: "left",
+      "& > span:first-child": {
+        justifyContent: "center",
       },
     },
   },
@@ -150,9 +186,17 @@ const headerLinksStyle = (theme) => ({
     marginRight: "10px",
   },
   headerNav: {
-    width: "90vw",
+    width: "60vw",
     display: "inline-flex",
     justifyContent: "center",
+  },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  modalBackdrop: {
+    backgroundColor: "rgba(0,0,0,0.9) !important",
   },
 });
 

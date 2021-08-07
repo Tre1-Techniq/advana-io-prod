@@ -77,7 +77,6 @@ export default function Header(props) {
     <AppBar className={appBarClasses}>
       <Toolbar
         className={classes.container}
-        style={{ position: "absolute", margin: "0 auto" }}
       >
         {leftLinks !== undefined ? desktopLogo : null}
         <div className={classes.flex}>

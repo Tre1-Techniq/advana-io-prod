@@ -50,7 +50,7 @@ const landingPageStyle = {
     width: "90%",
   },
   solidBtn: {
-    width: "175px",
+    width: "200px",
   },
   outlineBtn: {
     width: "175px",
@@ -60,6 +60,14 @@ const landingPageStyle = {
   },
   scrollTop: {
     zIndex: "2000",
+  },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  modalBackdrop: {
+    backgroundColor: "rgba(0,0,0,0.9) !important",
   },
 };
 
