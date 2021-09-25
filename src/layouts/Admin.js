@@ -32,7 +32,7 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import Navbar from "../components/Navbars/Navbar.js";
+import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import Footer from "../components/Footer/Footer.js";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 
@@ -86,7 +86,7 @@ export default function Admin({ ...rest }) {
     setMobileOpen(!mobileOpen);
   };
   const getRoute = () => {
-    return window.location.pathname !== "/admin/maps";
+    return window.location.pathname !== "/admin/analytics";
   };
   const resizeFunction = () => {
     if (window.innerWidth >= 960) {
@@ -141,7 +141,7 @@ export default function Admin({ ...rest }) {
           {...rest}
         />
         <div className={classes.mainPanel} ref={mainPanel}>
-          <Navbar
+          <AdminNavbar
             routes={routes}
             handleDrawerToggle={handleDrawerToggle}
             {...rest}

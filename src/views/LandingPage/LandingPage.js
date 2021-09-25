@@ -13,7 +13,7 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //import { useHistory } from "react-router-dom";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
@@ -63,6 +63,7 @@ import ProductSection from "./Sections/ProductSection";
 import CampaignsSection from "./Sections/CampaignsSection";
 // import TeamSection from "./Sections/TeamSection";
 import ContactSection from "./Sections/ContactSection";
+import Intro from "../Modal/Intro";
 
 // Import Imges
 import advanaMap from "../../assets/img/advana-map.png";
@@ -136,6 +137,11 @@ export default function LandingPage(props) {
     setOpenBookIntro(false);
   };
 
+  useEffect(() => {
+    const pageRoot = document.querySelector("#root");
+    setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
+  }, []);
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.heroContainer}>
@@ -156,7 +162,10 @@ export default function LandingPage(props) {
         <Parallax image={require("../../assets/img/advana-io-bg-01.jpg").default}>
           <div className={classes.container}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={5}>
+              <GridItem 
+                style={{ position: "relative", top: "50px" }}
+                xs={12} sm={12} md={5}
+              >
                 <h1 className={classes.title}>
                   The Performance Marketing <span>{"&"}</span> Intelligence
                   Platform for Retail
@@ -202,9 +211,7 @@ export default function LandingPage(props) {
                   }}
                 >
                   <Fade in={openBookIntro}>
-                      <div className={classes.modalBookIntro}>
-                        <h1>BOOK AN INTRO!</h1>
-                      </div>
+                      <Intro />
                   </Fade>
                 </Modal>
               </GridItem>

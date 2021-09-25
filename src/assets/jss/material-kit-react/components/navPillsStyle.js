@@ -5,21 +5,23 @@ import {
   successColor,
   warningColor,
   dangerColor,
-} from "assets/jss/material-kit-react.js";
+} from "../../../../assets/jss/material-kit-react.js";
 
 const navPillsStyle = (theme) => ({
   root: {
-    marginTop: "20px",
+    marginTop: "30px",
     paddingLeft: "0",
     marginBottom: "0",
     overflow: "visible !important",
-    lineHeight: "24px",
+    lineHeight: "12px",
+    minHeight: "30px",
     textTransform: "uppercase",
     fontSize: "12px",
     fontWeight: "500",
     position: "relative",
     display: "block",
     color: "inherit",
+    borderBottom: "1px solid" + primaryColor,
   },
   flexContainer: {
     [theme.breakpoints.down("xs")]: {
@@ -46,19 +48,23 @@ const navPillsStyle = (theme) => ({
     transition: "all .3s",
     padding: "10px 15px",
     color: "#555555",
+    width: "175px",
     height: "auto",
     opacity: "1",
     maxWidth: "100%",
     margin: "0 5px",
+    backgroundColor: "#d7d7d7",
   },
   pillsWithIcons: {
-    borderRadius: "4px",
+    margin: "0 1px",
+    borderRadius: "4px 4px 0 0",
+    minHeight: "30px",
   },
   tabIcon: {
-    width: "30px",
-    height: "30px",
+    width: "20px",
+    height: "20px",
     display: "block",
-    margin: "15px 0 !important",
+    margin: "0 10px 0 0  !important",
     "&, & *": {
       letterSpacing: "normal !important",
     },
@@ -71,14 +77,12 @@ const navPillsStyle = (theme) => ({
     },
   },
   contentWrapper: {
-    marginTop: "20px",
+    marginTop: "0",
   },
   primary: {
     "&,&:hover": {
       color: "#FFFFFF",
       backgroundColor: primaryColor,
-      boxShadow:
-        "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4)",
     },
   },
   info: {
@@ -132,6 +136,8 @@ const navPillsStyle = (theme) => ({
     lineHeight: "24px",
     fontWeight: "500",
     textTransform: "uppercase",
+    display: "flex",
+    flexDirection: "row",
     "&,& *": {
       letterSpacing: "normal",
     },

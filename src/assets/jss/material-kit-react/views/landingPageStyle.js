@@ -6,7 +6,36 @@ const landingPageStyle = {
     zIndex: "12",
     color: "#FFFFFF",
     position: "relative",
+  },
+  containerSm: {
+    ...container,
+    zIndex: "12",
+    color: "#FFFFFF",
+    position: "relative",
     top: "50px",
+    paddingBottom: "50px",
+  },
+  titleSm: {
+    ...title,
+    display: "flex",
+    justifyContent: "center",
+    position: "relative",
+    marginTop: "0",
+    minHeight: "32px",
+    textDecoration: "none",
+    "@media (min-width: 350px)": {
+      top: "60px",
+      textAlign: 'center',
+    },
+    "@media (min-width: 768px)": {
+      width: "100%",
+    },
+    "@media (min-width: 992px)": {
+      width: "100%",
+    },
+    "@media (min-width: 1200px)": {
+      width: "100%",
+    },
   },
   title: {
     ...title,
@@ -27,6 +56,7 @@ const landingPageStyle = {
     background: "#FFFFFF",
     position: "relative",
     zIndex: "3",
+    paddingBottom: "50px",
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -40,6 +70,36 @@ const landingPageStyle = {
   // },
   heroImg: {
     width: "100%",
+    "@media (min-width: 350px)": {
+      position: "relative",
+      top: '60px'
+    },
+    "@media (min-width: 768px)": {
+      width: "100%",
+    },
+    "@media (min-width: 992px)": {
+      width: "100%",
+    },
+    "@media (min-width: 1200px)": {
+      width: "100%",
+    },
+  },
+  heroImgSm: {
+    width: "25vw",
+    "@media (min-width: 350px)": {
+      position: "relative",
+      top: "20px",
+      width: "100%",
+    },
+    "@media (min-width: 768px)": {
+      width: "25vw",
+    },
+    "@media (min-width: 992px)": {
+      width: "25vw",
+    },
+    "@media (min-width: 1200px)": {
+      width: "25vw",
+    },
   },
   navLogo: {
     width: "100px",
@@ -48,9 +108,33 @@ const landingPageStyle = {
     display: "flex",
     justifyContent: "space-between",
     width: "90%",
+    "@media (min-width: 350px)": {
+      width: "100%",
+    },
+    "@media (min-width: 768px)": {
+      width: "90%",
+    },
+    "@media (min-width: 992px)": {
+      width: "90%",
+    },
+    "@media (min-width: 1200px)": {
+      width: "90%",
+    },
   },
   solidBtn: {
     width: "200px",
+    "@media (min-width: 350px)": {
+      width: "100%",
+    },
+    "@media (min-width: 768px)": {
+      width: "200px",
+    },
+    "@media (min-width: 992px)": {
+      width: "200px",
+    },
+    "@media (min-width: 1200px)": {
+      width: "200px",
+    },
   },
   outlineBtn: {
     width: "175px",
@@ -68,6 +152,31 @@ const landingPageStyle = {
   },
   modalBackdrop: {
     backgroundColor: "rgba(0,0,0,0.9) !important",
+  },
+  parallaxSm: {
+    height: "50vh",
+    width: "100%",
+  },
+  eventHero: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  nama2021Section: {
+    display: "flex",
+    justifyContent: "center",
+    padding: "0 0 50px 0",
+    "@media (min-width: 350px)": {
+      padding: "50px 0",
+    },
+    "@media (min-width: 768px)": {
+      width: "200px",
+    },
+    "@media (min-width: 992px)": {
+      width: "200px",
+    },
+    "@media (min-width: 1200px)": {
+      width: "200px",
+    },
   },
 };
 

@@ -13,7 +13,7 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 //import { useHistory } from "react-router-dom";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
@@ -58,6 +58,7 @@ import Parallax from "../../../components/Parallax/Parallax";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageStyle";
 
 // Sections for this page
+import Intro from "../../Modal/Intro";
 import SentryCategory from "./Sections/SentryCategory";
 import SentryRetail from "./Sections/SentryRetail";
 import SentryAudience from "./Sections/SentryAudience";
@@ -135,6 +136,11 @@ export default function Sentry(props) {
     setOpenBookIntro(false);
   };
 
+  useEffect(() => {
+    const pageRoot = document.querySelector("#root");
+    setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
+  }, []);
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.heroContainer}>
@@ -153,9 +159,12 @@ export default function Sentry(props) {
           id="back-to-top-anchor"
         />
         <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default}>
-          <div className={classes.container}>
+          <div id="parallax" className={classes.container}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={5}>
+              <GridItem 
+                style={{ position: "relative", top: "50px" }}
+                xs={12} sm={12} md={5}
+              >
                 <h1 className={classes.title}>
                   Introducing <b>SENTRY</b><br/> 
                   <span>Know your Market</span>
@@ -189,9 +198,7 @@ export default function Sentry(props) {
                       }}
                     >
                       <Fade in={openBookIntro}>
-                          <div className={classes.modalBookIntro}>
-                            <h1>BOOK AN INTRO!</h1>
-                          </div>
+                          <Intro />
                       </Fade>
                     </Modal>
                   {/* <Button

@@ -11,7 +11,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
 import Divider from "@material-ui/core/Divider";
 // @material-ui/icons
-import Person from "@material-ui/icons/Person";
+import SettingsIcon from "@material-ui/icons/Settings";
 import Notifications from "@material-ui/icons/Notifications";
 import HomeIcon from "@material-ui/icons/Home";
 // core components
@@ -46,7 +46,7 @@ export default function AdminNavbarLinks() {
     setOpenProfile(null);
   };
   return (
-    <div>
+    <div className={classes.headerLinksWrapper}>
       <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
@@ -147,7 +147,7 @@ export default function AdminNavbarLinks() {
           onClick={handleClickProfile}
           className={classes.buttonLink}
         >
-          <Person className={classes.icons} />
+          <SettingsIcon className={classes.icons} />
           <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Profile</p>
           </Hidden>

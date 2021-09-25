@@ -32,7 +32,6 @@ import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
 
 // Import Images
-import backgroundIMG2 from "../../../assets/img/advana-io-bg-02.jpg";
 import heroCampaigns from "../../../assets/img/hero-campaigns.png";
 import verifiedBadge from "../../../assets/img/verified-badge.png";
 
@@ -53,18 +52,7 @@ export default function CampaignsSection() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div
-        className={classes.campaignsSection}
-        style={{
-          backgroundImage: `url(${backgroundIMG2})`,
-          backgroundSize: "cover",
-          width: "100vw",
-          position: "relative",
-          left: "-96.5px",
-          overflow: "hidden",
-          padding: "50px",
-        }}
-      >
+      <div className={classes.campaignsSection}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <h1
@@ -76,7 +64,7 @@ export default function CampaignsSection() {
               with High Transparency
             </h1>
             <GridItem style={{ display: "flex" }} xs={12} sm={12} md={12}>
-              <GridItem xs={12} md={7} stlye={{ display: "flex" }}>
+              <GridItem xs={12} md={8} stlye={{ display: "flex" }}>
                 <div className={classes.demo}>
                   <List>
                     <ListItem>
@@ -103,7 +91,7 @@ export default function CampaignsSection() {
                         />
                       </ListItemIcon>
                       <ListItemText
-                        primary="Verified Viewed Impressions"
+                        primary="Verified Impressions Served"
                         style={{
                           fontFamily: `"Roboto", sans-serif`,
                           fontWeight: "300",
@@ -150,24 +138,17 @@ export default function CampaignsSection() {
                 style={{ display: "flex", justifyContent: "start" }}
                 xs={12}
                 sm={12}
-                md={5}
+                md={4}
               >
                 <img
                   src={verifiedBadge}
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ width: "150px", height: "150px" }}
                 />
               </GridItem>
             </GridItem>
             <br />
             <Box
-              className={classes.btnBox}
-              style={{
-                display: "flex",
-                justifyContent: "flex-start",
-                marginLeft: "50px",
-                marginTop: "30px",
-              }}
-            >
+              className={classes.btnBox}>
               <Button
                 className={classes.solidBtn}
                 variant="contained"

@@ -13,8 +13,18 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+//import { useHistory } from "react-router-dom";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+// import { FormControl } from '@material-ui/core';
+// import { InputLabel } from '@material-ui/core';
+// import { FormHelperText } from '@material-ui/core';
+// import { Input } from '@material-ui/core';
+
 // nodejs library that concatenates classes
 //import classNames from "classnames";
 
@@ -34,7 +44,7 @@ import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
 
 // @material-ui/icons
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+//import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
@@ -48,7 +58,8 @@ import Parallax from "../../../components/Parallax/Parallax";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageStyle";
 
-// Sections for this page
+// Import Sections
+import Intro from "../../Modal/Intro";
 import InsightOptimize from "./Sections/InsightOptimize";
 import InsightTrend from "./Sections/InsightTrend";
 import InsightZombie from "./Sections/InsightZombie";
@@ -111,9 +122,25 @@ ScrollTop.propTypes = {
 const useStyles = makeStyles(styles);
 
 export default function Insight(props) {
-  let history = useHistory();
+  //let history = useHistory();
   const classes = useStyles();
   const { ...rest } = props;
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
+  useEffect(() => {
+    const pageRoot = document.querySelector("#root");
+    setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
+  }, []);
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.heroContainer}>
@@ -148,22 +175,28 @@ export default function Insight(props) {
                     className={classes.solidBtn}
                     variant="contained"
                     color="primary"
-                    to="/"
+                    onClick={() => handleOpenBookIntro()}
                   >
                     <EventAvailableIcon className={classes.btnIcon} />
-                    BOOK A DEMO
+                    BOOK AN INTRO
                   </Button>
-                  <Button
-                    onClick={() => {
-                      history.push("/");
-                    }}
-                    className={classes.outlineBtn}
-                    variant="outlined"
-                    color="primary"
-                  >
-                    <ExitToAppIcon className={classes.btnIcon} />
-                    GET STARTED
-                  </Button>
+                  <Modal
+                      className={classes.modal}
+                      open={openBookIntro}
+                      onClose={handleCloseBookIntro}
+                      closeAfterTransition
+                      BackdropComponent={Backdrop}
+                      BackdropProps={{
+                          timeout: 300,
+                          classes: {
+                              root: classes.modalBackdrop
+                          }
+                      }}
+                    >
+                      <Fade in={openBookIntro}>
+                          <Intro />
+                      </Fade>
+                    </Modal>
                 </Box>
               </GridItem>
               <GridItem xs={12} sm={12} md={7}>

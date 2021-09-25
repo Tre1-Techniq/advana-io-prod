@@ -6,13 +6,15 @@ import {
   primaryCardHeader,
   roseCardHeader,
   whiteColor,
-} from "assets/jss/material-dashboard-react.js";
+} from "../../material-dashboard-react.js";
 
 const cardHeaderStyle = {
   cardHeader: {
-    padding: "0.75rem 1.25rem",
+    padding: "0.75rem 0",
     marginBottom: "0",
-    borderBottom: "none",
+    marginLeft: "1.25rem",
+    marginRight: "1.25rem",
+    borderBottom: "1px solid #e7e7e7",
     background: "transparent",
     zIndex: "3 !important",
     "&$cardHeaderPlain,&$cardHeaderIcon,&$cardHeaderStats,&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader":

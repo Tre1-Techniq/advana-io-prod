@@ -19,7 +19,6 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     display: "block",
     width: "auto",
-    margin: "0 25px",
     padding: "0",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
@@ -31,6 +30,20 @@ const headerLinksStyle = (theme) => ({
         marginLeft: "15px",
         backgroundColor: "#e5e5e5",
       },
+    },
+    margin: "0 25px",
+    "@media (min-width: 350px)": {
+      margin: "0",
+      padding: "10px",
+    },
+    "@media (min-width: 768px)": {
+      margin: "0 25px",
+    },
+    "@media (min-width: 992px)": {
+      margin: "0 25px",
+    },
+    "@media (min-width: 1200px)": {
+      margin: "0 25px",
     },
   },
   listItemText: {
@@ -88,6 +101,9 @@ const headerLinksStyle = (theme) => ({
     },
     "& > ul": {
       backgroundColor: "rgba(255,255,255,0.5)",
+    },
+    "& button span": {
+      justifyContent: "flex-start",
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -186,9 +202,30 @@ const headerLinksStyle = (theme) => ({
     marginRight: "10px",
   },
   headerNav: {
-    width: "60vw",
-    display: "inline-flex",
     justifyContent: "center",
+    width: "75vw",
+    height: "50px",
+    display: "inline-flex",
+    "& button": {
+      width: "100%",
+      marginLeft: "0",
+    },
+    "@media (min-width: 350px)": {
+      width: "100%",
+      height: "100%",
+      position: "relative",
+      left: "0",
+      display: "block",
+    },
+    "@media (min-width: 768px)": {
+      display: "inline-flex",
+    },
+    "@media (min-width: 992px)": {
+      display: "inline-flex",
+    },
+    "@media (min-width: 1200px)": {
+      display: "inline-flex",
+    },
   },
   modal: {
     display: "flex",

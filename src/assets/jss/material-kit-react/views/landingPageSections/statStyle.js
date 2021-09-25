@@ -24,6 +24,8 @@ const productStyle = {
   },
   advanaStatGrid: {
     margin: "0 10vw",
+    position: "relative",
+    top: "-50px" 
   },
   advanaStat: {
     display: "flex",

@@ -8,6 +8,9 @@ import dropdownStyle from "../../material-dashboard-react/dropdownStyle.js";
 
 const headerLinksStyle = (theme) => ({
   ...dropdownStyle(theme),
+  headerLinksWrapper: {
+    margin: "0 50px 0 0",
+  },
   search: {
     "& > div": {
       marginTop: "0",

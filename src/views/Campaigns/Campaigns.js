@@ -31,10 +31,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { FormControl } from '@material-ui/core';
-import { InputLabel } from '@material-ui/core';
-import { FormHelperText } from '@material-ui/core';
-import { Input } from '@material-ui/core';
 
 //import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
@@ -65,6 +61,9 @@ import GridItem from "../../components/Grid/GridItem";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import HeaderLinks from "../../components/Header/HeaderLinks";
+
+// Import Sections
+import OptIn from "../Modal/OptIn";
 
 // Import Images
 import campaignsPageHero from "../../assets/img/campaigns-page-hero.png";
@@ -146,6 +145,8 @@ export default function Campaigns(props) {
       // getCampaigns(campaigns);
       setCampaigns(campaignList);
 
+      const pageRoot = document.querySelector("#root");
+      setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
     }, []);
 
     function search(campaigns) {
@@ -243,13 +244,7 @@ export default function Campaigns(props) {
                           }}
                       >
                         <Fade in={openOptIn}>
-                            <div className={classes.modalOptIn}>
-                              <FormControl>
-                                <InputLabel htmlFor="my-input">Email address</InputLabel>
-                                <Input id="my-input" aria-describedby="my-helper-text" />
-                                <FormHelperText id="my-helper-text">We will never share your email.</FormHelperText>
-                              </FormControl>
-                            </div>
+                          <OptIn />
                         </Fade>
                       </Modal>
                     </GridItem>

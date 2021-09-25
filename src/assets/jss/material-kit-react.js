@@ -34,20 +34,21 @@ const containerFluid = {
 const container = {
   ...containerFluid,
   position: "relative !important",
-  top: "0",
-  maxWidth: "90vw !important",
-  // "@media (min-width: 576px)": {
-  //   maxWidth: "540px",
-  // },
-  // "@media (min-width: 768px)": {
-  //   maxWidth: "720px",
-  // },
-  // "@media (min-width: 992px)": {
-  //   maxWidth: "960px",
-  // },
-  // "@media (min-width: 1200px)": {
-  //   maxWidth: "90vw !important",
-  // },
+  top: "50px",
+  maxWidth: "90vw",
+  "@media (min-width: 350px)": {
+    top: "0",
+    maxWidth: "90vw",
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "720px",
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "960px",
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "90vw !important",
+  },
 };
 const heroContainer = {
   ...containerFluid,
@@ -66,6 +67,25 @@ const heroContainer = {
   // "@media (min-width: 1200px)": {
   //   maxWidth: "90vw !important",
   // },
+};
+
+const gridContainer = {
+  ...containerFluid,
+  position: "relative !important",
+  top: "0",
+  maxWidth: "90vw !important",
+  "@media (min-width: 576px)": {
+    maxWidth: "540px",
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "720px",
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "960px",
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "90vw !important",
+  },
 };
 
 const boxShadow = {
@@ -90,7 +110,7 @@ const defaultFont = {
   lineHeight: "1.5em",
 };
 
-const primaryColor = "#9c27b0";
+const primaryColor = "#00acc1";
 const warningColor = "#ff9800";
 const dangerColor = "#f44336";
 const successColor = "#4caf50";
@@ -181,11 +201,25 @@ const title = {
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
   fontWeight: "300",
-  fontSize: "2.25rem",
   lineHeight: "3.25rem",
   fontFamily: `"Roboto", sans-serif`,
   "& > span": {
     color: "#4db8be",
+  },
+  fontSize: "2.25rem",
+  "@media (min-width: 350px)": {
+    margin: "1.75rem 0 0.875rem",
+    lineHeight: "2.25rem",
+    fontSize: "1.75rem",
+  },
+  "@media (min-width: 768px)": {
+    fontSize: "2.25rem",
+  },
+  "@media (min-width: 992px)": {
+    fontSize: "2.25rem",
+  },
+  "@media (min-width: 1200px)": {
+    fontSize: "2.25rem",
   },
 };
 
@@ -215,11 +249,39 @@ const cardSubtitle = {
   marginTop: "-.375rem",
 };
 
+const adminTitle = {
+  color: "#2e4094",
+  margin: "0",
+  textDecoration: "none",
+  fontWeight: "300",
+  lineHeight: "1rem",
+  fontFamily: `"Roboto", sans-serif`,
+  "& > span": {
+    color: "#4db8be",
+  },
+  fontSize: "1rem",
+  "@media (min-width: 350px)": {
+    margin: "1.75rem 0 0.875rem",
+    lineHeight: "1.25rem",
+    fontSize: "1.75rem",
+  },
+  "@media (min-width: 768px)": {
+    fontSize: "1rem",
+  },
+  "@media (min-width: 992px)": {
+    fontSize: "1rem",
+  },
+  "@media (min-width: 1200px)": {
+    fontSize: "1rem",
+  },
+};
+
 export {
   //variables
   drawerWidth,
   transition,
   heroContainer,
+  gridContainer,
   container,
   containerFluid,
   boxShadow,
@@ -250,6 +312,7 @@ export {
   title,
   subtitle,
   cardTitle,
+  adminTitle,
   cardLink,
   cardSubtitle,
 };

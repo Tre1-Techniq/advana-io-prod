@@ -1,7 +1,8 @@
 /*eslint-disable*/
 import React, { useState } from "react";
-// react components for routing our app without refresh
-//import { useHistory } from "react-router-dom";
+// react components for routing the app without refresh
+// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,10 +14,10 @@ import { ThemeProvider, Button } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { FormControl } from '@material-ui/core';
-import { InputLabel } from '@material-ui/core';
-import { FormHelperText } from '@material-ui/core';
-import { Input } from '@material-ui/core';
+// import { FormControl } from '@material-ui/core';
+// import { InputLabel } from '@material-ui/core';
+// import { FormHelperText } from '@material-ui/core';
+// import { Input } from '@material-ui/core';
 
 import advanaTheme from "../../advanaTheme";
 
@@ -31,7 +32,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  //let history = useHistory();
+  let history = useHistory();
   const classes = useStyles();
 
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -49,7 +50,7 @@ export default function HeaderLinks(props) {
     <ThemeProvider theme={advanaTheme}>
       <List className={classes.headerNav}>
         <ListItem className={classes.listItem}>
-          <Button href="/" variant="text" color="primary" size="small">
+          <Button onClick={() => history.push("/")} variant="text" color="primary" size="small">
             HOME
           </Button>
         </ListItem>
@@ -63,13 +64,13 @@ export default function HeaderLinks(props) {
               }}
               buttonIcon={Apps}
               dropdownList={[
-                <Button href="/sentry" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                <Button onClick={() => history.push("/sentry")} className={classes.dropdownLink} variant="text" color="primary" size="small">
                   SENTRY
                 </Button>,
-                <Button href="/insight" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                <Button onClick={() => history.push("/insight")} className={classes.dropdownLink} variant="text" color="primary" size="small">
                   INSIGHT
                 </Button>,
-                <Button href="/promote" className={classes.dropdownLink} variant="text" color="primary" size="small">
+                <Button onClick={() => history.push("/promote")} className={classes.dropdownLink} variant="text" color="primary" size="small">
                   PROMOTE
                 </Button>,
               ]}
@@ -77,7 +78,7 @@ export default function HeaderLinks(props) {
         </ListItem>
         <ListItem className={classes.listItem}>
           <Button
-            href="/campaigns"
+            onClick={() => history.push("/campaigns")}
             variant="text"
             color="primary"
             size="small"
@@ -90,7 +91,7 @@ export default function HeaderLinks(props) {
             ABOUT
           </Button>
         </ListItem> */}
-        <ListItem className={classes.listItem}>
+        {/* <ListItem className={classes.listItem}>
           <Button
             onClick={() => handleOpenSignIn()}
             variant="contained"
@@ -99,7 +100,7 @@ export default function HeaderLinks(props) {
             <ExitToAppIcon className={classes.btnIcon} />
             SIGN IN
           </Button>
-        </ListItem>
+        </ListItem> */}
       </List>
       
       <Modal

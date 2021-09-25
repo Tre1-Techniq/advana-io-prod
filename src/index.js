@@ -13,38 +13,24 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-// Advana Color Theme
-import { ThemeProvider } from "@material-ui/core";
-import advanaTheme from "./advanaTheme";
+import App from './App';
 
 import "./assets/scss/material-kit-react.scss?v=1.10.0";
+import "./index.css";
 
-// pages for this product
-import LandingPage from "./views/LandingPage/LandingPage";
-import Sentry from './views/Products/Sentry/Sentry';
-import Insight from './views/Products/Insight/Insight';
-import Promote from './views/Products/Promote/Promote';
-import Campaigns from './views/Campaigns/Campaigns';
-import SignIn from "./views/Auth/SignIn";
-import Admin from "./layouts/Admin";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-206953045-1', {
+  debug: true,
+  titleCase: false,
+});
+
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <ThemeProvider theme={advanaTheme}>
-      <Router>
-        <Switch>
-          <Route path="/" exact component={LandingPage} />
-          <Route path="/sentry" exact component={Sentry} />
-          <Route path="/insight" exact component={Insight} />
-          <Route path="/promote" exact component={Promote} />
-          <Route path="/campaigns" exact component={Campaigns} />
-          <Route path="/signin" exact component={SignIn} />
-          <Route path="/admin" component={Admin} />
-        </Switch>
-      </Router>
-    </ThemeProvider>,
-  rootElement
-);
+
+ReactDOM.render( <App />, rootElement);
+
+

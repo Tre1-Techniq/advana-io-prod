@@ -2,6 +2,7 @@ import {
   container,
   defaultFont,
   primaryColor,
+  secondaryColor,
   defaultBoxShadow,
   infoColor,
   successColor,
@@ -13,9 +14,9 @@ import {
 
 const headerStyle = () => ({
   appBar: {
-    backgroundColor: "transparent",
+    backgroundColor: "#f7f7f7",
     boxShadow: "none",
-    borderBottom: "0",
+    borderBottom: "1px solid #e7e7e7",
     marginBottom: "0",
     position: "absolute",
     width: "100%",
@@ -40,14 +41,12 @@ const headerStyle = () => ({
     ...defaultFont,
     letterSpacing: "unset",
     lineHeight: "30px",
-    fontSize: "18px",
+    fontSize: "24px",
+    fontWeight: "300",
     borderRadius: "3px",
     textTransform: "none",
-    color: "inherit",
+    color: secondaryColor[0],
     margin: "0",
-    "&:hover,&:focus": {
-      background: "transparent",
-    },
   },
   appResponsive: {
     top: "8px",

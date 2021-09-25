@@ -29,7 +29,7 @@ import advanaTheme from "../../../../advanaTheme";
 import Card from "../../../../components/Card/Card.js";
 
 // Import Images
-import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
+//import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
 import caseStudyAwake from "../../../../assets/img/products/sentry/sentry-case-study-awake.png";
 //import awakeKPI01 from "../../../../assets/img/awake-kpi-01.png";
 //import awakeKPI02 from "../../../../assets/img/awake-kpi-02.png";
@@ -55,35 +55,19 @@ export default function SentryCaseStudy() {
   );
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div
-        className={classes.campaignsSection}
-        style={{
-          backgroundImage: `url(${backgroundIMG2})`,
-          backgroundSize: "cover",
-          width: "100vw",
-          position: "relative",
-          left: "-96.5px",
-          overflow: "hidden",
-          padding: "50px",
-        }}
-      >
+      <div className={classes.caseSection}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
-            <h1
-              className={classes.title}
-              style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
+            <h1 className={classes.title}>
               Case Study: <br />
               <span>Awake Chocolate Sentry</span>
             </h1>
-            <h4 className={classes.subtitle}
-            style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
+            <h4 className={classes.subtitle}>
             Learn how Awake Chocolate uses Sentry to help operators stay in-stock and priced to win with their industry leading Awake Bites.
             </h4>
             <img
               src={caseStudyAwake}
-              style={{ width: "100%", margin: "0", padding: "30px" }}
+              className={classes.sectionImg}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
@@ -117,7 +101,7 @@ export default function SentryCaseStudy() {
                 Results
               </h3>
               <p>
-              At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 5% of top-line growth for Awake and the operators who offer Awake in their markets.
+              At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 15% of top-line growth for Awake and the operators who offer Awake in their markets.
               </p>
             </GridItem>
             {/* <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>

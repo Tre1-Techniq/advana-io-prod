@@ -15,7 +15,7 @@ const imagesStyles = {
   },
   imgGallery: {
     width: "100%",
-    marginBottom: "2.142rem",
+    marginBottom: "0",
   },
   imgCardTop: {
     width: "100%",

@@ -23,7 +23,6 @@ const sidebarStyle = (theme) => ({
     bottom: "0",
     left: "0",
     zIndex: "1",
-    ...boxShadow,
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
       width: drawerWidth,
@@ -62,7 +61,7 @@ const sidebarStyle = (theme) => ({
   },
   logo: {
     position: "relative",
-    padding: "15px 15px",
+    padding: "24px 15px",
     zIndex: "4",
     "&:after": {
       content: '""',
@@ -102,7 +101,7 @@ const sidebarStyle = (theme) => ({
   },
   img: {
     width: "140px",
-    top: "0px",
+    top: "10px",
     position: "absolute",
     verticalAlign: "middle",
     border: "0",
@@ -126,7 +125,7 @@ const sidebarStyle = (theme) => ({
       content: '""',
       display: "block",
       background: blackColor,
-      opacity: ".8",
+      opacity: ".7",
     },
   },
   list: {
@@ -291,6 +290,7 @@ const sidebarStyle = (theme) => ({
     overflowScrolling: "touch",
   },
   activePro: {
+    backgroundColor: "rgba(" + primaryColor + ", 0.8)",
     [theme.breakpoints.up("md")]: {
       position: "absolute",
       width: "100%",

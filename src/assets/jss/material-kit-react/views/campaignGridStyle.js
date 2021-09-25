@@ -120,6 +120,7 @@ const campaingGridStyle = {
   filterContainer: {
     width: "100%",
     display: "flex",
+    flexWrap: 'wrap',
     margin: "0 0 10px 0",
     justifyContent: "center",
   },
@@ -135,11 +136,29 @@ const campaingGridStyle = {
     width: "25vw",
     position: "relative",
     top: "12px",
+    "@media (min-width: 350px)": {
+      width: "100%",
+    },
+    "@media (min-width: 768px)": {
+    },
+    "@media (min-width: 992px)": {
+    },
+    "@media (min-width: 1200px)": {
+    },
   },
   filterSelect: {
     width: "200px",
     margin: "0 auto",
     padding: "0 0 20px 0",
+    "@media (min-width: 350px)": {
+      width: "100%",
+    },
+    "@media (min-width: 768px)": {
+    },
+    "@media (min-width: 992px)": {
+    },
+    "@media (min-width: 1200px)": {
+    },
   },
   dialogWrapper: {
     width: "100vw",
@@ -156,7 +175,10 @@ const campaingGridStyle = {
     backgroundColor: "rgba(0,0,0,0.6)",
   },
   modalContent: {
-    maxWidth: "80vw",
+    maxWidth: "90vw",
+    "& img": {
+      width: "100%",
+    },
   },
   modalTitle: {
     color: "#fff",

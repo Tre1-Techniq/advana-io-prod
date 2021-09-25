@@ -4,7 +4,7 @@ import {
   successColor,
   grayColor,
   defaultFont,
-} from "assets/jss/material-dashboard-react.js";
+} from "../../material-dashboard-react.js";
 
 const customInputStyle = {
   disabled: {
@@ -38,6 +38,7 @@ const customInputStyle = {
     fontSize: "14px",
     lineHeight: "1.42857",
     letterSpacing: "unset",
+    top: "25px",
   },
   labelRootError: {
     color: dangerColor[0],

@@ -37,10 +37,7 @@ export default function StatsSection() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <GridContainer
-        className={classes.advanaStatGrid}
-        style={{ position: "relative", top: "-50px" }}
-      >
+      <GridContainer className={classes.advanaStatGrid}>
         <GridItem
           style={{ display: "flex", justifyContent: "center" }}
           xs={12}

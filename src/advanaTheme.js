@@ -26,14 +26,19 @@ advanaTheme.props = {
 };
 
 advanaTheme.overrides = {
-  MuiAppBar: {
-    width: "60vw"
+  // MuiAppBar: {
+  //   width: "60vw"
+  // },
+  MuiIconButton: {
+    colorInherit: {
+      color: "#848484",
+    },
   },
   MuiButton: {
     root: {
       minWidth: "100px",
       padding: "10px 20px",
-      borderRadius: 0,
+      borderRadius: "4px",
       textTransform: "uppercase",
       borderBottom: "2px solid transparent",
       "&:hover,&:focus": {
@@ -43,6 +48,7 @@ advanaTheme.overrides = {
       },
     },
     containedPrimary: {
+      border: "2px solid transparent",
       "&:hover": {
         backgroundColor: "transparent",
         color: advanaTheme.palette.primary.main,
@@ -55,6 +61,7 @@ advanaTheme.overrides = {
       color: "#848484",
     },
     containedSecondary: {
+      border: "2px solid transparent",
       "&:hover": {
         backgroundColor: "transparent",
         color: advanaTheme.palette.secondary.main,

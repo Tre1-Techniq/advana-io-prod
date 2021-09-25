@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "assets/jss/material-dashboard-react/components/cardHeaderStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/components/cardHeaderStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -38,6 +38,7 @@ CardHeader.propTypes = {
     "danger",
     "info",
     "primary",
+    "secondary",
     "rose",
   ]),
   plain: PropTypes.bool,

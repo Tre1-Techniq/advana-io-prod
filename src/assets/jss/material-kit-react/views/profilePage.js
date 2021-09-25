@@ -1,16 +1,21 @@
-import { container, title } from "assets/jss/material-kit-react.js";
+import { container, gridContainer, title, adminTitle } from "../../../../assets/jss/material-kit-react.js";
 
-import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
+import imagesStyle from "../../../../assets/jss/material-kit-react/imagesStyles.js";
 
 const profilePageStyle = {
   container,
+  gridContainer,
   profile: {
     textAlign: "center",
+    marginBottom: "40px",
+    borderBottom: "1px solid #e7e7e7",
     "& img": {
-      maxWidth: "160px",
+      maxWidth: "50px",
       width: "100%",
       margin: "0 auto",
-      transform: "translate3d(0, -50%, 0)",
+    },
+    "& h6": {
+      margin: "0 0 15px 0",
     },
   },
   description: {
@@ -20,7 +25,10 @@ const profilePageStyle = {
     textAlign: "center !important",
   },
   name: {
-    marginTop: "-80px",
+    marginTop: "5px",
+    "& h3": {
+      margin: "0",
+    },
   },
   ...imagesStyle,
   main: {
@@ -41,6 +49,9 @@ const profilePageStyle = {
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none",
+  },
+  adminTitle: {
+    ...adminTitle,
   },
   socials: {
     marginTop: "0",

@@ -52,7 +52,7 @@ export default function ProductSection() {
               from the Point of Sale
             </h1>
             <h4 className={classes.subtitle}>
-            Discover your purchase trends, velocity, market share, distribution, retail pricing and more with Sentry.
+            Discover your purchase trends, velocity, market share, distribution, retail pricing and more with Sentry <span>( *Requires Operator Approval )</span>.
             </h4>
             <br />
             <Button

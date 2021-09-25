@@ -16,16 +16,24 @@
 
 */
 
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+// import { FormControl } from '@material-ui/core';
+// import { InputLabel } from '@material-ui/core';
+// import { FormHelperText } from '@material-ui/core';
+// import { Input } from '@material-ui/core';
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../../advanaTheme";
 
 // Import Images
-import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
 //import sentryFPO from "../../../../assets/img/products/sentry/sentry-fpo.png";
 import promoteInventory from "../../../../assets/img/products/promote/promote-inventory.png";
 
@@ -37,53 +45,67 @@ import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import GridContainer from "../../../../components/Grid/GridContainer.js";
 import GridItem from "../../../../components/Grid/GridItem.js";
 
+// Import Sections
+import Intro from "../../../Modal/Intro";
+
 import styles from "../../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function PromoteInventory() {
   const classes = useStyles();
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div
-        className={classes.campaignsSection}
-        style={{
-          backgroundImage: `url(${backgroundIMG2})`,
-          backgroundSize: "cover",
-          width: "100vw",
-          position: "relative",
-          left: "-96.5px",
-          overflow: "hidden",
-          padding: "50px",
-        }}
-      >
+      <div className={classes.inventorySection}>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={5}>
-            <h1
-              className={classes.title}
-              style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
+          <GridItem xs={12} sm={12} md={6}>
+            <h1 className={classes.title}>
               Verified Inventory<br />
               <span>Promote Where Your Product Is</span>
             </h1>
-            <h4 className={classes.subtitle}
-            style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
+            <h4 className={classes.subtitle}>
             Advana verifies your product is selling before we activate your promotion ensuring the best returns for your investment. 
             </h4>
             <br />
             <Button
-              style={{marginLeft: "50px"}}
               className={classes.solidBtn}
               variant="contained"
               color="primary"
-              to="/"
+              onClick={() => handleOpenBookIntro()}
             >
               <EventAvailableIcon className={classes.btnIcon} style={{marginRight: "20px"}} />
-              BOOK A DEMO
+              BOOK AN INTRO
             </Button>
+            <Modal
+              className={classes.modal}
+              open={openBookIntro}
+              onClose={handleCloseBookIntro}
+              closeAfterTransition
+              BackdropComponent={Backdrop}
+              BackdropProps={{
+                  timeout: 300,
+                  classes: {
+                      root: classes.modalBackdrop
+                  }
+              }}
+            >
+              <Fade in={openBookIntro}>
+                <Intro />
+              </Fade>
+            </Modal>
           </GridItem>
-          <GridItem xs={12} sm={12} md={7}>
+          <GridItem xs={12} sm={12} md={6}>
             <img
               style={{ width: "100%" }}
               className={classes.heroImg}
