@@ -1,7 +1,6 @@
 /*eslint-disable*/
 import React, { useState } from "react";
-// react components for routing the app without refresh
-// import { useHistory } from "react-router-dom";
+// react components for routing our app without refresh
 import { useHistory } from "react-router-dom";
 
 // @material-ui/core components
@@ -14,15 +13,15 @@ import { ThemeProvider, Button } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-// import { FormControl } from '@material-ui/core';
-// import { InputLabel } from '@material-ui/core';
-// import { FormHelperText } from '@material-ui/core';
-// import { Input } from '@material-ui/core';
+import { FormControl } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { FormHelperText } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 
 import advanaTheme from "../../advanaTheme";
 
 // @material-ui/icons
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+//import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Apps } from "@material-ui/icons";
 
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
@@ -49,59 +48,64 @@ export default function HeaderLinks(props) {
   return (
     <ThemeProvider theme={advanaTheme}>
       <List className={classes.headerNav}>
-        <ListItem className={classes.listItem}>
-          <Button onClick={() => history.push("/")} variant="text" color="primary" size="small">
-            HOME
-          </Button>
-        </ListItem>
-        <ListItem className={classes.listItem}>
-          <CustomDropdown
-              noLiPadding
-              buttonText="PRODUCTS"
-              buttonProps={{
-                className: classes.customDropdown,
-                color: "transparent",
-              }}
-              buttonIcon={Apps}
-              dropdownList={[
-                <Button onClick={() => history.push("/sentry")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                  SENTRY
-                </Button>,
-                <Button onClick={() => history.push("/insight")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                  INSIGHT
-                </Button>,
-                <Button onClick={() => history.push("/promote")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                  PROMOTE
-                </Button>,
-              ]}
-            />
-        </ListItem>
-        <ListItem className={classes.listItem}>
-          <Button
-            onClick={() => history.push("/campaigns")}
-            variant="text"
-            color="primary"
-            size="small"
-          >
-            CAMPAIGNS
-          </Button>
-        </ListItem>
-        {/* <ListItem className={classes.listItem}>
-          <Button href="/home#about" variant="text" color="primary" size="small">
-            ABOUT
-          </Button>
-        </ListItem> */}
-        {/* <ListItem className={classes.listItem}>
-          <Button
-            onClick={() => handleOpenSignIn()}
-            variant="contained"
-            color="secondary"
-          >
-            <ExitToAppIcon className={classes.btnIcon} />
-            SIGN IN
-          </Button>
-        </ListItem> */}
-      </List>
+          <ListItem className={classes.listItem}>
+            <Button
+              onClick={() => history.push("/")}
+              variant="text"
+              color= "primary"
+              size="small"
+            >
+              HOME
+            </Button>
+          </ListItem>
+          <ListItem className={classes.listItem}>
+            <CustomDropdown
+                noLiPadding
+                buttonText="PRODUCTS"
+                buttonProps={{
+                  className: classes.customDropdown,
+                  color: "transparent",
+                }}
+                buttonIcon={Apps}
+                dropdownList={[
+                  <Button onClick={() => history.push("/sentry")} className={classes.dropdownLink} variant="text" color="primary" size="small">
+                    SENTRY
+                  </Button>,
+                  <Button onClick={() => history.push("/insight")} className={classes.dropdownLink} variant="text" color="primary" size="small">
+                    INSIGHT
+                  </Button>,
+                  <Button onClick={() => history.push("/promote")} className={classes.dropdownLink} variant="text" color="primary" size="small">
+                    PROMOTE
+                  </Button>,
+                ]}
+              />
+          </ListItem>
+          <ListItem className={classes.listItem}>
+            <Button
+              onClick={() => history.push("/campaigns")}
+              variant="text"
+              color="primary"
+              size="small"
+            >
+              CAMPAIGNS
+            </Button>
+          </ListItem>
+          {/* <ListItem className={classes.listItem}>
+            <Button href="/home#about" variant="text" color="primary" size="small">
+              ABOUT
+            </Button>
+          </ListItem> */}
+          {/* <ListItem className={classes.listItem}>
+            <Button
+              onClick={() => handleOpenSignIn()}
+              variant="contained"
+              color="secondary"
+            >
+              <ExitToAppIcon className={classes.btnIcon} />
+              SIGN IN
+            </Button>
+          </ListItem> */}
+        </List>
       
       <Modal
           className={classes.modal}

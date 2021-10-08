@@ -1,6 +1,7 @@
 import {
   primaryColor,
   whiteColor,
+  primaryBoxShadow,
   defaultFont,
   blackColor,
   grayColor,
@@ -115,6 +116,7 @@ const dropdownStyle = (theme) => ({
     "&:hover": {
       backgroundColor: primaryColor[0],
       color: whiteColor,
+      ...primaryBoxShadow,
     },
   },
 });

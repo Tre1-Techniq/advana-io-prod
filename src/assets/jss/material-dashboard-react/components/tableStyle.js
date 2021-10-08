@@ -44,7 +44,6 @@ const tableStyle = (theme) => ({
     ...defaultFont,
     "&, &$tableCell": {
       fontSize: "1em",
-      fontWeight: "500",
     },
   },
   tableCell: {
@@ -67,7 +66,7 @@ const tableStyle = (theme) => ({
     verticalAlign: "middle",
   },
   tableBodyRow: {
-    height: "56px",
+    height: "48px",
     color: "inherit",
     display: "table-row",
     outline: "none",

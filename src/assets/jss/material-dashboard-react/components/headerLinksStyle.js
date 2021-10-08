@@ -9,13 +9,15 @@ import dropdownStyle from "../../material-dashboard-react/dropdownStyle.js";
 const headerLinksStyle = (theme) => ({
   ...dropdownStyle(theme),
   headerLinksWrapper: {
-    margin: "0 50px 0 0",
+    margin: "0",
+    display: "flex",
+    justifyContent: "end",
   },
   search: {
     "& > div": {
       marginTop: "0",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       margin: "10px 15px !important",
       float: "none !important",
       paddingTop: "1px",
@@ -35,7 +37,7 @@ const headerLinksStyle = (theme) => ({
     margin: "0px",
   },
   buttonLink: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       display: "flex",
       margin: "10px 15px 0",
       width: "-webkit-fill-available",
@@ -60,7 +62,7 @@ const headerLinksStyle = (theme) => ({
     },
   },
   searchButton: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       top: "-50px !important",
       marginRight: "22px",
       float: "right",
@@ -92,20 +94,20 @@ const headerLinksStyle = (theme) => ({
       verticalAlign: "middle",
       display: "block",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       ...defaultFont,
       fontSize: "14px",
       marginRight: "8px",
     },
   },
   manager: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "100%",
     },
     display: "inline-block",
   },
   searchWrapper: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "-webkit-fill-available",
       margin: "10px 15px 0",
     },

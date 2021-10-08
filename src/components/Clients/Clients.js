@@ -84,7 +84,7 @@ export default function Clients() {
             </PreviousButton>
           </div>
           <Carousel
-            autoPlay={true}
+            autoPlay={false}
             autoSize={true}
             centerMode={true}
             draggable={true}

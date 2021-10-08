@@ -55,6 +55,8 @@ import GridItem from "../../components/Grid/GridItem";
 import HeaderLinks from "../../components/Header/HeaderLinks";
 import Parallax from "../../components/Parallax/Parallax";
 
+import Intro from "../Modal/Intro";
+
 import styles from "../../assets/jss/material-kit-react/views/landingPageStyle";
 
 // Sections for this page
@@ -63,7 +65,6 @@ import ProductSection from "./Sections/ProductSection";
 import CampaignsSection from "./Sections/CampaignsSection";
 // import TeamSection from "./Sections/TeamSection";
 import ContactSection from "./Sections/ContactSection";
-import Intro from "../Modal/Intro";
 
 // Import Imges
 import advanaMap from "../../assets/img/advana-map.png";
@@ -144,7 +145,6 @@ export default function LandingPage(props) {
 
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.heroContainer}>
         <Header
           color="transparent"
           rightLinks={<HeaderLinks />}
@@ -162,10 +162,7 @@ export default function LandingPage(props) {
         <Parallax image={require("../../assets/img/advana-io-bg-01.jpg").default}>
           <div className={classes.container}>
             <GridContainer>
-              <GridItem 
-                style={{ position: "relative", top: "50px" }}
-                xs={12} sm={12} md={5}
-              >
+              <GridItem xs={12} sm={12} md={6}>
                 <h1 className={classes.title}>
                   The Performance Marketing <span>{"&"}</span> Intelligence
                   Platform for Retail
@@ -211,11 +208,11 @@ export default function LandingPage(props) {
                   }}
                 >
                   <Fade in={openBookIntro}>
-                      <Intro />
+                    <Intro />
                   </Fade>
                 </Modal>
               </GridItem>
-              <GridItem xs={12} sm={12} md={7}>
+              <GridItem xs={12} sm={12} md={6}>
                 <img className={classes.heroImg} src={advanaMap} />
               </GridItem>
             </GridContainer>
@@ -240,7 +237,6 @@ export default function LandingPage(props) {
           </ScrollTop>
         </div>
         <Footer />
-      </div>
     </ThemeProvider>
   );
 }

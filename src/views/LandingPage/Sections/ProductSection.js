@@ -41,7 +41,7 @@ export default function ProductSection() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.productsSection}>
+      <div className={classes.section}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <img className={classes.heroImg} src={heroProducts} />
@@ -52,7 +52,7 @@ export default function ProductSection() {
               from the Point of Sale
             </h1>
             <h4 className={classes.subtitle}>
-            Discover your purchase trends, velocity, market share, distribution, retail pricing and more with Sentry <span>( *Requires Operator Approval )</span>.
+            Discover your purchase trends, velocity, market share, distribution, retail pricing and more with Sentry.
             </h4>
             <br />
             <Button

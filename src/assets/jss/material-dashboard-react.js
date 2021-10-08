@@ -70,15 +70,15 @@ const defaultFont = {
   lineHeight: "1.5em",
 };
 
-const primaryColor = ["#4db8be", "#ab47bc", "#8e24aa", "#af2cc5"];
-const secondaryColor = ["#2e4094", "#ab47bc", "#8e24aa", "#af2cc5"];
-const warningColor = ["#ff9800", "#ffa726", "#fb8c00", "#ffa21a"];
+const primaryColor = ["#303F9F", "#2D48A2", "#2A52A5", "#275DA8"];
+const secondaryColor = ["#00ACC1", "#0998B8", "#1287AF", "#1B79A6"];
+const warningColor = ["#fb8c00", "#ffa726", "#fb8c00", "#ffa21a"];
 const dangerColor = ["#f44336", "#ef5350", "#e53935", "#f55a4e"];
-const successColor = ["#4caf50", "#66bb6a", "#43a047", "#5cb860"];
-const infoColor = ["#00acc1", "#26c6da", "#00acc1", "#00d3ee"];
+const successColor = ["#2b802f", "#66bb6a", "#43a047", "#5cb860"];
+const infoColor = ["#37999e", "#26c6da", "#00acc1", "#00d3ee"];
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#eb3573"];
 const grayColor = [
-  "#999",
+  "#848484",
   "#777",
   "#3C4858",
   "#AAAAAA",
@@ -210,6 +210,10 @@ const card = {
   background: whiteColor,
 };
 
+const kpiAvatar = {
+  color: warningColor[0],
+}
+
 const defaultBoxShadow = {
   border: "0",
   borderRadius: "3px",
@@ -296,6 +300,7 @@ export {
   roseCardHeader,
   cardActions,
   cardHeader,
+  kpiAvatar,
   defaultBoxShadow,
   title,
   cardTitle,

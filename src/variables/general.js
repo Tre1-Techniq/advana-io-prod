@@ -15,9 +15,8 @@ var messages = [
 var bugs = [
   'Sign contract for "What are conference organizers afraid of?"',
   "Lines From Great Russian Literature? Or E-mails From My Boss?",
-  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  
+  "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
+  "Create 4 Invisible User Experiences you Never Knew About",
 ];
 var website = [
   "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
@@ -30,7 +29,7 @@ var server = [
 ];
 
 module.exports = {
-  // these 4 are used to create the tasks lists in TasksCard - Dashboard view
+  // these 3 are used to create the tasks lists in TasksCard - Dashboard view
   messages,
   bugs,
   website,

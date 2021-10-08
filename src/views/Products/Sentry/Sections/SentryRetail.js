@@ -16,18 +16,9 @@
 
 */
 
-import React, { useState } from "react";
+import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-//Modal
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-// import { FormControl } from '@material-ui/core';
-// import { InputLabel } from '@material-ui/core';
-// import { FormHelperText } from '@material-ui/core';
-// import { Input } from '@material-ui/core';
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -44,75 +35,47 @@ import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import GridContainer from "../../../../components/Grid/GridContainer.js";
 import GridItem from "../../../../components/Grid/GridItem.js";
 
-// Import Sections
-import Intro from "../../../Modal/Intro";
-
 import styles from "../../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function SentryRetail() {
   const classes = useStyles();
-
-  const [openBookIntro, setOpenBookIntro] = useState(false);
-
-  const handleOpenBookIntro = () => {
-    setOpenBookIntro(true);
-  };
-  
-  const handleCloseBookIntro = () => {
-    setOpenBookIntro(false);
-  };
-
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.retailSection}>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <h1
-              className={classes.title}>
-              Retail Sentry <br />
-              <span>Know your Space</span>
-            </h1>
-            <h4 className={classes.subtitle}>
-            Gain visibility into your distribution, retail pricing, out-of-stocks, promotional effectiveness and more.
-            </h4>
-            <br />
-            <Button
-              className={classes.solidBtn}
-              variant="contained"
-              color="primary"
-              onClick={() => handleOpenBookIntro()}
-            >
-              <EventAvailableIcon className={classes.btnIcon} style={{marginRight: "20px"}} />
-              BOOK AN INTRO
-            </Button>
-            <Modal
-              className={classes.modal}
-              open={openBookIntro}
-              onClose={handleCloseBookIntro}
-              closeAfterTransition
-              BackdropComponent={Backdrop}
-              BackdropProps={{
-                  timeout: 300,
-                  classes: {
-                      root: classes.modalBackdrop
-                  }
-              }}
-            >
-              <Fade in={openBookIntro}>
-                  <Intro />
-              </Fade>
-            </Modal>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-            <img
-              style={{ width: "100%" }}
-              className={classes.heroImg}
-              src={sentryRetail}
-            />
-          </GridItem>
-        </GridContainer>
+      <div className={classes.campaignsBG}>
+        <div className={classes.sectionBG}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1
+                className={classes.title}
+              >
+                Retail Sentry <br />
+                <span>Know your Space</span>
+              </h1>
+              <h4 className={classes.subtitle}
+              >
+              Gain visibility into your distribution, retail pricing, out-of-stocks, promotional effectiveness and more.
+              </h4>
+              <Button
+                className={classes.solidBtn}
+                variant="contained"
+                color="primary"
+                to="/"
+              >
+                <EventAvailableIcon className={classes.btnIcon} />
+                BOOK A DEMO
+              </Button>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={6}>
+              <img
+                style={{ width: "100%" }}
+                className={classes.heroImg}
+                src={sentryRetail}
+              />
+            </GridItem>
+          </GridContainer>
+        </div>
       </div>
     </ThemeProvider>
   );

@@ -3,7 +3,6 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -15,7 +14,7 @@ import Icon from "@material-ui/core/Icon";
 import AdminNavbarLinks from "../../components/Navbars/AdminNavbarLinks.js";
 
 // Advana Theme Overrides
-import { ThemeProvider, Button } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../../advanaTheme";
 
 import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
@@ -101,55 +100,55 @@ export default function Sidebar(props) {
     </div>
   );
   return (
-    <ThemeProvider theme={advanaTheme}>
-      <div>
-        <Hidden mdUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor="right"
-            open={props.open}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            onClose={props.handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {brand}
-            <div className={classes.sidebarWrapper}>
-              <AdminNavbarLinks />
-              {links}
-            </div>
-            {image !== undefined ? (
-              <div
-                className={classes.background}
-                style={{ backgroundImage: "url(" + image + ")" }}
-              />
-            ) : null}
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer
-            anchor="left"
-            variant="permanent"
-            open
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            {brand}
-            <div className={classes.sidebarWrapper}>{links}</div>
-            {image !== undefined ? (
-              <div
-                className={classes.background}
-                style={{ backgroundImage: "url(" + image + ")" }}
-              />
-            ) : null}
-          </Drawer>
-        </Hidden>
-      </div>
-    </ThemeProvider>
+      <ThemeProvider theme={advanaTheme}>
+        <div>
+          <Hidden mdUp implementation="css">
+            <Drawer
+              variant="temporary"
+              anchor="right"
+              open={props.open}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+              onClose={props.handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+            >
+              {brand}
+              <div className={classes.sidebarWrapper}>
+                <AdminNavbarLinks />
+                {links}
+              </div>
+              {image !== undefined ? (
+                <div
+                  className={classes.background}
+                  style={{ backgroundImage: "url(" + image + ")" }}
+                />
+              ) : null}
+            </Drawer>
+          </Hidden>
+          <Hidden mdDown implementation="css">
+            <Drawer
+              anchor="left"
+              variant="permanent"
+              open
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+            >
+              {brand}
+              <div className={classes.sidebarWrapper}>{links}</div>
+              {image !== undefined ? (
+                <div
+                  className={classes.background}
+                  style={{ backgroundImage: "url(" + image + ")" }}
+                />
+              ) : null}
+            </Drawer>
+          </Hidden>
+        </div>
+      </ThemeProvider>
   );
 }
 

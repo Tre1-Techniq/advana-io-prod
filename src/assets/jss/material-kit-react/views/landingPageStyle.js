@@ -6,14 +6,19 @@ const landingPageStyle = {
     zIndex: "12",
     color: "#FFFFFF",
     position: "relative",
-  },
-  containerSm: {
-    ...container,
-    zIndex: "12",
-    color: "#FFFFFF",
-    position: "relative",
     top: "50px",
-    paddingBottom: "50px",
+    "@media (min-width: 350px)": {
+      top: "20px",
+    },
+    "@media (min-width: 768px)": {
+      top: "50px",
+    },
+    "@media (min-width: 992px)": {
+      top: "50px",
+    },
+    "@media (min-width: 1200px)": {
+      top: "50px",
+    },
   },
   titleSm: {
     ...title,
@@ -41,9 +46,27 @@ const landingPageStyle = {
     ...title,
     display: "inline-block",
     position: "relative",
-    marginTop: "30px",
     minHeight: "32px",
+    margin: "1.25rem 0 0.875rem",
     textDecoration: "none",
+    "@media (min-width: 350px)": {
+      fontSize: '1.5rem',
+      lineHeight: '2rem',
+      margin: "0.875rem 0",
+    },
+    "@media (min-width: 768px)": {
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+    },
+    "@media (min-width: 992px)": {
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+    },
+    "@media (min-width: 1200px)": {
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+      margin: "1.25rem 0 0.875rem",
+    },
   },
   subtitle: {
     ...subtitle,
@@ -51,6 +74,22 @@ const landingPageStyle = {
     maxWidth: "600px",
     margin: "10px 0",
     color: "#848484",
+    "@media (min-width: 350px)": {
+      fontSize: '1rem',
+      lineHeight: '1.25rem',
+    },
+    "@media (min-width: 768px)": {
+      fontSize: '1rem',
+      lineHeight: '1.25rem',
+    },
+    "@media (min-width: 992px)": {
+      fontSize: '1rem',
+      lineHeight: '1.25rem',
+    },
+    "@media (min-width: 1200px)": {
+      fontSize: '1rem',
+      lineHeight: '1.25rem',
+    },
   },
   main: {
     background: "#FFFFFF",
@@ -72,16 +111,19 @@ const landingPageStyle = {
     width: "100%",
     "@media (min-width: 350px)": {
       position: "relative",
-      top: '60px'
+      top: "30px",
     },
     "@media (min-width: 768px)": {
       width: "100%",
+      top: "30px",
     },
     "@media (min-width: 992px)": {
       width: "100%",
+      top: "30px",
     },
     "@media (min-width: 1200px)": {
       width: "100%",
+      top: 0,
     },
   },
   heroImgSm: {
@@ -123,7 +165,7 @@ const landingPageStyle = {
   },
   solidBtn: {
     width: "200px",
-    "@media (min-width: 350px)": {
+    "@media (min-width: 340px)": {
       width: "100%",
     },
     "@media (min-width: 768px)": {
@@ -135,6 +177,14 @@ const landingPageStyle = {
     "@media (min-width: 1200px)": {
       width: "200px",
     },
+  },
+  parallaxSm: {
+    height: "50vh",
+    width: "100%",
+  },
+  eventHero: {
+    display: "flex",
+    justifyContent: "center",
   },
   outlineBtn: {
     width: "175px",
@@ -152,31 +202,6 @@ const landingPageStyle = {
   },
   modalBackdrop: {
     backgroundColor: "rgba(0,0,0,0.9) !important",
-  },
-  parallaxSm: {
-    height: "50vh",
-    width: "100%",
-  },
-  eventHero: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  nama2021Section: {
-    display: "flex",
-    justifyContent: "center",
-    padding: "0 0 50px 0",
-    "@media (min-width: 350px)": {
-      padding: "50px 0",
-    },
-    "@media (min-width: 768px)": {
-      width: "200px",
-    },
-    "@media (min-width: 992px)": {
-      width: "200px",
-    },
-    "@media (min-width: 1200px)": {
-      width: "200px",
-    },
   },
 };
 

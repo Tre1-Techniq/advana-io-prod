@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "status": "Past",
+      "alt": "Clif Bar - Nutrition for Sustained Energy",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/clif-bar/CLIF+(v5)+Final.png",
+      "title": "Clif Bar",
+      "subtitle": "Nutrition for Sustained Energy"
+    },
+    {
+      "id": 2,
+      "status": "Current",
+      "alt": "Lunchables - Lunch Combinations",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/lunchables/202107_KraftLunch_HCTC_1024x555.png",
+      "title": "Lunchables",
+      "subtitle": "Lunch Combinations"
+    },
+    {
+      "id": 3,
+      "status": "Past",
+      "alt": "Chips Ahoy - Sweeten Your Snacktime",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/chips-ahoy/CA_Mini_Canteen+V5_1024X555.jpg",
+      "title": "Chips Ahoy",
+      "subtitle": "Sweeten Your Snacktime"
+    },
+    {
+      "id": 4,
+      "status": "Current",
+      "alt": "Celsius - Healthy Energy to Live Fit",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/celsius/202107_CELSIUS_VRTY_1024x555.jpg",
+      "title": "Celsius",
+      "subtitle": "Healthy Energy to Live Fit"
+    },
+    {
+      "id": 5,
+      "status": "Past",
+      "alt": "KIND Frozen - Find it in the freezer",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/kind-frozen/kind-frozen-1024x520.jpg",
+      "title": "KIND Frozen",
+      "subtitle": "Find it in the freezer"
+    },
+    {
+      "id": 6,
+      "status": "Past",
+      "alt": "Planters - Nuts of Distinction Since 1906",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/planters/Planters_V5+%26+Nano_15OFF.png",
+      "title": "Planters",
+      "subtitle": "Nuts of Distinction Since 1906"
+    },
+    {
+      "id": 7,
+      "status": "Past",
+      "alt": "LIFE WTR - pH Balanced Water",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/life-wtr/Life-WTR_1024x520.jpg",
+      "title": "LIFE WTR",
+      "subtitle": "pH Balanced Water"
+    },
+    {
+      "id": 8,
+      "status": "Past",
+      "alt": "Red Bull - Wings for your Summer",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/red-bull/Summer_Tablet_1024x520.jpg",
+      "title": "Red Bull",
+      "subtitle": "Wings for your Summer"
+    },
+    {
+      "id": 9,
+      "status": "Past",
+      "alt": "Core Water - Perfectly Balanced Water",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/core-water/CORE-Water-1024.jpg",
+      "title": "Core Water",
+      "subtitle": "Perfectly Balanced Water"
+    },
+    {
+      "id": 10,
+      "status": "Past",
+      "alt": "Awake Chocloate - Chocolate & Caffeine Slay the Slump",
+      "image": "https://advana-image-assets.s3.amazonaws.com/campaigns/awake-chocolate/Awake-1024.jpg",
+      "title": "Awake Chocloate",
+      "subtitle": "Chocolate & Caffeine Slay the Slump"
+    }
+  ]

@@ -136,7 +136,7 @@ const footerStyle = (theme) => ({
     display: "block",
     width: "auto",
     padding: "0",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "100%",
       "&:after": {
         width: "calc(100% - 30px)",
@@ -183,7 +183,7 @@ const footerStyle = (theme) => ({
       fontWeight: "700",
       backgroundColor: "transparent",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
       marginBottom: "8px",
@@ -217,7 +217,7 @@ const footerStyle = (theme) => ({
     "& > ul": {
       backgroundColor: "rgba(255,255,255,0.5)",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
       marginBottom: "8px",
@@ -248,7 +248,7 @@ const footerStyle = (theme) => ({
       fontWeight: "400",
       backgroundColor: "rgba(48, 63, 159, 0.04)",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
       marginBottom: "8px",

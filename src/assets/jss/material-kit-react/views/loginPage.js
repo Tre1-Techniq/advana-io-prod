@@ -4,10 +4,10 @@ const signupPageStyle = {
   container: {
     ...container,
     zIndex: "2",
-    position: "relative",
-    paddingTop: "20vh",
     color: "#FFFFFF",
-    paddingBottom: "225px",
+    position: "relative",
+    paddingTop: "10vh",
+    paddingBottom: "10vh",
   },
   cardHidden: {
     opacity: "0",
@@ -78,10 +78,16 @@ const signupPageStyle = {
   headerLogo: {
     width: "60px",
   },
+  promoLogo: {
+    width: "90%",
+  },
   divider: {
     marginTop: "30px",
     marginBottom: "0px",
     textAlign: "center",
+  },
+  cardBody: {
+    margin: "0 1.25rem 0 1.25rem !important",
   },
   cardFooter: {
     paddingTop: "0.75rem",

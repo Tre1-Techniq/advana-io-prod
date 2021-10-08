@@ -17,7 +17,7 @@
 */
 
 import React from 'react';
-// @material-ui/core components
+// @mui/material components
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components

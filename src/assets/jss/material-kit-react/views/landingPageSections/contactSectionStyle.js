@@ -3,23 +3,52 @@ import { title, container } from "../../../material-kit-react.js";
 const contactStyle = {
   container: {
     ...container,
-    "& .contactGrid": {
-      display: "flex",
-      justifyContent: "space-evenly",
-      width: "100%",
-    },
   },
   section: {
-    padding: "0 0 70px 0",
+    padding: "50px 0 100px 0",
+    "@media (min-width: 350px)": {
+      padding: "0 0 50px 0",
+    },
+    "@media (min-width: 768px)": {
+      padding: "50px 0 100px 0",
+    },
+    "@media (min-width: 992px)": {
+      padding: "50px 0 100px 0",
+    },
+    "@media (min-width: 1200px)": {
+      padding: "50px 0 100px 0",
+    },
   },
   title: {
     ...title,
     marginBottom: "20px",
-    marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none",
     textAlign: "center",
-    width: "90vw",
+    "@media (min-width: 350px)": {
+      marginBottom: "1rem",
+      marginTop: "1rem",
+      fontSize: '1.75rem',
+      lineHeight: '2.25rem',
+    },
+    "@media (min-width: 768px)": {
+      marginBottom: "1rem",
+      marginTop: "1rem",
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+    },
+    "@media (min-width: 992px)": {
+      marginBottom: "1rem",
+      marginTop: "1rem",
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+    },
+    "@media (min-width: 1200px)": {
+      marginBottom: "1rem",
+      marginTop: "1rem",
+      fontSize: '2.25rem',
+      lineHeight: '3rem',
+    },
   },
   subtitle: {
     color: "#848484",
@@ -41,43 +70,12 @@ const contactStyle = {
     borderTop: "1px solid #e4e4e4",
   },
   actionBtn: {
-    width: "250px",
-    display: "flex",
-    justifyContent: "center",
-    "@media (min-width: 350px)": {
-      padding: "10px",
-      width: "90vw",
-    },
-    "@media (min-width: 768px)": {
-      padding: "30px 100px",
-    },
-    "@media (min-width: 992px)": {
-      padding: "30px 100px",
-    },
-    "@media (min-width: 1200px)": {
-      padding: "10px",
-      width: "250px",
-      display: "flex",
-      justifyContent: "center",
-    },
+    width: "200px",
   },
-  contactBtn: {
+  contactBtns: {
     display: "flex",
     justifyContent: "center",
     padding: "30px 100px",
-    "@media (min-width: 350px)": {
-      padding: "30px",
-      width: "90vw",
-    },
-    "@media (min-width: 768px)": {
-      padding: "30px 100px",
-    },
-    "@media (min-width: 992px)": {
-      padding: "30px 100px",
-    },
-    "@media (min-width: 1200px)": {
-      padding: "30px 100px",
-    },
   },
   modal: {
     display: "flex",
@@ -86,29 +84,6 @@ const contactStyle = {
   },
   modalBackdrop: {
     backgroundColor: "rgba(0,0,0,0.9) !important",
-  },
-  contactSection: {
-    backgroundSize: "cover",
-    width: "100vw",
-    position: "relative",
-    left: "-96.5px",
-    overflow: "hidden",
-    padding: "50px 100px",
-    "@media (min-width: 350px)": {
-      padding: "20px",
-      left: "-35px",
-    },
-    "@media (min-width: 768px)": {
-      padding: "30px 50px",
-    },
-    "@media (min-width: 992px)": {
-      padding: "100px 50px",
-    },
-    "@media (min-width: 1200px)": {
-      padding: "50px 100px",
-      position: "relative",
-      left: "-75px",
-    },
   },
 };
 

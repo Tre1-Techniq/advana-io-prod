@@ -7,7 +7,7 @@ const advanaTheme = createTheme({
       main: indigo[700],
     },
     secondary: {
-      main: orange[600],
+      main: cyan[600],
       contrastText: "#ffffff",
     },
   },
@@ -26,14 +26,6 @@ advanaTheme.props = {
 };
 
 advanaTheme.overrides = {
-  // MuiAppBar: {
-  //   width: "60vw"
-  // },
-  MuiIconButton: {
-    colorInherit: {
-      color: "#848484",
-    },
-  },
   MuiButton: {
     root: {
       minWidth: "100px",
@@ -43,8 +35,8 @@ advanaTheme.overrides = {
       borderBottom: "2px solid transparent",
       "&:hover,&:focus": {
         backgroundColor: "transparent",
-        color: cyan[600],
-        borderBottom: `2px solid ${cyan[600]}`,
+        color: indigo[700],
+        // borderBottom: `2px solid ${indigo[700]}`,
       },
     },
     containedPrimary: {
@@ -116,8 +108,36 @@ advanaTheme.overrides = {
     },
   },
   MuiListItem: {
-    
-  }
+    gutters: {
+      paddingLeft: "0",
+    },
+  },
+  MuiListItemAvatar: {
+    root: {
+      minWidth: "30px",
+    },
+  },
+  MuiListItemText: {
+    root: {
+      minWidth: "65px",
+    },
+    secondary: {
+      fontSize: "0.8rem",
+    },
+  },
+  MuiTypography: {
+    body1: {
+      fontSize: "0.9rem",
+    },
+  },
+  MuiLinearProgress: {
+    root: {
+      backgroundColor: grey[300],
+    },
+    colorSecondary: {
+      backgroundColor: grey[300],
+    },
+  },
 };
 
 export default advanaTheme;

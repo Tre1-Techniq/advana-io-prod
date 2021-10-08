@@ -62,7 +62,6 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import HeaderLinks from "../../components/Header/HeaderLinks";
 
-// Import Sections
 import OptIn from "../Modal/OptIn";
 
 // Import Images
@@ -145,8 +144,6 @@ export default function Campaigns(props) {
       // getCampaigns(campaigns);
       setCampaigns(campaignList);
 
-      const pageRoot = document.querySelector("#root");
-      setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
     }, []);
 
     function search(campaigns) {
@@ -244,7 +241,9 @@ export default function Campaigns(props) {
                           }}
                       >
                         <Fade in={openOptIn}>
-                          <OptIn />
+                            <div className={classes.modalOptIn}>
+                              <OptIn />
+                            </div>
                         </Fade>
                       </Modal>
                     </GridItem>

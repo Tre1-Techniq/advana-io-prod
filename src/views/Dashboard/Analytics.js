@@ -1,10 +1,10 @@
 import React from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
-// @material-ui/core
+// @mui/material
 import { makeStyles } from "@material-ui/core/styles";
-//import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
+//import Icon from "@mui/material/Icon";
+// @mui/icons-material
 //import Store from "@material-ui/icons/Store";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";

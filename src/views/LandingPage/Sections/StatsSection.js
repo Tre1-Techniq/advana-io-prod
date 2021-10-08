@@ -37,14 +37,16 @@ export default function StatsSection() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <GridContainer className={classes.advanaStatGrid}>
+      <GridContainer
+        className={classes.advanaStatGrid}
+      >
         <GridItem
           style={{ display: "flex", justifyContent: "center" }}
           xs={12}
           sm={12}
           md={4}
         >
-          <img style={{ width: "70%" }} src={statCustomers} />
+          <img className={classes.statImg} src={statCustomers} />
         </GridItem>
         <GridItem
           style={{ display: "flex", justifyContent: "center" }}
@@ -52,7 +54,7 @@ export default function StatsSection() {
           sm={12}
           md={4}
         >
-          <img style={{ width: "70%" }} src={statLocations} />
+          <img className={classes.statImg} src={statLocations} />
         </GridItem>
         <GridItem
           style={{ display: "flex", justifyContent: "center" }}
@@ -60,7 +62,7 @@ export default function StatsSection() {
           sm={12}
           md={4}
         >
-          <img style={{ width: "70%" }} src={statTransactions} />
+          <img className={classes.statImg} src={statTransactions} />
         </GridItem>
       </GridContainer>
     </ThemeProvider>

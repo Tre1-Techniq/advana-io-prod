@@ -1,11 +1,11 @@
 import {
   drawerWidth,
   transition,
-  boxShadow,
   defaultFont,
   primaryColor,
+  secondaryColor,
   primaryBoxShadow,
-  infoColor,
+  // infoColor,
   successColor,
   warningColor,
   dangerColor,
@@ -23,6 +23,7 @@ const sidebarStyle = (theme) => ({
     bottom: "0",
     left: "0",
     zIndex: "1",
+    //...boxShadow,
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
       width: drawerWidth,
@@ -31,7 +32,7 @@ const sidebarStyle = (theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       width: drawerWidth,
-      ...boxShadow,
+      //...boxShadow,
       position: "fixed",
       display: "block",
       top: "0",
@@ -125,7 +126,7 @@ const sidebarStyle = (theme) => ({
       content: '""',
       display: "block",
       background: blackColor,
-      opacity: ".7",
+      opacity: ".8",
     },
   },
   list: {
@@ -194,24 +195,24 @@ const sidebarStyle = (theme) => ({
     },
   },
   blue: {
-    backgroundColor: infoColor[0],
+    backgroundColor: secondaryColor[0],
     boxShadow:
       "0 12px 20px -10px rgba(" +
-      hexToRgb(infoColor[0]) +
+      hexToRgb(secondaryColor[0]) +
       ",.28), 0 4px 20px 0 rgba(" +
       hexToRgb(blackColor) +
       ",.12), 0 7px 8px -5px rgba(" +
-      hexToRgb(infoColor[0]) +
+      hexToRgb(secondaryColor[0]) +
       ",.2)",
     "&:hover,&:focus": {
-      backgroundColor: infoColor[0],
+      backgroundColor: secondaryColor[0],
       boxShadow:
         "0 12px 20px -10px rgba(" +
-        hexToRgb(infoColor[0]) +
+        hexToRgb(secondaryColor[0]) +
         ",.28), 0 4px 20px 0 rgba(" +
         hexToRgb(blackColor) +
         ",.12), 0 7px 8px -5px rgba(" +
-        hexToRgb(infoColor[0]) +
+        hexToRgb(secondaryColor[0]) +
         ",.2)",
     },
   },
@@ -290,7 +291,6 @@ const sidebarStyle = (theme) => ({
     overflowScrolling: "touch",
   },
   activePro: {
-    backgroundColor: "rgba(" + primaryColor + ", 0.8)",
     [theme.breakpoints.up("md")]: {
       position: "absolute",
       width: "100%",

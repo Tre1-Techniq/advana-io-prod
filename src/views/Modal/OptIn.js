@@ -12,10 +12,10 @@ import { title } from "../../assets/jss/material-kit-react.js";
 // core components
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-// import TextField from '@material-ui/core/TextField';
-// import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid';
-// import { Typography } from "@material-ui/core";
+// import TextField from '@mui/material/TextField';
+// import Button from '@mui/material/Button';
+// import Grid from '@mui/material/Grid';
+// import { Typography } from "@mui/material";
 
 // Amplify Components
 //import Amplify, { Auth } from "aws-amplify";
@@ -27,8 +27,7 @@ import GridItem from "../../components/Grid/GridItem.js";
 import bgIMG from "../../assets/img/advana-io-bg-01.jpg";
 import advanaPillLogo from "../../assets/img/advana-pill-logo.png";
 
-// Material UI Styles
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 // Import Sections
 import HubspotForm from 'react-hubspot-form';

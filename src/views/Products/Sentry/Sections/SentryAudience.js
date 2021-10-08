@@ -39,10 +39,10 @@ export default function SentryAudience() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.audienceSection}>
+      <div className={classes.section}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
-            <img className={classes.sectionImg} src={sentryAudience} />
+            <img className={classes.heroImg} src={sentryAudience} />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>

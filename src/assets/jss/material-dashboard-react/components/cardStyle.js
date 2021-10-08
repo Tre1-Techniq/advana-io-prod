@@ -20,7 +20,6 @@ const cardStyle = {
     minWidth: "0",
     wordWrap: "break-word",
     fontSize: ".875rem",
-    padding: "10px 0",
   },
   cardPlain: {
     background: "transparent",

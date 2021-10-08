@@ -1,8 +1,7 @@
 import { defaultFont } from "../../material-kit-react.js";
-
 import tooltip from "../../material-kit-react/tooltipsStyle.js";
 
-const headerLinksStyle = (theme) => ({
+const headerLinksStyle = () => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
@@ -20,17 +19,6 @@ const headerLinksStyle = (theme) => ({
     display: "block",
     width: "auto",
     padding: "0",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-      "&:after": {
-        width: "calc(100% - 30px)",
-        content: '""',
-        display: "block",
-        height: "1px",
-        marginLeft: "15px",
-        backgroundColor: "#e5e5e5",
-      },
-    },
     margin: "0 25px",
     "@media (min-width: 350px)": {
       margin: "0",
@@ -68,16 +56,6 @@ const headerLinksStyle = (theme) => ({
       fontWeight: "700",
       backgroundColor: "transparent",
     },
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(100% - 30px)",
-      marginLeft: "15px",
-      marginBottom: "8px",
-      marginTop: "8px",
-      textAlign: "left",
-      "& > span:first-child": {
-        justifyContent: "flex-start",
-      },
-    },
   },
   customDropdown: {
     color: "#848484",
@@ -105,16 +83,6 @@ const headerLinksStyle = (theme) => ({
     "& button span": {
       justifyContent: "flex-start",
     },
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(100% - 30px)",
-      marginLeft: "15px",
-      marginBottom: "8px",
-      marginTop: "8px",
-      textAlign: "left",
-      "& > span:first-child": {
-        justifyContent: "center",
-      },
-    },
   },
   dropdownLink: {
     color: "#848484",
@@ -135,16 +103,6 @@ const headerLinksStyle = (theme) => ({
       color: "#00acc1",
       fontWeight: "400",
       backgroundColor: "rgba(48, 63, 159, 0.04)",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(100% - 30px)",
-      marginLeft: "15px",
-      marginBottom: "8px",
-      marginTop: "8px",
-      textAlign: "left",
-      "& > span:first-child": {
-        justifyContent: "center",
-      },
     },
   },
   notificationNavLink: {
@@ -209,6 +167,23 @@ const headerLinksStyle = (theme) => ({
     "& button": {
       width: "100%",
       marginLeft: "0",
+    },
+    "& li": {
+      borderBottom: "1px solid transparent",
+      "@media (min-width: 350px)": {
+        width: "100%",
+        margin: "10px 0",
+        borderBottom: "1px solid #e7e7e7",
+      },
+      "@media (min-width: 768px)": {
+        borderBottom: "1px solid transparent",
+      },
+      "@media (min-width: 992px)": {
+        borderBottom: "1px solid transparent",
+      },
+      "@media (min-width: 1200px)": {
+        borderBottom: "1px solid transparent",
+      },
     },
     "@media (min-width: 350px)": {
       width: "100%",

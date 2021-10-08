@@ -10,11 +10,9 @@ import {
 
 const cardHeaderStyle = {
   cardHeader: {
-    padding: "0.75rem 0",
+    padding: "0.75rem 1.25rem 0 1.25rem",
     marginBottom: "0",
-    marginLeft: "1.25rem",
-    marginRight: "1.25rem",
-    borderBottom: "1px solid #e7e7e7",
+    borderBottom: "none",
     background: "transparent",
     zIndex: "3 !important",
     "&$cardHeaderPlain,&$cardHeaderIcon,&$cardHeaderStats,&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader":

@@ -13,18 +13,8 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 //import { useHistory } from "react-router-dom";
-
-//Modal
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-// import { FormControl } from '@material-ui/core';
-// import { InputLabel } from '@material-ui/core';
-// import { FormHelperText } from '@material-ui/core';
-// import { Input } from '@material-ui/core';
-
 // nodejs library that concatenates classes
 //import classNames from "classnames";
 
@@ -44,9 +34,15 @@ import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
 
 // @material-ui/icons
-//import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+
+import Intro from "../../Modal/Intro";
 
 // core components
 import Header from "../../../components/Header/Header";
@@ -58,8 +54,7 @@ import Parallax from "../../../components/Parallax/Parallax";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageStyle";
 
-// Import Sections
-import Intro from "../../Modal/Intro";
+// Sections for this page
 import InsightOptimize from "./Sections/InsightOptimize";
 import InsightTrend from "./Sections/InsightTrend";
 import InsightZombie from "./Sections/InsightZombie";
@@ -124,7 +119,6 @@ const useStyles = makeStyles(styles);
 export default function Insight(props) {
   //let history = useHistory();
   const classes = useStyles();
-  const { ...rest } = props;
 
   const [openBookIntro, setOpenBookIntro] = useState(false);
 
@@ -141,6 +135,7 @@ export default function Insight(props) {
     setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
   }, []);
 
+  const { ...rest } = props;
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.heroContainer}>
@@ -178,26 +173,26 @@ export default function Insight(props) {
                     onClick={() => handleOpenBookIntro()}
                   >
                     <EventAvailableIcon className={classes.btnIcon} />
-                    BOOK AN INTRO
+                    BOOK A DEMO
                   </Button>
-                  <Modal
-                      className={classes.modal}
-                      open={openBookIntro}
-                      onClose={handleCloseBookIntro}
-                      closeAfterTransition
-                      BackdropComponent={Backdrop}
-                      BackdropProps={{
-                          timeout: 300,
-                          classes: {
-                              root: classes.modalBackdrop
-                          }
-                      }}
-                    >
-                      <Fade in={openBookIntro}>
-                          <Intro />
-                      </Fade>
-                    </Modal>
                 </Box>
+                <Modal
+                  className={classes.modal}
+                  open={openBookIntro}
+                  onClose={handleCloseBookIntro}
+                  closeAfterTransition
+                  BackdropComponent={Backdrop}
+                  BackdropProps={{
+                      timeout: 300,
+                      classes: {
+                          root: classes.modalBackdrop
+                      }
+                  }}
+                >
+                  <Fade in={openBookIntro}>
+                    <Intro />
+                  </Fade>
+                </Modal>
               </GridItem>
               <GridItem xs={12} sm={12} md={7}>
                 <img className={classes.heroImg} src={insightHero} />

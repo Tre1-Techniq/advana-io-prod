@@ -1,152 +1,125 @@
-import React from "react";
-import { geoCentroid } from "d3-geo";
-import {
-  ComposableMap,
-  ZoomableGroup,
-  Geographies,
-  Geography,
-  Marker,
-  Annotation,
-} from "react-simple-maps";
+import React, { useState, useEffect, memo } from "react";
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
+import { scaleQuantile } from "d3-scale";
+import { csv } from "d3-fetch";
 
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+//import classNames from "classnames";
 
+const geoUrl = "/counties-10m.json";
 
-import allStates from "../../geojson/data/allstates.json";
-//import offsets from "../../geojson/data/offsets.json";
+const SalesMap = ({ setTooltipContent }) => {
+  const [data, setData] = useState([]);
+  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
 
-import usMap from "../../geojson/us-map.json";
+  function handleZoomIn() {
+    if (position.zoom >= 6) return;
+    setPosition(pos => ({ ...pos, zoom: pos.zoom * (1.25)}));
+  }
 
-const offsets = {
-    VT: [50, -8],
-    NH: [34, 2],
-    MA: [30, -1],
-    RI: [28, 2],
-    CT: [35, 10],
-    NJ: [34, 1],
-    DE: [33, 0],
-    MD: [47, 10],
-    DC: [49, 21]
-};
+  function handleZoomOut() {
+    if (position.zoom <= 1) return;
+    setPosition(pos => ({ ...pos, zoom: pos.zoom / (1.25) }));
+  }
 
-const markers = [
-    { id: "01", markerOffset: 15, city: "New York", coordinates: [-74.0059413, 40.7127837], tooltip: "New York" },
-    { id: "02", markerOffset: 15, city: "Chicago", coordinates: [-87.6297982, 41.8781136], tooltip: "Chicago" },
-    { id: "03", markerOffset: 15, city: "Irvine", coordinates: [-117.7946942, 33.6839473], tooltip: "Irvine" },
-    { id: "04", markerOffset: 15, city: "San Diego", coordinates: [-117.1610838, 32.715738], tooltip: "San Diego" },
-    { id: "05", markerOffset: 15, city: "Phoenix", coordinates: [-112.0740373, 33.4483771], tooltip: "Phoenix" },
-];
+  function handleMoveEnd(position) {
+    setPosition(position);
+  }
 
-const SalesMap = () => {
+  useEffect(() => {
+    csv("/unemployment-by-county-2017.csv").then(counties => {
+      setData(counties);
+      //console.log("COUNTIES: ", counties);
+    });
+  }, []);
+
+  const colorScale = scaleQuantile()
+    .domain(data.map(d => d.unemployment_rate))
+    .range([
+        "#C4F5F0",
+        "#93EAE7",
+        "#62DDDE",
+        "#31C7D0",
+        "#00ACC1",
+        "#079DBA",
+        "#0E8FB4",
+        "#1483AD",
+        "#1B79A6",
+    ]);
+
+    SalesMap.propTypes = {
+        setTooltipContent: PropTypes.func,
+    };
+
   return (
-    <ComposableMap
-        projection="geoAlbersUsa"
-        projectionConfig={{
-            scale: 1300
-        }}
-        height={500}
-    >
-        <ZoomableGroup>
-            <Geographies geography={usMap}>
-                {({ geographies }) => (
-                <>
-                    {geographies.map(geo => (
-                    <Geography
-                        key={geo.rsmKey}
-                        stroke="#d7d7d7"
-                        geography={geo}
-                          style={{
-                            default: {
-                                fill: "#e7e7e7"
-                            },
-                            hover: {
-                                fill: "#e1e1e1"
-                            },
-                            pressed: {
-                                fill: "#e1e1e1"
-                            }
-                          }}
-                    />
-                    ))}
-                    {geographies.map(geo => {
-                    const centroid = geoCentroid(geo);
-                    const cur = allStates.find(s => s.val === geo.id);
-                    return (
-                        <g key={geo.rsmKey + "-name"}>
-                        {cur &&
-                            centroid[0] > -160 &&
-                            centroid[0] < -67 &&
-                            (Object.keys(offsets).indexOf(cur.id) === -1 ? (
-                            <Marker coordinates={centroid}>
-                                <text y="2" fontSize={14} textAnchor="middle" fill="#b7b7b7">
-                                    {cur.id}
-                                </text>
-                            </Marker>
-                            ) : (
-                            <Annotation
-                                subject={centroid}
-                                dx={offsets[cur.id][0]}
-                                dy={offsets[cur.id][1]}
-                                connectorProps={{
-                                    stroke: "#b7b7b7",
-                                    strokeWidth: 1,
-                                    strokeLinecap: "round"
-                                  }}
-                            >
-                                <text x={4} fontSize={14} alignmentBaseline="middle" fill="#a7a7a7">
-                                    {cur.id}
-                                </text>
-                            </Annotation>
-                            ))}
-                        </g>
-                    );
-                })}
-                {markers.map(({ id, coordinates, tooltip }) => (
-                    <Marker
-                        key={id}
-                        coordinates={coordinates}
-                        data-tip={tooltip}
-                        onMouseEnter={() => console.log(tooltip)}
-                    >
-                        <g
-                            fill="none"
-                            stroke="#2e4094"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            transform="translate(-12, -24)"
-                        >
-                            <circle
-                                cx="12"
-                                cy="10"
-                                r="12"
-                            />
-                        </g>
-                        <g
-                            fill="#2e4094"
-                            stroke="none"
-                            transform="translate(-12, -24)"
-                        >
-                            <circle
-                                cx="12"
-                                cy="10"
-                                r="8"
-                                className="markerInner"
-                            />
-                        </g>
-                    </Marker>
-                ))}
-                </>
-                )}
-            </Geographies>
-        </ZoomableGroup>
-    </ComposableMap>
+    <>
+        <ComposableMap
+            data-tip=""
+            projection="geoAlbersUsa"
+            projectionConfig={{
+                scale: 1000
+            }}
+            height={500}
+        >
+            <ZoomableGroup
+                zoom={position.zoom}
+                center={position.coordinates}
+                onMoveEnd={handleMoveEnd}
+            >
+                <Geographies geography={geoUrl}>
+                    {({ geographies }) =>
+                    geographies.map(geo => {
+                        const cur = data.find(s => s.id === geo.id);
+                        return (
+                        <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={cur ? colorScale(cur.unemployment_rate) : "#e7e7e7"}
+                            onMouseEnter={() => {
+                                //console.log(cur.unemployment_rate);
+                                setTooltipContent(`${cur.name}` + `<br/>` +  `${"Unemployment: " + cur.unemployment_rate}` +"%");
+                                //console.log(`"RATE: " ${cur.unemployment_rate}`);
+                            }}
+                            onMouseLeave={() => {
+                                //console.log("MOUSE LEAVE: ");
+                                setTooltipContent("");
+                            }}
+                        />
+                        );
+                    })
+                    }
+                </Geographies>
+            </ZoomableGroup>
+        </ComposableMap>
+        <div className="controls">
+            <button onClick={handleZoomIn}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </button>
+            <button onClick={handleZoomOut}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </button>
+        </div>
+    </>
   );
 };
 
-export default SalesMap;
-
-SalesMap.propTypes = {
-    setTooltipContent: PropTypes.func,
-};
+export default memo(SalesMap);

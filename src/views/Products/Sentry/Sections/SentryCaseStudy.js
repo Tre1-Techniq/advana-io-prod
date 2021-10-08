@@ -29,7 +29,6 @@ import advanaTheme from "../../../../advanaTheme";
 import Card from "../../../../components/Card/Card.js";
 
 // Import Images
-//import backgroundIMG2 from "../../../../assets/img/advana-io-bg-02.jpg";
 import caseStudyAwake from "../../../../assets/img/products/sentry/sentry-case-study-awake.png";
 //import awakeKPI01 from "../../../../assets/img/awake-kpi-01.png";
 //import awakeKPI02 from "../../../../assets/img/awake-kpi-02.png";
@@ -55,71 +54,76 @@ export default function SentryCaseStudy() {
   );
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.caseSection}>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <h1 className={classes.title}>
-              Case Study: <br />
-              <span>Awake Chocolate Sentry</span>
-            </h1>
-            <h4 className={classes.subtitle}>
-            Learn how Awake Chocolate uses Sentry to help operators stay in-stock and priced to win with their industry leading Awake Bites.
-            </h4>
-            <img
-              src={caseStudyAwake}
-              className={classes.sectionImg}
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-          <GridItem xs={12} sm={12} md={12} className={classes.teamCard}>
-            <Card plain>
-              <GridItem
-                xs={12}
-                sm={12}
-                md={4}
-                className={classes.gridItem}
-                style={{ margin: "0 auto" }}
+      <div className={classes.campaignsBG}>
+        <div className={classes.sectionBG}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1
+                className={classes.title}
               >
-                <img src={avatarAwake} alt="..." className={imageClasses} />
+                Case Study: <br />
+                <span>Awake Chocolate Sentry</span>
+              </h1>
+              <h4 className={classes.subtitle}
+              >
+              Learn how Awake Chocolate uses Sentry to help operators stay in-stock and priced to win with their industry leading Awake Bites.
+              </h4>
+              <img
+              className={classes.caseStudyImg}
+                src={caseStudyAwake}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={12} className={classes.teamCard}>
+              <Card plain>
+                <GridItem
+                  xs={12}
+                  sm={12}
+                  md={4}
+                  className={classes.gridItem}
+                  style={{ margin: "0 auto" }}
+                >
+                  <img src={avatarAwake} alt="..." className={imageClasses} />
+                </GridItem>
+              </Card>
+            </GridItem>
+              <GridItem style={{ color: "#848484" }}>
+                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                  Challenges
+                </h3>
+                <p>
+                Out-of-stocks are all too prevalent in micro markets and cost our industry thousands of dollars everyday. With millions of shoppers reaching into empty Awake Chocolate boxes every month Awake turned to Advana for insights on how to slay the inventory slump.
+                </p>
+                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                  Solutions
+                </h3>
+                <p>
+                Retail Sentry from Advana provides location-level analysis for manufacturers {"&"} participating operators to make joint decisions to maximize their growth. Leveraging billions of transactions, Sentry identifies purchase patterns where out of stocks are likely common and produces actions by location for operators to target improvements.
+                </p>
+                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                  Results
+                </h3>
+                <p>
+                At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 5% of top-line growth for Awake and the operators who offer Awake in their markets.
+                </p>
               </GridItem>
-            </Card>
-          </GridItem>
-            <GridItem style={{ color: "#848484" }}>
-              <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                Challenges
-              </h3>
-              <p>
-              Out-of-stocks are all too prevalent in micro markets and cost our industry thousands of dollars everyday. With millions of shoppers reaching into empty Awake Chocolate boxes every month Awake turned to Advana for insights on how to slay the inventory slump.
-              </p>
-              <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                Solutions
-              </h3>
-              <p>
-              Retail Sentry from Advana provides location-level analysis for manufacturers {"&"} participating operators to make joint decisions to maximize their growth. Leveraging billions of transactions, Sentry identifies purchase patterns where out of stocks are likely common and produces actions by location for operators to target improvements.
-              </p>
-              <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                Results
-              </h3>
-              <p>
-              At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 15% of top-line growth for Awake and the operators who offer Awake in their markets.
-              </p>
+              {/* <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
+              <GridItem xs={12} sm={6} md={3}>
+              <img src={awakeKPI01} style={{width: "100%", padding: "15px"}} />
+              </GridItem>
+              <GridItem xs={12} sm={6} md={3}>
+              <img src={awakeKPI02} style={{width: "100%", padding: "15px"}} />
+              </GridItem>
+              <GridItem xs={12} sm={6} md={3}>
+              <img src={awakeKPI01} style={{width: "100%", padding: "15px"}} />
+              </GridItem>
+              <GridItem xs={12} sm={6} md={3}>
+              <img src={awakeKPI02} style={{width: "100%", padding: "15px"}} />
+              </GridItem>
+            </GridItem> */}
             </GridItem>
-            {/* <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
-            <GridItem xs={12} sm={6} md={3}>
-            <img src={awakeKPI01} style={{width: "100%", padding: "15px"}} />
-            </GridItem>
-            <GridItem xs={12} sm={6} md={3}>
-            <img src={awakeKPI02} style={{width: "100%", padding: "15px"}} />
-            </GridItem>
-            <GridItem xs={12} sm={6} md={3}>
-            <img src={awakeKPI01} style={{width: "100%", padding: "15px"}} />
-            </GridItem>
-            <GridItem xs={12} sm={6} md={3}>
-            <img src={awakeKPI02} style={{width: "100%", padding: "15px"}} />
-            </GridItem>
-          </GridItem> */}
-          </GridItem>
-        </GridContainer>
+          </GridContainer>
+        </div>
       </div>
     </ThemeProvider>
   );

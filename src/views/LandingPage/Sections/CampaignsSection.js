@@ -52,20 +52,24 @@ export default function CampaignsSection() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.campaignsSection}>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <h1
-              className={classes.title}
-              style={{ paddingLeft: "50px", textAlign: "left" }}
-            >
-              High Performance Marketing <br />
-              <span>Campaigns </span>
-              with High Transparency
-            </h1>
-            <GridItem style={{ display: "flex" }} xs={12} sm={12} md={12}>
-              <GridItem xs={12} md={8} stlye={{ display: "flex" }}>
-                <div className={classes.demo}>
+      <div className={classes.campaignsBG}>
+        <div className={classes.sectionBG}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1
+                className={classes.title}
+              >
+                High Performance Marketing <br />
+                <span>Campaigns </span>
+                with High Transparency
+              </h1>
+              <GridItem  xs={12} sm={12} md={6} >
+                <img
+                  src={verifiedBadge}
+                  className={classes.verifiedBadge}
+                />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
                   <List>
                     <ListItem>
                       <ListItemIcon>
@@ -91,7 +95,7 @@ export default function CampaignsSection() {
                         />
                       </ListItemIcon>
                       <ListItemText
-                        primary="Verified Impressions Served"
+                        primary="Verified Viewed Impressions"
                         style={{
                           fontFamily: `"Roboto", sans-serif`,
                           fontWeight: "300",
@@ -132,44 +136,38 @@ export default function CampaignsSection() {
                       />
                     </ListItem>
                   </List>
-                </div>
               </GridItem>
-              <GridItem
-                style={{ display: "flex", justifyContent: "start" }}
-                xs={12}
-                sm={12}
-                md={4}
-              >
-                <img
-                  src={verifiedBadge}
-                  style={{ width: "150px", height: "150px" }}
-                />
+              <GridItem xs={12} sm={12} md={12}>
+                <Box
+                  className={classes.btnBox}
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Button
+                    className={classes.solidBtn}
+                    variant="contained"
+                    color="primary"
+                    onClick={() => {
+                      history.push('/promote');
+                    }}
+                  >
+                    LEARN MORE
+                    <ChevronRightIcon style={{ marginLeft: "10px" }} />
+                  </Button>
+                </Box>
               </GridItem>
             </GridItem>
-            <br />
-            <Box
-              className={classes.btnBox}>
-              <Button
-                className={classes.solidBtn}
-                variant="contained"
-                color="primary"
-                onClick={() => {
-                  history.push('/promote');
-                }}
-              >
-                LEARN MORE
-                <ChevronRightIcon style={{ marginLeft: "10px" }} />
-              </Button>
-            </Box>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-            <img
-              style={{ width: "100%" }}
-              className={classes.heroImg}
-              src={heroCampaigns}
-            />
-          </GridItem>
-        </GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <img
+                style={{ width: "100%" }}
+                className={classes.heroImg}
+                src={heroCampaigns}
+              />
+            </GridItem>
+          </GridContainer>
+        </div>
       </div>
     </ThemeProvider>
   );

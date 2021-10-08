@@ -5,11 +5,11 @@ import {
   successColor,
   warningColor,
   dangerColor,
-} from "../../../../assets/jss/material-kit-react.js";
+} from "../../material-kit-react.js";
 
 const navPillsStyle = (theme) => ({
   root: {
-    marginTop: "30px",
+    marginTop: "0",
     paddingLeft: "0",
     marginBottom: "0",
     overflow: "visible !important",
@@ -24,7 +24,7 @@ const navPillsStyle = (theme) => ({
     borderBottom: "1px solid" + primaryColor,
   },
   flexContainer: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexWrap: "wrap",
     },

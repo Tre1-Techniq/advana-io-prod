@@ -43,11 +43,11 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 
-// Import Images
-//import backgroundIMG1 from "../../../assets/img/advana-io-bg-01.jpg";
-
 // Import Sections
 import Intro from "../../Modal/Intro";
+
+// Import Images
+//import backgroundIMG1 from "../../../assets/img/advana-io-bg-01.jpg";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/contactSectionStyle.js";
 
@@ -69,8 +69,8 @@ export default function WorkSection() {
 
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.contactSection} xs={12} sm={12} md={12}>
-        <GridContainer className={classes.contactGrid}>
+      <div className={classes.section}>
+        <GridContainer>
           <GridItem xs={12} sm={12} md={12}>
             <h1 className={classes.title} style={{ textAlign: "center" }}>
               <span>Connecting </span>
@@ -83,8 +83,39 @@ export default function WorkSection() {
             <h1 className={classes.title}>
               Getting Started is Quick <span>{"&"}</span> Easy!
             </h1>
+            {/* <h4 className={classes.subtitle}>
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam
+              corporis suscipit laboriosam
+            </h4> */}
             <br />
-            <GridContainer style={{display: "flex", justifyContent: "center"}}>
+            <GridItem
+              className={classes.contactBtns}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                padding: "30px 100px",
+              }}
+            >
+              {/* <GridItem xs={12} sm={12} md={6}>
+                <Button
+                  className={classes.actionBtn}
+                  variant="contained"
+                  color="secondary"
+                >
+                  <VerifiedIcon style={{ marginRight: "10px" }} />
+                  BRANDS
+                </Button>
+              </GridItem>
+              <GridItem>
+                <Button
+                  className={classes.actionBtn}
+                  variant="contained"
+                  color="secondary"
+                >
+                  <WhereToVoteIcon style={{ marginRight: "10px" }} />
+                  OPERATORS
+                </Button>
+              </GridItem> */}
               <GridItem>
                 <Button
                   onClick={() => handleOpenBookIntro()}
@@ -109,11 +140,11 @@ export default function WorkSection() {
                   }}
                 >
                   <Fade in={openBookIntro}>
-                      <Intro />
+                    <Intro />
                   </Fade>
                 </Modal>
               </GridItem>
-            </GridContainer>
+            </GridItem>
           </GridItem>
         </GridContainer>
       </div>

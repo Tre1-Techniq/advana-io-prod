@@ -13,7 +13,7 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 //import { useHistory } from "react-router-dom";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
@@ -38,6 +38,8 @@ import Fade from "@material-ui/core/Fade";
 // import { FormHelperText } from '@material-ui/core';
 // import { Input } from '@material-ui/core';
 
+import Intro from "../../Modal/Intro";
+
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
@@ -58,7 +60,6 @@ import Parallax from "../../../components/Parallax/Parallax";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageStyle";
 
 // Sections for this page
-import Intro from "../../Modal/Intro";
 import SentryCategory from "./Sections/SentryCategory";
 import SentryRetail from "./Sections/SentryRetail";
 import SentryAudience from "./Sections/SentryAudience";
@@ -124,7 +125,6 @@ const useStyles = makeStyles(styles);
 export default function Sentry(props) {
   ///let history = useHistory();
   const classes = useStyles();
-  const { ...rest } = props;
 
   const [openBookIntro, setOpenBookIntro] = useState(false);
 
@@ -140,6 +140,8 @@ export default function Sentry(props) {
     const pageRoot = document.querySelector("#root");
     setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
   }, []);
+
+  const { ...rest } = props;
 
   return (
     <ThemeProvider theme={advanaTheme}>
@@ -159,12 +161,9 @@ export default function Sentry(props) {
           id="back-to-top-anchor"
         />
         <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default}>
-          <div id="parallax" className={classes.container}>
+          <div className={classes.container}>
             <GridContainer>
-              <GridItem 
-                style={{ position: "relative", top: "50px" }}
-                xs={12} sm={12} md={5}
-              >
+              <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
                   Introducing <b>SENTRY</b><br/> 
                   <span>Know your Market</span>
@@ -198,7 +197,7 @@ export default function Sentry(props) {
                       }}
                     >
                       <Fade in={openBookIntro}>
-                          <Intro />
+                        <Intro />
                       </Fade>
                     </Modal>
                   {/* <Button
