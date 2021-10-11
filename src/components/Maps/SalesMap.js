@@ -3,6 +3,8 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simp
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
 
+//import Loader from "../../components/Loader/Loader";
+
 import PropTypes from 'prop-types';
 //import classNames from "classnames";
 
@@ -53,6 +55,7 @@ const SalesMap = ({ setTooltipContent }) => {
 
   return (
     <>
+    {/* <Loader /> */}
         <ComposableMap
             data-tip=""
             projection="geoAlbersUsa"

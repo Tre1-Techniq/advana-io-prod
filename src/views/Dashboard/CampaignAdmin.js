@@ -20,6 +20,8 @@
 import React, { useState } from "react";
 import MaterialTable from "@material-table/core";
 
+//import { motion } from "framer-motion";
+
 import PropTypes from 'prop-types';
 
 import Radio from '@material-ui/core/Radio';
@@ -47,6 +49,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Table from "../../components/Table/Table.js";
 import LinearProgress from '@material-ui/core/LinearProgress';
+import IconButton from '@material-ui/core/IconButton';
 
 // @mui/icons-material
 import DateRange from "@material-ui/icons/DateRange";
@@ -61,11 +64,14 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import WarningIcon from '@material-ui/icons/Warning';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 // import images
 import applePay from "../../assets/img/campaigns/apple-pay.jpg";
-import clifBar from "../../assets/img/campaigns/clif.png";
-import pepsiZero from "../../assets/img/campaigns/pepsi-zero.png";
+import clifBar from "../../assets/img/campaigns/clif.jpg";
+import pepsiZero from "../../assets/img/campaigns/pepsi-zero.jpg";
+import redBull from "../../assets/img/campaigns/red-bull.jpg";
+import awake from "../../assets/img/campaigns/awake.jpg";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -88,58 +94,86 @@ const rows = [
   {
     id: 1,
     campaign: "Apple Pay",
-    version: "Canteen Cycle 12: No Offer",
+    version: "Canteen Cycle 13: No Offer",
     redemptions: 80,
     image: applePay,
     impCurrent: 800000,
     impTotal: 1000000,
     endDate: "Oct 3, 2021",
     budget: "$10,000",
-    offer: "No Offer",
+    offer: "Canteen Cycle 13: No Offer",
   },
   {
     id: 2,
     campaign: "Clif Bar",
-    version: "Canteen Cycle 12: $0.15; Off",
+    version: "Canteen Cycle 13: $0.15 Off",
     redemptions: 60,
     image: clifBar,
     impCurrent: 600000,
     impTotal: 1000000,
     endDate: "Oct 3, 2021",
     budget: "$10,000",
-    offer: "15&#162; off",
+    offer: "Canteen Cycle 13: $0.15 Off",
   },
   {
     id: 3,
     campaign: "Pepsi Zero Sugar",
-    version: "Canteen Cycle 12: No Offer",
+    version: "Canteen Cycle 13: No Offer",
     redemptions: 90,
-    image: clifBar,
+    image: pepsiZero,
     impCurrent: 600000,
     impTotal: 1000000,
     endDate: "Oct 3, 2021",
     budget: "$10,000",
-    offer: "15&#162; off",
+    offer: "Canteen Cycle 13: No Offer",
   },
   {
     id: 4,
     campaign: "Red Bull",
-    redemptions: 65,
+    version: "Canteen Cycle 13: No Offer",
+    redemptions: 75,
+    image: redBull,
+    impCurrent: 750000,
+    impTotal: 1000000,
+    endDate: "Oct 3, 2021",
+    budget: "$10,000",
+    offer: "Canteen Cycle 13: No Deal",
   },
   {
     id: 5,
     campaign: "Awake Chocolate",
-    redemptions: 77,
+    version: "Canteen Cycle 13: $0.25 Off",
+    redemptions: 57,
+    image: awake,
+    impCurrent: 570000,
+    impTotal: 1000000,
+    endDate: "Oct 3, 2021",
+    budget: "$10,000",
+    offer: "Canteen Cycle 13: $0.25 off",
   },
   {
     id: 6,
     campaign: "Red Bull",
+    version: "Canteen Cycle 13: No Deal",
     redemptions: 65,
+    image: redBull,
+    impCurrent: 650000,
+    impTotal: 1000000,
+    endDate: "Oct 3, 2021",
+    budget: "$10,000",
+    offer: "Canteen Cycle 13: No Deal",
   },
   {
     id: 7,
     campaign: "Awake Chocolate",
+    version: "Canteen Cycle 13: $0.25 off",
     redemptions: 77,
+    image: awake,
+    impCurrent: 770000,
+    impTotal: 1000000,
+    endDate: "Oct 3, 2021",
+    budget: "$10,000",
+    offer: "Canteen Cycle 13: $0.25 off",
   },
 ];
 
@@ -196,39 +230,47 @@ export default function CampaignAdmin() {
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
   const [selectedValue, setSelectedValue] = useState(1);
+  const [ campaignValue, setCampaignValue ] = useState(1);
 
   const handleChange = e => {
     const target = e.target;
-    console.log(e.target);
+    //console.log(e.target);
     if (target.checked) {
       setSelectedValue(target.value);
+      setCampaignValue(target.value);
       () => campaignDetails();
     }
   };
 
-  const campaignDetails = () => {
+  const campaignDetails = (props) => {
     //console.log("ROWS: ", props);
+    const campaignHealthSuccess = (props[campaignValue -1].redemptions <= 60);
+    const campaignHealthWarning = (props[campaignValue -1].redemptions > 60 && props[campaignValue -1].redemptions <= 80);
+    const campaignHealthDanger = (props[campaignValue -1].redemptions > 80); 
     return (
-      <>
+      <div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }} 
+      >
         <div xs={12} sm={12} md={12}>
-          <p className={classes.campaignDetailsTitle}>Apple Pay<span>Canteen Cycle 12: No Offer</span></p>
+          <p className={classes.campaignDetailsTitle}>{props[campaignValue -1].campaign}<span>{props[campaignValue -1].version}</span></p>
           <img
-            alt="Apple Pay Ad"
-            src={applePay}
+            alt={props[campaignValue -1].alt}
+            src={props[campaignValue -1].image}
             className={navImageClasses}
           />
         </div>
         <div xs={12} sm={12} md={12}>
           <div className={classes.campaignProgressBar}>
-            <p className={classes.campaignProgressBarTitle}>Impressions:<span>800,000</span> of<span>1,000,000</span></p>
-            <LinearProgress className={classes.linearProgress} variant="determinate" value={80} color="secondary" />
+            <p className={classes.campaignProgressBarTitle}>Impressions:<span>{props[campaignValue -1].impCurrent}</span> of<span>1{props[campaignValue -1].impTotal}</span></p>
+            <LinearProgress className={classes.linearProgress} variant="determinate" value={props[campaignValue -1].redemptions} color="secondary" />
           </div>
         </div>
         <div xs={12} sm={12} md={12}>
             <List className={classes.horizontalList}>
               <ListItem>
                 <ListItemAvatar>
-                  <Avatar className={classes.cardAvatar}>
+                  <Avatar className={classes.cardAvatarDetails}>
                     <EventBusyIcon />
                   </Avatar>
                 </ListItemAvatar>
@@ -236,7 +278,7 @@ export default function CampaignAdmin() {
               </ListItem>
               <ListItem>
                 <ListItemAvatar>
-                  <Avatar className={classes.cardAvatar}>
+                  <Avatar className={classes.cardAvatarDetails}>
                     <MonetizationOnIcon />
                   </Avatar>
                 </ListItemAvatar>
@@ -244,7 +286,7 @@ export default function CampaignAdmin() {
               </ListItem>
               <ListItem>
                 <ListItemAvatar>
-                  <Avatar className={classes.cardAvatar}>
+                  <Avatar className={classes.cardAvatarDetails}>
                     <LocalOfferIcon />
                   </Avatar>
                 </ListItemAvatar>
@@ -252,7 +294,46 @@ export default function CampaignAdmin() {
               </ListItem>
             </List>
           </div>
-        </>
+          <div xs={12} sm={12} md={12}>
+            <List className={classes.horizontalListDiv}>
+              <ListItem className={classes.horizontalLiDiv}>
+                <p>Campign Health:</p>
+                <div className={classes.campaignHealthDiv}>
+                  {campaignHealthSuccess ? <CheckCircleIcon className={classes.successIconHealth} /> : ""}
+                  {campaignHealthWarning ? <WarningIcon className={classes.warningIconHealth} /> : ""}
+                  {campaignHealthDanger ? <WarningIcon className={classes.dangerIconHealth} /> : ""}
+                </div>
+              </ListItem>
+              <ListItem className={classes.horizontalLiDiv}>
+                <p>Recommendation:</p>
+                <div className={classes.campaignHealthDiv}>
+                {campaignHealthSuccess ? <span className={classes.noActionLabel}>NO ACTION NEEDED</span> : ""}
+                {campaignHealthWarning ?
+                  <div className={classes.addFundsBTNWrapper}>
+                    <IconButton color="secondary" variant="text"
+                      className={classes.addFundsBTN}
+                    >
+                      <AddBoxIcon className={classes.addBtnIcon} />
+                    </IconButton>
+                    <span className={classes.addFundsBTNLabel}>ADD FUNDS</span>
+                  </div> : 
+                ""}
+                {campaignHealthDanger ?
+                  <div className={classes.addFundsBTNWrapper}>
+                    <IconButton color="secondary" variant="text"
+                    className={classes.addFundsBTN}
+                    >
+                      <AddBoxIcon className={classes.addBtnIcon} />
+                    </IconButton>
+                    <span className={classes.addFundsBTNLabel}>ADD FUNDS</span>
+                  </div> :
+                ""}
+
+                </div>
+              </ListItem>
+            </List>
+          </div>
+        </div>
       )
   }
 
@@ -271,19 +352,11 @@ export default function CampaignAdmin() {
                       tabContent: (
                         <GridContainer>
                           <GridItem xs={12} sm={12} md={7}>
-                            <Card className={classes.campaignCard55vh}>
+                            <Card className={classes.campaignAuthH}>
                               <CardHeader>
                                 <GridItem xs={12} sm={12} md={12}>
                                   <div className={classes.campaignTableHeader}>
                                     <p className={classes.campaignDetailsTitle}>Active Campaigns</p >
-                                    <Button
-                                      className={classes.addCampaignBTN}
-                                      variant="contained"
-                                      color="primary"
-                                    >
-                                      <AddCircle className={classes.addBtnIcon} />
-                                      <p>ADD A CAMPAIGN</p>
-                                    </Button>
                                   </div>
                                 </GridItem>
                               </CardHeader>
@@ -296,7 +369,7 @@ export default function CampaignAdmin() {
                                       {
                                         field: 'id',
                                         title: 'Selected',
-                                        width: '50px',
+                                        width: '15%',
                                         // eslint-disable-next-line react/display-name
                                         render: (props) => {
                                           return (
@@ -313,11 +386,11 @@ export default function CampaignAdmin() {
                                       {
                                         field: 'campaign',
                                         title: 'Campaign',
-                                        width: '100px',
+                                        width: '30%',
                                       },
                                       {
                                         field: 'redemptions',
-                                        width: '350px',
+                                        width: '55%',
                                         title: 'Redemptions Claimed',
                                         // eslint-disable-next-line react/display-name
                                         render: (props) => {
@@ -339,7 +412,7 @@ export default function CampaignAdmin() {
                                     padding: 'dense',
                                     showTitle: false,
                                     headerStyle: {
-                                      backgroundColor: '#e7e7e7'
+                                      backgroundColor: '#f7f7f7'
                                     },
                                     searchFieldStyle: {
                                       marginBottom: '30px',
@@ -357,19 +430,34 @@ export default function CampaignAdmin() {
                                     exportAllData: true,
                                     exportButton: true,
                                     toolbar: true,
-                                    paging: (rows.length > 5 ? true : false),
-                                    pageSizeOptions:[5],
+                                    tableLayout: 'fixed',
+                                    paging: (rows.length > 6 ? true : false),
+                                    pageSize:[6],
+                                    pageSizeOptions:[6],
                                     paginationType: 'stepped',
-                                    showFirstLastPageButtons: (rows.length > 10 ? true : false),
+                                    showFirstLastPageButtons: (rows.length > 12 ? true : false),
                                   }}
                                 />
                               </div>
-                                  <p className={classes.cardInstructions}><ArrowUpwardIcon />Select a radio button to view campaign details</p>
+                              <CardFooter>
+                                <p className={classes.cardInstructions}>
+                                  <ArrowUpwardIcon />
+                                  Select a radio button to view campaign details
+                                </p>
+                                <Button
+                                  className={classes.addCampaignBTN}
+                                  variant="contained"
+                                  color="primary"
+                                >
+                                  <AddCircle className={classes.addBtnIcon} />
+                                  <p>ADD A CAMPAIGN</p>
+                                </Button>
+                              </CardFooter>
                               </CardBody>
                             </Card>
                           </GridItem>
                           <GridItem xs={12} sm={12} md={5}>
-                            <Card className={classes.campaignCard55vh}>
+                            <Card className={classes.campaignAuthH}>
                               <CardBody>
                                   {campaignDetails(rows)}
                                 </CardBody>

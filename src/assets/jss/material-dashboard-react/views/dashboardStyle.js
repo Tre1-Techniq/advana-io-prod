@@ -101,6 +101,44 @@ const dashboardStyle = () => ({
     position: "relative",
     top: "5px"
   },
+  campaignHealthBox: {
+    
+  },
+  campaignHealthDiv: {
+    height: "40px",
+  },
+  successIconHealth: {
+    color: successColor[0],
+    fontSize: "3rem",
+    position: "relative",
+    top: "0",
+    display: "flex",
+    justifyContent: "center",
+  },
+  successIconRecomend: {
+    color: successColor[0],
+    fontSize: "2rem",
+    position: "relative",
+    top: "0",
+    display: "flex",
+    justifyContent: "center",
+  },
+  warningIconHealth: {
+    color: warningColor[0],
+    fontSize: "3rem",
+    position: "relative",
+    top: "0",
+    display: "flex",
+    justifyContent: "center",
+  },
+  dangerIconHealth: {
+    color: dangerColor[0],
+    fontSize: "3rem",
+    position: "relative",
+    top: "0",
+    display: "flex",
+    justifyContent: "center",
+  },
   linearProgress: {
     height: "10px",
     borderRadius: "5px",
@@ -141,10 +179,9 @@ const dashboardStyle = () => ({
   },
   campaignProgressBar: {
     paddingBottom: "30px",
-    borderBottom: "1px solid #e7e7e7",
   },
   redemptionsProgressBar: {
-    width: "85%",
+    width: "100%",
     padding: "10px 0",
   },
   dashboardHeader: {
@@ -171,7 +208,7 @@ const dashboardStyle = () => ({
     color: primaryColor[0],
     fontSize: "1.25rem",
     fontWeight: "400",
-    marginTop: "10px",
+    marginTop: "0",
     marginBottom: "0",
     "& span": {
       fontSize: "0.8rem",
@@ -179,9 +216,28 @@ const dashboardStyle = () => ({
       marginLeft: "5px",
     },
   },
+  insightLiWrapper: {
+    padding: "0",
+  },
   insightLI: {
+    marginLeft: "0",
     paddingTop: "0",
-    height: "55px",
+    height: "auto",
+    borderBottom: '1px solid #e7e7e7',
+  },
+  insightRank: {
+    color: "#ffffff",
+    fontSize: "0.7rem",
+    fontWeight: "400",
+    marginTop: "0",
+    marginRight: "10px",
+    marginBottom: "0",
+    marginLeft: "6px",
+    padding: "2px 7px",
+    width: "20px",
+    height: "20px",
+    borderRadius: "10px",
+    backgroundColor: primaryColor[0],
   },
   insightAvatarWrapper: {
     marginRight: "15px",
@@ -232,6 +288,7 @@ const dashboardStyle = () => ({
   userName: {
     height: "40px",
     paddingRight: "20px",
+    fontWeight: "300",
   },
   btnIcon: {
     marginRight: "10px",
@@ -272,19 +329,17 @@ const dashboardStyle = () => ({
     top: "-30px",
   },
   addFundsBTNWrapper: {
-    alignItems: "center",
-    position: "relative",
-    marginLeft: "20px",
+    
   },
   addFundsBTN: {
     margin: "0",
-    width: "45px",
-    height: "45px",
+    padding: "7px",
     "& p": {
       fontSize: "0.5rem !important",
+      fontWeight: "400",
     },
     "& svg": {
-      fontSize: "1.5rem !important",
+      fontSize: "2.5rem !important",
     },
   },
   addFundsBTNLabel: {
@@ -293,10 +348,13 @@ const dashboardStyle = () => ({
     position: "relative",
     margin: "0",
     top: "0px",
-    fontSize: "8px !important",
+    fontSize: "0.8rem !important",
     "& p": {
-      fontSize: "8px !important",
+      fontSize: "0.8rem !important",
     },
+  },
+  noActionLabel: {
+    
   },
   campaignCountWrapper: {
     paddingLeft: "10px",
@@ -328,6 +386,11 @@ const dashboardStyle = () => ({
   },
   messagesBody: {
     height: "auto",
+    paddingTop: "10px",
+    paddingBottom: "10px",
+    "& li:nth-child(odd)": {
+      background: "#f7f7f7"
+    },
   },
   tasksIcon: {
     fontSize: "2rem",
@@ -344,10 +407,11 @@ const dashboardStyle = () => ({
   },
   cardCategoryWrapper: {
     width: "100%",
-    borderBottom: "1px solid #e7e7e7",
+    borderBottom: "1px solid #2e4094",
     display: "flex",
     justifyContent: "start",
     alignItems: "center",
+    marginBottom: "10px",
   },
   cardCategory: {
     color: grayColor[0],
@@ -400,7 +464,7 @@ const dashboardStyle = () => ({
   },
   cardKPI: {
     color: secondaryColor[0],
-    margin: "-10px 0 0 6px",
+    margin: "-5px 0 0 6px",
     minHeight: "auto",
     fontSize: "2.25rem",
     fontWeight: "400",
@@ -419,10 +483,18 @@ const dashboardStyle = () => ({
 
   },
   cardAvatar: {
+    width: "40px !important",
+    height: "40px !important",
+    backgroundColor: warningColor[0] + "!important",
+    marginRight: "0 !important",
+    marginBottom: "10px",
+  },
+  cardAvatarDetails: {
     width: "30px",
     height: "30px",
     backgroundColor: warningColor[0],
     marginRight: "10px",
+    marginLeft: "30px",
     "& svg": {
       width: "1.25rem",
       height: "1.25rem",
@@ -498,15 +570,44 @@ const dashboardStyle = () => ({
     display: "flex",
     flexDirection: "row",
     paddingLeft: "0 !important",
-    borderBottom: "1px solid #e7e7e7",
+    border: "1px solid #e7e7e7",
+    borderRadius: "6px",
+    background: "#f7f7f7",
   },
-  dashCard55vh: {
+  horizontalListDiv: {
+    display: "flex",
+    flexDirection: "row",
+    paddingTop: "0 !important",
+    paddingBottom: "0 !important",
+    paddingLeft: "0 !important",
+    marginTop: "20px",
+    "& p": {
+      color: "#848484",
+    },
+    "& span": {
+      fontSize: "0.75rem",
+      fontWeight: "400",
+      lineHeight: "3rem",
+      color: successColor[0],
+    },
+    "& li:nth-child(1)": {
+      borderRight: "1px solid #e7e7e7",
+    },
+  },
+  horizontalLiDiv: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    "& h5": {
+      
+    },
+  },
+  dashCardAutoH: {
     // height: "55vh",
     height: "auto",
   },
-  campaignCard55vh: {
-    // height: "55vh",
-    height: "auto",
+  campaignAuthH: {
+    height: "76vh",
   },
   controls: {
     display:"flex",
@@ -515,6 +616,39 @@ const dashboardStyle = () => ({
     bottom: "60px",
     right: "20px",
   },
+  mapLegend: {
+    borderBottom: "1px solid #e7e7e7",
+  },
+  mapLegendValueList: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+    padding: "0 !important",
+    width: "95%",
+    marginLeft: "7%",
+  },
+  mapLegendValueListItem: {
+    paddingTop: "0",
+    fontSize: "0.7rem",
+  },
+  mapLegendGrad: {
+    height: "30px",
+    width: "100%",
+    background: "linear-gradient(to right, #C4F5F0 10%, #93EAE7 10% 20%, #62DDDE 20% 30%, #31C7D0 30% 40%, #00ACC1 40% 50%, #079DBA 50% 60%, #0E8FB4 60% 70%, #1483AD 70% 80%, #1B79A6 80%)",
+  },
+  mapLegendDesc: {
+    fontSize: "0.7rem",
+    margin: "0",
+    paddingTop: "9px",
+    color: "#00ACC1",
+  },
+  loader: {
+    width: "10px",
+    height: "10px",
+    margin: "40px auto",
+    borderRadius: "50%",
+    background: primaryColor[0],
+  }
 });
 
 export default dashboardStyle;

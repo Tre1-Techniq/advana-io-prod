@@ -33,7 +33,9 @@ const headerStyle = () => ({
   },
   container: {
     ...container,
-    minHeight: "50px",
+    minHeight: "64px",
+    display: "flex",
+    justifyContent: "space-between",
   },
   flex: {
     flex: 1,
@@ -85,6 +87,7 @@ const headerStyle = () => ({
     marginBottom: "0",
     display: "flex",
     justifyContent: "end",
+    minWidth: "225px",
     "& h5": {
       color: primaryColor[0],
       fontSize: "12px",

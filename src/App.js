@@ -18,22 +18,25 @@ import Campaigns from './views/Campaigns/Campaigns';
 import SignIn from "./views/Auth/SignIn";
 import Admin from "./layouts/Admin";
 import Santikos from "./views/Promos/Santikos";
+import SantikosCoupon from "./views/Promos/SantikosCoupon";
 
 export default function App() {
+
   return (
-      <ThemeProvider theme={advanaTheme}>
-        <Router>
-          <Switch>
-            <Route path="/" exact component={LandingPage} />
-            <Route path="/sentry" exact component={Sentry} />
-            <Route path="/insight" exact component={Insight} />
-            <Route path="/promote" exact component={Promote} />
-            <Route path="/campaigns" exact component={Campaigns} />
-            <Route path="/signin" exact component={SignIn} />
-            <Route path="/admin" component={Admin} />
-          </Switch>
-          <Route path="/santikos" component={Santikos} />
-        </Router>
-      </ThemeProvider>
+    <ThemeProvider theme={advanaTheme}>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/sentry" exact component={Sentry} />
+          <Route path="/insight" exact component={Insight} />
+          <Route path="/promote" exact component={Promote} />
+          <Route path="/campaigns" exact component={Campaigns} />
+          <Route path="/signin" exact component={SignIn} />
+          <Route path="/admin" component={Admin} />
+        </Switch>
+        <Route path="/santikos" exact component={Santikos} />
+        <Route path="/santikos/coupon" exact component={SantikosCoupon} />
+      </Router>
+    </ThemeProvider>
   );
 }

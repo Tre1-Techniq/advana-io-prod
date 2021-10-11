@@ -4,9 +4,13 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import Hidden from "@material-ui/core/Hidden";
+import IconButton from "@material-ui/core/IconButton";
 
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
+
+import MenuIcon from '@material-ui/icons/Menu';
 
 import avatar from "../../assets/img/faces/avatar-blank.jpg";
 
@@ -31,16 +35,22 @@ export default function AdminNavbar(props) {
     <AppBar className={classes.appBar + appBarClasses}>
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
-          <Toolbar className={classes.flex}>
-              {/* Here we create navbar brand, based on route name */}
-              {/* <IconButton color="inherit" aria-label="Open drawer">
+          <Toolbar className={classes.container}>
+            <GridItem xs={12} sm={12} md={1}>
+              <h2 className={classes.title}>
+                {routeName}
+              </h2>
+            </GridItem>
+            <Hidden mdUp implementation="css">
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={props.handleDrawerToggle}
+                size="large">
                 <MenuIcon />
-              </IconButton> */}
-              <GridItem xs={12} sm={12} md={1}>
-                <h2 className={classes.title}>
-                  {routeName}
-                </h2>
-              </GridItem>
+              </IconButton>
+            </Hidden>
+            <Hidden mdDown implementation="css">
               <GridItem xs={12} sm={12} md={10}>
                 <div className={classes.dashboardNavHeader}>
                   <div className={classes.userAvatarWrapper}>
@@ -51,18 +61,10 @@ export default function AdminNavbar(props) {
                     <h5 className={classes.userName}><span>Firstname Lastname</span></h5>
                   </div>
               </GridItem>
-              <GridItem xs={12} sm={12} md={1}>
-                <AdminNavbarLinks />
-              </GridItem>
-          {/* <Hidden mdUp implementation="css">
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={props.handleDrawerToggle}
-            >
-              <Menu />
-            </IconButton>
-          </Hidden> */}
+            </Hidden>
+            <Hidden mdDown implementation="css">
+              <AdminNavbarLinks />
+            </Hidden>
         </Toolbar>
         </GridItem>
       </GridContainer>

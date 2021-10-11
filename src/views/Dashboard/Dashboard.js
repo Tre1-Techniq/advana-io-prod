@@ -16,8 +16,12 @@
 
 */
 
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import ReactTooltip from "react-tooltip";
+
+// import { motion, AnimatePresence } from "framer-motion";
+
+import MapLegend from "./Charts/MapLegend";
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -49,7 +53,8 @@ import OverviewIcon from "@material-ui/icons/Language";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ConnectionsIcon from "@material-ui/icons/People";
 import DateRangeIcon from "@material-ui/icons/DateRange";
-import AssignmentIcon from '@material-ui/icons/Assignment';
+//import AssignmentIcon from '@material-ui/icons/Assignment';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
@@ -58,8 +63,8 @@ import SpeedIcon from '@material-ui/icons/Speed';
 
 // import images
 import applePay from "../../assets/img/campaigns/apple-pay.jpg";
-import clifBar from "../../assets/img/campaigns/clif.png";
-import pepsiZero from "../../assets/img/campaigns/pepsi-zero.png";
+import clifBar from "../../assets/img/campaigns/clif.jpg";
+import pepsiZero from "../../assets/img/campaigns/pepsi-zero.jpg";
 import avatar from "../../assets/img/faces/avatar-blank.jpg";
 
 // Advana Color Theme
@@ -69,7 +74,7 @@ import advanaTheme from "../../advanaTheme";
 //import { messages } from "../../variables/general.js";
 import salesItems from "./sales-items.json";
 
-import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js"
 
 const useStyles = makeStyles(styles);
 
@@ -80,345 +85,355 @@ export default function Dashboard() {
   const [content, setContent] = useState("");
 
   return (
-      <ThemeProvider theme={advanaTheme}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
-              <NavPills
-                  alignCenter
-                  color="primary"
-                  tabs={[
-                  {
-                    tabButton: "Overview",
-                    tabIcon: OverviewIcon,
-                    tabContent: (
-                      <GridContainer>
-                        <GridItem xs={12} sm={6} md={3}>
-                          <Card>
-                            <CardBody>
-                              <div className={classes.cardCategory}>
-                                Total Sales
-                              </div>
-                              <div className={classes.cardKPIWrapper}>
-                                <GridContainer>
-                                  <GridItem xs={2} sm={2} md={2}>
-                                    <Avatar className={classes.cardAvatar}>
-                                      <ReceiptIcon />
-                                    </Avatar>
-                                  </GridItem>
-                                  <GridItem xs={10} sm={10} md={10}>
-                                    <h3 className={classes.cardKPI}>
-                                      100,000
-                                    </h3>
-                                  </GridItem>
-                                </GridContainer>
-                              </div>
-                              <div className={classes.cardPercentChange}>
-                                  <ArrowDropUpIcon />
-                                  <p>8.75%<span>vs. last month</span></p>
-                              </div>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={6} md={3}>
-                          <Card>
-                            <CardBody>
-                              <div className={classes.cardCategory}>
-                                Total Retail $
-                              </div>
-                              <div className={classes.cardKPIWrapper}>
-                                <GridContainer>
-                                  <GridItem xs={2} sm={2} md={2}>
-                                    <Avatar className={classes.cardAvatar}>
-                                      <LocalAtmIcon  />
-                                    </Avatar>
-                                  </GridItem>
-                                  <GridItem xs={10} sm={10} md={10}>
-                                    <h3 className={classes.cardKPI}>$350,000</h3>
-                                  </GridItem>
-                                </GridContainer>
-                              </div>
-                              <div className={classes.cardPercentChange}>
-                                <ArrowDropUpIcon/>
-                                  <p>5.50%<span>vs. last month</span></p>
-                              </div>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={6} md={3}>
-                          <Card>
-                            <CardBody>
-                              <div className={classes.cardCategory}>
-                                Average Ticket
-                              </div>
-                              <div className={classes.cardKPIWrapper}>
-                                <GridContainer>
-                                  <GridItem xs={2} sm={2} md={2}>
-                                    <Avatar className={classes.cardAvatar}>
-                                      <LocalOfferIcon />
-                                    </Avatar>
-                                  </GridItem>
-                                  <GridItem xs={10} sm={10} md={10}>
-                                    <h3 className={classes.cardKPI}>$3.50</h3>
-                                  </GridItem>
-                                </GridContainer>
-                              </div>
-                              <div className={classes.cardPercentChange}>
-                                <ArrowDropUpIcon />
-                                <p>4.25% <span>vs. last month</span></p>
-                              </div>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={6} md={3}>
-                          <Card>
-                            <CardBody>
-                              <div className={classes.cardCategory}>
-                                %AGV
-                              </div>
-                              <div className={classes.cardKPIWrapper}>
-                                <GridContainer>
-                                  <GridItem xs={2} sm={2} md={2}>
-                                    <Avatar className={classes.cardAvatar}>
-                                      <SpeedIcon />
-                                    </Avatar>
-                                  </GridItem>
-                                  <GridItem xs={10} sm={10} md={10}>
-                                    <h3 className={classes.cardKPI}>7.5</h3>
-                                  </GridItem>
-                                </GridContainer>
-                              </div>
-                              <div className={classes.cardPercentChange}>
-                                <ArrowDropUpIcon />
-                                <p>1.25%<span>vs. last month</span></p>
-                              </div>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={8}>
-                          <Card className={classes.dashCard55vh}>
-                            <CardBody>
-                              <p className={classes.cardCategory}>National Sales Map</p>
-                              <div>
-                                <SalesMap setTooltipContent={setContent} />
-                                <ReactTooltip html={true} multiline={true}>{content}</ReactTooltip>
-                              </div>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                          <Card className={classes.dashCard55vh}>
-                            <CardBody>
-                              <div className={classes.cardCategoryWrapper}>
-                                <AssignmentIcon className={classes.tasksIcon} />
-                                <p className={classes.cardCategory}>Key Insights</p>
-                              </div>
-                              <GridItem xs={12} sm={12} md={12}>
-                                <div className={classes.messagesBody}>
-                                  <h5 className={classes.insightTitle}>Top 5 SKUs <span>by volume</span></h5>
-                                  {salesItems.map(item => 
-                                    (<ListItem className={classes.insightLI} key={item.id}>
-                                      <ListItemAvatar className={classes.insightAvatarWrapper}>
-                                        <Avatar className={classes.insightAvatar} alt={item.title} src={item.image} />
+    <ThemeProvider theme={advanaTheme}>
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
+          <NavPills
+              alignCenter
+              color="primary"
+              tabs={[
+              {
+                tabButton: "Overview",
+                tabIcon: OverviewIcon,
+                tabContent: (
+                  <GridContainer>
+                    <GridItem xs={12} sm={6} md={3}>
+                      <Card>
+                        <CardBody>
+                          <div className={classes.cardCategory}>
+                            Total Sales
+                          </div>
+                          <div className={classes.cardKPIWrapper}>
+                            <GridContainer>
+                              <GridItem xs={2} sm={2} md={2}>
+                                <Avatar className={classes.cardAvatar}>
+                                  <ReceiptIcon />
+                                </Avatar>
+                              </GridItem>
+                              <GridItem xs={10} sm={10} md={10}>
+                                <h3 className={classes.cardKPI}>
+                                  100,000
+                                </h3>
+                              </GridItem>
+                            </GridContainer>
+                          </div>
+                          <div className={classes.cardPercentChange}>
+                              <ArrowDropUpIcon />
+                              <p>8.75%<span>vs. last month</span></p>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={6} md={3}>
+                      <Card>
+                        <CardBody>
+                          <div className={classes.cardCategory}>
+                            Total Retail $
+                          </div>
+                          <div className={classes.cardKPIWrapper}>
+                            <GridContainer>
+                              <GridItem xs={2} sm={2} md={2}>
+                                <Avatar className={classes.cardAvatar}>
+                                  <LocalAtmIcon  />
+                                </Avatar>
+                              </GridItem>
+                              <GridItem xs={10} sm={10} md={10}>
+                                <h3 className={classes.cardKPI}>$350,000</h3>
+                              </GridItem>
+                            </GridContainer>
+                          </div>
+                          <div className={classes.cardPercentChange}>
+                            <ArrowDropUpIcon/>
+                              <p>5.50%<span>vs. last month</span></p>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={6} md={3}>
+                      <Card>
+                        <CardBody>
+                          <div className={classes.cardCategory}>
+                            Average Ticket
+                          </div>
+                          <div className={classes.cardKPIWrapper}>
+                            <GridContainer>
+                              <GridItem xs={2} sm={2} md={2}>
+                                <Avatar className={classes.cardAvatar}>
+                                  <LocalOfferIcon />
+                                </Avatar>
+                              </GridItem>
+                              <GridItem xs={10} sm={10} md={10}>
+                                <h3 className={classes.cardKPI}>$3.50</h3>
+                              </GridItem>
+                            </GridContainer>
+                          </div>
+                          <div className={classes.cardPercentChange}>
+                            <ArrowDropUpIcon />
+                            <p>4.25% <span>vs. last month</span></p>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={6} md={3}>
+                      <Card>
+                        <CardBody>
+                          <div className={classes.cardCategory}>
+                            %ACV
+                          </div>
+                          <div className={classes.cardKPIWrapper}>
+                            <GridContainer>
+                              <GridItem xs={2} sm={2} md={2}>
+                                <Avatar className={classes.cardAvatar}>
+                                  <SpeedIcon />
+                                </Avatar>
+                              </GridItem>
+                              <GridItem xs={10} sm={10} md={10}>
+                                <h3 className={classes.cardKPI}>7.5</h3>
+                              </GridItem>
+                            </GridContainer>
+                          </div>
+                          <div className={classes.cardPercentChange}>
+                            <ArrowDropUpIcon />
+                            <p>1.25%<span>vs. last month</span></p>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={8}>
+                      <Card className={classes.dashCardAutoH}>
+                        <CardBody>
+                          <p className={classes.cardCategory}>National Sales Map</p>
+                          <div>
+                            <SalesMap setTooltipContent={setContent} />
+                            <ReactTooltip html={true} multiline={true}>{content}</ReactTooltip>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card className={classes.dashCardAutoH}>
+                        <CardBody>
+                          <p className={classes.cardCategory}>Map Legend</p>
+                          <MapLegend />
+                          <p className={classes.mapLegendDesc}>% Unemployment</p>
+                        </CardBody>
+                      </Card>
+                      <Card className={classes.dashCardAutoH}>
+                        <CardBody>
+                          <div className={classes.cardCategoryWrapper}>
+                            <VerifiedUserIcon className={classes.tasksIcon} />
+                            <h5 className={classes.insightTitle}>Top 5 SKUs <span>by volume</span></h5>
+                          </div>
+                          <div className={classes.insightLiWrapper} xs={12} sm={12} md={12}>
+                            <div className={classes.messagesBody}>
+                              {salesItems.slice(0,5).map( (item) => 
+                                (
+                                  <ListItem className={classes.insightLI} key={item.id}>
+                                    <h5 className={classes.insightRank}>{ item.id }</h5>
+                                    <ListItemAvatar className={classes.insightAvatarWrapper}>
+                                      <Avatar className={classes.insightAvatar} alt={item.title} src={item.image} />
                                       </ListItemAvatar>
-                                      <ListItemText
-                                        primary={item.title}
-                                        secondary={item.subtitle}
-                                      />
-                                    </ListItem>))}
-                                </div>
-                              </GridItem>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                          <Card>
-                            <CardHeader>
-                              <p className={classes.cardCategory}>Apple Pay</p>
-                            </CardHeader>
-                            <CardBody>
-                              <img
-                                alt="Apple Pay Ad"
-                                src={applePay}
-                                className={navImageClasses}
+                                        <ListItemText
+                                          primary={item.title}
+                                          secondary={item.subtitle}
+                                        />
+                                  </ListItem>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card>
+                        <CardHeader>
+                          <p className={classes.cardCategory}>Apple Pay</p>
+                        </CardHeader>
+                        <CardBody>
+                          <img
+                            alt="Apple Pay Ad"
+                            src={applePay}
+                            className={navImageClasses}
+                          />
+                        </CardBody>
+                        <CardFooter stats>
+                          <div className={classes.stats}>
+                            <DateRangeIcon />
+                            Last 24 Hours
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card>
+                        <CardHeader>
+                          <p className={classes.cardCategory}>Clif Bar</p>
+                        </CardHeader>
+                        <CardBody>
+                          <img
+                            alt="Clif Bar Ad"
+                            src={clifBar}
+                            className={navImageClasses}
+                          />
+                        </CardBody>
+                        <CardFooter stats>
+                          <div className={classes.stats}>
+                            <DateRangeIcon />
+                            Last 24 Hours
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card>
+                        <CardHeader>
+                          <p className={classes.cardCategory}>Pepsi Zero Sugar</p>
+                        </CardHeader>
+                        <CardBody>
+                          <img
+                            alt="Pepsi Zero Sugar Ad"
+                            src={pepsiZero}
+                            className={navImageClasses}
+                          />
+                        </CardBody>
+                        <CardFooter stats>
+                          <div className={classes.stats}>
+                            <DateRangeIcon />
+                            Last 24 Hours
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </GridItem>
+                  </GridContainer>
+                ),
+              },
+              {
+                tabButton: "Settings",
+                tabIcon: SettingsIcon,
+                tabContent: (
+                  <GridContainer>
+                    <GridItem xs={12} sm={12} md={8}>
+                      <Card>
+                        <CardHeader className={classes.cardUserInfo}>
+                            <CardAvatar profile>
+                            <a href="#" onClick={(e) => e.preventDefault()}>
+                              <img src={avatar} alt="User Avatar" />
+                            </a>
+                            </CardAvatar>
+                        </CardHeader>
+                        <CardBody>
+                          <GridContainer>
+                            <GridItem xs={12} sm={12} md={5}>
+                              <CustomInput
+                                labelText="Company (disabled)"
+                                id="company-disabled"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                                inputProps={{
+                                  disabled: true,
+                                }}
                               />
-                            </CardBody>
-                            <CardFooter stats>
-                              <div className={classes.stats}>
-                                <DateRangeIcon />
-                                Duration:
-                              </div>
-                            </CardFooter>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                          <Card>
-                            <CardHeader>
-                              <p className={classes.cardCategory}>Clif Bar</p>
-                            </CardHeader>
-                            <CardBody>
-                              <img
-                                alt="Clif Bar Ad"
-                                src={clifBar}
-                                className={navImageClasses}
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={3}>
+                              <CustomInput
+                                labelText="Username"
+                                id="username"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
                               />
-                            </CardBody>
-                            <CardFooter stats>
-                              <div className={classes.stats}>
-                                <DateRangeIcon />
-                                Duration:
-                              </div>
-                            </CardFooter>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                          <Card>
-                            <CardHeader>
-                              <p className={classes.cardCategory}>Pepsi Zero Sugar</p>
-                            </CardHeader>
-                            <CardBody>
-                              <img
-                                alt="Pepsi Zero Sugar Ad"
-                                src={pepsiZero}
-                                className={navImageClasses}
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={4}>
+                              <CustomInput
+                                labelText="Email address"
+                                id="email-address"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
                               />
-                            </CardBody>
-                            <CardFooter stats>
-                              <div className={classes.stats}>
-                                <DateRangeIcon />
-                                Duration:
-                              </div>
-                            </CardFooter>
-                          </Card>
-                        </GridItem>
-                      </GridContainer>
-                    ),
-                  },
-                  {
-                    tabButton: "Settings",
-                    tabIcon: SettingsIcon,
-                    tabContent: (
-                      <GridContainer>
-                        <GridItem xs={12} sm={12} md={8}>
-                          <Card>
-                            <CardHeader className={classes.cardUserInfo}>
-                                <CardAvatar profile>
-                                <a href="#" onClick={(e) => e.preventDefault()}>
-                                  <img src={avatar} alt="User Avatar" />
-                                </a>
-                                </CardAvatar>
-                            </CardHeader>
-                            <CardBody>
-                              <GridContainer>
-                                <GridItem xs={12} sm={12} md={5}>
-                                  <CustomInput
-                                    labelText="Company (disabled)"
-                                    id="company-disabled"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                    inputProps={{
-                                      disabled: true,
-                                    }}
-                                  />
-                                </GridItem>
-                                <GridItem xs={12} sm={12} md={3}>
-                                  <CustomInput
-                                    labelText="Username"
-                                    id="username"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                                <GridItem xs={12} sm={12} md={4}>
-                                  <CustomInput
-                                    labelText="Email address"
-                                    id="email-address"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                              </GridContainer>
-                              <GridContainer>
-                                <GridItem xs={12} sm={12} md={6}>
-                                  <CustomInput
-                                    labelText="First Name"
-                                    id="first-name"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                                <GridItem xs={12} sm={12} md={6}>
-                                  <CustomInput
-                                    labelText="Last Name"
-                                    id="last-name"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                              </GridContainer>
-                              <GridContainer>
-                                <GridItem xs={12} sm={12} md={4}>
-                                  <CustomInput
-                                    labelText="City"
-                                    id="city"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                                <GridItem xs={12} sm={12} md={4}>
-                                  <CustomInput
-                                    labelText="Country"
-                                    id="country"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                                <GridItem xs={12} sm={12} md={4}>
-                                  <CustomInput
-                                    labelText="Postal Code"
-                                    id="postal-code"
-                                    formControlProps={{
-                                      fullWidth: true,
-                                    }}
-                                  />
-                                </GridItem>
-                              </GridContainer>
-                            </CardBody>
-                            <CardFooter>
-                              <Button color="primary">Update Profile</Button>
-                            </CardFooter>
-                          </Card>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                          <Card>
-                            <CardHeader className={classes.cardConnections}>
-                              <GridItem xs={12} sm={12} md={12}>
-                                <h4 className={classes.cardCategory}><ConnectionsIcon className={classes.connectionsIcon} /> CONNECTIONS</h4>
-                              </GridItem>
-                            </CardHeader>
-                            <CardBody profile>
-                              <p className={classes.description}>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                              </p>
-                              <Button color="primary" round>
-                                Follow
-                              </Button>
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                      </GridContainer>
-                    ),
-                  },
-                ]}
-              />
-              </GridItem>
-          </GridContainer>
-      </ThemeProvider>
+                            </GridItem>
+                          </GridContainer>
+                          <GridContainer>
+                            <GridItem xs={12} sm={12} md={6}>
+                              <CustomInput
+                                labelText="First Name"
+                                id="first-name"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={6}>
+                              <CustomInput
+                                labelText="Last Name"
+                                id="last-name"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                              />
+                            </GridItem>
+                          </GridContainer>
+                          <GridContainer>
+                            <GridItem xs={12} sm={12} md={4}>
+                              <CustomInput
+                                labelText="City"
+                                id="city"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={4}>
+                              <CustomInput
+                                labelText="Country"
+                                id="country"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={4}>
+                              <CustomInput
+                                labelText="Postal Code"
+                                id="postal-code"
+                                formControlProps={{
+                                  fullWidth: true,
+                                }}
+                              />
+                            </GridItem>
+                          </GridContainer>
+                        </CardBody>
+                        <CardFooter>
+                          <Button color="primary">Update Profile</Button>
+                        </CardFooter>
+                      </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card>
+                        <CardHeader className={classes.cardConnections}>
+                          <GridItem xs={12} sm={12} md={12}>
+                            <h4 className={classes.cardCategory}><ConnectionsIcon className={classes.connectionsIcon} /> CONNECTIONS</h4>
+                          </GridItem>
+                        </CardHeader>
+                        <CardBody profile>
+                          <p className={classes.description}>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          </p>
+                          <Button color="primary" round>
+                            Follow
+                          </Button>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                  </GridContainer>
+                ),
+              },
+            ]}
+          />
+        </GridItem>
+      </GridContainer>
+    </ThemeProvider>
   );
 }

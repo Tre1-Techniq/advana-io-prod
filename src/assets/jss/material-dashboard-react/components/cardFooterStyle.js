@@ -22,7 +22,7 @@ const cardFooterStyle = {
   },
   cardFooterStats: {
     borderTop: "1px solid " + grayColor[10],
-    marginTop: "20px",
+    marginTop: "0",
     "& svg": {
       position: "relative",
       top: "4px",
