@@ -14,6 +14,7 @@ The above copyright notice and this permission notice shall be included in all c
 */
 
 import React from "react";
+//import { Link } from "react-router-dom";
 
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
@@ -22,7 +23,7 @@ import advanaTheme from "../../advanaTheme";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,7 +56,7 @@ export default function Santikos() {
                     <GridItem xs={12} sm={12} md={4}>
                         <h2 className={classes.headerFontSm}>Here&#39;s your Coupon</h2>
                         <img className={classes.promoImg} src={sourPatchOffer} />
-                        <h3 className={classes.subHeader}>Present QR code at Santikos concession</h3>
+                        <h3 className={classes.subHeader}>Scan at Santikos Concessions</h3>
                         <Card className={classes.cardQrWrapper}>
                             <CardHeader>
                                 <img className={classes.santikosLogoColor} src={santikosLogoColor} />
@@ -64,9 +65,9 @@ export default function Santikos() {
                                 </CardBody>
                             </CardHeader>
                         </Card>
-                        <Button href="https://www.google.com/maps/search/santikos+san+antonio+texas/@29.4816477,-98.5600621,11z/data=!3m1!4b1/" target="_blank" className={classes.santikosGoogleBTN}>
+                        <a href="https://www.google.com/maps/search/santikos+san+antonio+texas/@29.4816477,-98.5600621,11z/data=!3m1!4b1/" target="_blank" rel="noreferrer" className={classes.santikosGoogleBTN}>
                             <img className={classes.santikosBtnIcon} src={googleMapPin} />Find My Santikos
-                        </Button>
+                        </a>
                         <p className={classes.finePrint}>Limit one coupon per visit. Offer valid from Oct 6, 2021 to Jan 24, 2022 in participating Santikos Theaters while supplies last.</p>
                     </GridItem>
                     </GridContainer>

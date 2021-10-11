@@ -22,8 +22,8 @@ const signupPageStyle = {
     justifyContent: "center",
   },
   subHeader: {
-    fontSize: "0.85rem",
-    fontWeight: "400",
+    fontSize: "1.25rem",
+    fontWeight: "500",
     lineHeight: "1rem",
     display: "flex",
     justifyContent: "center",
@@ -77,6 +77,10 @@ const signupPageStyle = {
     borderRadius: "4px",
     color: "#ffffff",
     fontWeight: "600",
+    "& a:focus": {
+        background: "#000000",
+        color: "#e7e7e7 !important",
+    },
   },
   santikosBtnIcon: {
     height: "20px",

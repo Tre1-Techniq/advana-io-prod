@@ -16,7 +16,7 @@
 
 */
 
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 
 // import { motion, AnimatePresence } from "framer-motion";
