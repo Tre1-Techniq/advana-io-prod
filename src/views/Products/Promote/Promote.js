@@ -142,8 +142,8 @@ export default function Promote(props) {
             <GridContainer>
               <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
-                  <b>PROMOTE</b><br/> 
-                  <span>Get There {"&"} Grow There</span>
+                  <b>PROMOTE</b>
+                  <h3 className={classes.subHeader}>Get There {"&"} Grow There</h3>
                 </h1>
                 <h4 className={classes.subtitle}>
                 Advana’s platform finds the best locations to meet your audience and delivers seamless digital advertising with your product just steps away.

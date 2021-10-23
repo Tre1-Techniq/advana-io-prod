@@ -72,8 +72,8 @@ export default function InsightOptimize() {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>
-            Price Optimization<br />
-            <span>Price to Move Faster</span>
+            Price Optimization
+            <h3 className={classes.subHeader}>Price to Move Faster</h3>
             </h1>
             <h4 className={classes.subtitle}>
             Measuring velocity by price point, category competition, and geography helps you price your products to maximize revenue, profit, or units to meet your goals.

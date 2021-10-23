@@ -49,8 +49,8 @@ export default function InsightZombie() {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>
-            Zombie Spotter<br />
-            <span>Get Rid of Slow-Moving SKUs</span>
+            Zombie Spotter
+            <h3 className={classes.subHeader}>Get Rid of Slow-Moving SKUs</h3>
             </h1>
             <h4 className={classes.subtitle}>
             Yes, zombie brands are real, just ask <a href="https://www.cnn.com/2020/07/21/business/coke-zombie-brands-coronavirus/index.html" target="_blank" rel="noreferrer" className={classes.textLink}>this company</a>. Advana has the insights to help you remove the walking dead from your portfolio.

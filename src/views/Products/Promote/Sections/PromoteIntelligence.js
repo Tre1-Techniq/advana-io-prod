@@ -47,14 +47,15 @@ export default function PromoteIntelligence() {
               <h1
                 className={classes.title}
               >
-                Ultimate Intelligence<br />
-                <span>eCommerce Grade Analytics<br/>for the Retail Environment</span>
+                Ultimate Intelligence
+                <h3 className={classes.subHeader}>eCommerce Grade Analytics for the <br/>Retail Environment</h3>
               </h1>
               <h4 className={classes.subtitle}
               >
               Track your impressions, engagements, and sales for every location participating in your campaign.  
               </h4>
-              <GridItem>
+
+              <div className={classes.productBullets}>
                 <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
                 Feel the Need, the Need for Speed 
                 </h3>
@@ -67,7 +68,7 @@ export default function PromoteIntelligence() {
                 <p style={{ color: "#848484" }}>
                 In addition to our performance metrics Advana Promote PRO brings you enhanced insights with day part {"&"} basket analysis. Knowing when shoppers buy your products and what they’re buy it with will arm you with intel guaranteed to take your competition’s breath away.
                 </p>
-              </GridItem>
+              </div>
             </GridItem>
             <GridItem xs={12} sm={12} md={7}>
               <img

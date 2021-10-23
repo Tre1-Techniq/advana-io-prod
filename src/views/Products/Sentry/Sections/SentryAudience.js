@@ -46,8 +46,8 @@ export default function SentryAudience() {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>
-            Audience Sentry <br />
-            <span>Know your Audience</span>
+            Audience Sentry
+            <h3 className={classes.subHeader}>Know your Audience</h3>
             </h1>
             <h4 className={classes.subtitle}>
             Get to know your audience with trial {"&"} repeat rates, consumer cohort analysis, bundling analysis, and daypart trends.

@@ -50,8 +50,8 @@ export default function PromoteInventory() {
               <h1
                 className={classes.title}
               >
-                Verified Inventory<br />
-                <span>Promote Where Your Product Is</span>
+                Verified Inventory
+                <h3 className={classes.subHeader}>Promote Where Your Product Is</h3>
               </h1>
               <h4 className={classes.subtitle}
               >

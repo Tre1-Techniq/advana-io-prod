@@ -48,8 +48,8 @@ export default function PromoteImpressions() {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>
-            Impressions that Count<br />
-            <span>Only Pay for what Consumers See</span>
+            Impressions that Count
+            <h3 className={classes.subHeader}>Only Pay for what Consumers See</h3>
             </h1>
             <h4 className={classes.subtitle}>
             Every impression with Advana is verified when a consumer interacts with our screens so you never pay for impressions when no one is looking.

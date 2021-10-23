@@ -57,25 +57,25 @@ const productStyle = {
       marginBottom: "1rem",
       marginTop: "1rem",
       fontSize: '1.75rem',
-      lineHeight: '2.25rem',
+      lineHeight: '1.75rem',
     },
     "@media (min-width: 768px)": {
       marginBottom: "1rem",
       marginTop: "1rem",
       fontSize: '2.25rem',
-      lineHeight: '3rem',
+      lineHeight: '2.25em',
     },
     "@media (min-width: 992px)": {
       marginBottom: "1rem",
       marginTop: "1rem",
       fontSize: '2.25rem',
-      lineHeight: '3rem',
+      lineHeight: '2.25rem',
     },
     "@media (min-width: 1200px)": {
       marginBottom: "1rem",
       marginTop: "1rem",
       fontSize: '2.25rem',
-      lineHeight: '3rem',
+      lineHeight: '2.25rem',
     },
   },
   ...imagesStyle,
@@ -103,6 +103,13 @@ const productStyle = {
       fontSize: '1rem',
       lineHeight: '1.25rem',
     },
+  },
+  subHeader: {
+    color: "#4db8be",
+    marginTop: "0",
+  },
+  productBullets: {
+    marginTop: "50px",
   },
   description: {
     color: "#999",

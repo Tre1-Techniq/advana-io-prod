@@ -57,6 +57,13 @@ const headerLinksStyle = () => ({
       backgroundColor: "transparent",
     },
   },
+  headerLink: {
+    "&:hover,&:focus": {
+      color: "#00acc1",
+      fontWeight: "400",
+      backgroundColor: "rgba(48, 63, 159, 0.04)",
+    },
+  },
   customDropdown: {
     color: "#848484",
     backgroundColor: "transparent",

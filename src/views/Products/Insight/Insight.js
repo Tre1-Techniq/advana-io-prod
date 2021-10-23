@@ -158,11 +158,11 @@ export default function Insight(props) {
             <GridContainer>
               <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
-                  <b>INSIGHT</b> with Action<br/> 
-                  <span>Know it All</span>
+                  <b>INSIGHT</b> with Action
+                  <h3 className={classes.subHeader}>Know it All</h3>
                 </h1>
                 <h4 className={classes.subtitle}>
-                Only Advana can dive into more than 1.7 billion retail transactions and connect with over 5 million shoppers to deliver the best in custom research.
+                Only Advana can dive into more than 2.5 billion retail transactions and connect with over 7.5 million shoppers to deliver the best in custom research.
                 </h4>
                 <br />
                 <Box className={classes.btnBox}>

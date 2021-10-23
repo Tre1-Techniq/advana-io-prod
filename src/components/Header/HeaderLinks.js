@@ -50,6 +50,7 @@ export default function HeaderLinks(props) {
       <List className={classes.headerNav}>
           <ListItem className={classes.listItem}>
             <Button
+              className={classes.headerLink}
               onClick={() => history.push("/")}
               variant="text"
               color= "primary"
@@ -82,6 +83,7 @@ export default function HeaderLinks(props) {
           </ListItem>
           <ListItem className={classes.listItem}>
             <Button
+              className={classes.headerLink}
               onClick={() => history.push("/campaigns")}
               variant="text"
               color="primary"

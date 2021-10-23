@@ -50,8 +50,8 @@ export default function SentryRetail() {
               <h1
                 className={classes.title}
               >
-                Retail Sentry <br />
-                <span>Know your Space</span>
+                Retail Sentry
+                <h3 className={classes.subHeader}>Know your Space</h3>
               </h1>
               <h4 className={classes.subtitle}
               >

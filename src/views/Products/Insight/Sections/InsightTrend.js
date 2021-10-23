@@ -51,8 +51,8 @@ export default function InsightTrend() {
               <h1
                 className={classes.title}
               >
-                Trend Spotter<br />
-                <span>Identify Legends of Tomorrow</span>
+                Trend Spotter
+                <h3 className={classes.subHeader}>Identify Legends of Tomorrow</h3>
               </h1>
               <h4 className={classes.subtitle}
               >

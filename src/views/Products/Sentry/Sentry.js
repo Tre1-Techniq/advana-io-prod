@@ -165,8 +165,8 @@ export default function Sentry(props) {
             <GridContainer>
               <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
-                  Introducing <b>SENTRY</b><br/> 
-                  <span>Know your Market</span>
+                  Introducing <b>SENTRY</b> 
+                  <h3 className={classes.subHeader}>Know your Market</h3>
                 </h1>
                 <h4 className={classes.subtitle}>
                 Collaborative Business Intelligence for manufacturers, retailers, {"&"} operators to find ways to grow together. 

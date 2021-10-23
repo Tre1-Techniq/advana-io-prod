@@ -91,6 +91,10 @@ const landingPageStyle = {
       lineHeight: '1.25rem',
     },
   },
+  subHeader: {
+    color: "#4db8be",
+    marginTop: "0",
+  },
   main: {
     background: "#FFFFFF",
     position: "relative",

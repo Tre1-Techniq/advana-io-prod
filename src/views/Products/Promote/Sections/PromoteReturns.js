@@ -47,8 +47,8 @@ export default function PromoteEasy() {
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>
-              Oh So Easy…<br />
-              <span>Just sit back and enjoy the returns</span>
+              Oh So Easy…
+              <h3 className={classes.subHeader}>Just sit back and enjoy the returns</h3>
               </h1>
               <h4 className={classes.subtitle}>
               We work directly with over 700 operators to secure their participation, increase your distribution, test your creative on-screen, load advertising {"&"} promotional pricing, and optimize performance throughout the campaign.  

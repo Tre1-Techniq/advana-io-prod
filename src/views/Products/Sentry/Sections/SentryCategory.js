@@ -54,8 +54,8 @@ export default function SentryCategory() {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title}>
-            Category Sentry <br />
-            <span>Know your Category</span>
+            Category Sentry
+            <h3 className={classes.subHeader}>Know your Category</h3>
             </h1>
             <h4 className={classes.subtitle}>
             Get to know your market share, retail pricing, and velocity for your brands and your competitors in your category.

@@ -61,8 +61,8 @@ export default function SentryCaseStudy() {
               <h1
                 className={classes.title}
               >
-                Case Study: <br />
-                <span>Awake Chocolate Sentry</span>
+                Case Study:
+                <h3 className={classes.subHeader}>Awake Chocolate Sentry</h3>
               </h1>
               <h4 className={classes.subtitle}
               >

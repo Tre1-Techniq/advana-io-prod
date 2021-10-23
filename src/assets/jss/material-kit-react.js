@@ -183,7 +183,7 @@ const title = {
   textDecoration: "none",
   fontWeight: "300",
   fontSize: "2.25rem",
-  lineHeight: "3.25rem",
+  lineHeight: "2.25rem",
   fontFamily: `"Roboto", sans-serif`,
   "& > span": {
     color: "#4db8be",
