@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.3d7fcf8c.chunk.css",
-    "main.js": "./static/js/main.5e3029eb.chunk.js",
-    "main.js.map": "./static/js/main.5e3029eb.chunk.js.map",
+    "main.js": "./static/js/main.730fbbb5.chunk.js",
+    "main.js.map": "./static/js/main.730fbbb5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.ca4eddc7.js",
     "runtime-main.js.map": "./static/js/runtime-main.ca4eddc7.js.map",
     "static/js/2.5e859730.chunk.js": "./static/js/2.5e859730.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "./index.html",
     "static/css/main.3d7fcf8c.chunk.css.map": "./static/css/main.3d7fcf8c.chunk.css.map",
     "static/js/2.5e859730.chunk.js.LICENSE.txt": "./static/js/2.5e859730.chunk.js.LICENSE.txt",
-    "static/js/main.5e3029eb.chunk.js.LICENSE.txt": "./static/js/main.5e3029eb.chunk.js.LICENSE.txt",
+    "static/js/main.730fbbb5.chunk.js.LICENSE.txt": "./static/js/main.730fbbb5.chunk.js.LICENSE.txt",
     "static/media/index.css": "./static/media/Appetite.1f1bff55.ttf",
     "static/media/advana-io-bg-01.jpg": "./static/media/advana-io-bg-01.0cad3c7a.jpg",
     "static/media/advana-io-bg-02.47b91d8e.jpg": "./static/media/advana-io-bg-02.47b91d8e.jpg",
@@ -50,6 +50,6 @@
     "static/js/runtime-main.ca4eddc7.js",
     "static/js/2.5e859730.chunk.js",
     "static/css/main.3d7fcf8c.chunk.css",
-    "static/js/main.5e3029eb.chunk.js"
+    "static/js/main.730fbbb5.chunk.js"
   ]
 }
