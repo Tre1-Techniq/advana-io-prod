@@ -19,6 +19,9 @@ const dashboardStyle = () => ({
         outline: "none",
       },
   },
+  content: {
+    padding: "0 15px 30px 15px !mportant",
+  },
   MuiListItemAvatar: {
     root: {
       minWidth: "40px !important",
@@ -143,11 +146,19 @@ const dashboardStyle = () => ({
     height: "10px",
     borderRadius: "5px",
   },
+  campaignDetailsWrapper: {
+    display: "block",
+  },
   campaignDetailsTitle: {
     color: primaryColor[0],
     fontSize: "1.25rem",
     fontWeight: "400",
-    marginTop: "10px",
+    marginTop: "0",
+    marginBottom: "20px",
+    display: "flex",
+    justifyContent: "center",
+    paddingBottom: "10px",
+    borderBottom: "1px solid #e7e7e7",
     "& span": {
       fontSize: "1rem",
       color: grayColor[0],
@@ -169,7 +180,7 @@ const dashboardStyle = () => ({
     padding: "10px 0",
     marginBottom: "0",
     display: "flex",
-    justifyContent: "start",
+    justifyContent: "center",
     "& span": {
       color: primaryColor[0],
       margin: "0 8px",
@@ -178,7 +189,9 @@ const dashboardStyle = () => ({
     },
   },
   campaignProgressBar: {
-    paddingBottom: "30px",
+    width: "100%",
+    paddingBottom: "10px",
+    borderTop: "1px solid #e7e7e7",
   },
   redemptionsProgressBar: {
     width: "100%",
@@ -253,22 +266,37 @@ const dashboardStyle = () => ({
     width: "100%",
     height: "60px",
     marginBottom: "0",
-    paddingBottom: "0",
+    padding: "20px",
     display: "inline-flex",
     justifyContent: "start",
     alignItems: "center",
-    "& h5": {
+    background: primaryColor[0],
+    borderRadius: "6px",
+    boxShadow: "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+    "& p": {
+      color: "#ffffff",
+      fontSize: "1.25rem",
+      fontWeight: "400",
+      alignItems: "center",
+      marginBottom: "0",
+      marginRight: "7px",
+    },
+    "& span": {
       color: secondaryColor[0],
       fontSize: "12px",
       display: "flex",
       alignItems: "center",
-      margin: "0 10px",
-      height: "50px",
-    },
-    "& span": {
       fontWeight: "500",
       marginRight: "0.25rem",
+      height: "50px",
     },
+  },
+  campaignTableBody: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  campaignTableFooter: {
+    borderTop: "1px solid #e7e7e7",
   },
   userAvatar: {
     "& img": {
@@ -401,6 +429,11 @@ const dashboardStyle = () => ({
     marginRight: "10px",
     color: primaryColor[0],
   },
+  cardHeaderOffset: {
+    width: "100%",
+    marginTop: "-25px",
+    marginBottom: "10px",
+  },
   cardDetailsWrapper: {
     width: "100%",
     marginBottom: "1.25rem",
@@ -494,7 +527,7 @@ const dashboardStyle = () => ({
     height: "30px",
     backgroundColor: warningColor[0],
     marginRight: "10px",
-    marginLeft: "30px",
+    // marginLeft: "30px",
     "& svg": {
       width: "1.25rem",
       height: "1.25rem",
@@ -575,12 +608,13 @@ const dashboardStyle = () => ({
     background: "#f7f7f7",
   },
   horizontalListDiv: {
+    width: "100%",
     display: "flex",
     flexDirection: "row",
     paddingTop: "0 !important",
     paddingBottom: "0 !important",
     paddingLeft: "0 !important",
-    marginTop: "20px",
+    marginTop: "0",
     "& p": {
       color: "#848484",
     },
@@ -602,12 +636,48 @@ const dashboardStyle = () => ({
       
     },
   },
+  verticalList: {
+    display: "flex",
+    flexDirection: "column",
+    paddingLeft: "0 !important",
+    // border: "1px solid #e7e7e7",
+    // borderRadius: "6px",
+    // background: "#f7f7f7",
+  },
+  verticalListDiv: {
+    display: "flex",
+    flexDirection: "row",
+    paddingTop: "0 !important",
+    paddingBottom: "0 !important",
+    paddingLeft: "0 !important",
+    marginTop: "20px",
+    "& p": {
+      color: "#848484",
+    },
+    "& span": {
+      fontSize: "0.75rem",
+      fontWeight: "400",
+      lineHeight: "3rem",
+      color: successColor[0],
+    },
+    "& li:nth-child(1)": {
+      borderRight: "1px solid #e7e7e7",
+    },
+  },
+  verticalLiDiv: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    "& h5": {
+      
+    },
+  },
   dashCardAutoH: {
     // height: "55vh",
     height: "auto",
   },
-  campaignAuthH: {
-    height: "76vh",
+  campaignAutoVh: {
+    height: "auto",
   },
   controls: {
     display:"flex",
@@ -617,7 +687,7 @@ const dashboardStyle = () => ({
     right: "20px",
   },
   mapLegend: {
-    borderBottom: "1px solid #e7e7e7",
+    height: "30px",
   },
   mapLegendValueList: {
     display: "flex",
@@ -632,13 +702,14 @@ const dashboardStyle = () => ({
     fontSize: "0.7rem",
   },
   mapLegendGrad: {
-    height: "30px",
+    padding: "0",
+    height: "15px",
     width: "100%",
     background: "linear-gradient(to right, #C4F5F0 10%, #93EAE7 10% 20%, #62DDDE 20% 30%, #31C7D0 30% 40%, #00ACC1 40% 50%, #079DBA 50% 60%, #0E8FB4 60% 70%, #1483AD 70% 80%, #1B79A6 80%)",
   },
   mapLegendDesc: {
     fontSize: "0.7rem",
-    margin: "0",
+    margin: "0 0 0 10px",
     paddingTop: "9px",
     color: "#00ACC1",
   },

@@ -21,12 +21,15 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import CampaignIcon from "@material-ui/icons/TrendingUp";
 import AnalyticsIcon from "@material-ui/icons/PieChart";
 import MediaIcon from "@material-ui/icons/PermMedia";
+import SettingsIcon from '@material-ui/icons/Settings';
 import AdminIcon from "@material-ui/icons/Build";
+
 // core components/views for Admin layout
 import Dashboard from "./views/Dashboard/Dashboard";
 import CampaignAdmin from "./views/Dashboard/CampaignAdmin";
 import Analytics from "./views/Dashboard/Analytics";
 import Media from "./views/Dashboard/Media";
+import Settings from "./views/Dashboard/Settings";
 import AdminPanel from "./views/Dashboard/AdminPanel";
 
 const routes = [
@@ -39,7 +42,7 @@ const routes = [
   },
   {
     path: "/campaignadmin",
-    name: "Campaign Admin",
+    name: "Campaigns",
     icon: CampaignIcon,
     component: CampaignAdmin,
     layout: "/admin",
@@ -56,6 +59,13 @@ const routes = [
     name: "Media Library",
     icon: MediaIcon,
     component: Media,
+    layout: "/admin",
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    icon: SettingsIcon,
+    component: Settings,
     layout: "/admin",
   },
   {

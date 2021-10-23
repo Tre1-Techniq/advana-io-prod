@@ -3,36 +3,43 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simp
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
 
-//import Loader from "../../components/Loader/Loader";
+// import { makeStyles } from "@material-ui/core/styles";
 
 import PropTypes from 'prop-types';
 //import classNames from "classnames";
 
+// import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js"
+
+// const useStyles = makeStyles(styles);
+
 const geoUrl = "/counties-10m.json";
 
 const SalesMap = ({ setTooltipContent }) => {
+//   const classes = useStyles();
   const [data, setData] = useState([]);
-  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+//   const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+const [zoom, setZoom] = useState(1);
+const [center, setCenter] = useState([-96,38]);
 
   function handleZoomIn() {
-    if (position.zoom >= 6) return;
-    setPosition(pos => ({ ...pos, zoom: pos.zoom * (1.25)}));
+    if (zoom > 9) return;
+    setZoom(() => zoom * (1.5));
   }
 
   function handleZoomOut() {
-    if (position.zoom <= 1) return;
-    setPosition(pos => ({ ...pos, zoom: pos.zoom / (1.25) }));
+    if (zoom < 1) return;
+    setZoom( () => zoom / (1.5));
   }
 
-  function handleMoveEnd(position) {
-    setPosition(position);
+  function handleMoveEnd() {
+    setZoom(zoom);
+    setCenter(center)
   }
 
   useEffect(() => {
     csv("/unemployment-by-county-2017.csv").then(counties => {
       setData(counties);
-      //console.log("COUNTIES: ", counties);
-    });
+    }).then(setZoom(zoom));
   }, []);
 
   const colorScale = scaleQuantile()
@@ -60,13 +67,14 @@ const SalesMap = ({ setTooltipContent }) => {
             data-tip=""
             projection="geoAlbersUsa"
             projectionConfig={{
-                scale: 1000
+                scale: 900
             }}
-            height={500}
+            height={350}
         >
             <ZoomableGroup
-                zoom={position.zoom}
-                center={position.coordinates}
+                className=""
+                zoom={zoom}
+                center={center}
                 onMoveEnd={handleMoveEnd}
             >
                 <Geographies geography={geoUrl}>

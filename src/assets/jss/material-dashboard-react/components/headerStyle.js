@@ -97,7 +97,7 @@ const headerStyle = () => ({
       height: "50px",
     },
     "& span": {
-      fontWeight: "500",
+      fontWeight: "400",
       marginRight: "0.25rem",
     },
   },

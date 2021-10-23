@@ -46,7 +46,7 @@ export default function AdminNavbar(props) {
                 color="inherit"
                 aria-label="open drawer"
                 onClick={props.handleDrawerToggle}
-                size="large">
+                size="medium">
                 <MenuIcon />
               </IconButton>
             </Hidden>

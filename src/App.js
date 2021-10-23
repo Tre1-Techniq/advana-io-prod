@@ -34,8 +34,8 @@ export default function App() {
           <Route path="/signin" exact component={SignIn} />
           <Route path="/admin" component={Admin} />
         </Switch>
-        <Route path="/santikos" exact component={Santikos} />
-        <Route path="/santikos/coupon" exact component={SantikosCoupon} />
+        <Route path="/santikos" component={Santikos} />
+        <Route path="/santikoscoupon" component={SantikosCoupon} />
       </Router>
     </ThemeProvider>
   );

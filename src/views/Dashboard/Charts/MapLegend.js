@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "../../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
  
-const values = ["3.0", "5.0", "7.0", "10.0+"];
+const values = ["3.0", "4.0", "5.0", "7.0+"];
  
 const useStyles = makeStyles(styles);
 
