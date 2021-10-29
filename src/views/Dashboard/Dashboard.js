@@ -226,7 +226,7 @@ function Dashboard() {
           </Card>
         </GridItem>
       </GridContainer>
-      <AmplifySignOut />
+      {/* <AmplifySignOut /> */}
     </ThemeProvider>
   );
 }
