@@ -19,12 +19,12 @@
 import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 
-import Amplify from 'aws-amplify';
-import config from '../../aws-exports';
-Amplify.configure(config);
+// import Amplify from 'aws-amplify';
+// import config from '../../aws-exports';
+// Amplify.configure(config);
 
 // import Amplify, { Auth } from "aws-amplify";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+//import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 // import { motion, AnimatePresence } from "framer-motion";
 
@@ -231,4 +231,5 @@ function Dashboard() {
   );
 }
 
-export default withAuthenticator(Dashboard);
+// export default withAuthenticator(Dashboard);
+export default Dashboard;
