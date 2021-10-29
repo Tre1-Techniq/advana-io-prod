@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "homepage": ".",
   "dependencies": {
-    "@aws-amplify/ui-react": "^1.2.1",
+    "@aws-amplify/ui-react": "^1.2.21",
     "@babel/core": "7.14.0",
     "@material-table/core": "^4.3.4",
     "@material-ui/core": "^4.11.4",
@@ -14,8 +14,9 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "amazon-cognito-identity-js": "^4.6.3",
     "amazon-quicksight-embedding-sdk": "^1.0.15",
-    "aws-amplify": "^4.0.3",
+    "aws-amplify": "^4.3.3",
     "aws-amplify-react": "^5.0.1",
+    "aws-sdk": "^2.1017.0",
     "axios": "^0.21.1",
     "chartist": "0.10.1",
     "classnames": "2.3.1",
@@ -54,7 +55,8 @@
     "react-slim-carousel": "^1.0.26",
     "react-swipeable-views": "0.13.9",
     "react-table": "^7.7.0",
-    "react-tooltip": "^4.2.21"
+    "react-tooltip": "^4.2.21",
+    "web-vitals": "^2.1.2"
   },
   "devDependencies": {
     "@babel/cli": "7.13.16",

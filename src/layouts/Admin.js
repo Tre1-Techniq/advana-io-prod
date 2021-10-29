@@ -19,12 +19,6 @@
 import React, { useState, useEffect, createRef } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-// import Amplify, { Auth } from "aws-amplify";
-
-// import awsconfig from "../aws-exports";
-
-// Amplify.configure(awsconfig);
-
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -67,7 +61,7 @@ const switchRoutes = (
 
 const useStyles = makeStyles(styles);
 
-export default function Admin({ ...rest }) {
+function Admin({ ...rest }) {
   // styles
   const classes = useStyles();
   // ref to help us initialize PerfectScrollbar on windows devices
@@ -143,3 +137,5 @@ export default function Admin({ ...rest }) {
     </ThemeProvider>
   );
 };
+
+export default Admin;

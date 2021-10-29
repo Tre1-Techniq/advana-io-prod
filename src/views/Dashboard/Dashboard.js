@@ -19,6 +19,13 @@
 import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 
+import Amplify from 'aws-amplify';
+import config from '../../aws-exports';
+Amplify.configure(config);
+
+// import Amplify, { Auth } from "aws-amplify";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+
 // import { motion, AnimatePresence } from "framer-motion";
 
 import MapLegend from "./Charts/MapLegend";
@@ -66,7 +73,7 @@ import styles from "../../assets/jss/material-dashboard-react/views/dashboardSty
 
 const useStyles = makeStyles(styles);
 
-export default function Dashboard() {
+function Dashboard() {
   const classes = useStyles();
   //const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
@@ -219,6 +226,9 @@ export default function Dashboard() {
           </Card>
         </GridItem>
       </GridContainer>
+      <AmplifySignOut />
     </ThemeProvider>
   );
 }
+
+export default withAuthenticator(Dashboard);
