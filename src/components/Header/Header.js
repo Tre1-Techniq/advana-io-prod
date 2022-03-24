@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -22,6 +23,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle.j
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
@@ -79,7 +81,7 @@ export default function Header(props) {
         className={classes.container}
       >
         {leftLinks !== undefined ? desktopLogo : null}
-        <div className={classes.flex}>
+        <div>
           {leftLinks !== undefined ? (
             <Hidden smDown implementation="css">
               {leftLinks}

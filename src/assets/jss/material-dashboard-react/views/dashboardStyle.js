@@ -1,4 +1,5 @@
 import {
+  container,
   defaultFont,
   primaryColor,
   secondaryColor,
@@ -14,11 +15,206 @@ import imagesStyle from "../../material-kit-react/imagesStyles.js";
 
 const dashboardStyle = () => ({
   root: {
-    "&.MuiDataGrid-root .MuiDataGrid-columnHeader:focus, &.MuiDataGrid-root .MuiDataGrid-cell:focus":
-      {
-        outline: "none",
-      },
+    "&.MuiDataGrid-root .MuiDataGrid-columnHeader:focus, &.MuiDataGrid-root .MuiDataGrid-cell:focus": {
+      outline: "none",
+    },
+    "& .MuiTypography-root": {
+      fontSize: "14px",
+    },
+    '& .MuiTextField-root': {
+      width: '100%',
+      padding: '5px 20px',
+      margin: '0 20px 10px 0',
+      fontSize: 'small',
+      display: 'flex',
+    },
+    '& .MuiGrid-grid-lg-12': {
+      display: 'flex',
+      justifyContent: 'space-evenly',
+    },
+    '& .MuiGrid-grid-lg-6': {
+      display: 'flex',
+      justifyContent: 'space-evenly',
+    },
+    '& .MuiGrid-container': {
+      margin: '0 auto',
+      backgroundColor: 'rgba(255,255,255,0.25)',
+      border: '1px solid #e4e4e4',
+    },
   },
+  main: {
+    background: "#FFFFFF",
+    position: "relative",
+    zIndex: "3",
+    paddingBottom: "20px",
+  },
+  formMain: {
+    background: "#FFFFFF",
+    position: "relative",
+    top: "175px",
+    paddingBottom: "200px",
+    margin: "0 30%",
+  },
+  container: {
+    ...container,
+    zIndex: "12",
+    color: "#FFFFFF",
+    position: "relative",
+    top: "20px",
+    maxWidth: "90vw",
+    "@media (min-width: 350px)": {
+      top: "20px",
+      maxWidth: "96vw",
+    },
+    "@media (min-width: 768px)": {
+      top: "20px",
+      maxWidth: "90vw",
+    },
+    "@media (min-width: 992px)": {
+      top: "20px",
+      maxWidth: "90vw",
+    },
+    "@media (min-width: 1200px)": {
+      top: "20px",
+      maxWidth: "90vw",
+    },
+  },
+  iFrame: {
+    marginTop: '0px !important',
+    display: 'block',
+    width: '100vw',
+    height: '88vh !important',
+  },
+  iFrameInner: {
+    display: 'block',
+    width: '100%',
+    height: '100vh',
+  },
+  embedContent: {
+    position: 'relative',
+    display: 'block',
+    width: 'calc(100vw - 275px)',
+    height: '100vh',
+    top: '0',
+    overflow: 'hidden',
+    '& #DisplayParent': {
+      width: 'calc(100vw - 275px)',
+      overflow: 'hidden',
+    },
+    '& #SessionContainer': {
+      width: 'calc(100vw - 275px)',
+      overflow: 'hidden',
+    },
+    '& #NavViewSelection': {
+      margin: '0 !important',
+    },
+    '& #navbarSupportedContent': {
+      justifyContent: 'space-between',
+    },
+    '& .embedNav': {
+      position:'relative',
+      top: '0',
+    },
+    '& #NavDashboards': {
+      marginRight: '0 !important',
+    },
+    '& #NavViewSelection': {
+      marginRight: '170px !important',
+      marginLeft: '0 !important',
+    },
+    '& .nav-item': {
+      marginRight: '50px',
+    },
+    '& .navbar-brand': {
+      margiRight: '100px !important',
+    },
+    '& #QBackdrop': {
+      width: 'calc(100vw - 275px)',
+      overflow: 'hidden',
+    },
+  },
+  messageFail: {
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#ff0000',
+    padding: '20px 0',
+  },
+  messageSuccess: {
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#00acc1',
+    padding: '20px',
+  },
+  adminWrapper: {
+    display: 'flex',
+  },
+  formContainer: {
+    position: 'relative',
+    top: '60px',
+    justifyContent: 'center',
+    width: '100%',
+  },
+  userForm: {
+    display: 'flex',
+  },
+  formControl: {
+    width: '100%',
+    padding: '0',
+    margin: '0 0 20px 0',
+    fontSize: 'medium',
+    position: 'relative',
+    top: '0',
+    borderBottom: '1px solid #ccc',
+  },
+  textfieldGroup: {
+    width: '100%',
+    margin: '0',
+    padding: '0',
+    display: 'flex',
+    position: 'relative',
+    top: '0',
+  },
+  registerTextWrapper: {
+    padding: '0 20px 0 0',
+  },
+  registerText: {
+    fontSize: '14px',
+    display: 'flex',
+    color: '#777777',
+    marginBottom: '5px',
+  },
+  registerRadioGroup: {
+    position: 'relative',
+    top: '45px',
+    padding: '20px',
+    fontSize: '14px',
+    marginBottom: '20px',
+    border: '1px solid #ccc',
+    backgroundColor: '#fdfdfd',
+    width: '100%',
+    borderRadius: '6px',
+  },
+  registerBtn: {
+    display: 'flex',
+    width: '100%',
+    margin: "20px 0 0 0",
+  },
+  userlist: {
+    position: 'relative',
+    top: '0',
+    display: 'flex',
+    justifyContent: 'center',
+    width: '50%',
+  },
+  message: {
+    display: 'cflex',
+    justifyContent: 'center',
+    color: '#ff0000',
+    position: 'relative',
+    top: '20px',
+    paddingBottom: '20px',
+  },
+  
   content: {
     padding: "0 15px 30px 15px !mportant",
   },
@@ -172,6 +368,27 @@ const dashboardStyle = () => ({
       width: "100%",
     },
   },
+  bodyTitle: {
+    ...defaultFont,
+    letterSpacing: "unset",
+    lineHeight: "30px",
+    fontSize: "1.25rem",
+    fontWeight: "400",
+    textTransform: "none",
+    color: primaryColor[0],
+    margin: "0",
+    width: '100%',
+    paddingBottom: '10px',
+    borderBottom: '1px solid #e7e7e7',
+    display: "flex",
+    justifyContent: "start",
+  },
+  bodyCopy: {
+    marginTop: '20px',
+    color: '#848484',
+    paddingBottom: '20px',
+    borderBottom: '1px solid #e7e7e7'
+  },
   campaignProgressBarTitle: {
     color: grayColor[0],
     margin: "0",
@@ -229,14 +446,29 @@ const dashboardStyle = () => ({
       marginLeft: "5px",
     },
   },
+  insightLiOverlay: {
+    display: "flex",
+    width: "100%",
+    height: "70%",           
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    zIndex: "1000",
+    backgroundColor: "rgba(0,0,0,0.7)",
+    borderRadius: "6px"
+  },
   insightLiWrapper: {
     padding: "0",
   },
   insightLI: {
+    height: "97px",
     marginLeft: "0",
     paddingTop: "0",
-    height: "auto",
     borderBottom: '1px solid #e7e7e7',
+    filter: "blur(0.4rem)",
+    "&:nth-child(1)": {
+      filter: "blur(0)",
+    }
   },
   insightRank: {
     color: "#ffffff",
@@ -494,15 +726,39 @@ const dashboardStyle = () => ({
   },
   cardKPIWrapper: {
     width: "100%",
+    display:'flex',
+    justifyContent: 'center',
+  },
+  cardKPIOverlay: {
+    display: "flex",
+    width: "100%",
+    height: "100%",           
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    zIndex: "1000",
+    backgroundColor: "rgba(0,0,0,0.7)",
+    borderRadius: "6px",
+  },
+  lockedKPI: {
+    filter: "blur(0.4rem)",
+  },
+  cardKPIContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  cardKPIItem: {
+    width: '100%',
+    padding: '0 !important',
   },
   cardKPI: {
     color: secondaryColor[0],
-    margin: "-5px 0 0 6px",
+    margin: "0 !important",
     minHeight: "auto",
     fontSize: "2.25rem",
     fontWeight: "400",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
     textDecoration: "none",
     "& small": {
       color: secondaryColor[0],
@@ -516,11 +772,15 @@ const dashboardStyle = () => ({
 
   },
   cardAvatar: {
-    width: "40px !important",
-    height: "40px !important",
-    backgroundColor: warningColor[0] + "!important",
+    width: "25px !important",
+    height: "25px !important",
+    backgroundColor: grayColor[3] + "!important",
     marginRight: "0 !important",
     marginBottom: "10px",
+  },
+  avatarIcon: {
+    width: '1rem',
+    height: '1rem',
   },
   cardAvatarDetails: {
     width: "30px",
@@ -543,7 +803,7 @@ const dashboardStyle = () => ({
   cardPercentChange: {
     borderTop: "1px solid #e7e7e7",
     display: "flex",
-    justifyContent: "end",
+    justifyContent: "center",
     paddingTop: "0",
     width: "100%",
     height: "20px",
@@ -675,6 +935,20 @@ const dashboardStyle = () => ({
   dashCardAutoH: {
     // height: "55vh",
     height: "auto",
+    width: "98%",
+    margin: "0 20px 0 0",
+  },
+  homeCardAutoH: {
+    // height: "55vh",
+    height: "550px",
+    width: "98%",
+    margin: "0 20px 0 0",
+  },
+  userCardAutoH: {
+    // height: "55vh",
+    height: "480px",
+    width: "100%",
+    margin: "0 20px 0 0",
   },
   campaignAutoVh: {
     height: "auto",

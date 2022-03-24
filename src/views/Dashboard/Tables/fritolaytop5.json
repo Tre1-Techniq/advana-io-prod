@@ -1,0 +1,52 @@
+[
+ {
+   "index": 962,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "Frito-Lay",
+   "Trademark": "Tostitos",
+   "SalesCount": 430754,
+   "Transactions": 285988,
+   "UnitVelocity": 150.6,
+   "Type": "Top5"
+ },
+ {
+   "index": 99,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "Frito-Lay",
+   "Trademark": "Cracker Jack",
+   "SalesCount": 3944,
+   "Transactions": 3341,
+   "UnitVelocity": 118.0,
+   "Type": "Top5"
+ },
+ {
+   "index": 252,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "Frito-Lay",
+   "Trademark": "Frito-Lay",
+   "SalesCount": 164990,
+   "Transactions": 143193,
+   "UnitVelocity": 115.2,
+   "Type": "Top5"
+ },
+ {
+   "index": 647,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "Frito-Lay",
+   "Trademark": "Quaker",
+   "SalesCount": 138,
+   "Transactions": 125,
+   "UnitVelocity": 110.4,
+   "Type": "Top5"
+ },
+ {
+   "index": 151,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "Frito-Lay",
+   "Trademark": "Matador",
+   "SalesCount": 86,
+   "Transactions": 79,
+   "UnitVelocity": 108.8,
+   "Type": "Top5"
+ }
+]

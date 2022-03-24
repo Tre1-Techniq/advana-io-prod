@@ -1,13 +1,15 @@
 /*eslint-disable*/
-import React, { useState } from "react";
+import React from "react";
 // react components for routing our app without refresh
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import { ThemeProvider, Button } from "@material-ui/core";
+
+import LoginBtn from "../Auth/Buttons/LoginBtn";
 
 //Modal
 import Modal from "@material-ui/core/Modal";
@@ -33,33 +35,37 @@ const useStyles = makeStyles(styles);
 export default function HeaderLinks(props) {
   let history = useHistory();
   const classes = useStyles();
+  const location = useLocation();
+  const { pathname } = location;
 
-  const [openSignIn, setOpenSignIn] = useState(false);
+  const splitLocation = pathname.split("/");
 
-  const handleOpenSignIn = () => {
-    console.log("OPEN SIGN IN!");
-    setOpenSignIn(true);
-  };
+  // const [openSignIn, setOpenSignIn] = useState(false);
 
-  const handleCloseSignIn = () => {
-    setOpenSignIn(false);
-  };
+  // const handleOpenSignIn = () => {
+  //   console.log("OPEN SIGN IN!");
+  //   setOpenSignIn(true);
+  // };
+
+  // const handleCloseSignIn = () => {
+  //   setOpenSignIn(false);
+  // };
 
   return (
     <ThemeProvider theme={advanaTheme}>
       <List className={classes.headerNav}>
-          <ListItem className={classes.listItem}>
+          <ListItem className={splitLocation[1] === "dooh" ? classes.listItemActive : classes.ListItem}>
             <Button
               className={classes.headerLink}
-              onClick={() => history.push("/")}
+              onClick={() => history.push("/dooh")}
               variant="text"
               color= "primary"
               size="small"
             >
-              HOME
+              DOOH
             </Button>
           </ListItem>
-          <ListItem className={classes.listItem}>
+          <ListItem className={splitLocation[1] === "sentry" ? classes.listItemActive : classes.ListItem}>
             <Button
               className={classes.headerLink} 
               onClick={() => history.push("/sentry")} 
@@ -69,7 +75,7 @@ export default function HeaderLinks(props) {
               SENTRY
             </Button>
           </ListItem>
-          <ListItem className={classes.listItem}>
+          <ListItem className={splitLocation[1] === "insight" ? classes.listItemActive : classes.ListItem}>
             <Button
               className={classes.headerLink} 
               onClick={() => history.push("/insight")} 
@@ -79,7 +85,7 @@ export default function HeaderLinks(props) {
               INSIGHT
             </Button>
           </ListItem>
-          <ListItem className={classes.listItem}>
+          <ListItem className={splitLocation[1] === "promote" ? classes.listItemActive : classes.ListItem}>
             <Button
               className={classes.headerLink}
               onClick={() => history.push("/promote")}
@@ -107,42 +113,20 @@ export default function HeaderLinks(props) {
           </ListItem> */}
           {/* <ListItem className={classes.listItem}>
             <Button
-              onClick={() => handleOpenSignIn()}
+              type="submit"
+              //onClick={() => handleOpenSignIn()}
+              onClick={() => history.push("/admin/home")}
               variant="contained"
               color="secondary"
             >
               <ExitToAppIcon className={classes.btnIcon} />
-              SIGN IN
+              PORTAL
             </Button>
           </ListItem> */}
+          <ListItem className={classes.listItem}>
+            <LoginBtn />
+          </ListItem>
         </List>
-      
-      <Modal
-          className={classes.modal}
-          open={openSignIn}
-          onClose={handleCloseSignIn}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-              timeout: 500,
-              classes: {
-                  root: classes.modalBackdrop
-              }
-          }}
-      >
-        <Fade in={openSignIn}>
-            <div className={classes.modalSignIn}>
-              {/* <FormControl>
-                <InputLabel htmlFor="my-input">Form Entry</InputLabel>
-                <Input id="my-input" aria-describedby="my-helper-text" />
-                <FormHelperText id="my-helper-text">Helper text.</FormHelperText>
-              </FormControl> */}
-              <div className={classes.modalBookIntro}>
-                <h1>SIGN IN!</h1>
-              </div>
-            </div>
-        </Fade>
-      </Modal>
     </ThemeProvider>
   );
 }

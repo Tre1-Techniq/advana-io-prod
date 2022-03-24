@@ -20,24 +20,24 @@
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import CampaignIcon from "@material-ui/icons/TrendingUp";
 import AnalyticsIcon from "@material-ui/icons/PieChart";
-import MediaIcon from "@material-ui/icons/PermMedia";
+//import MediaIcon from "@material-ui/icons/PermMedia";
 import SettingsIcon from '@material-ui/icons/Settings';
 import AdminIcon from "@material-ui/icons/Build";
 
 // core components/views for Admin layout
-import Dashboard from "./views/Dashboard/Dashboard";
+import AdminHome from "./views/Dashboard/AdminHome";
 import CampaignAdmin from "./views/Dashboard/CampaignAdmin";
 import Analytics from "./views/Dashboard/Analytics";
-import Media from "./views/Dashboard/Media";
-import Settings from "./views/Dashboard/Settings";
+//import Media from "./views/Dashboard/Media";
+import UserSettings from "./views/Dashboard/UserSettings";
 import AdminPanel from "./views/Dashboard/AdminPanel";
 
 const routes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/home",
+    name: "Home",
     icon: DashboardIcon,
-    component: Dashboard,
+    component: AdminHome,
     layout: "/admin",
   },
   {
@@ -48,24 +48,24 @@ const routes = [
     layout: "/admin",
   },
   {
-    path: "/analytics",
-    name: "Analytics",
+    path: "/sentry",
+    name: "Sentry",
     icon: AnalyticsIcon,
     component: Analytics,
     layout: "/admin",
   },
-  {
-    path: "/media",
-    name: "Media Library",
-    icon: MediaIcon,
-    component: Media,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/media",
+  //   name: "Media Library",
+  //   icon: MediaIcon,
+  //   component: Media,
+  //   layout: "/admin",
+  // },
   {
     path: "/settings",
     name: "Settings",
     icon: SettingsIcon,
-    component: Settings,
+    component: UserSettings,
     layout: "/admin",
   },
   {

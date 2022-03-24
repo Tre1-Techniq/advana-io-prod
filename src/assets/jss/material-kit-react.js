@@ -35,37 +35,37 @@ const container = {
   ...containerFluid,
   position: "relative !important",
   top: "0",
-  maxWidth: "90vw !important",
-  // "@media (min-width: 576px)": {
-  //   maxWidth: "540px",
-  // },
-  // "@media (min-width: 768px)": {
-  //   maxWidth: "720px",
-  // },
-  // "@media (min-width: 992px)": {
-  //   maxWidth: "960px",
-  // },
-  // "@media (min-width: 1200px)": {
-  //   maxWidth: "90vw !important",
-  // },
+  maxWidth: "90vw",
+  "@media (min-width: 350px)": {
+    maxWidth: "96vw",
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "90vw",
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "90vw",
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "90vw",
+  },
 };
 const heroContainer = {
   ...containerFluid,
   position: "relative !important",
   top: "0",
-  maxWidth: "90vw !important",
-  // "@media (min-width: 576px)": {
-  //   maxWidth: "540px",
-  // },
-  // "@media (min-width: 768px)": {
-  //   maxWidth: "720px",
-  // },
-  // "@media (min-width: 992px)": {
-  //   maxWidth: "960px",
-  // },
-  // "@media (min-width: 1200px)": {
-  //   maxWidth: "90vw !important",
-  // },
+  maxWidth: "90vw",
+  "@media (min-width: 350px)": {
+    maxWidth: "96vw",
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "90vw",
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "90vw",
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "90vw",
+  },
 };
 
 const boxShadow = {
@@ -181,7 +181,7 @@ const title = {
   color: "#2e4094",
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
-  fontWeight: "300",
+  fontWeight: "400",
   fontSize: "2.25rem",
   lineHeight: "2.25rem",
   fontFamily: `"Roboto", sans-serif`,

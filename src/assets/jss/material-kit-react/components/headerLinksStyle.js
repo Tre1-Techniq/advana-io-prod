@@ -18,20 +18,42 @@ const headerLinksStyle = () => ({
     position: "relative",
     display: "block",
     width: "auto",
-    padding: "0",
     margin: "0 25px",
     "@media (min-width: 350px)": {
-      margin: "0",
-      padding: "10px",
+      
     },
     "@media (min-width: 768px)": {
-      margin: "0 25px",
+      
     },
     "@media (min-width: 992px)": {
-      margin: "0 25px",
+      
     },
     "@media (min-width: 1200px)": {
-      margin: "0 25px",
+      
+    },
+  },
+  listItemActive: {
+    float: "left",
+    position: "relative",
+    display: "flex",
+    width: "auto",
+    margin: "0 25px",
+    "& span:nth-child(1)": {
+      color: "#00acc1 !important",
+      fontWeight: "500",
+      // borderBottom: "2px solid #00acc1"
+    },
+    "@media (min-width: 350px)": {
+      
+    },
+    "@media (min-width: 768px)": {
+      
+    },
+    "@media (min-width: 992px)": {
+      
+    },
+    "@media (min-width: 1200px)": {
+      
     },
   },
   listItemText: {
@@ -176,20 +198,19 @@ const headerLinksStyle = () => ({
       marginLeft: "0",
     },
     "& li": {
-      borderBottom: "1px solid transparent",
       "@media (min-width: 350px)": {
         width: "100%",
         margin: "10px 0",
         borderBottom: "1px solid #e7e7e7",
       },
       "@media (min-width: 768px)": {
-        borderBottom: "1px solid transparent",
+        borderBottom: "2px solid transparent",
       },
       "@media (min-width: 992px)": {
-        borderBottom: "1px solid transparent",
+        borderBottom: "2px solid transparent",
       },
       "@media (min-width: 1200px)": {
-        borderBottom: "1px solid transparent",
+        borderBottom: "2px solid transparent",
       },
     },
     "@media (min-width: 350px)": {

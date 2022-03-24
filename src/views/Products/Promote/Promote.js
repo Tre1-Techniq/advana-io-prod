@@ -13,10 +13,18 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 //import { useHistory } from "react-router-dom";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import Box from "@material-ui/core/Box";
+
+import Intro from "../../Modal/Intro";
 
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -27,7 +35,7 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
+
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -114,6 +122,16 @@ export default function Promote(props) {
   //let history = useHistory();
   const classes = useStyles();
 
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
   useEffect(() => {
     const pageRoot = document.querySelector("#root");
     setTimeout(() => pageRoot.scrollIntoView({block: "start", behavior: "smooth"}), 100);
@@ -122,70 +140,85 @@ export default function Promote(props) {
   const { ...rest } = props;
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.heroContainer}>
-        <Header
-          color="transparent"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 50,
-            color: "white",
-          }}
-          {...rest}
-        />
-        <Toolbar
-          style={{ position: "absolute", top: "-50px" }}
-          id="back-to-top-anchor"
-        />
-        <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default}>
-          <div className={classes.container}>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={5}>
-                <h1 className={classes.title}>
-                  <b>PROMOTE</b>
-                  <h3 className={classes.subHeader}>Get There {"&"} Grow There</h3>
-                </h1>
-                <h4 className={classes.subtitle}>
-                Advana’s platform finds the best locations to meet your audience and delivers seamless digital advertising with your product just steps away.
-                </h4>
-                <br />
-                <Box className={classes.btnBox}>
-                  <Button
-                    className={classes.solidBtn}
-                    variant="contained"
-                    color="primary"
-                    to="/"
+      <Header
+        color="transparent"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 50,
+          color: "white",
+        }}
+        {...rest}
+      />
+      <Toolbar
+        style={{ position: "absolute", top: "-50px" }}
+        id="back-to-top-anchor"
+      />
+      <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default} className={classes.parallax}>
+        <div className={classes.heroContainer}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={5}>
+              <h1 className={classes.title}>
+                <b>PROMOTE</b>
+              </h1>
+              <h3 className={classes.subHeader}>Get There {"&"} Grow There</h3>
+              <h4 className={classes.subtitle}>
+              Advana’s platform finds the best locations to meet your audience and delivers seamless digital advertising with your product just steps away.
+              </h4>
+              <br/>
+              <Box className={classes.btnBox}>
+                <Button
+                  className={classes.solidBtn}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleOpenBookIntro()}
+                >
+                  <EventAvailableIcon className={classes.btnIcon} />
+                  BOOK AN INTRO
+                </Button>
+                  <Modal
+                    className={classes.modal}
+                    open={openBookIntro}
+                    onClose={handleCloseBookIntro}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 300,
+                        classes: {
+                            root: classes.modalBackdrop
+                        }
+                    }}
                   >
-                    <EventAvailableIcon className={classes.btnIcon} />
-                    BOOK A DEMO
-                  </Button>
-                </Box>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={7}>
-                <img className={classes.heroImg} src={promoteHero} />
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
-        <div className={classes.main}>
-          <div className={classes.container}>
-            <PromoteImpressions name="products" />
-            <PromoteInventory name="campaigns" />
-            <PromoteReturns name="returns" />
-            <PromoteIntelligence name="intelligence" />
-          </div>
-          <ScrollTop
-            style={{ zIndex: "2000" }}
-            className={classes.scrollTop}
-            {...props}
-          >
-            <Fab color="secondary" size="small" aria-label="scroll back to top">
-              <KeyboardArrowUpIcon color="inherit" />
-            </Fab>
-          </ScrollTop>
+                  <Fade in={openBookIntro}>
+                    <Intro />
+                  </Fade>
+                </Modal>
+              </Box>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={7}>
+              <img className={classes.heroImg} src={promoteHero} />
+            </GridItem>
+          </GridContainer>
         </div>
-        <Footer />
+      </Parallax>
+      <div className={classes.main}>
+        <div className={classes.container}>
+          <PromoteImpressions name="products" />
+          <PromoteInventory name="campaigns" />
+          <PromoteReturns name="returns" />
+          <PromoteIntelligence name="intelligence" />
+        </div>
+        <ScrollTop
+          style={{ zIndex: "2000" }}
+          className={classes.scrollTop}
+          {...props}
+        >
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon color="inherit" />
+          </Fab>
+        </ScrollTop>
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }

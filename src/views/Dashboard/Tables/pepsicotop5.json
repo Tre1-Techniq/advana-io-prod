@@ -1,0 +1,52 @@
+[
+ {
+   "index": 301,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "PepsiCo",
+   "Trademark": "Bubly",
+   "SalesCount": 73338,
+   "Transactions": 68763,
+   "UnitVelocity": 106.6532874,
+   "Type": "Top5"
+ },
+ {
+   "index": 949,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "PepsiCo",
+   "Trademark": "Aquafina",
+   "SalesCount": 668396,
+   "Transactions": 629060,
+   "UnitVelocity": 106.2531396,
+   "Type": "Top5"
+ },
+ {
+   "index": 920,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "PepsiCo",
+   "Trademark": "Lifewtr",
+   "SalesCount": 131928,
+   "Transactions": 125455,
+   "UnitVelocity": 105.159619,
+   "Type": "Top5"
+ },
+ {
+   "index": 932,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "PepsiCo",
+   "Trademark": "Twister",
+   "SalesCount": 5294,
+   "Transactions": 5047,
+   "UnitVelocity": 104.8939964,
+   "Type": "Top5"
+ },
+ {
+   "index": 376,
+   "ParentCompany": "PepsiCo",
+   "Manufacturer": "PepsiCo",
+   "Trademark": "Brisk",
+   "SalesCount": 109301,
+   "Transactions": 104395,
+   "UnitVelocity": 104.6994588,
+   "Type": "Top5"
+ }
+]

@@ -22,6 +22,8 @@ import { useHistory } from "react-router-dom";
 import { ThemeProvider, Button } from "@material-ui/core";
 import advanaTheme from "../../../advanaTheme";
 
+import Box from '@material-ui/core/Box';
+
 // Import Images
 import heroProducts from "../../../assets/img/hero-products.png";
 
@@ -29,8 +31,8 @@ import heroProducts from "../../../assets/img/hero-products.png";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 // core components
-import GridContainer from "../../../components/Grid/GridContainer.js";
-import GridItem from "../../../components/Grid/GridItem.js";
+// import GridContainer from "../../../components/Grid/GridContainer.js";
+// import GridItem from "../../../components/Grid/GridItem.js";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
@@ -42,11 +44,11 @@ export default function ProductSection() {
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.section}>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
+        <Box className={classes.sectionBoxWrapper}>
+          <Box className={classes.sectionBox} xs={12} sm={12} md={6} order={{xs: 2, sm: 2, md: 1}}>
             <img className={classes.heroImg} src={heroProducts} />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          </Box>
+          <Box className={classes.sectionBox} xs={12} sm={12} md={6} order={{xs: 1, sm: 1, md: 2}}>
             <h1 className={classes.title}>
               Actionable Insights <span>{"Direct"}</span> <br />
               from the Point of Sale
@@ -66,8 +68,8 @@ export default function ProductSection() {
               LEARN MORE
               <ChevronRightIcon style={{ marginLeft: "10px" }} />
             </Button>
-          </GridItem>
-        </GridContainer>
+          </Box>
+        </Box>
       </div>
     </ThemeProvider>
   );

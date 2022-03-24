@@ -1,23 +1,8 @@
-// =========================================================
-// Material Kit - v2.0.7
-// =========================================================
-
-// Product Page: https://www.creative-tim.com/product/material-kit
-// Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-
-// Coded by Creative Tim
-
-// =========================================================
-
-// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './App';
-
-// import Amplify from 'aws-amplify';
-// import config from './aws-exports';
-// Amplify.configure(config);
+import { Auth0Provider } from "@auth0/auth0-react";
+// import reportWebVitals from './reportWebVitals';
 
 import "./assets/scss/material-kit-react.scss?v=1.10.0";
 import "./index.css";
@@ -31,9 +16,19 @@ ReactGA.initialize('UA-206953045-1', {
 
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-
 const rootElement = document.getElementById("root");
 
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Auth0Provider
+    domain="dev-tyofb4m1.us.auth0.com"
+    clientId="DXAut1oqmhcZebuZaclvkLaNXtHqVFO4"
+    redirectUri={window.location.origin + "/admin"}
+  >
+    <App />
+  </Auth0Provider>, 
+  rootElement
+);
+
+// reportWebVitals();
 
 

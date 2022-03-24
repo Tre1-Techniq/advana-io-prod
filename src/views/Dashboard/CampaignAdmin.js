@@ -140,7 +140,7 @@ export default function CampaignAdmin() {
     if (target.checked) {
       setSelectedValue(target.value);
       setCampaignValue(target.value);
-      () => campaignDetails();
+      campaignDetails();
     }
   };
 

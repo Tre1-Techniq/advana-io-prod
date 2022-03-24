@@ -16,9 +16,19 @@
 
 */
 
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+//import Fade from "@material-ui/core/Fade";
+import MuiFade from "../../../Modal/MuiFade";
+import Box from "@material-ui/core/Box";
+
+import Intro from "../../../Modal/Intro";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -41,6 +51,17 @@ const useStyles = makeStyles(styles);
 
 export default function SentryRetail() {
   const classes = useStyles();
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.campaignsBG}>
@@ -51,25 +72,43 @@ export default function SentryRetail() {
                 className={classes.title}
               >
                 Retail Sentry
-                <h3 className={classes.subHeader}>Know your Space</h3>
               </h1>
+              <h3 className={classes.subHeader}>Know your Space</h3>
               <h4 className={classes.subtitle}
               >
               Gain visibility into your distribution, retail pricing, out-of-stocks, promotional effectiveness and more.
               </h4>
-              <Button
-                className={classes.solidBtn}
-                variant="contained"
-                color="primary"
-                to="/"
-              >
-                <EventAvailableIcon className={classes.btnIcon} />
-                BOOK A DEMO
-              </Button>
+              <Box className={classes.btnBox}>
+                <Button
+                  className={classes.solidBtn}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleOpenBookIntro()}
+                >
+                  <EventAvailableIcon className={classes.btnIcon} />
+                  BOOK AN INTRO
+                </Button>
+                  <Modal
+                    className={classes.modal}
+                    open={openBookIntro}
+                    onClose={handleCloseBookIntro}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 300,
+                        classes: {
+                            root: classes.modalBackdrop
+                        }
+                    }}
+                  >
+                  <MuiFade in={openBookIntro}>
+                    <Intro />
+                  </MuiFade>
+                </Modal>
+              </Box>
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
               <img
-                style={{ width: "100%" }}
                 className={classes.heroImg}
                 src={sentryRetail}
               />

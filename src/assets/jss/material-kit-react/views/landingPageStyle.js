@@ -1,4 +1,4 @@
-import { container, title, subtitle } from "../../material-kit-react";
+import { container, title, subtitle, heroContainer } from "../../material-kit-react";
 
 const landingPageStyle = {
   container: {
@@ -6,18 +6,52 @@ const landingPageStyle = {
     zIndex: "12",
     color: "#FFFFFF",
     position: "relative",
-    top: "50px",
+    top: "20px",
+    maxWidth: "90vw",
     "@media (min-width: 350px)": {
       top: "20px",
+      maxWidth: "96vw",
     },
     "@media (min-width: 768px)": {
-      top: "50px",
+      top: "20px",
+      maxWidth: "90vw",
+    },
+    "@media (min-width: 992px)": {
+      top: "20px",
+      maxWidth: "90vw",
+    },
+    "@media (min-width: 1200px)": {
+      top: "20px",
+      maxWidth: "90vw",
+    },
+  },
+  heroContainer: {
+    ...heroContainer,
+    zIndex: "12",
+    color: "#FFFFFF",
+    position: "relative",
+    top: "50px",
+    height: "50vh",
+    maxWidth: "90vw",
+    "@media (min-width: 350px)": {
+      top: "20px",
+      height: "70vh",
+      maxWidth: "96vw",
+    },
+    "@media (min-width: 768px)": {
+      top: "0px",
+      height: "50vh",
+      maxWidth: "90vw",
     },
     "@media (min-width: 992px)": {
       top: "50px",
+      height: "50vh",
+      maxWidth: "90vw",
     },
     "@media (min-width: 1200px)": {
       top: "50px",
+      height: "50vh",
+      maxWidth: "90vw",
     },
   },
   titleSm: {
@@ -44,33 +78,32 @@ const landingPageStyle = {
   },
   title: {
     ...title,
-    display: "inline-block",
-    position: "relative",
-    minHeight: "32px",
-    margin: "1.25rem 0 0.875rem",
+    minHeight: "1.65rem",
+    margin: "1.25rem 0 0.25rem",
     textDecoration: "none",
     "@media (min-width: 350px)": {
-      fontSize: '1.5rem',
+      fontSize: '1.65rem',
       lineHeight: '2rem',
-      margin: "0.875rem 0",
+      margin: "1.25rem 0 0.25rem",
     },
     "@media (min-width: 768px)": {
       fontSize: '2.25rem',
-      lineHeight: '3rem',
+      lineHeight: '2.5rem',
     },
     "@media (min-width: 992px)": {
       fontSize: '2.25rem',
-      lineHeight: '3rem',
+      lineHeight: '2.5rem',
     },
     "@media (min-width: 1200px)": {
       fontSize: '2.25rem',
-      lineHeight: '3rem',
-      margin: "1.25rem 0 0.875rem",
+      lineHeight: '2.5rem',
+      margin: "1.25rem 0 0.25rem",
     },
   },
   subtitle: {
     ...subtitle,
-    fontSize: "1.2rem",
+    fontSize: "1.25rem",
+    lineHeight: "1.75rem",
     maxWidth: "600px",
     margin: "10px 0",
     color: "#848484",
@@ -79,27 +112,47 @@ const landingPageStyle = {
       lineHeight: '1.25rem',
     },
     "@media (min-width: 768px)": {
-      fontSize: '1rem',
-      lineHeight: '1.25rem',
+      fontSize: '1.2rem',
+      lineHeight: '1.5rem',
     },
     "@media (min-width: 992px)": {
-      fontSize: '1rem',
-      lineHeight: '1.25rem',
+      fontSize: '1.2rem',
+      lineHeight: '1.5rem',
     },
     "@media (min-width: 1200px)": {
-      fontSize: '1rem',
-      lineHeight: '1.25rem',
+      fontSize: '1.2rem',
+      lineHeight: '1.5rem',
     },
   },
   subHeader: {
     color: "#4db8be",
     marginTop: "0",
+    marginBottom: "1.5rem",
+    fontWeight: "400",
+    fontSize: '1.5rem',
+    lineHeight: '1.75rem',
+    "@media (min-width: 350px)": {
+      fontSize: '1.3rem',
+      lineHeight: '1.5rem',
+    },
+    "@media (min-width: 768px)": {
+      fontSize: '1.5rem',
+      lineHeight: '1.75rem',
+    },
+    "@media (min-width: 992px)": {
+      fontSize: '1.5rem',
+      lineHeight: '1.75rem',
+    },
+    "@media (min-width: 1200px)": {
+      fontSize: '1.5rem',
+      lineHeight: '1.75rem',
+    },
   },
   main: {
     background: "#FFFFFF",
     position: "relative",
     zIndex: "3",
-    paddingBottom: "50px",
+    paddingBottom: "20px",
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -118,7 +171,7 @@ const landingPageStyle = {
       top: "30px",
     },
     "@media (min-width: 768px)": {
-      width: "100%",
+      width: "80vw",
       top: "30px",
     },
     "@media (min-width: 992px)": {
@@ -169,6 +222,7 @@ const landingPageStyle = {
   },
   solidBtn: {
     width: "200px",
+    margin: "1.25rem 0",
     "@media (min-width: 340px)": {
       width: "100%",
     },

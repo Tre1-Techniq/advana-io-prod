@@ -1,0 +1,61 @@
+[
+    {
+        "ParentCompany": {
+            "S": "PepsiCo"
+          },
+        "Manufacturer": {
+            "S": "Minute Maid"
+        },
+        "Month": {
+            "S": "11"
+        },
+        "SalesCount": {
+            "N": "302"
+        },
+        "RetailDollars": {
+            "N": "981"
+        },
+        "PSkusTracked": {
+            "N": "2"
+        },
+        "Trans": {
+            "N": "13267"
+        },
+        "UnitVelocity": {
+            "N": "22.76"
+        },
+        "Type": {
+            "S": "HomeKpi"
+        }
+        
+    },
+    {
+        "ParentCompany": {
+            "S": "PepsiCo"
+          },
+        "Manufacturer": {
+            "S": "Frito-Lay"
+        },
+        "Month": {
+            "S": "10"
+        },
+        "SalesCount": {
+            "N": "38188615"
+        },
+        "RetailDollars": {
+            "N": "9865946"
+        },
+        "SkusTracked": {
+            "N": "429"
+        },
+        "Trans": {
+            "N": "350638958"
+        },
+        "UnitVelocity": {
+            "N": "23.35"
+        },
+        "Type": {
+            "S": "HomeKpi"
+        }
+    }
+]

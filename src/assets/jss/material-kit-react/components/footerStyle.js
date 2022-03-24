@@ -25,21 +25,29 @@ const footerStyle = (theme) => ({
     margin: "0",
     justifyContent: "flex-end",
     display: "flex",
+    height: "40px",
+    top: "10px",
     "@media (min-width: 350px)": {
       display: "flex",
       position: "relative",
       height: "20px",
-      top: "20px",
+      top: "0",
       width: "100%"
     },
     "@media (min-width: 768px)": {
       display: "flex",
+      height: "40px",
+      top: "10px",
     },
     "@media (min-width: 992px)": {
       display: "flex",
+      height: "40px",
+      top: "10px",
     },
     "@media (min-width: 1200px)": {
       display: "flex",
+      height: "40px",
+      top: "10px",
     },
   },
   footer: {
@@ -52,18 +60,18 @@ const footerStyle = (theme) => ({
     backgroundImage:
       "radial-gradient(circle, rgba(53,113,191,1) 0%, rgba(46,64,148,1) 70%, rgba(22,32,75,1) 100%)",
     textAlign: "center",
-    padding: "50px",
+    padding: "30px",
     "@media (min-width: 350px)": {
       padding: "20px",
     },
     "@media (min-width: 768px)": {
-      padding: "50px",
+      padding: "30px",
     },
     "@media (min-width: 992px)": {
-      padding: "50px",
+      padding: "30px",
     },
     "@media (min-width: 1200px)": {
-      padding: "50px",
+      padding: "30px",
     },
   },
   a: {
@@ -135,7 +143,6 @@ const footerStyle = (theme) => ({
     position: "relative",
     display: "block",
     width: "auto",
-    padding: "0",
     [theme.breakpoints.down('md')]: {
       width: "100%",
       "&:after": {
@@ -164,6 +171,28 @@ const footerStyle = (theme) => ({
   listItemText: {
     padding: "0 !important",
     display: "inline-flex",
+  },
+  listItemActive: {
+    position: "relative",
+    margin: "0 25px",
+    paddingRight: "0",
+    "& span:nth-child(1)": {
+      color: "#00acc1 !important",
+      fontWeight: "500",
+      // borderBottom: "2px solid #00acc1"
+    },
+    "@media (min-width: 350px)": {
+      
+    },
+    "@media (min-width: 768px)": {
+      
+    },
+    "@media (min-width: 992px)": {
+      
+    },
+    "@media (min-width: 1200px)": {
+      
+    },
   },
   navLink: {
     color: "#848484",
@@ -317,15 +346,16 @@ const footerStyle = (theme) => ({
     justifyContent: "center",
     width: "75vw",
     display: "inline-flex",
+    "& button": {
+      color: "#e7e7e7",
+      width: "100%",
+    } ,
     "@media (min-width: 350px)": {
       width: "100%",
       height: "auto",
       position: "relative",
       left: "0",
       display: "block",
-    },
-    "& button": {
-      width: "100%",
     },
     "@media (min-width: 768px)": {
       display: "inline-flex",
@@ -335,6 +365,34 @@ const footerStyle = (theme) => ({
     },
     "@media (min-width: 1200px)": {
       display: "inline-flex",
+    },
+  },
+  footerNavUL: {
+    width: "auto",
+    display: "flex",
+    flexWrap: "nowrap",
+    "& li": {
+      paddingRight: "0",
+    },
+    "@media (min-width: 350px)": {
+      width: "auto",
+      display: "flex",
+      flexWrap: "wrap",
+    },
+    "@media (min-width: 768px)": {
+      width: "auto",
+      display: "flex",
+      flexWrap: "nowrap",
+    },
+    "@media (min-width: 992px)": {
+      width: "auto",
+      display: "flex",
+      flexWrap: "nowrap",
+    },
+    "@media (min-width: 1200px)": {
+      width: "auto",
+      display: "flex",
+      flexWrap: "nowrap",
     },
   },
   footerLogo: {

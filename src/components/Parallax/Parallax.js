@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+import parallaxBG from "../../assets/img/parallax/advana-io-bg-01.jpg"
+
 // core components
 import styles from "../../assets/jss/material-kit-react/components/parallaxStyle.js";
 
@@ -47,7 +49,7 @@ export default function Parallax(props) {
       className={parallaxClasses}
       style={{
         ...style,
-        backgroundImage: "url(" + image + ")",
+        backgroundImage: `url(${parallaxBG})`,
         transform: transform,
       }}
     >

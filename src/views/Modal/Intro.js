@@ -118,8 +118,8 @@ function Intro() {
           <HubspotForm
             portalId='7027050'
             formId='59814e6c-d119-4017-8d57-ca2f6100405a'
-            onSubmit={() => console.log('Submit!')}
-            onReady={(form) => console.log('Form ready: ', form)}
+            //onSubmit={() => console.log('Submit!')}
+            onReady={() => console.log('Form ready!')}
             loading={<div>Loading...</div>}
           />
         </GridItem>

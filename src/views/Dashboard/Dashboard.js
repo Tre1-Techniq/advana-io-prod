@@ -19,15 +19,6 @@
 import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 
-// import Amplify from 'aws-amplify';
-// import config from '../../aws-exports';
-// Amplify.configure(config);
-
-// import Amplify, { Auth } from "aws-amplify";
-//import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-
-// import { motion, AnimatePresence } from "framer-motion";
-
 import MapLegend from "./Charts/MapLegend";
 
 // nodejs library that concatenates classes
@@ -69,7 +60,7 @@ import advanaTheme from "../../advanaTheme";
 //import { messages } from "../../variables/general.js";
 import salesItems from "./sales-items.json";
 
-import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js"
+import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -85,17 +76,21 @@ function Dashboard() {
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardBody>
-              <div className={classes.cardCategory}>
-                Total Sales
-              </div>
+              <GridContainer>
+                <GridItem>
+                  <Avatar className={classes.cardAvatar}>
+                    <ReceiptIcon className={classes.avatarIcon} />
+                  </Avatar>
+                </GridItem>
+                  <div className={classes.cardCategory}>
+                    Total Sales
+                  </div>
+                <GridItem>
+                </GridItem>
+              </GridContainer>
               <div className={classes.cardKPIWrapper}>
-                <GridContainer>
-                  <GridItem xs={2} sm={2} md={2}>
-                    <Avatar className={classes.cardAvatar}>
-                      <ReceiptIcon />
-                    </Avatar>
-                  </GridItem>
-                  <GridItem xs={10} sm={10} md={10}>
+                <GridContainer className={classes.cardKPIContainer}>
+                  <GridItem className={classes.cardKPIItem}>
                     <h3 className={classes.cardKPI}>
                       100,000
                     </h3>
@@ -112,17 +107,21 @@ function Dashboard() {
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardBody>
-              <div className={classes.cardCategory}>
-                Total Retail $
-              </div>
+              <GridContainer>
+                <GridItem>
+                  <Avatar className={classes.cardAvatar}>
+                    <LocalAtmIcon className={classes.avatarIcon} />
+                  </Avatar>
+                </GridItem>
+                <GridItem>
+                  <div className={classes.cardCategory}>
+                    Total Dollars
+                  </div>
+                </GridItem>
+              </GridContainer>
               <div className={classes.cardKPIWrapper}>
-                <GridContainer>
-                  <GridItem xs={2} sm={2} md={2}>
-                    <Avatar className={classes.cardAvatar}>
-                      <LocalAtmIcon  />
-                    </Avatar>
-                  </GridItem>
-                  <GridItem xs={10} sm={10} md={10}>
+                <GridContainer className={classes.cardKPIContainer}>
+                  <GridItem>
                     <h3 className={classes.cardKPI}>$350,000</h3>
                   </GridItem>
                 </GridContainer>
@@ -137,18 +136,22 @@ function Dashboard() {
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardBody>
-              <div className={classes.cardCategory}>
-                Average Ticket
-              </div>
+              <GridContainer>
+                <GridItem>
+                  <Avatar className={classes.cardAvatar}>
+                    <LocalOfferIcon className={classes.avatarIcon} />
+                  </Avatar>
+                </GridItem>
+                <GridItem>
+                  <div className={classes.cardCategory}>
+                    SKUs Tracked
+                  </div>
+                </GridItem>
+              </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer>
-                  <GridItem xs={2} sm={2} md={2}>
-                    <Avatar className={classes.cardAvatar}>
-                      <LocalOfferIcon />
-                    </Avatar>
-                  </GridItem>
-                  <GridItem xs={10} sm={10} md={10}>
-                    <h3 className={classes.cardKPI}>$3.50</h3>
+                  <GridItem>
+                    <h3 className={classes.cardKPI}>337</h3>
                   </GridItem>
                 </GridContainer>
               </div>
@@ -162,17 +165,21 @@ function Dashboard() {
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardBody>
-              <div className={classes.cardCategory}>
-                %ACV
-              </div>
+              <GridContainer>
+                <GridItem>
+                  <Avatar className={classes.cardAvatar}>
+                    <SpeedIcon className={classes.avatarIcon} />
+                  </Avatar>
+                </GridItem>
+                <GridItem>
+                  <div className={classes.cardCategory}>
+                    % ACV
+                  </div>
+                </GridItem>
+              </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer>
-                  <GridItem xs={2} sm={2} md={2}>
-                    <Avatar className={classes.cardAvatar}>
-                      <SpeedIcon />
-                    </Avatar>
-                  </GridItem>
-                  <GridItem xs={10} sm={10} md={10}>
+                  <GridItem>
                     <h3 className={classes.cardKPI}>7.5</h3>
                   </GridItem>
                 </GridContainer>
@@ -185,7 +192,7 @@ function Dashboard() {
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
-          <Card className={classes.dashCardAutoH}>
+          <Card className={classes.homeCardAutoH}>
             <CardBody>
               <p className={classes.cardCategory}>Total Sales</p>
               <div>
@@ -198,7 +205,7 @@ function Dashboard() {
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-          <Card className={classes.dashCardAutoH}>
+          <Card className={classes.homeCardAutoH}>
             <CardBody>
               <div className={classes.cardCategoryWrapper}>
                 <VerifiedUserIcon className={classes.tasksIcon} />

@@ -16,9 +16,17 @@
 
 */
 
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import Box from "@material-ui/core/Box";
+
+import Intro from "../../../Modal/Intro";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -41,34 +49,63 @@ const useStyles = makeStyles(styles);
 
 export default function PromoteInventory() {
   const classes = useStyles();
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+  
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.campaignsBG}>
         <div className={classes.sectionBG}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={5}>
+            <GridItem xs={12} sm={12} md={6}>
               <h1
                 className={classes.title}
               >
                 Verified Inventory
-                <h3 className={classes.subHeader}>Promote Where Your Product Is</h3>
               </h1>
+              <h3 className={classes.subHeader}>Promote Where Your Product Is</h3>
               <h4 className={classes.subtitle}
               >
               Advana verifies your product is selling before we activate your promotion ensuring the best returns for your investment. 
               </h4>
-              <br />
-              <Button
-                className={classes.solidBtn}
-                variant="contained"
-                color="primary"
-                to="/"
+              <Box className={classes.btnBox}>
+                <Button
+                  className={classes.solidBtn}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleOpenBookIntro()}
+                >
+                  <EventAvailableIcon className={classes.btnIcon} />
+                  BOOK AN INTRO
+                </Button>
+              </Box>
+              <Modal
+                className={classes.modal}
+                open={openBookIntro}
+                onClose={handleCloseBookIntro}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 300,
+                    classes: {
+                        root: classes.modalBackdrop
+                    }
+                }}
               >
-                <EventAvailableIcon className={classes.btnIcon} style={{marginRight: "20px"}} />
-                BOOK A DEMO
-              </Button>
+                <Fade in={openBookIntro}>
+                  <Intro />
+                </Fade>
+              </Modal>
             </GridItem>
-            <GridItem xs={12} sm={12} md={7}>
+            <GridItem xs={12} sm={12} md={6}>
               <img
                 className={classes.heroImg}
                 src={promoteInventory}

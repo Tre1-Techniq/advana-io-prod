@@ -1,5 +1,5 @@
 import { createTheme } from "@material-ui/core/styles";
-import { grey, indigo, orange, cyan } from "@material-ui/core/colors";
+import { grey, indigo, cyan } from "@material-ui/core/colors";
 
 const advanaTheme = createTheme({
   palette: {
@@ -32,16 +32,14 @@ advanaTheme.overrides = {
       padding: "10px 20px",
       borderRadius: "4px",
       textTransform: "uppercase",
-      borderBottom: "2px solid transparent",
       "&:hover,&:focus": {
         backgroundColor: "transparent",
         color: indigo[700],
-        // borderBottom: `2px solid ${indigo[700]}`,
       },
     },
     containedPrimary: {
       border: "2px solid transparent",
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: "transparent",
         color: advanaTheme.palette.primary.main,
         border: `2px solid ${indigo[700]}`,
@@ -51,13 +49,18 @@ advanaTheme.overrides = {
     textSizeSmall: {
       fontWeight: "400",
       color: "#848484",
+      fontSize: "0.9rem",
+      "&:focus,&:active": {
+        color: "#00acc1",
+        fontWeight: "400",
+      }
     },
     containedSecondary: {
       border: "2px solid transparent",
       "&:hover": {
         backgroundColor: "transparent",
         color: advanaTheme.palette.secondary.main,
-        border: `2px solid ${orange[600]}`,
+        border: `2px solid ${cyan[600]}`,
         fontWeight: "700",
       },
     },
@@ -70,10 +73,10 @@ advanaTheme.overrides = {
       },
     },
     outlinedSecondary: {
-      border: `2px solid ${orange[600]}`,
+      border: `2px solid ${cyan[600]}`,
       "&:hover": {
         color: "#ffffff",
-        backgroundColor: `${orange[600]}`,
+        backgroundColor: `${cyan[600]}`,
         border: "2px solid transparent",
       },
     },

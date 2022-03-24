@@ -49,26 +49,27 @@ import reach from "../../../assets/img/products/advana-product-reach.png";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import avatarBlank from "../../../assets/img/faces/avatar-blank.jpg";
+// import avatarGeneric from "../../../assets/img/faces/avatar-blank.jpg";
+import avatarGeneric from "../../../assets/img/faces/avatar-generic.jpg";
 
 const useStyles = makeStyles(styles);
 
 export default function TeamSection() {
   const classes = useStyles();
   const imageClasses = classNames(
-    classes.imgRaised,
+    // classes.imgRaised,
     classes.imgRoundedCircle,
     classes.imgFluid
   );
   return (
     <div className={classes.section}>
-      <h1
+      <h2
         className={classes.title}
-        style={{ width: "100%", textAlign: "center" }}
+        style={{ fontWeight: "400", width: "100%", textAlign: "center", color: "#2e4094" }}
       >
-        About <span>ADVANA</span>
-      </h1>
-      <h4
+        About <span style={{color: "#00acc1" }}>ADVANA</span>
+      </h2>
+      {/* <h4
         className={classes.subtitle}
         style={{
           color: "#848484",
@@ -78,7 +79,7 @@ export default function TeamSection() {
       >
         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
         suscipit laboriosam
-      </h4>
+      </h4> */}
       <GridContainer>
         <GridItem
           xs={12}
@@ -88,6 +89,7 @@ export default function TeamSection() {
             display: "flex",
             borderRight: "1px solid #e4e4e4",
             marginTop: "50px",
+            justifyContent: "center",
           }}
         >
           <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
@@ -99,7 +101,7 @@ export default function TeamSection() {
                 className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
-                <img src={avatarBlank} alt="..." className={imageClasses} />
+                <img src={avatarGeneric} alt="..." className={imageClasses} />
               </GridItem>
               <h4
                 className={classes.cardTitle}
@@ -149,7 +151,7 @@ export default function TeamSection() {
                 className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
-                <img src={avatarBlank} alt="..." className={imageClasses} />
+                <img src={avatarGeneric} alt="..." className={imageClasses} />
               </GridItem>
               <h4
                 className={classes.cardTitle}
@@ -159,7 +161,7 @@ export default function TeamSection() {
                   lineHeight: "1.5rem",
                 }}
               >
-                Mike Fischer
+                Evan Johnson
                 <br />
                 <small className={classes.smallTitle}>Account Executive</small>
               </h4>
@@ -200,7 +202,7 @@ export default function TeamSection() {
                 style={{ margin: "0 auto" }}
               >
                 <img
-                  src={avatarBlank}
+                  src={avatarGeneric}
                   alt="..."
                   className={imageClasses}
                   style={{ margin: "0 auto" }}
@@ -256,7 +258,12 @@ export default function TeamSection() {
                 className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
-                <img src={avatarBlank} alt="..." className={imageClasses} />
+                <img
+                  src={avatarGeneric}
+                  alt="..."
+                  className={imageClasses}
+                  style={{ margin: "0 auto" }}
+                />
               </GridItem>
               <h4
                 className={classes.cardTitle}
@@ -266,9 +273,9 @@ export default function TeamSection() {
                   lineHeight: "1.5rem",
                 }}
               >
-                Carlos Anderson
+                Mike Stack
                 <br />
-                <small className={classes.smallTitle}>Developer</small>
+                <small className={classes.smallTitle}>Senior Data Engineer</small>
               </h4>
               <CardBody style={{ padding: "0 20px" }}>
                 <p className={classes.description}>
@@ -282,7 +289,13 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <CodeIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
+                  <ExtensionIcon
+                    style={{
+                      margin: "0 20px",
+                      fill: "#2e4094",
+                      cursor: "pointer",
+                    }}
+                  />
                 </Tooltip>
                 <Tooltip
                   id="instagram-twitter"
@@ -290,7 +303,7 @@ export default function TeamSection() {
                   placement={window.innerWidth > 959 ? "top" : "left"}
                   classes={{ tooltip: classes.tooltip }}
                 >
-                  <StorageIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
+                  <CodeIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
                 </Tooltip>
               </CardFooter>
             </Card>
@@ -304,7 +317,7 @@ export default function TeamSection() {
                 className={classes.gridItem}
                 style={{ margin: "0 auto" }}
               >
-                <img src={avatarBlank} alt="..." className={imageClasses} />
+                <img src={avatarGeneric} alt="..." className={imageClasses} />
               </GridItem>
               <h4
                 className={classes.cardTitle}
@@ -355,7 +368,7 @@ export default function TeamSection() {
                 style={{ margin: "0 auto" }}
               >
                 <img
-                  src={avatarBlank}
+                  src={avatarGeneric}
                   alt="..."
                   className={imageClasses}
                   style={{ margin: "0 auto" }}
@@ -404,6 +417,54 @@ export default function TeamSection() {
               </CardFooter>
             </Card>
           </GridItem>
+          <GridItem xs={12} sm={12} md={4} className={classes.teamCard}>
+            <Card plain>
+              <GridItem
+                xs={12}
+                sm={12}
+                md={8}
+                className={classes.gridItem}
+                style={{ margin: "0 auto" }}
+              >
+                <img src={avatarGeneric} alt="..." className={imageClasses} />
+              </GridItem>
+              <h4
+                className={classes.cardTitle}
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: "300",
+                  lineHeight: "1.5rem",
+                }}
+              >
+                Carlos Anderson
+                <br />
+                <small className={classes.smallTitle}>Developer</small>
+              </h4>
+              <CardBody style={{ padding: "0 20px" }}>
+                <p className={classes.description}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                <Tooltip
+                  id="instagram-twitter"
+                  title="Excepteur sint occaecat"
+                  placement={window.innerWidth > 959 ? "top" : "left"}
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <CodeIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
+                </Tooltip>
+                <Tooltip
+                  id="instagram-twitter"
+                  title="Excepteur sint occaecat"
+                  placement={window.innerWidth > 959 ? "top" : "left"}
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <StorageIcon style={{ margin: "0 20px", fill: "#2e4094" }} />
+                </Tooltip>
+              </CardFooter>
+            </Card>
+          </GridItem>
         </GridItem>
         <GridItem
           xs={12}
@@ -439,7 +500,7 @@ export default function TeamSection() {
               </p>
             </GridItem>
           </GridItem>
-          <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
+          {/* <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
             <GridItem xs={12} sm={6} md={3}>
             <img src={sentry} style={{width: "100%", padding: "15px"}} />
             </GridItem>
@@ -452,7 +513,7 @@ export default function TeamSection() {
             <GridItem xs={12} sm={6} md={3}>
             <img src={promote} style={{width: "100%", padding: "15px"}} />
             </GridItem>
-          </GridItem>
+          </GridItem> */}
         </GridItem>
       </GridContainer>
     </div>

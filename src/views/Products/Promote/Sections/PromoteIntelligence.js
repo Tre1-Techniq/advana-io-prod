@@ -43,34 +43,34 @@ export default function PromoteIntelligence() {
       <div className={classes.campaignsBG}>
         <div className={classes.sectionBG}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={5}>
+            <GridItem xs={12} sm={12} md={6}>
               <h1
                 className={classes.title}
               >
                 Ultimate Intelligence
-                <h3 className={classes.subHeader}>eCommerce Grade Analytics for the <br/>Retail Environment</h3>
               </h1>
+              <h3 className={classes.subHeader}>eCommerce Grade Analytics for the Retail Environment</h3>
               <h4 className={classes.subtitle}
               >
               Track your impressions, engagements, and sales for every location participating in your campaign.  
               </h4>
 
               <div className={classes.productBullets}>
-                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                <h3>
                 Feel the Need, the Need for Speed 
                 </h3>
-                <p style={{ color: "#848484" }}>
+                <p>
                 Fast moving consumer goods (FMCGs) thrive with Advana Promote helping you sell, earn, and profit faster than ever. With unmatched targeting capabilities, you’ll leave your competition ailing in the danger zone.
                 </p>
-                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
+                <h3>
                 Want more Insight? Go <span className={classes.badgePro}>PRO</span>
                 </h3>
-                <p style={{ color: "#848484" }}>
+                <p>
                 In addition to our performance metrics Advana Promote PRO brings you enhanced insights with day part {"&"} basket analysis. Knowing when shoppers buy your products and what they’re buy it with will arm you with intel guaranteed to take your competition’s breath away.
                 </p>
               </div>
             </GridItem>
-            <GridItem xs={12} sm={12} md={7}>
+            <GridItem xs={12} sm={12} md={6}>
               <img
                 src={promoteIntelligence}
                 className={classes.heroImg}

@@ -1,6 +1,6 @@
 const parallaxStyle = {
   parallax: {
-    height: "75vh",
+    height: "80vh",
     maxHeight: "1000px",
     overflow: "hidden",
     position: "relative",
@@ -11,6 +11,18 @@ const parallaxStyle = {
     border: "0",
     display: "flex",
     alignItems: "center",
+    "@media (min-width: 350px)": {
+      height: "100vh",
+    },
+    "@media (min-width: 768px)": {
+      height: "100vh",
+    },
+    "@media (min-width: 992px)": {
+      height: "80vh",
+    },
+    "@media (min-width: 1200px)": {
+      height: "80vh",
+    },
   },
   filter: {
     "&:before": {
@@ -28,7 +40,7 @@ const parallaxStyle = {
     },
   },
   small: {
-    height: "380px",
+    height: "25vh",
   },
 };
 

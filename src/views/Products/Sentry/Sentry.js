@@ -32,7 +32,7 @@ import Box from "@material-ui/core/Box";
 //Modal
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
+import MuiFade from "../../Modal/MuiFade";
 // import { FormControl } from '@material-ui/core';
 // import { InputLabel } from '@material-ui/core';
 // import { FormHelperText } from '@material-ui/core';
@@ -145,7 +145,6 @@ export default function Sentry(props) {
 
   return (
     <ThemeProvider theme={advanaTheme}>
-      <div className={classes.heroContainer}>
         <Header
           color="transparent"
           rightLinks={<HeaderLinks />}
@@ -160,14 +159,14 @@ export default function Sentry(props) {
           style={{ position: "absolute", top: "-50px" }}
           id="back-to-top-anchor"
         />
-        <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default}>
-          <div className={classes.container}>
+        <Parallax image={require("../../../assets/img/advana-io-bg-01.jpg").default} className={classes.parallax}>
+          <div className={classes.heroContainer}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
                   Introducing <b>SENTRY</b> 
-                  <h3 className={classes.subHeader}>Know your Market</h3>
                 </h1>
+                <h3 className={classes.subHeader}>Know your Market</h3>
                 <h4 className={classes.subtitle}>
                 Collaborative Business Intelligence for manufacturers, retailers, {"&"} operators to find ways to grow together. 
 
@@ -190,15 +189,15 @@ export default function Sentry(props) {
                       closeAfterTransition
                       BackdropComponent={Backdrop}
                       BackdropProps={{
-                          timeout: 300,
-                          classes: {
-                              root: classes.modalBackdrop
-                          }
+                        timeout: 300,
+                        classes: {
+                            root: classes.modalBackdrop
+                        }
                       }}
                     >
-                      <Fade in={openBookIntro}>
+                      <MuiFade in={openBookIntro}>
                         <Intro />
-                      </Fade>
+                      </MuiFade>
                     </Modal>
                   {/* <Button
                     onClick={() => {
@@ -237,7 +236,6 @@ export default function Sentry(props) {
           </ScrollTop>
         </div>
         <Footer />
-      </div>
     </ThemeProvider>
   );
 }

@@ -30,6 +30,18 @@ const headerStyle = {
     justifyContent: "flex-start",
     position: "relative",
     zIndex: "unset",
+    "@media (min-width: 350px)": {
+      
+    },
+    "@media (min-width: 768px)": {
+      
+    },
+    "@media (min-width: 992px)": {
+      
+    },
+    "@media (min-width: 1200px)": {
+      
+    },
   },
   absolute: {
     position: "absolute",

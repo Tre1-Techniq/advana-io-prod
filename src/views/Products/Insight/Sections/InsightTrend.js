@@ -16,9 +16,17 @@
 
 */
 
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+//Modal
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import Box from "@material-ui/core/Box";
+
+import Intro from "../../../Modal/Intro";
 
 // Advana Color Theme
 import { ThemeProvider, Button } from "@material-ui/core";
@@ -42,6 +50,17 @@ const useStyles = makeStyles(styles);
 
 export default function InsightTrend() {
   const classes = useStyles();
+
+  const [openBookIntro, setOpenBookIntro] = useState(false);
+
+  const handleOpenBookIntro = () => {
+    setOpenBookIntro(true);
+  };
+  
+  const handleCloseBookIntro = () => {
+    setOpenBookIntro(false);
+  };
+
   return (
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.campaignsBG}>
@@ -52,22 +71,40 @@ export default function InsightTrend() {
                 className={classes.title}
               >
                 Trend Spotter
-                <h3 className={classes.subHeader}>Identify Legends of Tomorrow</h3>
               </h1>
+              <h3 className={classes.subHeader}>Identify Legends of Tomorrow</h3>
               <h4 className={classes.subtitle}
               >
               New innovations pop up every day. Advana’s AI can spot the ones that are poised for growth so you can ensure your brands & assortment is always on trend.
               </h4>
-              <br />
-              <Button
-                className={classes.solidBtn}
-                variant="contained"
-                color="primary"
-                to="/"
-              >
-                <EventAvailableIcon className={classes.btnIcon} style={{marginRight: "20px"}} />
-                BOOK A DEMO
-              </Button>
+              <Box className={classes.btnBox}>
+                <Button
+                  className={classes.solidBtn}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleOpenBookIntro()}
+                >
+                  <EventAvailableIcon className={classes.btnIcon} />
+                  BOOK AN INTRO
+                </Button>
+                  <Modal
+                    className={classes.modal}
+                    open={openBookIntro}
+                    onClose={handleCloseBookIntro}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 300,
+                        classes: {
+                            root: classes.modalBackdrop
+                        }
+                    }}
+                  >
+                  <Fade in={openBookIntro}>
+                    <Intro />
+                  </Fade>
+                </Modal>
+              </Box>
             </GridItem>
             <GridItem xs={12} sm={12} md={7}>
               <img

@@ -1,0 +1,16 @@
+{
+  "function": {
+    "portalauthPreSignup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "portalhttplambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "auth": {},
+  "api": {}
+}

@@ -62,16 +62,33 @@ export default function SentryCaseStudy() {
                 className={classes.title}
               >
                 Case Study:
-                <h3 className={classes.subHeader}>Awake Chocolate Sentry</h3>
               </h1>
+              <h3 className={classes.subHeader}>Awake Chocolate Sentry</h3>
               <h4 className={classes.subtitle}
               >
               Learn how Awake Chocolate uses Sentry to help operators stay in-stock and priced to win with their industry leading Awake Bites.
               </h4>
-              <img
-              className={classes.caseStudyImg}
-                src={caseStudyAwake}
-              />
+              <div className={classes.productBullets}>
+                <h3>
+                  Challenges
+                </h3>
+                <p>
+                Out-of-stocks are all too prevalent in micro markets and cost our industry thousands of dollars everyday. With millions of shoppers reaching into empty Awake Chocolate boxes every month Awake turned to Advana for insights on how to slay the inventory slump.
+                </p>
+                <h3>
+                  Solutions
+                </h3>
+                <p>
+                Retail Sentry from Advana provides location-level analysis for manufacturers {"&"} participating operators to make joint decisions to maximize their growth. Leveraging billions of transactions, Sentry identifies purchase patterns where out of stocks are likely common and produces actions by location for operators to target improvements.
+                </p>
+                <h3>
+                  Results
+                </h3>
+                <p>
+                At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 5% of top-line growth for Awake and the operators who offer Awake in their markets.
+                </p>
+              </div>
+              
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
             <GridItem xs={12} sm={12} md={12} className={classes.teamCard}>
@@ -87,26 +104,10 @@ export default function SentryCaseStudy() {
                 </GridItem>
               </Card>
             </GridItem>
-              <GridItem style={{ color: "#848484" }}>
-                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                  Challenges
-                </h3>
-                <p>
-                Out-of-stocks are all too prevalent in micro markets and cost our industry thousands of dollars everyday. With millions of shoppers reaching into empty Awake Chocolate boxes every month Awake turned to Advana for insights on how to slay the inventory slump.
-                </p>
-                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                  Solutions
-                </h3>
-                <p>
-                Retail Sentry from Advana provides location-level analysis for manufacturers {"&"} participating operators to make joint decisions to maximize their growth. Leveraging billions of transactions, Sentry identifies purchase patterns where out of stocks are likely common and produces actions by location for operators to target improvements.
-                </p>
-                <h3 style={{ color: "#2e4094", fontWeight: "400" }}>
-                  Results
-                </h3>
-                <p>
-                At-risk and confirmed out-of-stock locations have decreased by 20% since the partnership began delivering over 5% of top-line growth for Awake and the operators who offer Awake in their markets.
-                </p>
-              </GridItem>
+              <img
+                className={classes.caseStudyImg}
+                src={caseStudyAwake}
+              />
               {/* <GridItem xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "space-between", padding: "0 !important"}}>
               <GridItem xs={12} sm={6} md={3}>
               <img src={awakeKPI01} style={{width: "100%", padding: "15px"}} />

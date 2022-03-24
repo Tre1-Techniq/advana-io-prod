@@ -1,0 +1,14 @@
+[
+  {
+    "groupName": "Admin",
+    "precedence": 1
+  },
+  {
+    "groupName": "FritoLay",
+    "precedence": 2
+  },
+  {
+    "groupName": "PepsiCo",
+    "precedence": 3
+  }
+]

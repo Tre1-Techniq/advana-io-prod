@@ -16,10 +16,13 @@
 
 */
 
+//import React, { useState, useEffect, createRef } from "react";
 import React, { useState, useEffect, createRef } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
-// @material-ui/core components
+//import { AccountContext } from '../components/Accounts/Accounts';
+//import Pool from '../components/UserPool/UserPool';
+
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
@@ -31,8 +34,6 @@ import Sidebar from "../components/Sidebar/Sidebar.js";
 import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../advanaTheme";
 
-//import { indigo } from "@material-ui/core/colors";
-
 import routes from "../routes.js";
 
 import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
@@ -41,27 +42,29 @@ import bgImage from "../assets/img/advana-io-bg-02.jpg";
 import fullLogo from "../assets/img/logo-full-white.png";
 //import pillLogo from "../assets/img/advana-pill-logo.png";
 
-const switchRoutes = (
-  <Switch>
-    {routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
-      }
-      return null;
-    })}
-    <Redirect from="/admin" to="/admin/dashboard" />
-  </Switch>
-);
+//const user = Pool.getCurrentUser();
 
 const useStyles = makeStyles(styles);
 
 function Admin({ ...rest }) {
+  const switchRoutes = (
+    <Switch>
+      {routes.map((prop, key) => {
+        if (prop.layout === "/admin") {
+          return (
+            <Route
+              path={prop.layout + prop.path}
+              component={prop.component}
+              key={key}
+            />
+          );
+        }
+        return null;
+      })}
+      <Redirect from="/admin" to="/admin/home" />
+    </Switch>
+  );
+
   // styles
   const classes = useStyles();
   // ref to help us initialize PerfectScrollbar on windows devices
@@ -71,17 +74,6 @@ function Admin({ ...rest }) {
 
   const color = "blue";
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-  const getRoute = () => {
-    return window.location.pathname !== "/admin/analytics";
-  };
-  const resizeFunction = () => {
-    if (window.innerWidth >= 960) {
-      setMobileOpen(false);
-    }
-  };
   // initialize and destroy the PerfectScrollbar plugin
   useEffect(() => {
     window.addEventListener("resize", resizeFunction);
@@ -91,21 +83,18 @@ function Admin({ ...rest }) {
     };
   }, [mainPanel]);
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  const getRoute = () => {
+    return window.location.pathname !== "/admin/sentry";
+  };
+  const resizeFunction = () => {
+    if (window.innerWidth >= 960) {
+      setMobileOpen(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   AssessLoggedInState();
-  // }, []);
-
-  // const AssessLoggedInState = () => {
-  //   Auth.currentAuthenticatedUser().then(() => {
-  //     setIsLoggedIn(true);
-  //     console.log("Logged In: ", isLoggedIn);
-  //   }).catch(() => {
-  //     setIsLoggedIn(false);
-  //     console.log("Logged In: ", isLoggedIn);
-  //   })
-  // }
   return (
     <ThemeProvider theme={advanaTheme}>
       <Sidebar
@@ -124,13 +113,13 @@ function Admin({ ...rest }) {
           handleDrawerToggle={handleDrawerToggle}
           {...rest}
         />
-        {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
+        {/* On the /analytics route we want the dashboard to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
         {getRoute() ? (
           <div className={classes.content}>
             <div className={classes.container}>{switchRoutes}</div>
           </div>
         ) : (
-          <div className={classes.map}>{switchRoutes}</div>
+          <div className={classes.iFrame}>{switchRoutes}</div>
         )}
         {getRoute() ? <Footer /> : null}
       </div>
@@ -138,4 +127,4 @@ function Admin({ ...rest }) {
   );
 };
 
-export default Admin;
+export default withRouter(Admin);

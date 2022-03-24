@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 // react components for routing our app without refresh
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { ThemeProvider, Button } from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
@@ -11,8 +11,8 @@ import styles from "../../assets/jss/material-kit-react/components/footerStyle.j
 import { Typography } from "@material-ui/core";
 
 // @mui/icons-material
-import Apps from "@material-ui/icons/Apps";
-import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
+// import Apps from "@material-ui/icons/Apps";
+// import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
 
 // Import Images
 import advanaPillLogo from "../../assets/img/advana-pill-logo.png";
@@ -25,6 +25,11 @@ export default function Footer(props) {
   const classes = useStyles();
   let history = useHistory();
 
+  const location = useLocation();
+  const { pathname } = location;
+
+  const splitLocation = pathname.split("/");
+
   return (
       <ThemeProvider theme={advanaTheme}>
         <footer
@@ -36,43 +41,46 @@ export default function Footer(props) {
                 <img src={advanaPillLogo} />
               </Button>
             <div className={classes.footerNav}>
-              <List>
-                <ListItem className={classes.listItem}>
-                  <Button className={classes.footerBtn} onClick={() => history.push("/")} variant="text" color="primary" size="small">
-                    HOME
-                  </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <CustomDropdown
-                      noLiPadding
-                      buttonText="PRODUCTS"
-                      buttonProps={{
-                        className: classes.customDropdown,
-                        color: "transparent",
-                      }}
-                      buttonIcon={Apps}
-                      dropdownList={[
-                        <Button onClick={() => history.push("/sentry")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                          SENTRY
-                        </Button>,
-                        <Button onClick={() => history.push("/insight")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                          INSIGHT
-                        </Button>,
-                        <Button onClick={() => history.push("/promote")} className={classes.dropdownLink} variant="text" color="primary" size="small">
-                          PROMOTE
-                        </Button>,
-                      ]}
-                    />
-                </ListItem>
-                <ListItem className={classes.listItem}>
+              <List className={classes.footerNavUL}>
+                <ListItem className={splitLocation[1] === "dooh" ? classes.listItemActive : classes.ListItem}>
                   <Button
-                    className={classes.footerBtn}
-                    onClick={() => history.push("/campaigns")}
+                    className={classes.headerLink}
+                    onClick={() => history.push("/dooh")}
                     variant="text"
-                    color="primary"
+                    color= "primary"
                     size="small"
                   >
-                    CAMPAIGNS
+                    DOOH
+                  </Button>
+                </ListItem>
+                <ListItem className={splitLocation[1] === "sentry" ? classes.listItemActive : classes.ListItem}>
+                  <Button
+                    className={classes.headerLink} 
+                    onClick={() => history.push("/sentry")} 
+                    variant="text" 
+                    color="primary" 
+                    size="small">
+                    SENTRY
+                  </Button>
+                </ListItem>
+                <ListItem className={splitLocation[1] === "insight" ? classes.listItemActive : classes.ListItem}>
+                  <Button
+                    className={classes.headerLink} 
+                    onClick={() => history.push("/insight")} 
+                    variant="text" 
+                    color="primary" 
+                    size="small">
+                    INSIGHT
+                  </Button>
+                </ListItem>
+                <ListItem className={splitLocation[1] === "promote" ? classes.listItemActive : classes.ListItem}>
+                  <Button
+                    className={classes.headerLink}
+                    onClick={() => history.push("/promote")}
+                    variant="text"
+                    color="primary"
+                    size="small">
+                    PROMOTE
                   </Button>
                 </ListItem>
                 {/* <ListItem className={classes.listItem}>

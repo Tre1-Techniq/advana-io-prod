@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-portalbackend-dev-185600-authRole",
+      "UnauthRoleArn": "arn:aws:iam::137317188003:role/amplify-portalbackend-dev-185600-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::137317188003:role/amplify-portalbackend-dev-185600-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-portalbackend-dev-185600-deployment",
+      "UnauthRoleName": "amplify-portalbackend-dev-185600-unauthRole",
+      "StackName": "amplify-portalbackend-dev-185600",
+      "StackId": "arn:aws:cloudformation:us-east-1:137317188003:stack/amplify-portalbackend-dev-185600/2f3615f0-6e9c-11ec-87a7-0eb6520b888d",
+      "AmplifyAppId": "d35b5g3lrc6rok",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-portalbackend-dev-185600-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-portalbackend-dev-185600-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "function": {
+        "portalauthPreSignup": {
+          "deploymentBucketName": "amplify-portalbackend-dev-185600-deployment",
+          "s3Key": "amplify-builds/portalauthPreSignup-6e615633453045617133-build.zip"
+        },
+        "portalhttplambda": {
+          "deploymentBucketName": "amplify-portalbackend-dev-185600-deployment",
+          "s3Key": "amplify-builds/portalhttplambda-2f6e567950776d735535-build.zip"
+        }
+      }
+    }
+  }
+}

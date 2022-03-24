@@ -59,85 +59,70 @@ export default function CampaignsSection() {
               <h1
                 className={classes.title}
               >
-                High Performance Marketing <br />
-                <span>Campaigns </span>
+                High Performance Marketing <span>Campaigns </span>
                 with High Transparency
               </h1>
-              <GridItem  xs={12} sm={12} md={6} >
-                <img
-                  src={verifiedBadge}
-                  className={classes.verifiedBadge}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CheckCircleIcon
-                          style={{ fontSize: "2.25rem" }}
-                          color="primary"
+                <div className={classes.listVerifiedWrapper}>
+                  <div>
+                    <List className={classes.listVerified}>
+                      <ListItem className={classes.listItemVerified}>
+                        <ListItemIcon>
+                          <CheckCircleIcon
+                            className={classes.listItemIcon}
+                            color="primary"
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary="Verified Product Availability"
+                          className={classes.listItemText}
                         />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Verified Product Availability"
-                        style={{
-                          fontFamily: `"Roboto", sans-serif`,
-                          fontWeight: "300",
-                          color: "#848484",
-                        }}
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CheckCircleIcon
-                          style={{ fontSize: "2.25rem" }}
-                          color="primary"
+                      </ListItem>
+                      <ListItem className={classes.listItemVerified}>
+                        <ListItemIcon>
+                          <CheckCircleIcon
+                            className={classes.listItemIcon}
+                            color="primary"
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary="Verified Viewed Impressions"
+                          className={classes.listItemText}
                         />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Verified Viewed Impressions"
-                        style={{
-                          fontFamily: `"Roboto", sans-serif`,
-                          fontWeight: "300",
-                          color: "#848484",
-                        }}
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CheckCircleIcon
-                          style={{ fontSize: "2.25rem" }}
-                          color="primary"
+                      </ListItem>
+                      <ListItem className={classes.listItemVerified}>
+                        <ListItemIcon>
+                          <CheckCircleIcon
+                            className={classes.listItemIcon}
+                            color="primary"
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary="Verified New Locations Selling"
+                          className={classes.listItemText}
                         />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Verified New Locations Selling"
-                        style={{
-                          fontFamily: `"Roboto", sans-serif`,
-                          fontWeight: "300",
-                          color: "#848484",
-                        }}
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CheckCircleIcon
-                          style={{ fontSize: "2.25rem" }}
-                          color="primary"
+                      </ListItem>
+                      <ListItem className={classes.listItemVerified}>
+                        <ListItemIcon>
+                          <CheckCircleIcon
+                            className={classes.listItemIcon}
+                            color="primary"
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary="Verified Same-Store Sales Growth"
+                          className={classes.listItemText}
                         />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Verified Same-Store Sales Growth"
-                        style={{
-                          fontFamily: `"Roboto", sans-serif`,
-                          fontWeight: "300",
-                          color: "#848484",
-                        }}
-                      />
-                    </ListItem>
-                  </List>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={12}>
+                      </ListItem>
+                    </List>
+                  </div>
+                  <div className={classes.verifiedBadgeWrapper}>
+                    <img
+                      src={verifiedBadge}
+                      className={classes.verifiedBadge}
+                    />
+                  </div>
+                </div>
+              <div xs={12} sm={12} md={12}>
                 <Box
                   className={classes.btnBox}
                   style={{
@@ -157,7 +142,7 @@ export default function CampaignsSection() {
                     <ChevronRightIcon style={{ marginLeft: "10px" }} />
                   </Button>
                 </Box>
-              </GridItem>
+              </div>
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
               <img

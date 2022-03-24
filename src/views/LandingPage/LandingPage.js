@@ -63,7 +63,7 @@ import styles from "../../assets/jss/material-kit-react/views/landingPageStyle";
 import StatsSection from "./Sections/StatsSection";
 import ProductSection from "./Sections/ProductSection";
 import CampaignsSection from "./Sections/CampaignsSection";
-// import TeamSection from "./Sections/TeamSection";
+//import TeamSection from "./Sections/TeamSection";
 import ContactSection from "./Sections/ContactSection";
 
 // Import Imges
@@ -159,10 +159,10 @@ export default function LandingPage(props) {
           style={{ position: "absolute", top: "-50px" }}
           id="back-to-top-anchor"
         />
-        <Parallax image={require("../../assets/img/advana-io-bg-01.jpg").default}>
-          <div className={classes.container}>
+        <Parallax className={classes.parallax}>
+          <div className={classes.heroContainer}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={5}>
                 <h1 className={classes.title}>
                   The Performance Marketing <span>{"&"}</span> Intelligence
                   Platform for Retail
@@ -212,7 +212,7 @@ export default function LandingPage(props) {
                   </Fade>
                 </Modal>
               </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={7}>
                 <img className={classes.heroImg} src={advanaMap} />
               </GridItem>
             </GridContainer>
@@ -223,8 +223,8 @@ export default function LandingPage(props) {
             <StatsSection />
             <ProductSection name="products" />
             <CampaignsSection name="campaigns" />
-            {/* <TeamSection name="about" /> */}
             <ContactSection />
+            {/* <TeamSection /> */}
           </div>
           <ScrollTop
             style={{ zIndex: "2000" }}
