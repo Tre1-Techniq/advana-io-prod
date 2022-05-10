@@ -1,0 +1,38 @@
+swagger: "2.0"
+info:
+  title: auth0-client-api
+  description: "Auth0 Client Authentication API."
+  version: "1.0.0"
+host: auth0-client-2pv0ufn7ck06v.apigateway.advana-data-infra.cloud.goog
+schemes:
+  - "https"
+paths:
+  "/auth0AccessToken":
+    get:
+      description: "Get Auth0 OAuth2 Access Token."
+      operationId: "auth0AccessToken"
+      parameters:
+        -
+          name: iataCode
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success."
+          schema:
+            type: string
+        400:
+          description: "The IATA code is invalid or missing."
+securityDefinitions:
+  auth0_jwk:
+    authorizationUrl: "https://dev-tyofb4m1.us.auth0.com/login"
+    flow: "implicit"
+    type: "oauth2"
+    # Replace YOUR-ACCOUNT-NAME with your Auth0 account name.
+    x-google-issuer: "https://dev-tyofb4m1.auth0.com/"
+    x-google-jwks_uri: "https://dev-tyofb4m1.auth0.com/.well-known/jwks.json"
+    # Optional. Replace YOUR-CLIENT-ID with your client ID
+    x-google-audiences: "UpBvv8QrA8G0YctuDtYWW8xstoPju6zX"
+  security:
+  - auth0_jwk: []

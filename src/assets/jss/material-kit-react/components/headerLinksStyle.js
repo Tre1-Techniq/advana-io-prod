@@ -185,6 +185,9 @@ const headerLinksStyle = () => ({
     position: "relative",
     right: "0",
   },
+  authBtn: {
+    padding: "4px 5px",
+  },
   btnIcon: {
     marginRight: "10px",
   },
@@ -215,7 +218,7 @@ const headerLinksStyle = () => ({
     },
     "@media (min-width: 350px)": {
       width: "100%",
-      height: "100%",
+      height: "50px",
       position: "relative",
       left: "0",
       display: "block",

@@ -109,9 +109,8 @@ const campaingGridStyle = {
     justifyContent: "space-evenly",
   },
   filterWrapper: {
-    backgroundColor: "#fafafa",
-    borderTop: "1px solid #e7e7e7",
-    borderBottom: "1px solid #e7e7e7",
+    backgroundColor: "transparent",
+    borderBottom: "1px solid #d7d7d7",
     height: "auto",
     padding: "0",
     display: "flex",
@@ -120,7 +119,7 @@ const campaingGridStyle = {
   filterContainer: {
     width: "100%",
     display: "flex",
-    margin: "0 0 10px 0",
+    margin: "0 0 30px 0",
     justifyContent: "center",
   },
   filterHeader: {

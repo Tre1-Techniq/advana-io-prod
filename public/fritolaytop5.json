@@ -1,52 +1,62 @@
 [
- {
-   "index": 962,
-   "ParentCompany": "PepsiCo",
-   "Manufacturer": "Frito-Lay",
-   "Trademark": "Tostitos",
-   "SalesCount": 430754,
-   "Transactions": 285988,
-   "UnitVelocity": 150.6196064,
-   "Type": "Top5"
- },
- {
-   "index": 99,
-   "ParentCompany": "PepsiCo",
-   "Manufacturer": "Frito-Lay",
-   "Trademark": "Cracker Jack",
-   "SalesCount": 3944,
-   "Transactions": 3341,
-   "UnitVelocity": 118.0484885,
-   "Type": "Top5"
- },
- {
-   "index": 252,
-   "ParentCompany": "PepsiCo",
-   "Manufacturer": "Frito-Lay",
-   "Trademark": "Frito-Lay",
-   "SalesCount": 164990,
-   "Transactions": 143193,
-   "UnitVelocity": 115.2221128,
-   "Type": "Top5"
- },
- {
-   "index": 647,
-   "ParentCompany": "PepsiCo",
-   "Manufacturer": "Frito-Lay",
-   "Trademark": "Quaker",
-   "SalesCount": 138,
-   "Transactions": 125,
-   "UnitVelocity": 110.4,
-   "Type": "Top5"
- },
- {
-   "index": 151,
-   "ParentCompany": "PepsiCo",
-   "Manufacturer": "Frito-Lay",
-   "Trademark": "Matador",
-   "SalesCount": 86,
-   "Transactions": 79,
-   "UnitVelocity": 108.8607595,
-   "Type": "Top5"
- }
+  {
+    "Trademark": "Doritos",
+    "Parent_Company": "PepsiCo",
+    "Manufacturer": "Frito-Lay",
+    "SalesCount": "3174598",
+    "Price": "1.24",
+    "Locations": "24665",
+    "RetailDollars": "3938420",
+    "Transactions": "91171411",
+    "Unit_Velocity": "34.8",
+    "Type": "Top5Rank"
+  },
+  {
+    "Trademark": "Lay\u0027s",
+    "Parent_Company": "PepsiCo",
+    "Manufacturer": "Frito-Lay",
+    "SalesCount": "3093222",
+    "Price": "1.16",
+    "Locations": "24430",
+    "RetailDollars": "3579723",
+    "Transactions": "91039526",
+    "Unit_Velocity": "33.9",
+    "Type": "Top5Rank"
+  },
+  {
+    "Trademark": "Cheetos",
+    "Parent_Company": "PepsiCo",
+    "Manufacturer": "Frito-Lay",
+    "SalesCount": "2407774",
+    "Price": "1.17",
+    "Locations": "23991",
+    "RetailDollars": "2819293",
+    "Transactions": "90307672",
+    "Unit_Velocity": "26.6",
+    "Type": "Top5Rank"
+  },
+  {
+    "Trademark": "Ruffles",
+    "Parent_Company": "PepsiCo",
+    "Manufacturer": "Frito-Lay",
+    "SalesCount": "1763497",
+    "Price": "1.21  ",
+    "Locations": "23360",
+    "RetailDollars": "2138697",
+    "Transactions": "89464497",
+    "Unit_Velocity": "19.7",
+    "Type": "Top5Rank"
+  },
+  {
+    "Trademark": "Fritos",
+    "Parent_Company": "PepsiCo",
+    "Manufacturer": "Frito-Lay",
+    "SalesCount": "1478585",
+    "Price": "1.12",
+    "Locations": "22873",
+    "RetailDollars": "1661407",
+    "Transactions": "88288692",
+    "Unit_Velocity": "16.7",
+    "Type": "Top5Rank"
+  }
 ]

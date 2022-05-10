@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "advana-data-infra",
+  "private_key_id": "c4aac9249041061cb455036bd58445dae9966849",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDflf/0oYeu10cC\nhsitbbmpiqNMT3n+lGvhQxQ9I/eun8XJ+1wLN0Nt2izjkPdqNDDRYzfBdLpqn0Q+\nLczPlxcYIc6LjSpNHVByq0WxUNnmwwiiGVJRXKI1F1jz4OfcFNCUUZ8e5CsWSHyE\nYMIGlHiImKTNuGO+2+J2HPhmkK9tzPhfLS8R+Dqo+SQA99dbC5fo5Fr1I+7QW15L\nYQ/42wUNc5H+yNW2gjHuN6uBacv/q/T49Jgqh97nPicKD5nQ0L0rSvopN4tlrzcB\nIVBXWrfxMWHmCcCTgQY/TKG1JvDXaArWukb8EMs2M4gJlJoc7LwvqtJSAixmPcp1\nZ/DLC1AvAgMBAAECggEAaexePj7oUOScN44zNDZvZurPQi/E097s3OMyi2SmyovW\n4EG88XNU9o4OBiF/lUj0d75Rg80RI8IgSnTYOuCRiFU7zNEr4SyqGCkb800ibjin\ntmPYo8MG9bAB7Ef4kEMsLZgdkjz2TLA6jVxpj0R3df8a1HsuhhUVzG8dHzocYh99\n/MkGr+VDMszZIUMI0wUFMPmuDfgzFibDX6K18vM37+7lVkoDshVXE/xpnaY3/20l\nKlrHB7bLV/1WT47MckAcLb+/xJiRM3l4+fIb8uml4+j1rIDnDS5hVjCkxzflMqLB\nvgBXTgeLbiZLaQeikFtPy7MWDW5a7kP5mMeEDTCiwQKBgQD6oqKDjmiX2PODhBk6\n7pC+xXpb/WQu/C5O2tM/3Ev8l2BWj8lnjkPakncNqH8tjXB20wB0+PLW14/3lQ6p\nRYmU76OHL6W1K7l41K39JR6DSIbcGjity5+/BlvNGh2uC4PEFDgMyiYbpcjF035l\nq8R4hW0HxN/h1ajV2ZMgRBEmfQKBgQDkXyWnJx1+3NF79c9sJ8PNBI2OxMZFWasq\n9YzHBy1iijQJuJ38zM+llC/7GeQKxp8wpYZ/H+wTnVyrfe6zdEkVQOYRYXUpTkEZ\n5izUHHzGuD4iJd35AVq6KDxmHqiW8Y59PQy0XumeTQ4idLnT8GqOJQog02nbgxGP\nQFUSUaQVGwKBgQDa56E5dfA0b/CANagzqJoThTdRkQcnYmqvxMAtTqOvgidKc1td\nbwwkozgIXdp2Vsqbfb8wax7uNmgvvaiIf4ui4YraT+tTSVU9C8TLDNiRoY7oPp6y\nbN6hYVRc1yqFENmNMHuj8AtIqouo/QewlU2MVjzcRD+mZ46G+PlffRPdoQKBgG0X\n0rnd4qY2wE+yJispd8yZbzITaA+6/RyhfmWZVSHsmV1HdxlLkaosdxtBzAElzugD\nOpPB4Rmho6I8n2nUlBD2FrGY18oqmsjPfvy4uxaG7w+K/VW1Qu0IyYmS/cBVllbX\nchk7+efoMWdeUWMgRxauNP9nXvtAyoOfHMSKgZKfAoGBAKgbvocet012kECrXFkT\nnl0+jby1w7nZMgcbbXFlSv4I79qqnj33m9g/0TuTSQcjQRCLUsHARzffPwFOkpMS\nVgbv4qOd03oaPS9Yo1XCLhzhHuOZ3ww7oURr/eTgr3jkDy5IjY2zfcm3jGXA9skK\nFey2Ys/XY0mCPeV+iypszXp3\n-----END PRIVATE KEY-----\n",
+  "client_email": "gcp-advana-portal-sa@advana-data-infra.iam.gserviceaccount.com",
+  "client_id": "114441676930784453046",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gcp-advana-portal-sa%40advana-data-infra.iam.gserviceaccount.com"
+}

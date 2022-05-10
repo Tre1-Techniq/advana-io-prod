@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './App';
-import { Auth0Provider } from "@auth0/auth0-react";
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
+
 // import reportWebVitals from './reportWebVitals';
 
 import "./assets/scss/material-kit-react.scss?v=1.10.0";
@@ -19,13 +22,11 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="dev-tyofb4m1.us.auth0.com"
-    clientId="DXAut1oqmhcZebuZaclvkLaNXtHqVFO4"
-    redirectUri={window.location.origin + "/admin"}
-  >
-    <App />
-  </Auth0Provider>, 
+    <Router>
+      <Auth0ProviderWithHistory>
+        <App />
+      </Auth0ProviderWithHistory>
+    </Router>, 
   rootElement
 );
 

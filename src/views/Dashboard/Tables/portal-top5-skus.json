@@ -1,0 +1,95 @@
+{
+    "Frito-Lay": [
+        {
+            "rank": "1",
+            "Manufacturer": "Frito-Lay",
+            "Trademark": "Doritos",
+            "UnitVelocity": 34.8,
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmR7w7wSpbs7fTbJIw8T35YPtEjYu0Nl2qPhIMO-33hwD6Vvrj0M8MouPCJrcfHVClP4w&usqp=CAU",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "2",
+            "Manufacturer": "Frito-Lay",
+            "Trademark": "Lay\u0027s",
+            "UnitVelocity": 33.9,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "3",
+            "Manufacturer": "Frito-Lay",
+            "Trademark": "Cheetos",
+            "UnitVelocity": 26.6,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "4",
+            "Manufacturer": "Frito-Lay",
+            "Trademark": "Ruffles",
+            "UnitVelocity": 19.7,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "5",
+            "Manufacturer": "Frito-Lay",
+            "Trademark": "Fritos",
+            "UnitVelocity": 16.7,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        }
+        
+    ],
+    "PepsiCo": [
+        {
+            "rank": "1",
+            "index": 301,
+            "Manufacturer": "PepsiCo",
+            "Trademark": "Bubly",
+            "UnitVelocity": 106.6,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "2",
+            "index": 949,
+            "Manufacturer": "PepsiCo",
+            "Trademark": "Aquafina",
+            "UnitVelocity": 106.2,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "3",
+            "index": 920,
+            "Manufacturer": "PepsiCo",
+            "Trademark": "Lifewtr",
+            "UnitVelocity": 105.1,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "4",
+            "index": 932,
+            "Manufacturer": "PepsiCo",
+            "Trademark": "Twister",
+            "UnitVelocity": 104.8,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        },
+        {
+            "rank": "5",
+            "index": 376,
+            "Manufacturer": "PepsiCo",
+            "Trademark": "Brisk",
+            "UnitVelocity": 104.6,
+            "src": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2016/11/tostitos.jpg",
+            "desc": "Lorem ipsum dolor sit amet, consectetur"
+        }
+    ]
+}
+        
+
+

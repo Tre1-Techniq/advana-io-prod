@@ -18,6 +18,8 @@ import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 //import classNames from "classnames";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 
@@ -98,6 +100,10 @@ function ScrollTop(props) {
       anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
+
+  const { user } = useAuth0();
+
+  console.log("USER: ", user);
 
   return (
     <Zoom in={trigger}>

@@ -123,6 +123,12 @@ const headerStyle = () => ({
     width: "auto",
     paddingRight: "20px",
   },
+  authBtn: {
+    padding: "4px 5px",
+  },
+  navbar: {
+    
+  },
 });
 
 export default headerStyle;
