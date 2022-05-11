@@ -1,3 +1,4 @@
+import { relativeTimeRounding } from "moment";
 import {
   container,
   defaultFont,
@@ -469,10 +470,10 @@ const dashboardStyle = () => ({
     marginLeft: "0",
     paddingTop: "0",
     borderBottom: "1px solid #e7e7e7",
-    filter: "blur(0.4rem)",
-    "&:nth-child(1)": {
-      filter: "blur(0)",
-    },
+    // filter: "blur(0.4rem)",
+    // "&:nth-child(1)": {
+    //   filter: "blur(0)",
+    // },
   },
   insightRank: {
     color: "#ffffff",
@@ -506,6 +507,16 @@ const dashboardStyle = () => ({
     paddingRight: "10px",
     position: "relative",
     top: "10px",
+    "& span": {
+      color: primaryColor[0],
+      fontSize: "1rem",
+      fontWeight: "500",
+    },
+    "& p": {
+      color: "#848484",
+      fontSize: "0.7rem",
+      fontWeight: "400",
+    },
   },
   campaignTableHeader: {
     width: "100%",
@@ -788,7 +799,7 @@ const dashboardStyle = () => ({
     width: "25px !important",
     height: "25px !important",
     backgroundColor: grayColor[3] + "!important",
-    marginRight: "0 !important",
+    margin: " 0 10px !important",
     marginBottom: "10px",
   },
   avatarIcon: {
@@ -942,10 +953,8 @@ const dashboardStyle = () => ({
     "& h5": {},
   },
   dashCardAutoH: {
-    // height: "55vh",
     height: "auto",
-    width: "98%",
-    margin: "0 20px 0 0",
+    width: "100%",
   },
   homeCardAutoH: {
     // height: "55vh",
@@ -1004,12 +1013,20 @@ const dashboardStyle = () => ({
     borderRadius: "50%",
     background: primaryColor[0],
   },
-  spinner: {
-    width: "100px",
-    height: "100px",
-    margin: "40px auto",
-    borderRadius: "50%",
-    background: primaryColor[0],
+  loadingWrapper: {
+    position: "relative",
+    margin: "auto",
+    top: "40%",
+    width: "100vw",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    background: "transparent",
+  },
+  loading: {
+    width: "125px !important",
+    height: "125px !important",
+    borderRadius: "0 !important",
   },
   dashTitle: {
     margin: "0 auto",

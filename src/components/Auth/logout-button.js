@@ -6,7 +6,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { makeStyles } from "@material-ui/core/styles";
 
 // Material UI Icons
-import PersonIcon from '@material-ui/icons/Person';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import PieChartIcon from '@material-ui/icons/PieChart';
+import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 
 import styles from "../../assets/jss/material-dashboard-react/components/headerStyle";
@@ -53,7 +56,7 @@ const LogoutButton = () => {
         //     Log Out
         // </button>
         <>
-        <Navbar expand="sm">
+        <nav className="navbar navbar-expand-md">
             <Container>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -71,11 +74,35 @@ const LogoutButton = () => {
                                 <DropdownItem>{user.email}</DropdownItem>
                                 <DropdownItem
                                     tag={RouterNavLink}
+                                    to="/admin/home"
+                                    className="dropdown-profile"
+                                    activeClassName="router-link-exact-active"
+                                >
+                                    <DashboardIcon  className="mr-3" /> Home
+                                </DropdownItem>
+                                <DropdownItem
+                                    tag={RouterNavLink}
+                                    to="/admin/campaignadmin"
+                                    className="dropdown-profile"
+                                    activeClassName="router-link-exact-active"
+                                >
+                                    <TrendingUpIcon  className="mr-3" /> Campaigns
+                                </DropdownItem>
+                                <DropdownItem
+                                    tag={RouterNavLink}
+                                    to="/admin/sentry"
+                                    className="dropdown-profile"
+                                    activeClassName="router-link-exact-active"
+                                >
+                                    <PieChartIcon  className="mr-3" /> Sentry
+                                </DropdownItem>
+                                <DropdownItem
+                                    tag={RouterNavLink}
                                     to="/admin/settings"
                                     className="dropdown-profile"
                                     activeClassName="router-link-exact-active"
                                 >
-                                    <PersonIcon  className="mr-3" /> Settings
+                                    <SettingsIcon  className="mr-3" /> Settings
                                 </DropdownItem>
                                 <DropdownItem
                                     id="qsLogoutBtn"
@@ -89,7 +116,7 @@ const LogoutButton = () => {
                     </Nav>
             </Collapse>
         </Container>
-    </Navbar>
+    </nav>
     </>
     );
 };

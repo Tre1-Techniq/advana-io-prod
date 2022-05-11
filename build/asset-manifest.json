@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbb9237b.chunk.css",
-    "main.js": "/static/js/main.c6c1ac1a.chunk.js",
-    "main.js.map": "/static/js/main.c6c1ac1a.chunk.js.map",
+    "main.css": "/static/css/main.5b23d682.chunk.css",
+    "main.js": "/static/js/main.f77e5416.chunk.js",
+    "main.js.map": "/static/js/main.f77e5416.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7c4b94e9.js",
     "runtime-main.js.map": "/static/js/runtime-main.7c4b94e9.js.map",
-    "static/js/2.b1c02059.chunk.js": "/static/js/2.b1c02059.chunk.js",
-    "static/js/2.b1c02059.chunk.js.map": "/static/js/2.b1c02059.chunk.js.map",
+    "static/js/2.b9c85b01.chunk.js": "/static/js/2.b9c85b01.chunk.js",
+    "static/js/2.b9c85b01.chunk.js.map": "/static/js/2.b9c85b01.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fcd295c0f547e8adc9d44e4200f7e0ff.js": "/precache-manifest.fcd295c0f547e8adc9d44e4200f7e0ff.js",
+    "precache-manifest.d4a0c98950e6fc8a7f1439678ba755fc.js": "/precache-manifest.d4a0c98950e6fc8a7f1439678ba755fc.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.cbb9237b.chunk.css.map": "/static/css/main.cbb9237b.chunk.css.map",
-    "static/js/2.b1c02059.chunk.js.LICENSE.txt": "/static/js/2.b1c02059.chunk.js.LICENSE.txt",
-    "static/js/main.c6c1ac1a.chunk.js.LICENSE.txt": "/static/js/main.c6c1ac1a.chunk.js.LICENSE.txt",
+    "static/css/main.5b23d682.chunk.css.map": "/static/css/main.5b23d682.chunk.css.map",
+    "static/js/2.b9c85b01.chunk.js.LICENSE.txt": "/static/js/2.b9c85b01.chunk.js.LICENSE.txt",
+    "static/js/main.f77e5416.chunk.js.LICENSE.txt": "/static/js/main.f77e5416.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Appetite.2902f1d1.ttf",
     "static/media/advana-io-bg-01.jpg": "/static/media/advana-io-bg-01.7c48c5a5.jpg",
     "static/media/advana-io-bg-02.jpg": "/static/media/advana-io-bg-02.12c9ead1.jpg",
@@ -21,7 +21,6 @@
     "static/media/advana-map.png": "/static/media/advana-map.9dc0b34b.png",
     "static/media/advana-pill-logo-300.png": "/static/media/advana-pill-logo-300.9cb76899.png",
     "static/media/avatar-awake.jpg": "/static/media/avatar-awake.ebcc9014.jpg",
-    "static/media/avatar-blank.jpg": "/static/media/avatar-blank.9830ea9e.jpg",
     "static/media/campaigns-page-hero.png": "/static/media/campaigns-page-hero.568dc340.png",
     "static/media/dashboard-01.jpg": "/static/media/dashboard-01.711758c1.jpg",
     "static/media/dooh-captivate.png": "/static/media/dooh-captivate.d2a26daa.png",
@@ -34,6 +33,7 @@
     "static/media/insight-optimize.png": "/static/media/insight-optimize.fd08cfaa.png",
     "static/media/insight-trend.png": "/static/media/insight-trend.a33d486f.png",
     "static/media/insight-zombie.png": "/static/media/insight-zombie.d0c162d3.png",
+    "static/media/loading-blocks.svg": "/static/media/loading-blocks.0c0ba265.svg",
     "static/media/logo-full-grad.png": "/static/media/logo-full-grad.5b73f14c.png",
     "static/media/profile-bg.jpg": "/static/media/profile-bg.baf6b40a.jpg",
     "static/media/promote-hero.png": "/static/media/promote-hero.506dd3e5.png",
@@ -55,8 +55,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7c4b94e9.js",
-    "static/js/2.b1c02059.chunk.js",
-    "static/css/main.cbb9237b.chunk.css",
-    "static/js/main.c6c1ac1a.chunk.js"
+    "static/js/2.b9c85b01.chunk.js",
+    "static/css/main.5b23d682.chunk.css",
+    "static/js/main.f77e5416.chunk.js"
   ]
 }

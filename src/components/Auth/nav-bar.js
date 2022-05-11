@@ -2,8 +2,6 @@ import React from 'react';
 
 import AuthNav from './auth-nav';
 
-import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
-
 const NavBar = () => {
     return (
         // <div className="nav-container mb-3">

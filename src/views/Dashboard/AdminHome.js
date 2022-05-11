@@ -43,7 +43,8 @@ import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../../advanaTheme";
 
 import brandData from "./Tables/portal-home-kpi.json";
-import brandsTop5 from "./Tables/portal-top5-skus.js";
+import brandsTop5 from "./Tables/portal-top5-skus.json";
+// import brandsTop5 from "./Tables/portal-top5-skus.js";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
@@ -56,7 +57,7 @@ function AdminHome() {
 
   const classes = useStyles();
 
-  const top5SKUs = brandsTop5[0][manufacturerName].map((item) => (
+  const top5SKUs = brandsTop5[manufacturerName].map((item) => (
     <ListItem
       className={classes.insightLI}
       key={`${item.rank}` * Math.random()}
@@ -119,19 +120,26 @@ function AdminHome() {
           <Card>
             <CardBody>
               <GridContainer>
-                <GridItem>
+                <div>
                   <Avatar className={classes.cardAvatar}>
                     <ReceiptIcon className={classes.avatarIcon} />
                   </Avatar>
-                </GridItem>
+                </div>
                 <div className={classes.cardCategory}>
-                {manufacturerName} Total Sales
+                  {manufacturerName} Total Sales
                 </div>
               </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer className={classes.cardKPIContainer}>
                   <GridItem className={classes.cardKPIItem}>
-                    <h3 className={classes.cardKPI}>{totSales}</h3>
+                    <h3 className={classes.cardKPI}>
+                      <NumberFormat
+                        value={`${totSales}`}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        renderText={(value, props) => <div {...props}>{value}</div>}
+                      />
+                    </h3>
                   </GridItem>
                 </GridContainer>
               </div>
@@ -148,16 +156,12 @@ function AdminHome() {
           <Card>
             <CardBody>
               <GridContainer>
-                <GridItem>
-                  <Avatar className={classes.cardAvatar}>
-                    <LocalAtmIcon className={classes.avatarIcon} />
-                  </Avatar>
-                </GridItem>
-                <GridItem>
-                  <div className={classes.cardCategory}>
+                <Avatar className={classes.cardAvatar}>
+                  <LocalAtmIcon className={classes.avatarIcon} />
+                </Avatar>
+                <div className={classes.cardCategory}>
                   {manufacturerName} Total Dollars
-                  </div>
-                </GridItem>
+                </div>
               </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer className={classes.cardKPIContainer}>
@@ -187,16 +191,12 @@ function AdminHome() {
           <Card>
             <CardBody>
               <GridContainer>
-                <GridItem>
-                  <Avatar className={classes.cardAvatar}>
-                    <LocalOfferIcon className={classes.avatarIcon} />
-                  </Avatar>
-                </GridItem>
-                <GridItem>
-                  <div className={classes.cardCategory}>
+                <Avatar className={classes.cardAvatar}>
+                  <LocalOfferIcon className={classes.avatarIcon} />
+                </Avatar>
+                <div className={classes.cardCategory}>
                   {manufacturerName} SKUs Tracked
-                  </div>
-                </GridItem>
+                </div>
               </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer>
@@ -216,16 +216,15 @@ function AdminHome() {
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardBody className={classes.lockedKPI}>
+            {/* <CardBody className={classes.lockedKPI}> */}
+            <CardBody>
               <GridContainer>
-                <GridItem>
-                  <Avatar className={classes.cardAvatar}>
-                    <SpeedIcon className={classes.avatarIcon} />
-                  </Avatar>
-                </GridItem>
-                <GridItem>
-                  <div className={classes.cardCategory}>{manufacturerName} % ACV</div>
-                </GridItem>
+                <Avatar className={classes.cardAvatar}>
+                  <SpeedIcon className={classes.avatarIcon} />
+                </Avatar>
+                <div className={classes.cardCategory}>
+                  {manufacturerName} % ACV
+                </div>
               </GridContainer>
               <div className={classes.cardKPIWrapper}>
                 <GridContainer>
@@ -241,9 +240,9 @@ function AdminHome() {
                 </p>
               </div>
             </CardBody>
-            <div className={classes.cardKPIOverlay}>
+            {/* <div className={classes.cardKPIOverlay}>
               <LockIcon color="secondary" />
-            </div>
+            </div> */}
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
@@ -275,9 +274,9 @@ function AdminHome() {
               </div>
               <div className={classes.insightLiWrapper} xs={12} sm={12} md={12}>
                 <div className={classes.messagesBody}>{top5SKUs}</div>
-                <div className={classes.insightLiOverlay}>
+                {/* <div className={classes.insightLiOverlay}>
                   <LockIcon color="secondary" />
-                </div>
+                </div> */}
               </div>
             </CardBody>
           </Card>
