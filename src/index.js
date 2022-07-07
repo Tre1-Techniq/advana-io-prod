@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './App';
+import 'dotenv/config';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';

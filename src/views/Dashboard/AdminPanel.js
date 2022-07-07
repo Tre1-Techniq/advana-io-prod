@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import axios from 'axios';
 import config from '../../config.json';
@@ -38,9 +39,21 @@ const AddUser = () => {
   const [role, setRole] = useState('user');
   const [segment, setSegment] = useState('brand');
   const [users, setUsers] = useState([]);
-  //const [message, setMessage] = useState(null);
 
   const classes = useStyles();
+
+  const { user, getAccessTokenSilently } = useAuth0();
+
+  // const getAccessToken = () => {
+  //   // getAccessTokenSilently().then(token => {
+  //   //   console.log("TOKEN: ", token)
+  //   // })
+  // }
+
+  async function getAccessToken() {
+    const token = await getAccessTokenSilently();
+    console.log("GET TOKEN: ", token);
+  }
 
   const fetchUsers = async () => {
     try {
@@ -58,17 +71,6 @@ const AddUser = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     
-    // const requestBody = {
-    //   email: email,
-    //   firstname: firstname,
-    //   lastname: lastname,
-    //   parentcompany: parentcompany,
-    //   manufacturer: manufacturer,
-    //   tier: tier,
-    //   role: role,
-    //   segment: segment,
-    //   password: password
-    // }
   }
 
   return (
@@ -211,6 +213,15 @@ const AddUser = () => {
                           color="secondary"
                           type="submit">
                             Add User
+                        </Button>
+                      </Grid>
+                      <Grid item xs={12} md={12} lg={12}>
+                        <Button
+                          className={classes.registerBtn}
+                          variant="contained"
+                          color="secondary"
+                          onClick={getAccessToken}>
+                            Get Token
                         </Button>
                       </Grid>
                     </Grid>

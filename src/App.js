@@ -46,7 +46,6 @@ function App() {
           <Route path="/insight" exact component={Insight} />
           <Route path="/promote" exact component={Promote} />
           <Route path="/campaigns" exact component={Campaigns} />
-          {/* <ProtectedRoute path="/admin" component={Admin} isAuth={isAuth} /> */}
           <ProtectedRoute path="/admin" component={Admin} />
           <Route path="/pepsisweeps" component={PepsiQ1Sweeps} />
           <Route path="/santikos" component={Santikos} />

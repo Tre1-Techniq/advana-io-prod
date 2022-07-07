@@ -441,7 +441,7 @@ const dashboardStyle = () => ({
     marginTop: "0",
     marginBottom: "0",
     "& span": {
-      fontSize: "0.8rem",
+      fontSize: "0.9rem",
       color: grayColor[0],
       marginLeft: "5px",
     },
@@ -1040,6 +1040,9 @@ const dashboardStyle = () => ({
     justifyContent: "center",
     position: "relative",
     border: "none",
+  },
+  powerBIreport: {
+    
   },
 });
 

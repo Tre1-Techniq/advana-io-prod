@@ -73,61 +73,11 @@ function Admin({ ...rest }) {
   const mainPanel = createRef();
   // states and functions
   const [mobileOpen, setMobileOpen] = useState(false);
-  // const [userMetaData, setUserMetaData] = useState({});
 
   const color = "blue";
 
-  // // Import the Google Cloud client library using default credentials
-  // const {BigQuery} = require('@google-cloud/bigquery');
-  // const bigquery = new BigQuery();
-
-  // async function query() {
-  //   // Queries the U.S. given names dataset for the state of Texas.
-
-  //   const query = `SELECT name
-  //     FROM \`bigquery-public-data.usa_names.usa_1910_2013\`
-  //     WHERE state = 'TX'
-  //     LIMIT 100`;
-
-  //   // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query
-  //   const options = {
-  //     query: query,
-  //     // Location must match that of the dataset(s) referenced in the query.
-  //     location: 'US',
-  //   };
-
-  //   // Run the query as a job
-  //   const [job] = await bigquery.createQueryJob(options);
-  //   console.log(`Job ${job.id} started.`);
-
-  //   // Wait for the query to finish
-  //   const [rows] = await job.getQueryResults();
-
-  //   // Print the results
-  //   console.log('Rows:');
-  //     rows.forEach(row => console.log(row));
-  //   }
-
   // initialize and destroy the PerfectScrollbar plugin
   useEffect(() => {
-    // Log User AppData
-    // const axios = require("axios").default;
-
-    // const options = {
-    //     method: 'GET',
-    //     url: 'https://dev-tyofb4m1.us.auth0.com/api/v2/users',
-    //     headers: {authorization: 'Bearer TOKEN'}
-    // };
-    // // in my case I needed the app_metadata which held the users subscription status. But you can access anything you need similar to this
-    // axios.request(options).then(function (response) {
-    //     // if(response.data[0]['app_metadata']['subscription_status'] === true){
-    //     //     setIsSubscriber(true);
-    //     // }
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
-
-    
     window.addEventListener("resize", resizeFunction);
     // Specify how to clean up after this effect:
     return function cleanup() {

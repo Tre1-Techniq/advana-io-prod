@@ -6,7 +6,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { makeStyles } from "@material-ui/core/styles";
 
 // Material UI Icons
-import DashboardIcon from '@material-ui/icons/Dashboard';
+import HomeIcon from '@material-ui/icons/Home';
+// import DashboardIcon from '@material-ui/icons/Dashboard';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -64,7 +65,7 @@ const LogoutButton = () => {
                                     className="dropdown-profile"
                                     activeClassName="router-link-exact-active"
                                 >
-                                    <DashboardIcon  className="mr-3" /> Home
+                                    <HomeIcon  className="mr-3" /> Home
                                 </DropdownItem>
                                 <DropdownItem
                                     tag={RouterNavLink}
