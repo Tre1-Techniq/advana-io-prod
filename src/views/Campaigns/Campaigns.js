@@ -14,7 +14,7 @@ The above copyright notice and this permission notice shall be included in all c
 */
 
 import React, { useState, useEffect } from "react";
-//import axios from 'axios';
+import axios from 'axios';
 
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -67,7 +67,7 @@ import OptIn from "../Modal/OptIn";
 // Import Images
 import campaignsPageHero from "../../assets/img/campaigns-page-hero.png";
 
-import campaignList from "./campaign-items";
+import campaignList from "./campaign-list";
 import CampaignItems from "./CampaignItems";
 
 import styles from "../../assets/jss/material-kit-react/views/campaignGridStyle";
@@ -140,6 +140,24 @@ export default function Campaigns(props) {
       //   const res = await axios.get('./static/campaign-list.json');
       //   setCampaigns(res.data);
       // };
+
+      // getCampaigns(campaigns);
+      // async function getCampaigns() {
+      //   try {
+      //     const token = await getAccessTokenSilently();
+      //     const res = await axios.get("http://localhost:4000/campaigns", {
+      //       headers: {
+      //         authorization: `Bearer ${token}`,
+      //       },
+      //     });
+          
+      //     setCampaigns(campaignList);
+    
+      //     console.log("CAMPAIGNS RESPONSE: ", res.data);
+      //   } catch (error) {
+      //     console.log("API ERROR: ", error.message)
+      //   }
+      // }
 
       // getCampaigns(campaigns);
       setCampaigns(campaignList);

@@ -1,0 +1,35 @@
+ParentCompany,Manufacturer,Month,SalesCount,SalesGrowth,RetailDollars,RetailGrowth,SkusTracked,SkusGrowth,Trans,UnitVelocity,UvGrowth,Type
+PepsiCo,TBE,11,83345,0,129629,0,16,0,3721355,22.4,0,HomeKpi
+PepsiCo,Pepsi/Cytosport,11,17768,0,74040,0,13,0,1062921,16.72,0,HomeKpi
+PepsiCo,Sabra Dipping Co,11,54499,0,178027,0,14,0,1970605,27.66,0,HomeKpi
+PepsiCo,Minute Maid,11,302,0,981,0,2,0,13267,22.76,0,HomeKpi
+PepsiCo,Naked Juice,11,81973,0,307901,0,33,0,4189650,19.57,0,HomeKpi
+PepsiCo,South Beach Beverage,11,7657,0,16473,0,11,0,286369,26.74,0,HomeKpi
+PepsiCo,Quaker Oats/Gatorade,11,1724695,0,3240997,0,113,0,84596492,20.39,0,HomeKpi
+PepsiCo,Tropicana Products,11,86231,,174925,0,31,0,3698462,23.32,0,HomeKpi
+PepsiCo,Quaker Oats,11,93909,0,141888,0,30,0,3803463,24.69,0,HomeKpi
+PepsiCo,PepsiCo,11,8450958,-1.4,14370033,-0.9,393,-0.7,357973195,23.61,-0.05,HomeKpi
+PepsiCo,PepsiCo Canada,11,68270,0,165968,0,43,0,1394516,48.96,0,HomeKpi
+PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,11,106935,0,179842,0,61,0,2235267,47.84,0,HomeKpi
+PepsiCo,Frito-Lay,11,8568697,4.6,10303291,4.4,429,0,3774600,23,0.3,HomeKpi
+PepsiCo,PepsiCo Canada - Quaker Oats,11,19888,0,44292,0,27,0,446812,44.51,0,HomeKpi
+PepsiCo,Rockstar,11,180677,0,502193,0,45,0,8538182,21.16,0,HomeKpi
+PepsiCo,KeVita,11,3488,0,12754,0,15,0,123077,28.34,0,HomeKpi
+PepsiCo,Quaker Oats/Gatorade,10,1860957,0,3478877,0,117,0,88899764,20.93,0,HomeKpi
+PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,10,97044,0,162434,0,60,0,1954214,49.66,0,HomeKpi
+PepsiCo,Frito-Lay,10,8188615,0,9865946,0,429,0,350638958,23.35,0,HomeKpi
+PepsiCo,Pepsi/Cytosport,10,19192,0,79665,0,12,0,1059549,18.11,0,HomeKpi
+PepsiCo,TBE,10,89013,0,136170,0,17,0,3957528,22.49,0,HomeKpi
+PepsiCo,Sabra Dipping Co,10,56380,0,182767,0,13,0,2068502,27.26,0,HomeKpi
+PepsiCo,South Beach Beverage,10,10665,0,22467,0,12,0,454165,23.48,0,HomeKpi
+PepsiCo,Rockstar,10,170916,0,472014,0,49,0,7880817,21.69,0,HomeKpi
+PepsiCo,Tropicana Products,10,86499,0,176726,0,30,0,3847358,22.48,0,HomeKpi
+PepsiCo,PepsiCo,10,8578077,0,14511345,0,396,0,356256272,24.08,0,HomeKpi
+PepsiCo,KeVita,10,3779,0,13716,0,15,0,140825,26.83,0,HomeKpi
+PepsiCo,Quaker Oats,10,90846,0,136033,0,30,0,3705853,24.51,0,HomeKpi
+PepsiCo,PepsiCo Canada,10,66353,0,164623,0,45,0,1239009,53.55,0,HomeKpi
+PepsiCo,Minute Maid,10,399,0,1299,0,2,0,18510,21.56,0,HomeKpi
+PepsiCo,Naked Juice,10,79664,0,296580,0,33,0,3798949,20.97,0,HomeKpi
+PepsiCo,PepsiCo Canada - Quaker Oats,10,18612,0,41759,0,28,0,395701,47.04,0,HomeKpi
+PepsiCo,PepsiCo Canada - Quaker Oats,10,18612,0,41759,0,28,0,395701,47.04,0,HomeKpi
+Awake Chocolate,Awake Corporation,11,107863,0.2,110658,0.1,14,0.1,380740,1335.9,0,HomeKpi

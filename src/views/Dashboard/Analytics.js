@@ -40,20 +40,11 @@ export default function Analytics() {
   useEffect(() => {
     
   }, []);
-
   
   return (
-    // <iframe className={classes.iFrameInner} frameBorder="0" src={embedContent} width="100%" height="100%" title='A youtube video on React hooks'></iframe>
-
-    //<div className={classes.embedContent} dangerouslySetInnerHTML={{ __html: `${embedContent}` }}></div>
     <GridContainer>
-      {/* <GridItem xs={12} sm={12} md={12}>
-      <div className={classes.dashTitle}>
-        <h2>Sentry Dashboards</h2>
-      </div>
-      </GridItem> */}
       <GridItem xs={12} sm={12} md={12}>
-      <Iframe url="https://app.powerbi.com/reportEmbed?reportId=cd82b58c-a8a6-424f-adea-abe40a193878&autoAuth=true&ctid=155c33b3-b4af-4076-a864-15ee882880ae&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWNlbnRyYWwtYi1wcmltYXJ5LXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9"
+      <Iframe url="https://app.powerbi.com/reportEmbed?reportId=6ae2a37a-b26d-4936-ac28-66d14804bd38&autoAuth=true&ctid=155c33b3-b4af-4076-a864-15ee882880ae&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWNlbnRyYWwtYi1wcmltYXJ5LXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9"
         width="100%"
         height="550px"
         frameBorder="0"

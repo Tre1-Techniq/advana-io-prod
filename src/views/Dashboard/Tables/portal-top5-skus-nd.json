@@ -1,0 +1,128 @@
+{
+    "Frito-Lay": [
+        {
+          "rank": "1",
+          "Manufacturer": "Frito-Lay",
+          "Trademark": "Doritos",
+          "UnitVelocity": 34.8,
+          "src": "https://target.scene7.com/is/image/Target/GUEST_d769c627-2f55-49ae-8ba9-d3f19b81e462?wid=325&hei=325&qlt=80&fmt=pjpeg",
+          "desc": "Nacho Cheese - 9.25oz"
+        },
+        {
+          "rank": "2",
+          "Manufacturer": "Frito-Lay",
+          "Trademark": "Lay\u0027s",
+          "UnitVelocity": 33.9,
+          "src": "https://www.sxmleshalles.com/4273-large_default/lay-s-potato-crisp-original.jpg",
+          "desc": "Classic Potato Chips - 8oz"
+        },
+        {
+          "rank": "3",
+          "Manufacturer": "Frito-Lay",
+          "Trademark": "Cheetos",
+          "UnitVelocity": 26.6,
+          "src": "https://images.heb.com/is/image/HEBGrocery/001962881?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
+          "desc": "Crunchy Cheese - 8.5oz"
+        },
+        {
+          "rank": "4",
+          "Manufacturer": "Frito-Lay",
+          "Trademark": "Ruffles",
+          "UnitVelocity": 19.7,
+          "src": "https://m.media-amazon.com/images/I/9101IWIRy7L._SL1500_.jpg",
+          "desc": "Sour Cream - 8.5oz"
+        },
+        {
+          "rank": "5",
+          "Manufacturer": "Frito-Lay",
+          "Trademark": "Fritos",
+          "UnitVelocity": 16.7,
+          "src": "https://images.albertsons-media.com/is/image/ABS/960156578?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available",
+          "desc": "The Original - 9.25oz"
+        }
+      ],
+      "PepsiCo": [
+        {
+          "rank": "1",
+          "Manufacturer": "PepsiCo",
+          "Trademark": "Mountain Dew",
+          "UnitVelocity": 81.8,
+          "src": "https://images.albertsons-media.com/is/image/ABS/960120564?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available",
+          "desc": "Original"
+        },
+        {
+          "rank": "2",
+          "Manufacturer": "PepsiCo",
+          "Trademark": "Pepsi",
+          "UnitVelocity": 40.6,
+          "src": "https://images.albertsons-media.com/is/image/ABS/108010327?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available",
+          "desc": "Soda Cola - 20oz"
+        },
+        {
+          "rank": "3",
+          "Manufacturer": "PepsiCo",
+          "Trademark": "Twister",
+          "UnitVelocity": 12.7,
+          "src": "https://m.media-amazon.com/images/I/810JN8OwjHL._SX679_.jpg",
+          "desc": "Fruit Fury - 20oz"
+        },
+        {
+          "rank": "4",
+          "Manufacturer": "PepsiCo",
+          "Trademark": "Brisk",
+          "UnitVelocity": 8.5,
+          "src": "https://www.instacart.com/image-server/466x466/filters:fill(FFF,true):format(webp)/www.instacart.com/assets/domains/product-image/file/large_e4757759-4239-47a8-88c3-876a34d23c73.png",
+          "desc": "Lemon Iced Tea - 20oz"
+        },
+        {
+            "rank": "5",
+            "Manufacturer": "PepsiCo",
+            "Trademark": "LifeWTR",
+            "UnitVelocity": 8.2,
+            "src": "https://images.albertsons-media.com/is/image/ABS/960320508?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available",
+            "desc": "Water Purified - 20oz"
+          }
+      ],
+      "Awake": [
+        {
+          "rank": "1",
+          "Manufacturer": "Awake",
+          "Trademark": "Bites",
+          "UnitVelocity": 9.6,
+          "src": "https://cdn.shopify.com/s/files/1/0506/8691/8841/products/Edit_Milk.png?v=1619560306",
+          "desc": "Milk Chocolate - 0.5oz"
+        },
+        {
+          "rank": "2",
+          "Manufacturer": "Awake",
+          "Trademark": "Bites",
+          "UnitVelocity": 9.4,
+          "src": "https://cdn.shopify.com/s/files/1/0506/8691/8841/products/Edit_Dark_720x.png?v=1619559944",
+          "desc": "Dark Chocolate - 0.5oz"
+        },
+        {
+          "rank": "3",
+          "Manufacturer": "Awake",
+          "Trademark": "Bites",
+          "UnitVelocity": 8.5,
+          "src": "https://cdn.shopify.com/s/files/1/0506/8691/8841/products/Edit_Caramel_720x.png?v=1619559834",
+          "desc": "Caramel Chocolate - 0.5oz"
+        },
+        {
+          "rank": "4",
+          "Manufacturer": "Awake",
+          "Trademark": "Bits",
+          "UnitVelocity": 7.6,
+          "src": "https://cdn.shopify.com/s/files/1/0506/8691/8841/products/AWL_001816_720x.png?v=1635353167",
+          "desc": "Chocolate Covered Peanuts - 1oz"
+        },
+        {
+          "rank": "5",
+          "Manufacturer": "Awake",
+          "Trademark": "Bites",
+          "UnitVelocity": 7.4,
+          "src": "https://cdn.shopify.com/s/files/1/0506/8691/8841/products/awk-004213_720x.jpg?v=1647539637",
+          "desc": "Peanut Butter Chocolate - 0.5oz"
+        }
+      ]
+}

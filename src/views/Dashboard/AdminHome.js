@@ -32,6 +32,7 @@ import SalesMap from "../../components/Maps/SalesMap";
 //import AssignmentIcon from '@material-ui/icons/Assignment';
 //import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
@@ -42,7 +43,6 @@ import SpeedIcon from "@material-ui/icons/Speed";
 import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../../advanaTheme";
 
-// import brandData from "./Tables/portal-home-kpi.json";
 import brandsTop5 from "./Tables/portal-top5-skus.json";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
@@ -53,6 +53,10 @@ const useStyles = makeStyles(styles);
 function AdminHome() {
   const [ homeKpi, setHomeKpi ] = useState([{}]);
   const [ top5Skus, setTop5Skus ] = useState([{}]);
+  const [ percSalesPos, setPercSalesPos ] = useState(true);
+  const [ percDollarsPos, setPercDollarsPos ] = useState(true);
+  const [ percSkusPos, setPercSkusPos ] = useState(true);
+  const [ percUvPos, setPercUvPos ] = useState(true);
 
   const { user, getAccessTokenSilently } = useAuth0();
 
@@ -62,8 +66,6 @@ function AdminHome() {
   const classes = useStyles();
 
   useEffect(() => {
-    // fetchHomeKpi();
-    // callApi();
     callHomeKpiApi();
     callTop5SkusApi();
 
@@ -80,9 +82,71 @@ function AdminHome() {
         },
       });
 
-      setHomeKpi(response.data[0]);
+      let manIndex;
 
-      console.log("HOME KPI RESPONSE: ", response.data[0]);
+      function setPercClass() {
+        function getPercSales() {
+          if (response.data[manIndex].SalesGrowth > 0){
+            setPercSalesPos(true);
+          } else if (response.data[manIndex].SalesGrowth < 0) {
+            setPercSalesPos(false);
+          }
+        }
+        getPercSales();
+
+        function getPercDollars() {
+          if (response.data[manIndex].RetailGrowth > 0){
+            setPercDollarsPos(true);
+          } else if (response.data[manIndex].RetailGrowth < 0) {
+            setPercDollarsPos(false);
+          }
+        }
+        getPercDollars();
+
+        function getPercSkus() {
+          if (response.data[manIndex].SkusGrowth > 0){
+            setPercSkusPos(true);
+          } else if (response.data[manIndex].SkusGrowth < 0) {
+            setPercSkusPos(false);
+          }
+        }
+        getPercSkus();
+
+        function getPercUv() {
+          if (response.data[manIndex].UvGrowth > 0){
+            setPercUvPos(true);
+          } else if (response.data[manIndex].UvGrowth < 0) {
+            setPercUvPos(false);
+          }
+        }
+        getPercUv();
+      }
+
+      function getManIndex() {
+        if (manufacturerName === 'Frito-Lay'){
+          setHomeKpi(response.data[31]);
+          manIndex = 31;
+
+          setPercClass();
+        }
+        
+        if (manufacturerName === 'PepsiCo'){
+          setHomeKpi(response.data[32]);
+          manIndex = 32;
+
+          setPercClass();
+        } 
+        if (manufacturerName === 'Awake Corporation'){
+          setHomeKpi(response.data[33]);
+          manIndex = 33;
+
+          setPercClass();
+        } 
+        console.log("HOME KPI RES: ", response.data[manIndex]);
+      }
+
+      getManIndex();
+      
     } catch (error) {
       console.log("API ERROR: ", error.message)
     }
@@ -91,16 +155,16 @@ function AdminHome() {
   async function callTop5SkusApi() {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get("http://localhost:4000/top5skus", {
+      const res = await axios.get("http://localhost:4000/top5skus", {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
 
-      setTop5Skus(response.data[0]);
+      setTop5Skus(res.data);
 
-      console.log("ACCESS TOKEN: ", token);
-      console.log("TOP5 SKUS RESPONSE: ", response.data);
+      // console.log("ACCESS TOKEN: ", token);
+      console.log("TOP5 SKUS RESPONSE: ", res.data);
     } catch (error) {
       console.log("API ERROR: ", error.message)
     }
@@ -181,8 +245,9 @@ function AdminHome() {
                     </GridItem>
                   </GridContainer>
                 </div>
-                <div className={classes.cardPercentChange}>
-                  <ArrowDropUpIcon />
+                <div className={`${percSalesPos ? classes.cardPercentPos : classes.cardPercentNeg}`}>
+                  {percSalesPos && <ArrowDropUpIcon />}
+                  {!percSalesPos && <ArrowDropDownIcon />}
                   <p>
                     {SalesGrowth}%<span>vs. last month</span>
                   </p>
@@ -216,8 +281,9 @@ function AdminHome() {
                     </GridItem>
                   </GridContainer>
                 </div>
-                <div className={classes.cardPercentChange}>
-                  <ArrowDropUpIcon />
+                <div className={`${percDollarsPos ? classes.cardPercentPos : classes.cardPercentNeg}`}>
+                  {percDollarsPos && <ArrowDropUpIcon />}
+                  {!percDollarsPos && <ArrowDropDownIcon />}
                   <p>
                     {RetailGrowth}%<span>vs. last month</span>
                   </p>
@@ -243,8 +309,9 @@ function AdminHome() {
                     </GridItem>
                   </GridContainer>
                 </div>
-                <div className={classes.cardPercentChange}>
-                  <ArrowDropUpIcon />
+                <div className={`${percSkusPos ? classes.cardPercentPos : classes.cardPercentNeg}`}>
+                  {percSkusPos && <ArrowDropUpIcon />}
+                  {!percSkusPos && <ArrowDropDownIcon />}
                   <p>
                     {SkusGrowth}% <span>vs. last month</span>
                   </p>
@@ -271,8 +338,9 @@ function AdminHome() {
                     </GridItem>
                   </GridContainer>
                 </div>
-                <div className={classes.cardPercentChange}>
-                  <ArrowDropUpIcon />
+                <div className={`${percUvPos ? classes.cardPercentPos : classes.cardPercentNeg}`}>
+                  {percUvPos && <ArrowDropUpIcon />}
+                  {!percUvPos && <ArrowDropDownIcon />}
                   <p>
                     {UvGrowth}%<span>vs. last month</span>
                   </p>

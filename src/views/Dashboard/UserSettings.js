@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
 import { useAuth0 } from "@auth0/auth0-react";
 
 const UserSettings = () => {
   const { user } = useAuth0();
   const { name, picture, email } = user;
+
+  const { getAccessTokenSilently } = useAuth0();
+
+  async function getAccessToken() {
+    const token = await getAccessTokenSilently();
+  }
+
+  useEffect(() => {
+    getAccessToken();
+  },[]);
+  const namespace = 'https://user.metadata.io';
+  const company = `${namespace}/manufacturer`;
+  const companyName = `${user[company]}`;
+
+  const roles = `${namespace}/roles`;
+  const rolesList = `${user[roles]}`;
 
   return (
     <div>
@@ -21,10 +37,9 @@ const UserSettings = () => {
           <p className="lead text-muted">{email}</p>
         </div>
       </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          {JSON.stringify(user, null, 2)}
-        </pre>
+      <div className="col-md text-center text-md-left">
+          <p><strong>Company:</strong> {companyName}</p>
+          <p><strong>Roles:</strong> {rolesList}</p>
       </div>
     </div>
   );

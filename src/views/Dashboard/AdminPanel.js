@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
 import axios from 'axios';
-import config from '../../config.json';
 
 // Material UI Core Components
 import Input from '@material-ui/core/Input';
@@ -38,46 +37,31 @@ const AddUser = () => {
   const [tier, setTier] = useState('free');
   const [role, setRole] = useState('user');
   const [segment, setSegment] = useState('brand');
-  const [users, setUsers] = useState([]);
 
   const classes = useStyles();
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  // const getAccessToken = () => {
-  //   // getAccessTokenSilently().then(token => {
-  //   //   console.log("TOKEN: ", token)
-  //   // })
-  // }
+  const dotenv =  require("dotenv");
+  dotenv.config();
 
   async function getAccessToken() {
     const token = await getAccessTokenSilently();
-    console.log("GET TOKEN: ", token);
-  }
-
-  const fetchUsers = async () => {
-    try {
-      const res = await axios.get(`${config.api.invokeUrl}/users`);
-      setUsers(res.data);
-    } catch (err) {
-      console.log(`An error has occured: ${err}`);
-    }
   }
 
   useEffect(() => {
-    fetchUsers();
+    getAccessToken();
   },[]);
 
   const submitHandler = (event) => {
     event.preventDefault();
-    
   }
 
   return (
     <>
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.adminWrapper}>
-        <Grid container>
+        {/* <Grid container>
           <Grid item className={classes.userList} xs={12} md={12} lg={12}>
             <Card className={classes.dashCardAutoH}>
               <CardBody>
@@ -106,7 +90,7 @@ const AddUser = () => {
               </CardBody>
             </Card>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Grid container>
           <Grid item xs={12} md={12} lg={12} className={classes.adminContainer}>
             <Grid container className={classes.formContainer}>
@@ -203,7 +187,6 @@ const AddUser = () => {
                     </Grid>
                   </form>
                     <Grid item xs={12} md={12} lg={12}>
-                      {/* {message && <p className={classes.message}>{message}</p>} */}
                     </Grid>
                     <Grid container>
                       <Grid item xs={12} md={12} lg={12}>
@@ -213,15 +196,6 @@ const AddUser = () => {
                           color="secondary"
                           type="submit">
                             Add User
-                        </Button>
-                      </Grid>
-                      <Grid item xs={12} md={12} lg={12}>
-                        <Button
-                          className={classes.registerBtn}
-                          variant="contained"
-                          color="secondary"
-                          onClick={getAccessToken}>
-                            Get Token
                         </Button>
                       </Grid>
                     </Grid>

@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b23d682.chunk.css",
-    "main.js": "/static/js/main.f77e5416.chunk.js",
-    "main.js.map": "/static/js/main.f77e5416.chunk.js.map",
+    "main.css": "/static/css/main.126808ed.chunk.css",
+    "main.js": "/static/js/main.74b7cd4e.chunk.js",
+    "main.js.map": "/static/js/main.74b7cd4e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7c4b94e9.js",
     "runtime-main.js.map": "/static/js/runtime-main.7c4b94e9.js.map",
-    "static/js/2.b9c85b01.chunk.js": "/static/js/2.b9c85b01.chunk.js",
-    "static/js/2.b9c85b01.chunk.js.map": "/static/js/2.b9c85b01.chunk.js.map",
+    "static/js/2.d3dea181.chunk.js": "/static/js/2.d3dea181.chunk.js",
+    "static/js/2.d3dea181.chunk.js.map": "/static/js/2.d3dea181.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d4a0c98950e6fc8a7f1439678ba755fc.js": "/precache-manifest.d4a0c98950e6fc8a7f1439678ba755fc.js",
+    "precache-manifest.31a3b73849ba4b1d01ec2ad047e32699.js": "/precache-manifest.31a3b73849ba4b1d01ec2ad047e32699.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.5b23d682.chunk.css.map": "/static/css/main.5b23d682.chunk.css.map",
-    "static/js/2.b9c85b01.chunk.js.LICENSE.txt": "/static/js/2.b9c85b01.chunk.js.LICENSE.txt",
-    "static/js/main.f77e5416.chunk.js.LICENSE.txt": "/static/js/main.f77e5416.chunk.js.LICENSE.txt",
+    "static/css/main.126808ed.chunk.css.map": "/static/css/main.126808ed.chunk.css.map",
+    "static/js/2.d3dea181.chunk.js.LICENSE.txt": "/static/js/2.d3dea181.chunk.js.LICENSE.txt",
+    "static/js/main.74b7cd4e.chunk.js.LICENSE.txt": "/static/js/main.74b7cd4e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Appetite.2902f1d1.ttf",
     "static/media/advana-io-bg-01.jpg": "/static/media/advana-io-bg-01.7c48c5a5.jpg",
     "static/media/advana-io-bg-02.jpg": "/static/media/advana-io-bg-02.12c9ead1.jpg",
@@ -22,7 +22,6 @@
     "static/media/advana-pill-logo-300.png": "/static/media/advana-pill-logo-300.9cb76899.png",
     "static/media/avatar-awake.jpg": "/static/media/avatar-awake.ebcc9014.jpg",
     "static/media/campaigns-page-hero.png": "/static/media/campaigns-page-hero.568dc340.png",
-    "static/media/dashboard-01.jpg": "/static/media/dashboard-01.711758c1.jpg",
     "static/media/dooh-captivate.png": "/static/media/dooh-captivate.d2a26daa.png",
     "static/media/dooh-impressions.png": "/static/media/dooh-impressions.70bddac5.png",
     "static/media/dooh-measure.png": "/static/media/dooh-measure.73a386d7.png",
@@ -55,8 +54,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7c4b94e9.js",
-    "static/js/2.b9c85b01.chunk.js",
-    "static/css/main.5b23d682.chunk.css",
-    "static/js/main.f77e5416.chunk.js"
+    "static/js/2.d3dea181.chunk.js",
+    "static/css/main.126808ed.chunk.css",
+    "static/js/main.74b7cd4e.chunk.js"
   ]
 }

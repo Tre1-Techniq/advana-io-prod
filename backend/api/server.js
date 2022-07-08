@@ -9,19 +9,20 @@ const axios = require("axios");
 const app = express();
 app.use(cors());
 
-// const verifyJwt = jwt({
-//   secret: jwks.expressJwtSecret({
-//     cache: true,
-//     rateLimit: true,
-//     jwksRequestsPerMinute: 5,
-//     jwksUri: "https://dev-tyofb4m1.us.auth0.com/.well-known/jwks.json",
-//   }),
-//   audience: "https://portal-data-api",
-//   issuer: "https://dev-tyofb4m1.us.auth0.com/",
-//   algoritms: ["RS256"],
-// });
+var request = require("request");
 
-// app.use(verifyJwt);
+var options = {
+  method: "POST",
+  url: "https://dev-tyofb4m1.us.auth0.com/oauth/token",
+  headers: { "content-type": "application/json" },
+  body: '{"client_id":"UpBvv8QrA8G0YctuDtYWW8xstoPju6zX","client_secret":"2eI_QweMKxScycQyOVqQCwCtAHv8bWxnhqu4hhfU5vFbsw6hZKts4Y8ZunmeXxcc","audience":"https://dev-tyofb4m1.us.auth0.com/api/v2/","grant_type":"client_credentials"}',
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
 
 app.get("/", (req, res) => {
   res.send("Portal Backend ROOT");
@@ -39,14 +40,12 @@ app.get("/homekpi", (req, res) => {
     // The SQL query to run
     const sqlQuery = `SELECT *
             FROM \`advana-data-infra.portal_data_test.portal-home-kpi\`
-            WHERE (Manufacturer = "Frito-Lay") AND (Month = 11)
             `;
 
     const options = {
       query: sqlQuery,
       // Location must match that of the dataset(s) referenced in the query.
       location: "us-east1",
-      params: { Manufacturer: "Frito-Lay", Month: "11" },
     };
 
     const [queryRes] = await bigqueryClient.query(options);
@@ -69,14 +68,12 @@ app.get("/top5skus", (req, res) => {
     // The SQL query to run
     const sqlQuery = `SELECT *
             FROM \`advana-data-infra.portal_data_test.portal-top5-skus\`
-            WHERE Frito_Lay_Manufacturer = "Frito-Lay"
             `;
 
     const options = {
       query: sqlQuery,
       // Location must match that of the dataset(s) referenced in the query.
       location: "us-east1",
-      params: { Frito_Lay_Manufacturer: "Frito-Lay" },
     };
 
     const [queryRes] = await bigqueryClient.query(options);
@@ -85,6 +82,34 @@ app.get("/top5skus", (req, res) => {
   }
 
   queryTop5Skus();
+});
+
+app.get("/campaigns", (req, res) => {
+  require("dotenv").config();
+  // Import the Google Cloud client library
+  const { BigQuery } = require("@google-cloud/bigquery");
+
+  async function queryCampaigns() {
+    // Create a client
+    const bigqueryClient = new BigQuery();
+
+    // The SQL query to run
+    const sqlQuery = `SELECT *
+            FROM \`advana-data-infra.portal_data_test.portal-campaign-list\`
+            `;
+
+    const options = {
+      query: sqlQuery,
+      // Location must match that of the dataset(s) referenced in the query.
+      location: "us-east1",
+    };
+
+    const [queryRes] = await bigqueryClient.query(options);
+
+    return res.json(queryRes);
+  }
+
+  queryCampaigns();
 });
 
 app.listen(4000, () => {

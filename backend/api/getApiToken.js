@@ -1,5 +1,6 @@
 var axios = require("axios").default;
-require("dotenv").config();
+dotenv = require("dotenv");
+dotenv.config();
 
 var options = {
   method: "POST",
@@ -7,7 +8,7 @@ var options = {
   headers: { "content-type": "application/x-www-form-urlencoded" },
   data: new URLSearchParams({
     grant_type: "client_credentials",
-    client_id: process.env.AUTH0_CLIENT_ID,
+    client_id: process.env.AUTH0_M2M_CLIENT_ID,
     client_secret: process.env.AUTH0_M2M_SECRET,
     audience: "https://dev-tyofb4m1.us.auth0.com/api/v2/",
   }),

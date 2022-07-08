@@ -1,20 +1,6 @@
-/*!
-=========================================================
-Material Kit - v2.0.7
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/material-kit
-Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-
-Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import React, { useState, useEffect } from "react";
-//import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from 'axios';
 
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -67,7 +53,7 @@ import OptIn from "../Modal/OptIn";
 // Import Images
 import campaignsPageHero from "../../assets/img/campaigns-page-hero.png";
 
-import campaignList from "../Campaigns/campaign-items";
+import campaignList from "../Campaigns/campaign-list";
 import CampaignItems from "../Campaigns/CampaignItems";
 
 import styles from "../../assets/jss/material-kit-react/views/campaignGridStyle";
@@ -133,17 +119,28 @@ export default function Campaigns(props) {
 
     const [openOptIn, setOpenOptIn] = useState(false);
 
+    const { getAccessTokenSilently } = useAuth0();
+
     //const [visible, setVisible] = useState(6);
 
     useEffect(() => {
-      // const getCampaigns = async () => {
-      //   const res = await axios.get('./static/campaign-list.json');
-      //   setCampaigns(res.data);
-      // };
+      getCampaigns(campaigns);
+      async function getCampaigns() {
+        try {
+          const token = await getAccessTokenSilently();
+          const res = await axios.get("http://localhost:4000/campaigns", {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          
+          setCampaigns(res.data);
+        } catch (error) {
+          console.log("API ERROR: ", error.message)
+        }
+      }
 
-      // getCampaigns(campaigns);
-      setCampaigns(campaignList);
-
+      getCampaigns(campaigns);
     }, []);
 
     function search(campaigns) {
