@@ -29,14 +29,16 @@ import styles from "../../assets/jss/material-dashboard-react/views/dashboardSty
 const useStyles = makeStyles(styles);
 
 const AddUser = () => {
-  const [email, setEmail] = useState('');
-  const [firstname, setFirstName] = useState('');
-  const [lastname, setLastName] = useState('');
-  const [parentcompany, setParentCompany] = useState('');
-  const [manufacturer, setManufacturer] = useState('');
-  const [tier, setTier] = useState('free');
-  const [role, setRole] = useState('user');
-  const [segment, setSegment] = useState('brand');
+  const [ gsUsers, setGsUsers ] = useState([]);
+  const [gsUserId, setGsUserId] = useState('');
+  const [gsUserEmail, setGsUserEmail] = useState('');
+  const [gsUserFName, setGsUserFName] = useState('');
+  const [gsUserLName, setGsUserLName] = useState('');
+  const [gsUserAccess, setGsUserAccess] = useState('brand');
+  const [gsUserTitle, setGsUserTitle] = useState('');
+  const [gsUserPhone, setGsUserPhone] = useState('');
+  const [gsUserCustId, setGsUserCustId] = useState('');
+  const [gsUserIsAdmin, setGsUserIsAdmin] = useState(false);
 
   const classes = useStyles();
 
@@ -51,7 +53,27 @@ const AddUser = () => {
 
   useEffect(() => {
     getAccessToken();
+    getGsUsers();
   },[]);
+
+  async function getGsUsers() {
+    try {
+      const token = await getAccessTokenSilently();
+      const res = await axios.get("http://localhost:4000/user-reg-form", {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (res.status === 200) {
+        setGsUsers(res.data.values);
+      };
+
+      console.log("GS USERS: ", res.data.values);
+    } catch (error) {
+      console.log("API ERROR: ", error.message)
+    }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -61,7 +83,7 @@ const AddUser = () => {
     <>
     <ThemeProvider theme={advanaTheme}>
       <div className={classes.adminWrapper}>
-        {/* <Grid container>
+        <Grid container>
           <Grid item className={classes.userList} xs={12} md={12} lg={12}>
             <Card className={classes.dashCardAutoH}>
               <CardBody>
@@ -69,19 +91,19 @@ const AddUser = () => {
                   <h5 className={classes.bodyTitle}>User List</h5>
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
-                  { users.map(user => <div name={user.firstname} id={user.id} key={user.id}>
+                  { gsUsers.map((item, index) => <div name={item.user_first_name} id={item.user_last_name} key={index}>
                     <>
                       <Grid item xs={12} md={12} lg={3}>
-                          {user.firstname}
+                          {gsUsers.gsUserFName}
                       </Grid>
                       <Grid item xs={12} md={12} lg={3}>
-                          {' ' + user.lastname}
+                          {' ' + gsUsers.gsUserLName}
                       </Grid>
                       <Grid item xs={12} md={12} lg={3}>
-                          {user.email}
+                          {gsUsers.gsUserEmail}
                       </Grid>
                       <Grid item xs={12} md={12} lg={3}>
-                          {user.company}
+                          {gsUsers.gsUserCustId}
                       </Grid>
                     </>
                   </div>) }
@@ -90,7 +112,7 @@ const AddUser = () => {
               </CardBody>
             </Card>
           </Grid>
-        </Grid> */}
+        </Grid>
         <Grid container>
           <Grid item xs={12} md={12} lg={12} className={classes.adminContainer}>
             <Grid container className={classes.formContainer}>
@@ -106,46 +128,46 @@ const AddUser = () => {
                             <Grid item xs={12} md={12} lg={12}>
                               <Input
                                 className={classes.registerText}
-                                name="firstname"
-                                onChange={event => setFirstName(event.target.value)}
+                                name="gsUserFName"
+                                onChange={event => setGsUserFName(event.target.value)}
                                 placeholder="First Name"
-                                value={firstname}
+                                value={gsUserFName}
                               />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
                               <Input
                                 className={classes.registerText}
-                                name="lastname"
-                                onChange={event => setLastName(event.target.value)}
+                                name="gsUserLName"
+                                onChange={event => setGsUserLName(event.target.value)}
                                 placeholder="Last Name"
-                                value={lastname}
+                                value={gsUserLName}
                               />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
                               <Input
                                 className={classes.registerText}
-                                name="parentcompany"
-                                onChange={event => setParentCompany(event.target.value)}
-                                placeholder="Parent Company"
-                                value={parentcompany}
+                                name="gsUserTitle"
+                                onChange={event => setGsUserTitle(event.target.value)}
+                                placeholder="Title"
+                                value={gsUserTitle}
                               />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
                               <Input
                                 className={classes.registerText}
-                                name="manufacturer"
-                                onChange={event => setManufacturer(event.target.value)}
-                                placeholder="Manufacturer"
-                                value={manufacturer}
+                                name="gsUserId"
+                                onChange={event => setGsUserId(event.target.value)}
+                                placeholder="User ID"
+                                value={gsUserId}
                               />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
                               <Input
                                 className={classes.registerText}
-                                name="email"
-                                onChange={event => setEmail(event.target.value)}
+                                name="gsUserEmail"
+                                onChange={event => setGsUserEmail(event.target.value)}
                                 placeholder="eMail"
-                                value={email}
+                                value={gsUserEmail}
                               />
                             </Grid>
                           </Grid>
@@ -155,30 +177,10 @@ const AddUser = () => {
                         <div className={classes.registerRadioGroup}>
                           <Grid item xs={12} md={12} lg={12}>
                             <FormControl className={classes.formControl}>
-                              <FormLabel component="legend">Segment</FormLabel>
-                              <RadioGroup row aria-label="segment" name="segment" value={segment} onChange={(event) => setSegment(event.target.value)}>
+                              <FormLabel component="legend">Access</FormLabel>
+                              <RadioGroup row aria-label="gsUserAccess" name="gsUserAccess" value={gsUserAccess} onChange={(event) => setGsUserAccess(event.target.value)}>
                                 <FormControlLabel value="brand" control={<Radio />} label="Brand" />
                                 <FormControlLabel value="operator" control={<Radio />} label="Operator" />
-                              </RadioGroup>
-                            </FormControl>
-                          </Grid>
-                          <Grid item xs={12} md={12} lg={12}>
-                            <FormControl className={classes.formControl}>
-                              <FormLabel component="legend">Role</FormLabel>
-                              <RadioGroup row aria-label="role" name="role" value={role} onChange={(event) => setRole(event.target.value)}>
-                                <FormControlLabel value="admin" control={<Radio />} label="Admin" />
-                                <FormControlLabel value="manager" control={<Radio />} label="Manager" />
-                                <FormControlLabel value="user" control={<Radio />} label="User" />
-                              </RadioGroup>
-                            </FormControl>
-                          </Grid>
-                          <Grid item xs={12} md={12} lg={12}>
-                            <FormControl className={classes.formControl}>
-                              <FormLabel component="legend">Tier</FormLabel>
-                              <RadioGroup row aria-label="tier" name="tier" value={tier} onChange={(event) => setTier(event.target.value)}>
-                                <FormControlLabel value="free" control={<Radio />} label="Free" />
-                                <FormControlLabel value="pro" control={<Radio />} label="Pro" />
-                                <FormControlLabel value="pro+" control={<Radio />} label="Pro+" />
                               </RadioGroup>
                             </FormControl>
                           </Grid>

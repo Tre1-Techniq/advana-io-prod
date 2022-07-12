@@ -83,6 +83,7 @@
     "react-slim-carousel": "^1.0.26",
     "react-swipeable-views": "0.13.9",
     "react-table": "^7.7.0",
+    "react-toastify": "^9.0.5",
     "react-tooltip": "^4.2.21",
     "reactstrap": "^9.0.2",
     "uuid": "^3.4.0",

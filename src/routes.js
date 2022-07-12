@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Material Dashboard React - v1.10.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 // @mui/icons-material
 import HomeIcon from '@material-ui/icons/Home';
 //import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -32,6 +14,8 @@ import Analytics from "./views/Dashboard/Analytics";
 // import Media from "./views/Dashboard/Media";
 import UserSettings from "./views/Dashboard/UserSettings";
 import AdminPanel from "./views/Dashboard/AdminPanel";
+import AddEditUser from "./views/Dashboard/Users/AddEditUser";
+import ViewUserDetails from "./views/Dashboard/Users/ViewUserDetails";
 
 const routes = [
   {
@@ -74,6 +58,20 @@ const routes = [
     name: "Admin Panel",
     icon: AdminIcon,
     component: AdminPanel,
+    layout: "/admin",
+  },
+  {
+    path: "/add-edit/:id",
+    name: "Add/Edit Users",
+    icon: AdminIcon,
+    component: AddEditUser,
+    layout: "/admin",
+  },
+  {
+    path: "/view-details/:id",
+    name: "View User Details",
+    icon: AdminIcon,
+    component: ViewUserDetails,
     layout: "/admin",
   },
 ];
