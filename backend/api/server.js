@@ -27,22 +27,20 @@ app.use(cors());
 
 require("dotenv").config();
 
-// var request = require("request");
+var request = require("request");
 
-// import request from "request";
+var options = {
+  method: "POST",
+  url: "https://dev-tyofb4m1.us.auth0.com/oauth/token",
+  headers: { "content-type": "application/json" },
+  body: '{"client_id":"UpBvv8QrA8G0YctuDtYWW8xstoPju6zX","client_secret":"2eI_QweMKxScycQyOVqQCwCtAHv8bWxnhqu4hhfU5vFbsw6hZKts4Y8ZunmeXxcc","audience":"https://dev-tyofb4m1.us.auth0.com/api/v2/","grant_type":"client_credentials"}',
+};
 
-// var options = {
-//   method: "POST",
-//   url: "https://dev-tyofb4m1.us.auth0.com/oauth/token",
-//   headers: { "content-type": "application/json" },
-//   body: '{"client_id":"UpBvv8QrA8G0YctuDtYWW8xstoPju6zX","client_secret":"2eI_QweMKxScycQyOVqQCwCtAHv8bWxnhqu4hhfU5vFbsw6hZKts4Y8ZunmeXxcc","audience":"https://dev-tyofb4m1.us.auth0.com/api/v2/","grant_type":"client_credentials"}',
-// };
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-// request(options, function (error, response, body) {
-//   if (error) throw new Error(error);
-
-//   console.log(body);
-// });
+  console.log(body);
+});
 
 app.use("/", userRoutes);
 

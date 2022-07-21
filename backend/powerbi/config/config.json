@@ -1,0 +1,13 @@
+{
+  "authenticationMode": "ServicePrincipal",
+  "authorityUri": "https://login.microsoftonline.com/common/v2.0",
+  "scope": "https://analysis.windows.net/powerbi/api",
+  "apiUrl": "https://api.powerbi.com/",
+  "clientId": "8eca30e0-e10d-4449-aa8d-c25b736eb164",
+  "workspaceId": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+  "reportId": "c69de0ff-8ad7-4551-b304-dcc86d310006",
+  "pbiUsername": "",
+  "pbiPassword": "",
+  "clientSecret": "Zgk8Q~PmIMJyIPQmq958L5iKlT.jMWprbxyw6bCC",
+  "tenantId": "155c33b3-b4af-4076-a864-15ee882880ae"
+}
