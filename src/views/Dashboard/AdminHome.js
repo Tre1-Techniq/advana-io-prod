@@ -76,7 +76,7 @@ function AdminHome() {
   async function callHomeKpiApi() {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get("http://localhost:4000/homekpi", {
+      const response = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/homekpi", {
         headers: {
           authorization: `Bearer ${token}`,
         },
@@ -155,7 +155,7 @@ function AdminHome() {
   async function callTop5SkusApi() {
     try {
       const token = await getAccessTokenSilently();
-      const res = await axios.get("http://localhost:4000/top5skus", {
+      const res = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/top5skus", {
         headers: {
           authorization: `Bearer ${token}`,
         },

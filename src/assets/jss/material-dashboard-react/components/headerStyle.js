@@ -14,9 +14,9 @@ import {
 
 const headerStyle = () => ({
   appBar: {
-    backgroundColor: "#e7e7e7 !important",
+    backgroundColor: "#313131 !important",
     boxShadow: "none",
-    borderBottom: "1px solid #d7d7d7",
+    borderBottom: "1px solid #444444",
     marginBottom: "0",
     display: "flex",
     justifyContent: "start",
@@ -27,7 +27,7 @@ const headerStyle = () => ({
     zIndex: "1029",
     color: grayColor[7],
     border: "0",
-    borderRadius: "3px",
+    borderRadius: "0px",
     transition: "all 150ms ease 0s",
     minHeight: "50px",
   },
@@ -89,7 +89,7 @@ const headerStyle = () => ({
     justifyContent: "start",
     width: "20vw", 
     "& h5": {
-      color: primaryColor[0],
+      color: "#f3f3f3",
       fontSize: "1.5rem",
       display: "flex",
       alignItems: "center",

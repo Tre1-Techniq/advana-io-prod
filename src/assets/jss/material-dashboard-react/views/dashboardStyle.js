@@ -791,6 +791,12 @@ const dashboardStyle = () => ({
       lineHeight: "1",
     },
   },
+  cardProfileImg: {
+    width: "150px",
+    display: "flex",
+    justifyContent: "center",
+    margin: "0 auto",
+  },
   cardAvatarWrapper: {
     display: "flex",
     justifyContent: "start",
@@ -1102,7 +1108,9 @@ const dashboardStyle = () => ({
     border: "none",
   },
   powerBIreport: {
-    
+    "& html": {
+      overflow: "hidden",
+    },
   },
 });
 

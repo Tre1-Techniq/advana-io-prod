@@ -23,6 +23,7 @@ const sidebarStyle = (theme) => ({
     bottom: "0",
     left: "0",
     zIndex: "1",
+    borderRight: "1px solid #444444",
     //...boxShadow,
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
@@ -72,7 +73,7 @@ const sidebarStyle = (theme) => ({
       height: "1px",
       right: "15px",
       width: "calc(100% - 30px)",
-      backgroundColor: "rgba(" + hexToRgb(grayColor[6]) + ", 0.3)",
+      // backgroundColor: "rgba(" + hexToRgb(grayColor[6]) + ", 0.3)",
     },
   },
   logoLink: {
@@ -286,7 +287,7 @@ const sidebarStyle = (theme) => ({
     position: "relative",
     height: "calc(100vh - 75px)",
     overflow: "auto",
-    width: "260px",
+    width: "259px",
     zIndex: "4",
     overflowScrolling: "touch",
   },

@@ -17,9 +17,15 @@ const bodyParser = require("body-parser");
 import userRoutes from "./routes/users.js";
 
 const app = express();
-app.use(cors());
 
-const port = 4000;
+// Enable CORS for all methods
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+});
+
+const port = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());

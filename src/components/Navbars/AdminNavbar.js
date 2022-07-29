@@ -34,6 +34,10 @@ export default function AdminNavbar(props) {
     [" " + classes[color]]: color,
   });
 
+  // const namespace = 'https://user.metadata.io';
+  // const fName= `${namespace}/givenname`;
+  // const firstName = `${user[fName]}`;
+
   const { user } = useAuth0();
 
   return (

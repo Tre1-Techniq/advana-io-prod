@@ -62,6 +62,7 @@ const appStyle = (theme) => ({
     maxHeight: "100%",
     width: "100%",
     overflowScrolling: "touch",
+    background: "#313131 !important",
   },
   content: {
     marginTop: "0",

@@ -128,7 +128,7 @@ export default function Campaigns(props) {
       async function getCampaigns() {
         try {
           const token = await getAccessTokenSilently();
-          const res = await axios.get("http://localhost:4000/campaigns", {
+          const res = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/campaigns", {
             headers: {
               authorization: `Bearer ${token}`,
             },

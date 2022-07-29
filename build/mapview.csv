@@ -1,0 +1,637 @@
+State,Parent Company,Manufacturer,SalesCount
+NJ,PepsiCo,TBE,1070
+NE,PepsiCo,Tropicana Products,430
+IN,PepsiCo,Pepsi/Cytosport,111
+KS,PepsiCo,Pepsi/Cytosport,77
+IL,PepsiCo,KeVita,371
+OH,PepsiCo,Frito-Lay,486985
+QC,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,13815
+AR,PepsiCo,Quaker Oats/Gatorade,9574
+FL,PepsiCo,Quaker Oats,3245
+IL,PepsiCo,Frito-Lay,280751
+BC,PepsiCo,PepsiCo Canada,3778
+IL,PepsiCo,Naked Juice,1913
+WI,PepsiCo,PepsiCo,363208
+NE,PepsiCo,Rockstar,382
+RI,PepsiCo,Pepsi/Cytosport,94
+ND,PepsiCo,Frito-Lay,13633
+MA,PepsiCo,Pepsi/Cytosport,40
+NY,PepsiCo,PepsiCo,120632
+WI,PepsiCo,Rockstar,4408
+MD,PepsiCo,Quaker Oats,895
+AB,PepsiCo,Frito-Lay,247
+MO,PepsiCo,Tropicana Products,411
+KY,PepsiCo,PepsiCo,439668
+NC,PepsiCo,Pepsi/Cytosport,1020
+MA,PepsiCo,Rockstar,213
+ND,PepsiCo,Naked Juice,126
+IN,PepsiCo,PepsiCo,595625
+Error,PepsiCo,Frito-Lay,29813
+NB,PepsiCo,PepsiCo Canada - Quaker Oats,328
+AL,PepsiCo,Pepsi/Cytosport,167
+MO,PepsiCo,Naked Juice,407
+CT,PepsiCo,TBE,35
+OR,PepsiCo,Naked Juice,1613
+KS,PepsiCo,Frito-Lay,33983
+MI,PepsiCo,Naked Juice,2106
+MO,PepsiCo,Pepsi/Cytosport,181
+AK,PepsiCo,Tropicana Products,54
+MI,PepsiCo,Tropicana Products,673
+MA,PepsiCo,Quaker Oats,305
+CT,PepsiCo,Quaker Oats/Gatorade,3675
+CO,PepsiCo,Sabra Dipping Co,1533
+NB,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,1402
+UT,PepsiCo,Quaker Oats,116
+FL,PepsiCo,Rockstar,1578
+OK,PepsiCo,Rockstar,230
+SC,PepsiCo,Sabra Dipping Co,282
+NY,PepsiCo,Pepsi/Cytosport,219
+AZ,PepsiCo,Pepsi/Cytosport,627
+NE,PepsiCo,Sabra Dipping Co,264
+Error,PepsiCo,Quaker Oats,462
+WI,PepsiCo,Naked Juice,1959
+NE,PepsiCo,PepsiCo,43033
+ND,PepsiCo,Quaker Oats,105
+MI,PepsiCo,PepsiCo,307407
+NE,PepsiCo,Frito-Lay,37746
+MN,PepsiCo,Rockstar,4988
+DE,PepsiCo,Naked Juice,289
+Error,PepsiCo,Tropicana Products,348
+TX,PepsiCo,Frito-Lay,549518
+IA,PepsiCo,PepsiCo,82591
+WV,PepsiCo,Frito-Lay,20593
+WA,PepsiCo,Quaker Oats,2199
+CA,PepsiCo,Sabra Dipping Co,3833
+DE,PepsiCo,Quaker Oats,237
+SK,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,586
+WA,PepsiCo,Frito-Lay,149560
+OH,PepsiCo,South Beach Beverage,1787
+VT,PepsiCo,Frito-Lay,5385
+MN,PepsiCo,PepsiCo,232930
+AZ,PepsiCo,Sabra Dipping Co,2218
+CO,PepsiCo,Tropicana Products,3378
+MN,PepsiCo,TBE,4224
+ME,PepsiCo,South Beach Beverage,118
+SD,PepsiCo,Frito-Lay,11629
+CT,PepsiCo,Rockstar,85
+KS,PepsiCo,Quaker Oats/Gatorade,11980
+CA,PepsiCo,Naked Juice,13395
+NC,PepsiCo,Quaker Oats/Gatorade,95131
+AZ,PepsiCo,Tropicana Products,846
+NH,PepsiCo,PepsiCo,7443
+RI,PepsiCo,Frito-Lay,3705
+KY,PepsiCo,Sabra Dipping Co,816
+RI,PepsiCo,PepsiCo,2367
+MS,PepsiCo,Naked Juice,251
+NA,PepsiCo,Frito-Lay,6878
+LA,PepsiCo,Quaker Oats/Gatorade,8228
+DE,PepsiCo,TBE,25
+AL,PepsiCo,Sabra Dipping Co,244
+CA,PepsiCo,PepsiCo,402068
+MN,PepsiCo,Sabra Dipping Co,400
+VA,PepsiCo,TBE,1845
+SD,PepsiCo,Quaker Oats,185
+UT,PepsiCo,Frito-Lay,44625
+VA,PepsiCo,South Beach Beverage,603
+NC,PepsiCo,Naked Juice,2390
+RI,PepsiCo,Tropicana Products,31
+NC,PepsiCo,Quaker Oats,4336
+AL,PepsiCo,Quaker Oats/Gatorade,39886
+CO,PepsiCo,KeVita,690
+ID,PepsiCo,Frito-Lay,7109
+NV,PepsiCo,Quaker Oats/Gatorade,18562
+TX,PepsiCo,Rockstar,1961
+NM,PepsiCo,PepsiCo,7421
+AZ,PepsiCo,TBE,4002
+DE,PepsiCo,Tropicana Products,680
+NM,PepsiCo,Quaker Oats,151
+KY,PepsiCo,Tropicana Products,380
+Error,PepsiCo,PepsiCo Canada - Quaker Oats,5138
+RI,PepsiCo,Quaker Oats/Gatorade,923
+MD,PepsiCo,Naked Juice,1452
+VT,PepsiCo,Quaker Oats,35
+MT,PepsiCo,KeVita,15
+CT,PepsiCo,Tropicana Products,496
+NJ,PepsiCo,Rockstar,1211
+NS,PepsiCo,PepsiCo Canada,539
+WV,PepsiCo,Rockstar,626
+PA,PepsiCo,Quaker Oats/Gatorade,52959
+KS,PepsiCo,PepsiCo,41504
+OH,PepsiCo,TBE,4454
+UT,PepsiCo,Quaker Oats/Gatorade,12289
+PA,PepsiCo,Rockstar,4304
+PA,PepsiCo,Naked Juice,3815
+Error,PepsiCo,South Beach Beverage,43
+AL,PepsiCo,Frito-Lay,245469
+NS,PepsiCo,PepsiCo Canada - Quaker Oats,116
+CA,PepsiCo,KeVita,1044
+NC,PepsiCo,PepsiCo,482185
+MS,PepsiCo,Tropicana Products,149
+CO,PepsiCo,Frito-Lay,64334
+WA,PepsiCo,Rockstar,8934
+TN,PepsiCo,Frito-Lay,437767
+CT,PepsiCo,Frito-Lay,31718
+MS,PepsiCo,Rockstar,1044
+WA,PepsiCo,Sabra Dipping Co,2918
+IN,PepsiCo,Tropicana Products,1166
+KS,PepsiCo,Rockstar,352
+WI,PepsiCo,KeVita,87
+DE,PepsiCo,Rockstar,1
+KY,PepsiCo,Frito-Lay,299028
+WI,PepsiCo,South Beach Beverage,442
+Error,PepsiCo,Rockstar,3151
+MN,PepsiCo,Quaker Oats,618
+MA,PepsiCo,Sabra Dipping Co,701
+NA,PepsiCo,Tropicana Products,41
+NV,PepsiCo,Rockstar,6052
+NJ,PepsiCo,Quaker Oats/Gatorade,31798
+NB,PepsiCo,Rockstar,267
+OR,PepsiCo,Quaker Oats,822
+IN,PepsiCo,Rockstar,6766
+MT,PepsiCo,PepsiCo,8984
+DE,PepsiCo,Frito-Lay,12285
+BC,PepsiCo,Rockstar,158
+FL,PepsiCo,Tropicana Products,4253
+IO,PepsiCo,PepsiCo,87
+VA,PepsiCo,Quaker Oats,2111
+NB,PepsiCo,Frito-Lay,919
+Error,PepsiCo,PepsiCo Canada,19237
+NL,PepsiCo,PepsiCo Canada - Quaker Oats,163
+MO,PepsiCo,Rockstar,585
+GA,PepsiCo,Rockstar,5337
+KY,PepsiCo,Quaker Oats,2763
+VA,PepsiCo,PepsiCo,172517
+TN,PepsiCo,Quaker Oats/Gatorade,78271
+OK,PepsiCo,Naked Juice,101
+AZ,PepsiCo,Rockstar,6371
+OR,PepsiCo,PepsiCo,77808
+CA,PepsiCo,Rockstar,44637
+ID,PepsiCo,Quaker Oats/Gatorade,1894
+ON,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,39621
+MA,PepsiCo,PepsiCo,19544
+PA,PepsiCo,Tropicana Products,7405
+MA,PepsiCo,Tropicana Products,997
+SD,PepsiCo,Naked Juice,83
+NL,PepsiCo,PepsiCo Canada,815
+NE,PepsiCo,TBE,191
+DC,PepsiCo,KeVita,44
+OK,PepsiCo,Quaker Oats,920
+UT,PepsiCo,Naked Juice,2554
+MO,PepsiCo,Frito-Lay,107646
+OH,PepsiCo,Rockstar,12364
+MA,PepsiCo,Quaker Oats/Gatorade,6295
+SC,PepsiCo,Frito-Lay,314791
+WV,PepsiCo,Quaker Oats/Gatorade,5237
+WI,PepsiCo,Pepsi/Cytosport,157
+FL,PepsiCo,PepsiCo,246757
+TN,PepsiCo,Sabra Dipping Co,1636
+WY,PepsiCo,Quaker Oats/Gatorade,15
+MI,PepsiCo,Sabra Dipping Co,3543
+UT,PepsiCo,Rockstar,3579
+AK,PepsiCo,PepsiCo,497
+WI,PepsiCo,Quaker Oats/Gatorade,47325
+OH,PepsiCo,Tropicana Products,517
+IL,PepsiCo,PepsiCo,272333
+NE,PepsiCo,Quaker Oats,219
+Error,PepsiCo,Naked Juice,231
+AZ,PepsiCo,PepsiCo,108487
+AK,PepsiCo,Frito-Lay,1903
+NB,PepsiCo,Tropicana Products,27
+NM,PepsiCo,Frito-Lay,9169
+TN,PepsiCo,Tropicana Products,1342
+NV,PepsiCo,PepsiCo,66691
+CO,PepsiCo,PepsiCo,67697
+SD,PepsiCo,Quaker Oats/Gatorade,3834
+GU,PepsiCo,PepsiCo,1619
+IL,PepsiCo,Rockstar,6877
+VA,PepsiCo,KeVita,16
+WI,PepsiCo,Frito-Lay,260109
+TX,PepsiCo,Quaker Oats,4029
+ME,PepsiCo,Quaker Oats/Gatorade,1513
+MI,PepsiCo,South Beach Beverage,1498
+IA,PepsiCo,Tropicana Products,90
+NJ,PepsiCo,Frito-Lay,111166
+NA,PepsiCo,Quaker Oats/Gatorade,1519
+MA,PepsiCo,TBE,112
+WA,PepsiCo,TBE,4255
+ME,PepsiCo,Sabra Dipping Co,143
+TX,PepsiCo,Naked Juice,6909
+IL,PepsiCo,Tropicana Products,1536
+WY,PepsiCo,PepsiCo,83
+VA,PepsiCo,Sabra Dipping Co,1148
+SC,PepsiCo,Tropicana Products,20940
+NB,PepsiCo,PepsiCo,917
+TN,PepsiCo,Naked Juice,3463
+AZ,PepsiCo,Quaker Oats,1447
+IA,PepsiCo,TBE,332
+NS,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,429
+TX,PepsiCo,South Beach Beverage,93
+AL,PepsiCo,PepsiCo Canada,36
+IO,PepsiCo,Frito-Lay,90
+CT,PepsiCo,Sabra Dipping Co,1560
+CT,PepsiCo,Naked Juice,915
+AR,PepsiCo,Rockstar,381
+IN,PepsiCo,South Beach Beverage,45
+AB,PepsiCo,Quaker Oats/Gatorade,40
+GA,PepsiCo,KeVita,24
+RI,PepsiCo,Sabra Dipping Co,62
+NA,PepsiCo,Sabra Dipping Co,43
+WV,PepsiCo,Sabra Dipping Co,111
+RI,PepsiCo,Quaker Oats,75
+AB,PepsiCo,Rockstar,103
+OK,PepsiCo,Sabra Dipping Co,344
+KS,PepsiCo,TBE,76
+NM,PepsiCo,Naked Juice,57
+NH,PepsiCo,TBE,65
+Error,PepsiCo,Sabra Dipping Co,128
+MT,PepsiCo,Tropicana Products,54
+IA,PepsiCo,Pepsi/Cytosport,15
+NH,PepsiCo,Rockstar,79
+MT,PepsiCo,Sabra Dipping Co,44
+WV,PepsiCo,Quaker Oats,105
+DC,PepsiCo,Tropicana Products,51
+MT,PepsiCo,Naked Juice,48
+AL,PepsiCo,Naked Juice,31
+AZ,PepsiCo,South Beach Beverage,50
+MT,PepsiCo,Quaker Oats,35
+RI,PepsiCo,South Beach Beverage,17
+UT,PepsiCo,South Beach Beverage,17
+NA,PepsiCo,Quaker Oats,36
+NJ,PepsiCo,South Beach Beverage,68
+NH,PepsiCo,KeVita,16
+MD,PepsiCo,KeVita,34
+SC,PepsiCo,KeVita,21
+MD,PepsiCo,South Beach Beverage,2
+OH,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,2
+MI,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,1
+WY,PepsiCo,Sabra Dipping Co,11
+WY,PepsiCo,South Beach Beverage,1
+NB,PepsiCo,Naked Juice,2
+ID,PepsiCo,South Beach Beverage,3
+NM,PepsiCo,South Beach Beverage,1
+CO,PepsiCo,South Beach Beverage,10
+DE,PepsiCo,Pepsi/Cytosport,7
+MO,PepsiCo,Minute Maid,1
+MD,PepsiCo,Pepsi/Cytosport,8
+PA,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,1
+GA,PepsiCo,South Beach Beverage,2
+KY,PepsiCo,PepsiCo Canada,1
+RI,PepsiCo,Rockstar,1
+AL,PepsiCo,PepsiCo Canada - Quaker Oats,3
+AL,PepsiCo,South Beach Beverage,1
+ON,PepsiCo,Quaker Oats,1
+AR,PepsiCo,Tropicana Products,1
+NJ,PepsiCo,Quaker Oats,2475
+SK,PepsiCo,PepsiCo Canada - Quaker Oats,114
+ID,PepsiCo,PepsiCo,7536
+OR,PepsiCo,Sabra Dipping Co,879
+IA,PepsiCo,Sabra Dipping Co,328
+OH,PepsiCo,Naked Juice,1578
+QC,PepsiCo,PepsiCo Canada - Quaker Oats,3735
+CO,PepsiCo,Quaker Oats,1638
+QC,PepsiCo,Rockstar,326
+DC,PepsiCo,PepsiCo,7206
+LA,PepsiCo,Quaker Oats,590
+MS,PepsiCo,Frito-Lay,132771
+MO,PepsiCo,TBE,499
+VT,PepsiCo,Tropicana Products,499
+DC,PepsiCo,Quaker Oats,208
+NY,PepsiCo,South Beach Beverage,15
+HI,PepsiCo,PepsiCo,4034
+NE,PepsiCo,Quaker Oats/Gatorade,6921
+DC,PepsiCo,Pepsi/Cytosport,71
+WA,PepsiCo,South Beach Beverage,46
+VT,PepsiCo,Sabra Dipping Co,219
+AZ,PepsiCo,Frito-Lay,143619
+ON,PepsiCo,Rockstar,525
+OK,PepsiCo,South Beach Beverage,183
+MD,PepsiCo,Quaker Oats/Gatorade,16975
+WI,PepsiCo,Sabra Dipping Co,1584
+NA,PepsiCo,PepsiCo,6410
+PA,PepsiCo,Pepsi/Cytosport,418
+MO,PepsiCo,Quaker Oats/Gatorade,21089
+IL,PepsiCo,Quaker Oats/Gatorade,43424
+CO,PepsiCo,Quaker Oats/Gatorade,11457
+AL,PepsiCo,Rockstar,3528
+SC,PepsiCo,Rockstar,1088
+ND,PepsiCo,Rockstar,337
+NY,PepsiCo,PepsiCo Canada,1
+NV,PepsiCo,Pepsi/Cytosport,51
+NV,PepsiCo,Quaker Oats,1544
+NH,PepsiCo,Frito-Lay,10834
+LA,PepsiCo,Naked Juice,581
+NM,PepsiCo,Quaker Oats/Gatorade,626
+Error,PepsiCo,Pepsi/Cytosport,231
+CA,PepsiCo,Frito-Lay,734767
+MT,PepsiCo,Frito-Lay,6815
+CO,PepsiCo,Rockstar,2862
+OK,PepsiCo,Tropicana Products,3
+WA,PepsiCo,PepsiCo,125606
+OH,PepsiCo,Quaker Oats,4929
+DC,PepsiCo,Quaker Oats/Gatorade,1339
+NH,PepsiCo,Quaker Oats/Gatorade,1430
+NY,PepsiCo,Sabra Dipping Co,1513
+WI,PepsiCo,TBE,5190
+MO,PepsiCo,Quaker Oats,915
+CT,PepsiCo,PepsiCo,20346
+CT,PepsiCo,Quaker Oats,494
+MS,PepsiCo,Pepsi/Cytosport,418
+DE,PepsiCo,Quaker Oats/Gatorade,2428
+MD,PepsiCo,PepsiCo,66372
+AB,PepsiCo,PepsiCo Canada - Quaker Oats,999
+SC,PepsiCo,Quaker Oats/Gatorade,83377
+CA,PepsiCo,TBE,3626
+IA,PepsiCo,South Beach Beverage,32
+TN,PepsiCo,Minute Maid,3
+OH,PepsiCo,Quaker Oats/Gatorade,144972
+MN,PepsiCo,KeVita,57
+GA,PepsiCo,PepsiCo,375490
+MA,PepsiCo,Frito-Lay,27367
+NM,PepsiCo,Sabra Dipping Co,95
+NE,PepsiCo,Naked Juice,182
+ON,PepsiCo,PepsiCo Canada - Quaker Oats,7610
+NJ,PepsiCo,Pepsi/Cytosport,280
+OR,PepsiCo,TBE,1505
+FL,PepsiCo,Quaker Oats/Gatorade,72978
+HI,PepsiCo,Tropicana Products,250
+TN,PepsiCo,Rockstar,6872
+VT,PepsiCo,PepsiCo,6199
+SD,PepsiCo,PepsiCo,23425
+IL,PepsiCo,Sabra Dipping Co,1424
+MB,PepsiCo,PepsiCo Canada,3017
+NB,PepsiCo,Quaker Oats/Gatorade,99
+OH,PepsiCo,PepsiCo,804462
+HI,PepsiCo,Frito-Lay,6783
+MI,PepsiCo,Quaker Oats,3065
+IL,PepsiCo,Pepsi/Cytosport,199
+NH,PepsiCo,Tropicana Products,252
+OR,PepsiCo,Quaker Oats/Gatorade,24680
+MI,PepsiCo,KeVita,100
+NC,PepsiCo,Sabra Dipping Co,2265
+OK,PepsiCo,TBE,779
+NC,PepsiCo,Frito-Lay,407204
+NY,PepsiCo,TBE,1128
+AZ,PepsiCo,Naked Juice,4710
+RI,PepsiCo,Naked Juice,236
+SD,PepsiCo,Sabra Dipping Co,18
+AL,PepsiCo,Tropicana Products,321
+AL,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,85
+NY,PepsiCo,Quaker Oats,2154
+SC,PepsiCo,Quaker Oats,3839
+GU,PepsiCo,Frito-Lay,912
+GU,PepsiCo,Tropicana Products,244
+ON,PepsiCo,Sabra Dipping Co,36
+UT,PepsiCo,Sabra Dipping Co,2151
+MD,PepsiCo,TBE,1320
+IL,PepsiCo,South Beach Beverage,492
+IA,PepsiCo,Quaker Oats/Gatorade,10462
+MB,PepsiCo,PepsiCo Canada - Quaker Oats,317
+AB,PepsiCo,Sabra Dipping Co,33
+MO,PepsiCo,Sabra Dipping Co,629
+AR,PepsiCo,TBE,80
+IN,PepsiCo,TBE,8538
+MI,PepsiCo,TBE,3520
+HI,PepsiCo,Quaker Oats/Gatorade,2372
+ME,PepsiCo,Naked Juice,67
+UT,PepsiCo,Pepsi/Cytosport,39
+TX,PepsiCo,TBE,2135
+UT,PepsiCo,KeVita,89
+NM,PepsiCo,Rockstar,148
+FL,PepsiCo,Frito-Lay,334987
+NJ,PepsiCo,PepsiCo,89318
+LA,PepsiCo,Frito-Lay,58258
+IA,PepsiCo,Rockstar,766
+IA,PepsiCo,Naked Juice,83
+DC,PepsiCo,Sabra Dipping Co,564
+NA,PepsiCo,TBE,170
+NY,PepsiCo,Quaker Oats/Gatorade,29160
+IN,PepsiCo,Quaker Oats,3256
+FL,PepsiCo,Naked Juice,1604
+GU,PepsiCo,Quaker Oats/Gatorade,876
+ME,PepsiCo,Quaker Oats,109
+PA,PepsiCo,PepsiCo,284131
+OK,PepsiCo,Quaker Oats/Gatorade,16841
+MI,PepsiCo,Rockstar,1609
+AK,PepsiCo,Rockstar,166
+NH,PepsiCo,Quaker Oats,77
+NV,PepsiCo,Frito-Lay,88951
+MO,PepsiCo,PepsiCo,142183
+GA,PepsiCo,Frito-Lay,427805
+ND,PepsiCo,Quaker Oats/Gatorade,5437
+OR,PepsiCo,Rockstar,16662
+TN,PepsiCo,PepsiCo,446192
+IN,PepsiCo,Quaker Oats/Gatorade,114031
+TN,PepsiCo,Quaker Oats,5158
+KY,PepsiCo,Pepsi/Cytosport,330
+DC,PepsiCo,TBE,361
+FL,PepsiCo,TBE,1701
+CA,PepsiCo,Quaker Oats,4132
+LA,PepsiCo,Sabra Dipping Co,894
+AB,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,4202
+AL,PepsiCo,TBE,4524
+VA,PepsiCo,Pepsi/Cytosport,591
+TX,PepsiCo,KeVita,35
+PA,PepsiCo,KeVita,89
+AZ,PepsiCo,Quaker Oats/Gatorade,23856
+ID,PepsiCo,Rockstar,614
+VT,PepsiCo,Rockstar,150
+VA,PepsiCo,Naked Juice,1467
+GA,PepsiCo,Pepsi/Cytosport,504
+WY,PepsiCo,Frito-Lay,357
+Error,PepsiCo,TBE,292
+PA,PepsiCo,South Beach Beverage,767
+CA,PepsiCo,Tropicana Products,5385
+IL,PepsiCo,Quaker Oats,4328
+MN,PepsiCo,Pepsi/Cytosport,466
+WA,PepsiCo,Tropicana Products,85
+MS,PepsiCo,Quaker Oats,544
+UT,PepsiCo,Tropicana Products,47
+KS,PepsiCo,Quaker Oats,342
+QC,PepsiCo,PepsiCo Canada,9612
+TN,PepsiCo,Pepsi/Cytosport,75
+OK,PepsiCo,Frito-Lay,57463
+PA,PepsiCo,Sabra Dipping Co,2652
+CA,PepsiCo,Pepsi/Cytosport,4324
+PA,PepsiCo,TBE,2023
+AB,PepsiCo,PepsiCo,157
+DE,PepsiCo,PepsiCo,14494
+ME,PepsiCo,Frito-Lay,9707
+DC,PepsiCo,Frito-Lay,7073
+NL,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,817
+CO,PepsiCo,Naked Juice,3137
+CA,PepsiCo,Quaker Oats/Gatorade,154087
+OK,PepsiCo,PepsiCo,53266
+ND,PepsiCo,PepsiCo,24211
+PA,PepsiCo,Quaker Oats,3063
+WA,PepsiCo,KeVita,243
+ME,PepsiCo,Tropicana Products,19
+AR,PepsiCo,Frito-Lay,76510
+SK,PepsiCo,PepsiCo Canada,588
+GU,PepsiCo,Pepsi/Cytosport,222
+MS,PepsiCo,PepsiCo,101952
+TX,PepsiCo,Sabra Dipping Co,3139
+KY,PepsiCo,Naked Juice,304
+LA,PepsiCo,PepsiCo,23044
+NH,PepsiCo,Sabra Dipping Co,339
+OR,PepsiCo,Tropicana Products,1817
+SC,PepsiCo,PepsiCo,359100
+TX,PepsiCo,Quaker Oats/Gatorade,76544
+NY,PepsiCo,Frito-Lay,114860
+KS,PepsiCo,Naked Juice,48
+ON,PepsiCo,Naked Juice,275
+WA,PepsiCo,Naked Juice,3733
+IA,PepsiCo,Quaker Oats,1087
+VA,PepsiCo,Frito-Lay,157620
+OH,PepsiCo,Pepsi/Cytosport,1282
+SD,PepsiCo,TBE,146
+MN,PepsiCo,South Beach Beverage,243
+WA,PepsiCo,Quaker Oats/Gatorade,33921
+IN,PepsiCo,Naked Juice,1749
+WA,PepsiCo,Pepsi/Cytosport,408
+DC,PepsiCo,Naked Juice,200
+SC,PepsiCo,Naked Juice,454
+KS,PepsiCo,South Beach Beverage,182
+NJ,PepsiCo,KeVita,58
+CO,PepsiCo,Pepsi/Cytosport,492
+LA,PepsiCo,Rockstar,38
+NJ,PepsiCo,Tropicana Products,5854
+ON,PepsiCo,PepsiCo Canada,23625
+WI,PepsiCo,Quaker Oats,3936
+BC,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,6776
+VA,PepsiCo,Rockstar,1150
+MB,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,2127
+Error,PepsiCo,KeVita,95
+MN,PepsiCo,Naked Juice,3175
+VA,PepsiCo,Quaker Oats/Gatorade,32088
+HI,PepsiCo,Naked Juice,863
+VA,PepsiCo,Tropicana Products,387
+OR,PepsiCo,South Beach Beverage,165
+NJ,PepsiCo,Naked Juice,4639
+NY,PepsiCo,Rockstar,1736
+ND,PepsiCo,Tropicana Products,312
+OR,PepsiCo,Frito-Lay,81985
+VT,PepsiCo,Quaker Oats/Gatorade,1156
+UT,PepsiCo,PepsiCo,47024
+ND,PepsiCo,Pepsi/Cytosport,133
+GA,PepsiCo,Quaker Oats/Gatorade,69290
+NC,PepsiCo,Tropicana Products,1132
+KY,PepsiCo,Quaker Oats/Gatorade,63461
+Error,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,30112
+WI,PepsiCo,Tropicana Products,2055
+NJ,PepsiCo,Sabra Dipping Co,1384
+MS,PepsiCo,TBE,832
+MN,PepsiCo,Frito-Lay,154869
+MD,PepsiCo,Frito-Lay,66863
+Error,PepsiCo,Quaker Oats/Gatorade,6357
+OH,PepsiCo,Sabra Dipping Co,4384
+MB,PepsiCo,Rockstar,382
+GA,PepsiCo,Quaker Oats,7083
+MT,PepsiCo,Quaker Oats/Gatorade,1367
+LA,PepsiCo,Pepsi/Cytosport,81
+IN,PepsiCo,Sabra Dipping Co,1408
+NV,PepsiCo,Sabra Dipping Co,749
+WV,PepsiCo,PepsiCo,37138
+HI,PepsiCo,TBE,582
+FL,PepsiCo,Pepsi/Cytosport,933
+TX,PepsiCo,Pepsi/Cytosport,1673
+KS,PepsiCo,Sabra Dipping Co,154
+AB,PepsiCo,PepsiCo Canada,3036
+NC,PepsiCo,TBE,3253
+IL,PepsiCo,TBE,4570
+AL,PepsiCo,Quaker Oats,2075
+GA,PepsiCo,Tropicana Products,5437
+MI,PepsiCo,Pepsi/Cytosport,669
+MN,PepsiCo,Quaker Oats/Gatorade,30166
+AL,PepsiCo,PepsiCo,288827
+ME,PepsiCo,PepsiCo,8650
+KY,PepsiCo,TBE,5996
+IN,PepsiCo,Frito-Lay,389948
+AR,PepsiCo,PepsiCo,83653
+NY,PepsiCo,Tropicana Products,4959
+NY,PepsiCo,KeVita,107
+FL,PepsiCo,Sabra Dipping Co,2314
+CO,PepsiCo,TBE,89
+AK,PepsiCo,Quaker Oats/Gatorade,166
+OR,PepsiCo,Pepsi/Cytosport,109
+AR,PepsiCo,Quaker Oats,125
+CT,PepsiCo,Pepsi/Cytosport,242
+IA,PepsiCo,Frito-Lay,70059
+GA,PepsiCo,Sabra Dipping Co,466
+SD,PepsiCo,Rockstar,613
+NB,PepsiCo,PepsiCo Canada,1260
+NY,PepsiCo,Naked Juice,1254
+SC,PepsiCo,TBE,3815
+WV,PepsiCo,TBE,425
+NA,PepsiCo,Rockstar,165
+MT,PepsiCo,Rockstar,187
+Error,PepsiCo,PepsiCo,35689
+MI,PepsiCo,Frito-Lay,254740
+MD,PepsiCo,Sabra Dipping Co,682
+KY,PepsiCo,Rockstar,6417
+GA,PepsiCo,Naked Juice,2020
+KS,PepsiCo,Tropicana Products,406
+NC,PepsiCo,Rockstar,669
+MS,PepsiCo,Quaker Oats/Gatorade,28199
+TX,PepsiCo,Tropicana Products,1568
+GA,PepsiCo,TBE,743
+LA,PepsiCo,TBE,101
+TX,PepsiCo,PepsiCo,305256
+UT,PepsiCo,TBE,1440
+FL,PepsiCo,South Beach Beverage,261
+MN,PepsiCo,Tropicana Products,3192
+OR,PepsiCo,KeVita,8
+BC,PepsiCo,PepsiCo Canada - Quaker Oats,781
+ND,PepsiCo,Sabra Dipping Co,282
+TX,PepsiCo,Minute Maid,293
+MA,PepsiCo,Naked Juice,1161
+TN,PepsiCo,TBE,716
+NV,PepsiCo,Naked Juice,1389
+MD,PepsiCo,Tropicana Products,1490
+DE,PepsiCo,Sabra Dipping Co,103
+PA,PepsiCo,Frito-Lay,224862
+MI,PepsiCo,Quaker Oats/Gatorade,67350
+NC,PepsiCo,South Beach Beverage,14
+MO,PepsiCo,KeVita,27
+QC,PepsiCo,Naked Juice,37
+MS,PepsiCo,Sabra Dipping Co,118
+SC,PepsiCo,Pepsi/Cytosport,65
+MO,PepsiCo,South Beach Beverage,65
+AB,PepsiCo,Quaker Oats,11
+NA,PepsiCo,South Beach Beverage,16
+AB,PepsiCo,Naked Juice,40
+ME,PepsiCo,Rockstar,189
+MA,PepsiCo,South Beach Beverage,26
+ID,PepsiCo,Quaker Oats,72
+CA,PepsiCo,South Beach Beverage,4
+AZ,PepsiCo,KeVita,25
+FL,PepsiCo,KeVita,16
+NS,PepsiCo,Rockstar,40
+OH,PepsiCo,KeVita,15
+MT,PepsiCo,TBE,36
+AK,PepsiCo,Naked Juice,28
+NV,PepsiCo,KeVita,9
+MS,PepsiCo,South Beach Beverage,40
+NM,PepsiCo,Pepsi/Cytosport,16
+LA,PepsiCo,Tropicana Products,29
+AK,PepsiCo,Quaker Oats,22
+VT,PepsiCo,TBE,19
+NV,PepsiCo,Tropicana Products,9
+NS,PepsiCo,Tropicana Products,8
+WY,PepsiCo,Quaker Oats,2
+ME,PepsiCo,TBE,2
+TN,PepsiCo,KeVita,5
+NV,PepsiCo,TBE,15
+PA,PepsiCo,PepsiCo Canada,3
+MD,PepsiCo,Rockstar,22
+OK,PepsiCo,KeVita,5
+NC,PepsiCo,KeVita,11
+ON,PepsiCo,PepsiCo,2
+WY,PepsiCo,Rockstar,9
+OK,PepsiCo,Pepsi/Cytosport,10
+NE,PepsiCo,Pepsi/Cytosport,4
+NA,PepsiCo,Naked Juice,2
+WV,PepsiCo,Tropicana Products,3
+NM,PepsiCo,TBE,1
+MS,PepsiCo,Minute Maid,1
+SC,PepsiCo,PepsiCo Foods Canada - Frito Lay/Quaker Oats,1
+NM,PepsiCo,Tropicana Products,3

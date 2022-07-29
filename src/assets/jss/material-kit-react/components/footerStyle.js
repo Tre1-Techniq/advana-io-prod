@@ -57,9 +57,9 @@ const footerStyle = (theme) => ({
     display: "flex",
     overflow: "visible",
     justifyContent: "space-between",
-    backgroundImage:
-      "radial-gradient(circle, rgba(53,113,191,1) 0%, rgba(46,64,148,1) 70%, rgba(22,32,75,1) 100%)",
+    background: "#313131",
     textAlign: "center",
+    boxShadow: "none !important",
     padding: "30px",
     "@media (min-width: 350px)": {
       padding: "20px",
@@ -84,7 +84,7 @@ const footerStyle = (theme) => ({
     textDecoration: "none",
     backgroundColor: "transparent",
     "&:hover": {
-      color: "#2e4094",
+      color: "#4db8be",
     }
   },
   footerBtn: {
@@ -100,8 +100,8 @@ const footerStyle = (theme) => ({
     justifyContent: "space-between",
     margin: "0",
     padding: "20px 0",
-    borderTop: "1px solid #2e4094",
-    borderBottom: "1px solid #2e4094",
+    borderTop: "1px solid #444444",
+    borderBottom: "1px solid #444444",
     display: "flex",
     "@media (min-width: 350px)": {
       display: "inline-block",

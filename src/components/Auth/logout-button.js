@@ -73,7 +73,7 @@ const LogoutButton = () => {
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem>{user.email}</DropdownItem>
-                                <DropdownItem
+                                {/* <DropdownItem
                                     tag={RouterNavLink}
                                     to="/admin/home"
                                     className="dropdown-profile"
@@ -88,7 +88,7 @@ const LogoutButton = () => {
                                     activeClassName="router-link-exact-active"
                                 >
                                     <TrendingUpIcon  className="mr-3" /> Campaigns
-                                </DropdownItem>
+                                </DropdownItem> */}
                                 <DropdownItem
                                     tag={RouterNavLink}
                                     to="/admin/sentry"
