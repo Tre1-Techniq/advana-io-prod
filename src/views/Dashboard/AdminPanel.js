@@ -43,38 +43,26 @@ const AddUser = () => {
   const classes = useStyles();
 
   const { user, getAccessTokenSilently } = useAuth0();
-
-  const dotenv =  require("dotenv");
-  dotenv.config();
-
-  async function getAccessToken() {
-    const token = await getAccessTokenSilently();
-  }
-
+  
   useEffect(() => {
-    getAccessToken();
-    getGsUsers();
+    getPortalUsers();
   },[]);
 
-  async function getGsUsers() {
-    try {
+  async function getPortalUsers() {
       const token = await getAccessTokenSilently();
-      const res = await axios.get("http://localhost:4000/user-reg-form", {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (res.status === 200) {
-        setGsUsers(res.data.values);
-      };
-
-      console.log("GS USERS: ", res.data.values);
-    } catch (error) {
-      console.log("API ERROR: ", error.message)
+      console.log("OAUTH TOKEN: ", token);
+      try {
+        const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/userinfo", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
     }
-  };
-
+  
   const submitHandler = (event) => {
     event.preventDefault();
   }

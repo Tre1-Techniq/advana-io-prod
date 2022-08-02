@@ -31,8 +31,10 @@ export default function Analytics() {
 
   const { user } = useAuth0();
 
-  const pbiSentry = "https://user.metadata.io/pbiSentry";
-  const sentryId = `${user[pbiSentry]}`;
+  const pbiSentryGroup = "https://user.metadata.io/pbiSentryGroup";
+  const pbiSentryReport = "https://user.metadata.io/pbiSentryReport";
+  const sentryGroupId = `${user[pbiSentryGroup]}`;
+  const sentryReportId = `${user[pbiSentryReport]}`;
 
   // PowerBI Workspace Link
   // const sentryLink = "https://app.powerbi.com/groups/" + `${sentryId}`; 

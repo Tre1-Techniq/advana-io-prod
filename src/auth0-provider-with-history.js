@@ -18,9 +18,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
       domain={domain}
       clientId={clientId}
       redirectUri={redirectUri}
-      audience="https://portal-data-api"
-      scope="openid profile email"
       onRedirectCallback={onRedirectCallback}
+      audience="https://dev-tyofb4m1.us.auth0.com/api/v2/"
+      scope="openid profile email read:current_user update:current_user_metadata"
     >
       {children}
     </Auth0Provider>

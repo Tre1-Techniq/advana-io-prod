@@ -1,0 +1,42 @@
+[
+    {
+        "email": "4carlosanderson@gmail.com",
+        "email_verified": false,
+        "identities": [
+            {
+                "user_id": "626twg58ofdl385nvxat57yg",
+                "provider": "auth0",
+                "connection": "Username-Password-Authentication",
+                "isSocial": false
+            }
+        ],
+        "name": "Carlos",
+        "nickname": "4carlosanderson",
+        "picture": "https://s.gravatar.com/avatar/3444b3ea00aa82aed530b18c1f7edc7c?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2F4c.png",
+        "user_id": "auth0|626twg58ofdl385nvxat57yg",
+        "user_metadata": {
+            "bio": "Your favorite snacks. Our lifelong passion.",
+            "family_name": "Anderson",
+            "given_name": "Carlos",
+            "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+            "title": "Developer"
+        },
+        "app_metadata": {
+            "access": "Brand",
+            "manufacturer": "Frito-Lay",
+            "parent_company": "PepsiCo",
+            "products": [
+                {
+                    "name": "PowerBiSentry",
+                    "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+                    "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+                },
+                {
+                    "name": "Campaigns",
+                    "id": "101010101010"
+                }
+            ],
+            "tier": "Basic"
+        }
+    }
+]

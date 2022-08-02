@@ -6,10 +6,14 @@ import NumberFormat from "react-number-format";
 
 import MapLegend from "./Charts/MapLegend";
 
+import Loading from '../../components/Auth/loading';
+
 import { useAuth0 } from "@auth0/auth0-react";
 
 // @mui/material components
 import { makeStyles } from "@material-ui/core/styles";
+import Button from '@material-ui/core/Button';
+
 //import InputLabel from "@mui/InputLabel";
 // core components
 import GridItem from "../../components/Grid/GridItem.js";
@@ -58,7 +62,7 @@ function AdminHome() {
   const [ percSkusPos, setPercSkusPos ] = useState(true);
   const [ percUvPos, setPercUvPos ] = useState(true);
 
-  const { user, getAccessTokenSilently } = useAuth0();
+  const { user, isLoading, getAccessTokenSilently } = useAuth0();
 
   const manufacturer = "https://user.metadata.io/manufacturer";
   const manufacturerName = `${user[manufacturer]}`;
@@ -73,12 +77,34 @@ function AdminHome() {
     console.log("BRANDS TOP 5: ", brandsTop5);
   }, []);
 
+  async function callApi() {
+    const response = await axios.get("http://localhost:8080");
+    console.log(response.data);
+  }
+
+  async function callProtectedApi() {
+    const token = await getAccessTokenSilently();
+    // console.log("OAUTH TOKEN =>> ", token);
+    try {
+      const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/api/v2/users", {
+      // const response = await axios.get("http://localhost:4040/users", {
+      // const response = await axios.get("http://localhost:8080/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   async function callHomeKpiApi() {
     try {
       const token = await getAccessTokenSilently();
       const response = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/homekpi", {
         headers: {
-          authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -157,13 +183,12 @@ function AdminHome() {
       const token = await getAccessTokenSilently();
       const res = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/top5skus", {
         headers: {
-          authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
       setTop5Skus(res.data);
 
-      // console.log("ACCESS TOKEN: ", token);
       console.log("TOP5 SKUS RESPONSE: ", res.data);
     } catch (error) {
       console.log("API ERROR: ", error.message)
@@ -215,8 +240,24 @@ function AdminHome() {
     </ListItem>
   ));
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <ThemeProvider theme={advanaTheme}>
+      <GridContainer>
+       <GridItem>
+         <Button onClick={callApi}>
+          CALL API
+         </Button>
+        </GridItem>
+        <GridItem>
+         <Button onClick={callProtectedApi}>
+          CALL PROTECTED API
+         </Button>
+        </GridItem>
+      </GridContainer>
       <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>

@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useAuth0 } from '@auth0/auth0-react';
 
-//import Loading from "./components/Loading/Loading";
-
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "./advanaTheme";

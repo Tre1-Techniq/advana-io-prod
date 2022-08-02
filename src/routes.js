@@ -18,13 +18,13 @@ import AddEditUser from "./views/Dashboard/Users/AddEditUser";
 import ViewUserDetails from "./views/Dashboard/Users/ViewUserDetails";
 
 const routes = [
-  // {
-  //   path: "/home",
-  //   name: "Home",
-  //   icon: HomeIcon,
-  //   component: AdminHome,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/home",
+    name: "Home",
+    icon: HomeIcon,
+    component: AdminHome,
+    layout: "/admin",
+  },
   // {
   //   path: "/campaignadmin",
   //   name: "Campaigns",

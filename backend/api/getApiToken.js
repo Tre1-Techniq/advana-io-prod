@@ -1,5 +1,9 @@
-var axios = require("axios").default;
-dotenv = require("dotenv");
+// Use Require and Import Together
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+const axios = require("axios").default;
+const dotenv = require("dotenv");
 dotenv.config();
 
 var options = {
