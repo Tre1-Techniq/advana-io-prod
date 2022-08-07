@@ -26,6 +26,15 @@ advanaTheme.props = {
 };
 
 advanaTheme.overrides = {
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 768,
+      md: 1280,
+      lg: 1400,
+      xl: 1920,
+    },
+  },
   MuiButton: {
     root: {
       minWidth: "100px",

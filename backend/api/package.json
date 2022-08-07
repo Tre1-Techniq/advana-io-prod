@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Portal Backend",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
@@ -14,14 +13,24 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/bigquery": "^5.12.0",
+    "adal-node": "^0.2.1",
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
+    "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-jwt": "^7.7.5",
+    "express-jwt-permissions": "^1.3.6",
     "googleapis": "^105.0.0",
+    "guid": "0.0.12",
+    "jquery": "^3.5.1",
     "jwks-rsa": "^2.1.3",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "powerbi-client": "^2.16.5",
+    "require": "^2.4.20",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

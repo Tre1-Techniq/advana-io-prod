@@ -27,7 +27,7 @@ const LoginButton = () => {
                     className="btn-margin"
                     onClick={() => loginWithRedirect()}
                 >
-                    Portal
+                    Sign-In
                 </Button>
             </NavItem>
         </Nav>

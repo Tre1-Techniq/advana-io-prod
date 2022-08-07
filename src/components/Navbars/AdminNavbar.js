@@ -34,10 +34,6 @@ export default function AdminNavbar(props) {
     [" " + classes[color]]: color,
   });
 
-  // const namespace = 'https://user.metadata.io';
-  // const fName= `${namespace}/givenname`;
-  // const firstName = `${user[fName]}`;
-
   const { user } = useAuth0();
 
   return (
@@ -45,7 +41,7 @@ export default function AdminNavbar(props) {
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <Toolbar className={classes.container}>
-            <Hidden mdUp implementation="css">
+            <Hidden lgUp implementation="css">
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -58,57 +54,12 @@ export default function AdminNavbar(props) {
             <Hidden mdDown implementation="css">
               <GridItem xs={12} sm={12} md={10}>
                 <div className={classes.dashboardNavHeader}>
-                  {/* <div className={classes.userAvatarWrapper}>
-                    <a
-                      className={classes.userAvatar}
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <img src={avatar} alt="User Avatar" />
-                    </a>
-                  </div> */}
                   <h5 className={classes.userName}>
                     <span>Welcome, {user.name} </span>
                   </h5>
                 </div>
               </GridItem>
             </Hidden>
-            {/* <GridItem xs={12} sm={12} md={1}>
-              <h2 className={classes.title}>
-                {routeName}
-              </h2>
-            </GridItem> */}
-            {/* <Hidden mdDown implementation="css">
-              <AdminNavbarLinks />
-            </Hidden> */}
-            {/* <Hidden mdDown implementation="css">
-              <h2 className={classes.title}>
-                {routeName}
-              </h2>
-            </Hidden> */}
-            {/* {!isLoading && !user && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.authBtn}
-                  onClick={() => loginWithRedirect()}
-                >
-                  Sign In
-                </Button>
-              )
-            }
-            
-            {!isLoading && user && (
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.authBtn}
-                onClick={() => logout()}
-              >
-                Sign Out
-              </Button>
-            )
-          } */}
             <AuthNavAdmin />
           </Toolbar>
         </GridItem>

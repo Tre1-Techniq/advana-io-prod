@@ -74,7 +74,7 @@ function Admin({ ...rest }) {
     return window.location.pathname !== "/admin/sentry";
   };
   const resizeFunction = () => {
-    if (window.innerWidth >= 960) {
+    if (window.innerWidth >= 1280) {
       setMobileOpen(false);
     }
   };

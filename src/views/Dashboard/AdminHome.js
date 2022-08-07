@@ -72,106 +72,72 @@ function AdminHome() {
   useEffect(() => {
     callHomeKpiApi();
     callTop5SkusApi();
-
-    console.log("MANUFACTURER: ", manufacturerName);
-    console.log("BRANDS TOP 5: ", brandsTop5);
   }, []);
 
-  async function callApi() {
-    const response = await axios.get("http://localhost:8080");
-    console.log(response.data);
-  }
-
-  async function callProtectedApi() {
-    const token = await getAccessTokenSilently();
-    // console.log("OAUTH TOKEN =>> ", token);
-    try {
-      const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/api/v2/users", {
-      // const response = await axios.get("http://localhost:4040/users", {
-      // const response = await axios.get("http://localhost:8080/users", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  // async function callProtectedApi() {
+  //   const token = await getAccessTokenSilently();
+  //   console.log("OAUTH TOKEN =>> ", token);
+  //   try {
+  //     const response = await axios.get("http://localhost:5050", {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log("ERROR: ", error.message);
+  //   }
+  // }
 
   async function callHomeKpiApi() {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/homekpi", {
+      const response = await axios.get("http://localhost:4040/homekpi", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      let manIndex;
-
       function setPercClass() {
         function getPercSales() {
-          if (response.data[manIndex].SalesGrowth > 0){
+          if (response.data[0].SalesGrowth > 0){
             setPercSalesPos(true);
-          } else if (response.data[manIndex].SalesGrowth < 0) {
+          } else if (response.data[0].SalesGrowth < 0) {
             setPercSalesPos(false);
           }
         }
         getPercSales();
 
         function getPercDollars() {
-          if (response.data[manIndex].RetailGrowth > 0){
+          if (response.data[0].RetailGrowth > 0){
             setPercDollarsPos(true);
-          } else if (response.data[manIndex].RetailGrowth < 0) {
+          } else if (response.data[0].RetailGrowth < 0) {
             setPercDollarsPos(false);
           }
         }
         getPercDollars();
 
         function getPercSkus() {
-          if (response.data[manIndex].SkusGrowth > 0){
+          if (response.data[0].SkusGrowth > 0){
             setPercSkusPos(true);
-          } else if (response.data[manIndex].SkusGrowth < 0) {
+          } else if (response.data[0].SkusGrowth < 0) {
             setPercSkusPos(false);
           }
         }
         getPercSkus();
 
         function getPercUv() {
-          if (response.data[manIndex].UvGrowth > 0){
+          if (response.data[0].UvGrowth > 0){
             setPercUvPos(true);
-          } else if (response.data[manIndex].UvGrowth < 0) {
+          } else if (response.data[0].UvGrowth < 0) {
             setPercUvPos(false);
           }
         }
         getPercUv();
-      }
+      };
 
-      function getManIndex() {
-        if (manufacturerName === 'Frito-Lay'){
-          setHomeKpi(response.data[31]);
-          manIndex = 31;
-
-          setPercClass();
-        }
-        
-        if (manufacturerName === 'PepsiCo'){
-          setHomeKpi(response.data[32]);
-          manIndex = 32;
-
-          setPercClass();
-        } 
-        if (manufacturerName === 'Awake Corporation'){
-          setHomeKpi(response.data[33]);
-          manIndex = 33;
-
-          setPercClass();
-        } 
-        console.log("HOME KPI RES: ", response.data[manIndex]);
-      }
-
-      getManIndex();
+      setHomeKpi(response.data[0]);
+      setPercClass();
       
     } catch (error) {
       console.log("API ERROR: ", error.message)
@@ -206,7 +172,7 @@ function AdminHome() {
   const UvGrowth = homeKpi.UvGrowth;
 
   // Top5 SKUs Local Copy
-  const top5SKUs = brandsTop5[manufacturerName].map((item) => (
+  const top5SKUs = brandsTop5[manufacturerName].map((item, index) => (
     <ListItem
       className={classes.insightLI}
       key={`${item.rank}` * Math.random()}
@@ -246,18 +212,13 @@ function AdminHome() {
 
   return (
     <ThemeProvider theme={advanaTheme}>
-      <GridContainer>
-       <GridItem>
-         <Button onClick={callApi}>
-          CALL API
-         </Button>
-        </GridItem>
+      {/* <GridContainer>
         <GridItem>
          <Button onClick={callProtectedApi}>
           CALL PROTECTED API
          </Button>
         </GridItem>
-      </GridContainer>
+      </GridContainer> */}
       <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>

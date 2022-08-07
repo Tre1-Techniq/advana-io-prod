@@ -11,7 +11,7 @@ const headerLinksStyle = (theme) => ({
   headerLinksWrapper: {
     margin: "0",
     display: "flex",
-    justifyContent: "end",
+    justifyContent: "center",
   },
   search: {
     "& > div": {

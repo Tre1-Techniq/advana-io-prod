@@ -35,13 +35,7 @@ export default function Analytics() {
   const pbiSentryReport = "https://user.metadata.io/pbiSentryReport";
   const sentryGroupId = `${user[pbiSentryGroup]}`;
   const sentryReportId = `${user[pbiSentryReport]}`;
-
-  // PowerBI Workspace Link
-  // const sentryLink = "https://app.powerbi.com/groups/" + `${sentryId}`; 
-
-  // const handleClick = () => {
-  //   window.open(`${sentryLink}`);
-  // };
+  console.log("Sentry Report ID: ", sentryReportId );
 
   useEffect(() => {
     
@@ -51,7 +45,8 @@ export default function Analytics() {
     <ThemeProvider theme={advanaTheme}>
      <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
-       <Iframe url="https://powerbiembed-dot-advana-data-infra.uc.r.appspot.com/"
+      {/* <Iframe url="https://powerbiembed-dot-advana-data-infra.uc.r.appspot.com/" */}
+      <Iframe url="http://localhost:4040/sentry"
          width="100%"
          height="640px"
          frameBorder="0"

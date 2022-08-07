@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // Material UI Icons
 import HomeIcon from '@material-ui/icons/Home';
 // import DashboardIcon from '@material-ui/icons/Dashboard';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';

@@ -86,8 +86,8 @@ const headerStyle = () => ({
     height: "50px",
     marginBottom: "0",
     display: "flex",
-    justifyContent: "start",
-    width: "20vw", 
+    justifyContent: "center",
+    width: "65vw", 
     "& h5": {
       color: "#f3f3f3",
       fontSize: "1.5rem",

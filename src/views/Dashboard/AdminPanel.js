@@ -52,7 +52,7 @@ const AddUser = () => {
       const token = await getAccessTokenSilently();
       console.log("OAUTH TOKEN: ", token);
       try {
-        const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/userinfo", {
+        const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/api/v2/users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

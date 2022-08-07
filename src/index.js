@@ -39,7 +39,7 @@ ReactDOM.render(
         clientId="0Dy7nWXLzqQZHfnXHYrHa11N53CA3hhA"
         redirectUri={window.location.origin + `${"/admin"}`}
         audience="https://portal-users-api.io"
-        scope="openid profile email read:users create:users read:user_idp_tokens read:current_user update:current_user_metadata"
+        scope="openid profile email"
       >
         <App />
       </Auth0Provider>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "advana-data-infra",
+  "private_key_id": "3427be10d1ca6947624356b4e702321015118c6f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC4jJtYISQcl5oS\nsK1noisVYNTdsCuJIxWLBzP7MNekS5AxBcf9UsY4F/stedxRlt8J0/mzeU3pVzYp\naU0yz81JfY5JArIZmrSebQaFL7JOcvj5113t6rNwm94fEC1bNbIV0KgVUtogSLHU\nTM5yx7HpvKXdcWVAv9bPTQkyvj1kLYRwcXYoEfFWW1I1Z+AZDFYdF4ivv9He9FhU\nbVu57BcEly6eZp6qxDDdre8XjIbASa5Grl7uWPjmpOWPzRTAfnzYYLK9XHgMdb0T\nx6t0M6KZSFf1FMxYhzRgttcOlPGXmFCNj3mFSdk6ebvamioKS8PQesC48ycTN8Hf\nlUEd7myDAgMBAAECggEAALp+KUoymct+NLR7PFow04wTzjvSGCyWx65qGQPXpHlJ\nFiB0A/IUZtR7zdfaALDY3yTCkUZMm+8XsopZxY/gO0a751oTrBoAiR8pQO2JklmB\nPEwKcPqvTAwzEF1TruhjdEZkFRCqj492s3DwLOM3HRL9EDnQqmfd208H1vbwSBml\nXc5U2JsjxYwhhupYAQUeLC1H6GjWaEkQsKcovIywZk++aBIkjB8qrK2iw0NW+x/N\nYjpvQBMCar7ayWQ0ZD3t+eTJ/WMubSYud/N7sli7cgF7m4yvua49t4wfUdUJHCpk\nIvAE4wN7D2mtuaYnEv+z4krxzsx/9h3iKTQcDbcKuQKBgQD30LZPB3N+0Yur0yAa\nxTzmaFkDMP+rdALSiBB/uI08KS+JcUkPjTM4dfoN4tIDUpmxeVJ8P5G2Qu5UcGia\ndJ8eVniETCNnK/2e30A5vIkMK2s+W6SphL5JugM92X+Kq7Nf3q1/QuDfS6Ya8610\nKBnS49qqkWNVhGOORTClYgCBSwKBgQC+pPpVmY68QQYAlhA8tF67gwPnq1XBXFM3\ngYDKe0Jn3odLHIp97qWn6LtCxy5yWDsDZuvKCKupAUFFksi8v7q8yi32QiX0JjnC\nC2k3GxbBPVjhjtsIou8EZCn7nW2HxheBOtnWzPspJDmEFBIXzKU+BAy9cl19OxFH\nmuq8kDH2qQKBgQDRB8u/fZl+L2KQ3NUHv7dO4lWyy3HdPU3kJ8FC+nindlYSqOvn\nokLCLUFu1RQwmUvq11ssUrKl+m7t6qNRJW3SOT4O2epC7GhRyh5ylQVErpsXTlXm\nZ4HaznxNf1iFr67t/vZ5kf/8WeMSeNimUez2ZhvcJCaVy8XuC46s8a1bYQKBgA+J\naHFjc1N6RR/1Gtuno3TKp53Qw8tfV9TVNAbMZswKQaJocAz1TwDRIbm+e9WLxTtw\nvtSXQk4isQwXe06OnYxXOcmw+GDeYKSkw21fQsp60myHdOhORwZnl1hPKyb+iNna\nTviHegyPTDSsYhEYd3sHX3ZtBJt5Hd5lDK5TXg8JAoGBAMESaR5tAhAOsVj+FkRM\nG04qRLkjAEo/LHx0rFYLOpj4Kb2jhxpkRM9f9XWH/rWewRThVaCKTiORP/83HwdG\nzFZ0DLD8Qk/Hu93nXUHdSODPyVgVc0LzfMBYcBvLkZmTxGFyQmcG46EhKpCQe9yW\nI4rlm4yGfhitIr4WzYi1cI4U\n-----END PRIVATE KEY-----\n",
+  "client_email": "portal-bigquery-sa@advana-data-infra.iam.gserviceaccount.com",
+  "client_id": "103242317421290353590",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/portal-bigquery-sa%40advana-data-infra.iam.gserviceaccount.com"
+}

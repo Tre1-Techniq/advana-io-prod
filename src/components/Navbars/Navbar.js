@@ -36,9 +36,6 @@ export default function Header(props) {
             {routeName}
           </Button>
         </div>
-        <Hidden smDown implementation="css">
-          <AdminNavbarLinks />
-        </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton
             color="inherit"
@@ -47,6 +44,9 @@ export default function Header(props) {
           >
             <Menu />
           </IconButton>
+        </Hidden>
+        <Hidden smDown implementation="css">
+          <AdminNavbarLinks />
         </Hidden>
       </Toolbar>
     </AppBar>
