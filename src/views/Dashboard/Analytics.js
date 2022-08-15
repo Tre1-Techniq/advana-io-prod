@@ -47,6 +47,8 @@ export default function Analytics() {
         },
       });
 
+      // console.log("RES DATA: ", res.data);
+
       setAccessToken(res.data.accessToken);
       setEmbedUrl(res.data.embedUrl[0].embedUrl);
       setReportId(res.data.embedUrl[0].reportId);
