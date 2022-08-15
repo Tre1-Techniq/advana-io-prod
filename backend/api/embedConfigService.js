@@ -15,6 +15,7 @@ const fetch = require("node-fetch");
  * Generate embed token and embed urls for reports
  * @return Details like Embed URL, Access token and Expiry
  */
+
 async function getEmbedInfo() {
   // Get the Report Embed details
   try {

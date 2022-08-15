@@ -51,15 +51,13 @@ export default function AdminNavbar(props) {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Hidden mdDown implementation="css">
-              <GridItem xs={12} sm={12} md={10}>
-                <div className={classes.dashboardNavHeader}>
-                  <h5 className={classes.userName}>
-                    <span>Welcome, {user.name} </span>
-                  </h5>
-                </div>
-              </GridItem>
-            </Hidden>
+            <GridItem xs={12} sm={12} md={10}>
+              <div className={classes.dashboardNavHeader}>
+                <h5 className={classes.userName}>
+                  <span>Welcome, {user.name} </span>
+                </h5>
+              </div>
+            </GridItem>
             <AuthNavAdmin />
           </Toolbar>
         </GridItem>

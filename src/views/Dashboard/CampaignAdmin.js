@@ -24,7 +24,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 //import InputAdornment from '@material-ui/core/InputAdornment';
 
-import Parallax from "../../components/Parallax/Parallax";
+import LoadingAdmin from '../../components/Auth/loading-admin';
 
 // @material-ui/lab components
 //import Pagination from '@material-ui/lab/Pagination';
@@ -114,14 +114,10 @@ export default function Campaigns(props) {
     const [q, setQ] = useState("");
     const [searchParam] = useState(["status", "title"]);
     const [filterParam, setFilterParam] = useState(["All"]);
-
     const [campaigns, setCampaigns] = useState([]);
-
     const [openOptIn, setOpenOptIn] = useState(false);
-
     const { getAccessTokenSilently } = useAuth0();
-
-    //const [visible, setVisible] = useState(6);
+    const [ apiLoading, setApiLoading ] = useState(true);
 
     useEffect(() => {
       getCampaigns(campaigns);
@@ -141,6 +137,9 @@ export default function Campaigns(props) {
       }
 
       getCampaigns(campaigns);
+      setTimeout(() => {
+        setApiLoading(false);
+      }, 1000);
     }, []);
 
     function search(campaigns) {
@@ -183,6 +182,10 @@ export default function Campaigns(props) {
     const handleCloseOptIn = () => {
       setOpenOptIn(false);
     };
+
+    if (apiLoading) {
+    return <LoadingAdmin />;
+  }
     
   return (
     <ThemeProvider theme={advanaTheme}>

@@ -4,28 +4,28 @@ import React from "react";
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 
-import loadingBlocks from "../../assets/img/loading-blocks.svg"
+import loadingPulse from "../../assets/img/loading-pulse.svg"
 
 // @mui/material components
 import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
-const loadingImg = loadingBlocks;
+const loadingImgAdmin = loadingPulse;
 
 const useStyles = makeStyles(styles);
 
-function Loading() {
+function LoadingAdmin() {
   const classes = useStyles();
   return (
     <GridContainer>
       <GridItem>
-        <div className={classes.loadingWrapper}>
-          <img className={classes.loading} src={loadingImg} alt="Loading..." />
+        <div className={classes.loadingWrapperAdmin}>
+          <img className={classes.loading} src={loadingImgAdmin} alt="Loading..." />
         </div>
       </GridItem>
     </GridContainer>
   );
 }
 
-export default Loading;
+export default LoadingAdmin;

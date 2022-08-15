@@ -110,7 +110,7 @@
     "typescript": "4.2.4"
   },
   "scripts": {
-    "dev": "concurrently \"npm start\" \"cd backend/api && npm run dev\"",
+    "dev": "concurrently \"npm start\" \"cd backend/api && npm start\"",
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses && npm install",
     "test": "react-scripts test --env=jsdom",

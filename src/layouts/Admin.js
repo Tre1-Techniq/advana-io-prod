@@ -3,7 +3,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
-import Loading from "../components/loading.js";
+import LoadingAdmin from "../components/Auth/loading-admin.js";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -17,6 +17,9 @@ import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "../advanaTheme";
 
 import routes from "../routes.js";
+import adminRoutes from "../routesAdmin.js";
+
+// import routes from "../routes.js";
 
 import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
@@ -28,12 +31,31 @@ const useStyles = makeStyles(styles);
 
 function Admin({ ...rest }) {
   const { user } = useAuth0();
-
-  console.log("USER: ", user);
+  const access = "https://user.metadata.io/access";
+  const userAccess = `${user[access]}`
+  const isAdmin = userAccess.includes("Admin");
 
   const switchRoutes = (
     <Switch>
       {routes.map((prop, key) => {
+        if (prop.layout === "/admin") {
+          return (
+            <Route
+              path={prop.layout + prop.path}
+              component={prop.component}
+              key={key}
+            />
+          );
+        }
+        return null;
+      })}
+      <Redirect from="/admin" to="/admin/sentry" />
+    </Switch>
+  );
+
+  const switchAdminRoutes = (
+    <Switch>
+      {adminRoutes.map((prop, key) => {
         if (prop.layout === "/admin") {
           return (
             <Route
@@ -82,6 +104,7 @@ function Admin({ ...rest }) {
   return (
     <ThemeProvider theme={advanaTheme}>
       <Sidebar
+        adminRoutes={adminRoutes}
         routes={routes}
         logoText={""}
         logo={fullLogo}
@@ -100,7 +123,17 @@ function Admin({ ...rest }) {
         {/* On the /analytics route we want the dashboard to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
         {getRoute() ? (
           <div className={classes.content}>
-            <div className={classes.container}>{switchRoutes}</div>
+            {!isAdmin && 
+              <>
+                <div className={classes.container}>{switchRoutes}</div>
+              </>
+            }
+
+            {isAdmin && 
+              <>
+                <div className={classes.container}>{switchAdminRoutes}</div>
+              </>
+            }
           </div>
         ) : (
           <div className={classes.iFrame}>{switchRoutes}</div>
@@ -112,5 +145,5 @@ function Admin({ ...rest }) {
 }
 
 export default withRouter(Admin, {
-  onRedirecting: () => <Loading />,
+  onRedirecting: () => <LoadingAdmin />,
 });

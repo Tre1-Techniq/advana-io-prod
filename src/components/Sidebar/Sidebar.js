@@ -1,8 +1,13 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
+
+import { useAuth0 } from "@auth0/auth0-react";
+
+// import axios from "axios";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -25,57 +30,132 @@ export default function Sidebar(props) {
   const classes = useStyles();
   let location = useLocation();
   let history = useHistory();
+
+  // const [ isAdmin, setIsAdmin] = useState(false);
+
+  const { user, getAccessTokenSilently } = useAuth0();
+
+  const access = "https://user.metadata.io/access";
+  const userAccess = `${user[access]}`
+  const isAdmin = userAccess.includes("Admin");
+
+  console.log("IS ADMIN: ", isAdmin);
+
+  // const access = ["https://user.metadata.io/access"];
+  // const userAccess = `${user[access][0]}`;
+
+  // async function scanUserRoles() {
+  //   const token = await getAccessTokenSilently();
+  //     const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/userinfo", {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+
+  //   const userInfo = response.data;
+  //   const access = "https://user.metadata.io/access";
+  //   const userAccess = `${userInfo[access]}`
+  //   const isAdmin = userAccess.includes("Admin");
+
+  //   console.log("IS ADMIN: ", isAdmin);
+  // }
+
+  useEffect(() => {
+    // scanUserRoles();
+  }, []);
+
   // verifies if routeName is the one active (in browser input)
   function activeRoute(routeName) {
     return location.pathname === routeName;
   }
-  const { color, logo, image, logoText, routes } = props;
+  const { color, logo, image, logoText, routes, adminRoutes } = props;
   var links = (
     <List className={classes.list}>
-      {routes.map((prop, key) => {
-        var activePro = " ";
-        var listItemClasses;
-        if (prop.path === "/admin-panel") {
-          activePro = classes.activePro + " ";
-          listItemClasses = classNames({
-            [" " + classes[color]]: true,
-          });
-        } else {
+      { isAdmin && 
+      <div>
+        {adminRoutes.map((prop, key) => {
+          var activePro = " ";
+          var listItemClasses;
           listItemClasses = classNames({
             [" " + classes[color]]: activeRoute(prop.layout + prop.path),
           });
-        }
-        const whiteFontClasses = classNames({
-          [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path),
-        });
-        return (
-          <NavLink
-            to={prop.layout + prop.path}
-            className={activePro + classes.item}
-            activeClassName="active"
-            key={key}
-          >
-            <ListItem button className={classes.itemLink + listItemClasses}>
-              {typeof prop.icon === "string" ? (
-                <Icon
-                  className={classNames(classes.itemIcon, whiteFontClasses)}
-                >
-                  {prop.icon}
-                </Icon>
-              ) : (
-                <prop.icon
-                  className={classNames(classes.itemIcon, whiteFontClasses)}
+          const whiteFontClasses = classNames({
+            [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path),
+          });
+  
+          return (
+            <NavLink
+              to={prop.layout + prop.path}
+              className={activePro + classes.item}
+              activeClassName="active"
+              key={key}
+            >
+              <ListItem button className={classes.itemLink + listItemClasses}>
+                {typeof prop.icon === "string" ? (
+                  <Icon
+                    className={classNames(classes.itemIcon, whiteFontClasses)}
+                  >
+                    {prop.icon}
+                  </Icon>
+                ) : (
+                  <prop.icon
+                    className={classNames(classes.itemIcon, whiteFontClasses)}
+                  />
+                )}
+                <ListItemText
+                  primary={props.rtlActive ? prop.rtlName : prop.name}
+                  className={classNames(classes.itemText, whiteFontClasses)}
+                  disableTypography={true}
                 />
-              )}
-              <ListItemText
-                primary={props.rtlActive ? prop.rtlName : prop.name}
-                className={classNames(classes.itemText, whiteFontClasses)}
-                disableTypography={true}
-              />
-            </ListItem>
-          </NavLink>
-        );
-      })}
+              </ListItem>
+            </NavLink>
+          );
+        })}
+        </div>
+      }
+
+      { !isAdmin && 
+        <div>
+          {routes.map((prop, key) => {
+            var activePro = " ";
+            var listItemClasses;
+            listItemClasses = classNames({
+              [" " + classes[color]]: activeRoute(prop.layout + prop.path),
+            });
+            const whiteFontClasses = classNames({
+              [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path),
+            });
+    
+            return (
+              <NavLink
+                to={prop.layout + prop.path}
+                className={activePro + classes.item}
+                activeClassName="active"
+                key={key}
+              >
+                <ListItem button className={classes.itemLink + listItemClasses}>
+                  {typeof prop.icon === "string" ? (
+                    <Icon
+                      className={classNames(classes.itemIcon, whiteFontClasses)}
+                    >
+                      {prop.icon}
+                    </Icon>
+                  ) : (
+                    <prop.icon
+                      className={classNames(classes.itemIcon, whiteFontClasses)}
+                    />
+                  )}
+                  <ListItemText
+                    primary={props.rtlActive ? prop.rtlName : prop.name}
+                    className={classNames(classes.itemText, whiteFontClasses)}
+                    disableTypography={true}
+                  />
+                </ListItem>
+              </NavLink>
+            );
+          })}
+        </div>
+      } 
     </List>
   );
 
@@ -160,5 +240,6 @@ Sidebar.propTypes = {
   image: PropTypes.string,
   logoText: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object),
+  routesAdmin: PropTypes.arrayOf(PropTypes.object),
   open: PropTypes.bool,
 };

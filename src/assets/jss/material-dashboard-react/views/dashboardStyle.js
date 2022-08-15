@@ -1089,6 +1089,16 @@ const dashboardStyle = () => ({
     justifyContent: "center",
     background: "transparent",
   },
+  loadingWrapperAdmin: {
+    position: "relative",
+    margin: "auto",
+    top: "30%",
+    width: "75vw",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    background: "transparent",
+  },
   loading: {
     width: "125px !important",
     height: "125px !important",

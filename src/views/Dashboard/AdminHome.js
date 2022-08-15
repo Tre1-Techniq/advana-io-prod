@@ -6,9 +6,11 @@ import NumberFormat from "react-number-format";
 
 import MapLegend from "./Charts/MapLegend";
 
-import Loading from '../../components/Auth/loading';
+import LoadingAdmin from '../../components/Auth/loading-admin';
 
 import { useAuth0 } from "@auth0/auth0-react";
+
+import axios from "axios";
 
 // @mui/material components
 import { makeStyles } from "@material-ui/core/styles";
@@ -50,7 +52,6 @@ import advanaTheme from "../../advanaTheme";
 import brandsTop5 from "./Tables/portal-top5-skus.json";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import axios from "axios";
 
 const useStyles = makeStyles(styles);
 
@@ -61,6 +62,7 @@ function AdminHome() {
   const [ percDollarsPos, setPercDollarsPos ] = useState(true);
   const [ percSkusPos, setPercSkusPos ] = useState(true);
   const [ percUvPos, setPercUvPos ] = useState(true);
+  const [ apiLoading, setApiLoading ] = useState(true);
 
   const { user, isLoading, getAccessTokenSilently } = useAuth0();
 
@@ -73,21 +75,6 @@ function AdminHome() {
     callHomeKpiApi();
     callTop5SkusApi();
   }, []);
-
-  // async function callProtectedApi() {
-  //   const token = await getAccessTokenSilently();
-  //   console.log("OAUTH TOKEN =>> ", token);
-  //   try {
-  //     const response = await axios.get("http://localhost:5050", {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log("ERROR: ", error.message);
-  //   }
-  // }
 
   async function callHomeKpiApi() {
     try {
@@ -138,7 +125,7 @@ function AdminHome() {
 
       setHomeKpi(response.data[0]);
       setPercClass();
-      
+      setApiLoading(false);
     } catch (error) {
       console.log("API ERROR: ", error.message)
     }
@@ -147,7 +134,7 @@ function AdminHome() {
   async function callTop5SkusApi() {
     try {
       const token = await getAccessTokenSilently();
-      const res = await axios.get("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/top5skus", {
+      const res = await axios.get("http://localhost:4040/top5skus", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -206,19 +193,12 @@ function AdminHome() {
     </ListItem>
   ));
 
-  if (isLoading) {
-    return <Loading />;
+  if (apiLoading) {
+    return <LoadingAdmin />;
   }
 
   return (
     <ThemeProvider theme={advanaTheme}>
-      {/* <GridContainer>
-        <GridItem>
-         <Button onClick={callProtectedApi}>
-          CALL PROTECTED API
-         </Button>
-        </GridItem>
-      </GridContainer> */}
       <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>

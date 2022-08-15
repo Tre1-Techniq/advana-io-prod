@@ -50,9 +50,9 @@ const AddUser = () => {
 
   async function getPortalUsers() {
       const token = await getAccessTokenSilently();
-      console.log("OAUTH TOKEN: ", token);
+      // console.log("OAUTH TOKEN: ", token);
       try {
-        const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/api/v2/users", {
+        const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/userinfo", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -35,11 +35,11 @@ ReactDOM.render(
         <App />
       </Auth0ProviderWithHistory> */}
       <Auth0Provider
-        domain="dev-tyofb4m1.us.auth0.com"
+        domain="auth.advana.io"
         clientId="0Dy7nWXLzqQZHfnXHYrHa11N53CA3hhA"
         redirectUri={window.location.origin + `${"/admin"}`}
         audience="https://portal-users-api.io"
-        scope="openid profile email"
+        scope="openid profile email read:users update:users delete:users create:users read:users_app_metadata update:users_app_metadata delete:users_app_metadata create:users_app_metadata read:user_idp_tokens"
       >
         <App />
       </Auth0Provider>

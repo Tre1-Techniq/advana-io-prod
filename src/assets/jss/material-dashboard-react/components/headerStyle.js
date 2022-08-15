@@ -100,6 +100,9 @@ const headerStyle = () => ({
       fontWeight: "400",
       marginRight: "0.25rem",
     },
+    "@media (max-width: 1280px)": {
+      width: "85vw", 
+    },
   },
   userAvatar: {
     "& img": {

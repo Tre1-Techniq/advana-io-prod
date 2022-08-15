@@ -18,62 +18,41 @@ import AddEditUser from "./views/Dashboard/Users/AddEditUser";
 import ViewUserDetails from "./views/Dashboard/Users/ViewUserDetails";
 
 const routes = [
-  {
-    path: "/home",
-    name: "Home",
-    icon: HomeIcon,
-    component: AdminHome,
-    layout: "/admin",
-  },
-  // {
-  //   path: "/campaignadmin",
-  //   name: "Campaigns",
-  //   icon: CampaignIcon,
-  //   component: CampaignAdmin,
-  //   layout: "/admin",
-  // },
-  {
-    path: "/sentry",
-    name: "Sentry",
-    icon: AnalyticsIcon,
-    component: Analytics,
-    layout: "/admin",
-  },
-  // {
-  //   path: "/media",
-  //   name: "Media Library",
-  //   icon: MediaIcon,
-  //   component: Media,
-  //   layout: "/admin",
-  // },
-  {
-    path: "/settings",
-    name: "Settings",
-    icon: SettingsIcon,
-    component: UserSettings,
-    layout: "/admin",
-  },
-  // {
-  //   path: "/admin-panel",
-  //   name: "Admin Panel",
-  //   icon: AdminIcon,
-  //   component: AdminPanel,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/add-edit/:id",
-  //   name: "Add/Edit Users",
-  //   icon: AdminIcon,
-  //   component: AddEditUser,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/view-details/:id",
-  //   name: "View User Details",
-  //   icon: AdminIcon,
-  //   component: ViewUserDetails,
-  //   layout: "/admin",
-  // },
-];
-
+    // {
+    //   path: "/home",
+    //   name: "Home",
+    //   icon: HomeIcon,
+    //   component: AdminHome,
+    //   layout: "/admin",
+    // },
+    // {
+    //   path: "/campaignadmin",
+    //   name: "Campaigns",
+    //   icon: CampaignIcon,
+    //   component: CampaignAdmin,
+    //   layout: "/admin",
+    // },
+    {
+      path: "/sentry",
+      name: "Sentry",
+      icon: AnalyticsIcon,
+      component: Analytics,
+      layout: "/admin",
+    },
+    // {
+    //   path: "/media",
+    //   name: "Media Library",
+    //   icon: MediaIcon,
+    //   component: Media,
+    //   layout: "/admin",
+    // },
+    {
+      path: "/settings",
+      name: "Settings",
+      icon: SettingsIcon,
+      component: UserSettings,
+      layout: "/admin",
+    },
+  ];
+  
 export default routes;

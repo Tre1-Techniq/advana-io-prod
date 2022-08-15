@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
+
+import Loading from './components/Auth/loading';
 
 // Advana Color Theme
 import { ThemeProvider } from "@material-ui/core";
 import advanaTheme from "./advanaTheme";
-
-import Loading from './components/Auth/loading';
 
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage";

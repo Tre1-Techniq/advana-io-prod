@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -40,8 +39,6 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
-
-app.use(userRoutes);
 
 const port = process.env.PORT || 4040;
 
@@ -134,6 +131,15 @@ app.get("/getEmbedToken", verifyJwt, async function (req, res) {
     // result.status specified the statusCode that will be sent along with the result object
     res.status(result.status).send(result);
     // console.log("RESPONSE: ", response.data);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
+app.get("/users", (req, res) => {
+  try {
+    // TO-DO: Transfer User CRUD Logic
+    res.send("Auth0 Users Backend API");
   } catch (error) {
     res.send(error.message);
   }
