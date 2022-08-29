@@ -7,8 +7,8 @@
 /coverage
 
 # production
-/controllers/config
 /keys
+/a0Deploy-CLI
 
 # misc
 .DS_Store

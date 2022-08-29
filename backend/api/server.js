@@ -1,171 +1,93 @@
 const express = require("express");
 const app = express();
-const axios = require("axios");
-const dotenv = require("dotenv");
-const cors = require("cors");
+
+const { auth } = require("express-openid-connect");
+
+// const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const fs = require("fs");
-const userRoutes = require("./routes/userRoutes");
-
-const port = process.env.PORT || 4040;
-
-dotenv.config();
-
-// Define paths for config
 let path = require("path");
 
-// Prepare server for Bootstrap, jQuery and PowerBI files
-app.use("/js", express.static("./node_modules/powerbi-client/dist/")); // Redirect JS PowerBI
+const pbiRoutes = require("./routes/pbiRoutes");
+const bqRoutes = require("./routes/bqRoutes");
+const userRoutes = require("./routes/userRoutes");
 
-const { expressjwt: jwt } = require("express-jwt");
-const jwks = require("jwks-rsa");
+const dotenv = require("dotenv");
+dotenv.config();
 
-// Import the Google Cloud client library
-const { BigQuery } = require("@google-cloud/bigquery");
-// Create a client
-const bigqueryClient = new BigQuery();
-
+const cors = require("cors");
 // Enable CORS for all methods
-app.use(cors());
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "*");
-  next();
-});
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:4000",
+  "http://127.0.0.1:5500",
+  "https://advana.io",
+  "https://www.advana.io",
+  "https://auth.advana.io",
+  "https://portaldemo.d35b5g3lrc6rok.amplifyapp.com",
+  "https://dev-tyofb4m1.us.auth0.com",
+  "https://content.powerapps.com",
+  "https://app.powerbi.com",
+  "https://api.powerbi.com",
+  "https://www.googleapis.com",
+];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Origin not allowed by CORS!"));
+      console.log("Origin not allowed by CORS!");
+    }
+  },
+  optionsSuccessStatus: 200,
+};
 
+// log requests
+// app.use(morgan("tiny"));
+
+app.use(cors(corsOptions));
+
+// parse request to body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+// set view engine
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views/crud"));
 
-app.use(userRoutes);
+// Prepare server for Bootstrap, jQuery and PowerBI files
+app.use("/js", express.static("./node_modules/bootstrap/dist/js/"));
+app.use("/js", express.static("./node_modules/jquery/dist/"));
+app.use("/js", express.static("./node_modules/powerbi-client/dist/"));
+app.use("/css", express.static("./node_modules/bootstrap/dist/css/"));
+app.use("/public", express.static("./public/"));
 
-var verifyJwt = jwt({
-  secret: jwks.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: "https://auth.advana.io/.well-known/jwks.json",
-  }),
-  audience: "https://portal-users-api.io",
-  issuer: "https://auth.advana.io/",
-  algorithms: ["RS256"],
-});
+// Load assets for user CRUD operations
+app.use("/css", express.static(path.resolve(__dirname, "users/css")));
+app.use("/img", express.static(path.resolve(__dirname, "users/img")));
+app.use("/js", express.static(path.resolve(__dirname, "users/js")));
 
-app.get("/homekpi", verifyJwt, async function (req, res) {
-  try {
-    const accessToken = req.headers.authorization.split([" "])[1];
-    const response = await axios.get(
-      "https://dev-tyofb4m1.us.auth0.com/userInfo",
-      {
-        headers: {
-          authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+const port = process.env.PORT || 4000;
 
-    const userInfo = response.data;
-    const manuEndpoint = "https://user.metadata.io/manufacturer";
-    const manufacturer = `${userInfo[manuEndpoint]}`;
+const config = {
+  authRequired: false,
+  auth0Logout: false,
+  issuerBaseURL: "https://dev-tyofb4m1.us.auth0.com",
+  baseURL: "http://localhost:4000",
+  clientID: process.env.AUTH0_MGMNT_CLIENT_ID,
+  secret: process.env.AUTH0_MGMNT_CLIENT_SECRET,
+};
 
-    // const date = new Date();
-    // const month = date.getMonth() + 1;
+// app.use(auth(config));
 
-    // Query Home KPI Data from BigQuery
-    async function queryHomeKpi() {
-      // The SQL query to run
-      const sqlQuery = `SELECT *
-              FROM \`advana-data-infra.portal_data_test.portal-home-kpi\`
-              WHERE Manufacturer = @Manufacturer
-              AND Month = @Month
-              `;
+// User Routes
+app.use("/", userRoutes);
 
-      const options = {
-        query: sqlQuery,
-        // Location must match the dataset(s) referenced in the query.
-        location: "us-east1",
-        params: { Manufacturer: `${manufacturer}`, Month: 11 },
-      };
+// PowerBI Routes
+app.use("/pbi", pbiRoutes);
 
-      const [queryRes] = await bigqueryClient.query(options);
-
-      return res.json(queryRes);
-    }
-
-    queryHomeKpi();
-  } catch (error) {
-    res.send(error.message);
-  }
-});
-
-app.get("/top5skus", verifyJwt, async (req, res) => {
-  const accessToken = req.headers.authorization.split([" "])[1];
-  const response = await axios.get(
-    "https://dev-tyofb4m1.us.auth0.com/userInfo",
-    {
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-      },
-    }
-  );
-
-  const userInfo = response.data;
-  const manuEndpoint = "https://user.metadata.io/manufacturer";
-  const manufacturer = `${userInfo[manuEndpoint]}`;
-
-  // const date = new Date();
-  // const month = date.getMonth() + 1;
-
-  async function queryTop5Skus() {
-    // Create a client
-    const bigqueryClient = new BigQuery();
-
-    // SQL query
-    const sqlQuery = `SELECT *
-            FROM \`advana-data-infra.portal_data_test.portal-top5-skus\`
-            `;
-
-    const options = {
-      query: sqlQuery,
-      // Location must match the dataset(s) referenced in the query.
-      location: "us-east1",
-      params: { Manufacturer: `${manufacturer}`, Month: 11 },
-    };
-
-    const [queryRes] = await bigqueryClient.query(options);
-
-    return res.json(queryRes);
-  }
-
-  queryTop5Skus();
-});
-
-app.get("/campaigns", verifyJwt, (req, res) => {
-  async function queryCampaigns() {
-    // Create a client
-    const bigqueryClient = new BigQuery();
-
-    // SQL query
-    const sqlQuery = `SELECT *
-            FROM \`advana-data-infra.portal_data_test.portal-campaign-list\`
-            `;
-
-    const options = {
-      query: sqlQuery,
-      // Location must match that of the dataset(s) referenced in the query.
-      location: "us-east1",
-    };
-
-    const [queryRes] = await bigqueryClient.query(options);
-
-    return res.json(queryRes);
-  }
-
-  queryCampaigns();
-});
+// BigQuery Routes
+app.use("/bq", bqRoutes);
 
 app.use((req, res, next) => {
   const error = new Error("Not Found");

@@ -30,11 +30,6 @@ import fullLogo from "../assets/img/logo-full-white.png";
 const useStyles = makeStyles(styles);
 
 function Admin({ ...rest }) {
-  const { user } = useAuth0();
-  const access = "https://user.metadata.io/access";
-  const userAccess = `${user[access]}`
-  const isAdmin = userAccess.includes("Admin");
-
   const switchRoutes = (
     <Switch>
       {routes.map((prop, key) => {
@@ -67,7 +62,7 @@ function Admin({ ...rest }) {
         }
         return null;
       })}
-      <Redirect from="/admin" to="/admin/sentry" />
+      <Redirect from="/admin" to="/admin/home" />
     </Switch>
   );
 
@@ -77,11 +72,27 @@ function Admin({ ...rest }) {
   const mainPanel = createRef();
   // states and functions
   const [mobileOpen, setMobileOpen] = useState(false);
+  // const [ isAdmin, setIsAdmin ] = useState(false);
 
   const color = "blue";
 
+  const { user, getAccessTokenSilently } = useAuth0();
+
+  const roles = "https://user.metadata.io/roles";
+  const userRoles = `${user[roles]}`
+  const isAdmin = userRoles.includes("Admin");
+
+  console.log("IS ADMIN: ", isAdmin);
+
   // initialize and destroy the PerfectScrollbar plugin
   useEffect(() => {
+    // if(userRoles.includes("Admin")) {
+    //   setIsAdmin(true);
+    // }
+
+    console.log("USER: ", user);
+    console.log("USER ROLES: ", userRoles);
+
     window.addEventListener("resize", resizeFunction);
     // Specify how to clean up after this effect:
     return function cleanup() {

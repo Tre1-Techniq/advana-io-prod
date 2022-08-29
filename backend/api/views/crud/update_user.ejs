@@ -1,0 +1,82 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-dark">Use the below form to Update this user</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+ <form method="POST" id="update_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="fname" class="text-dark">First Name</label>
+            <input type="hidden" name="id" value="<%= user.user_id %>">
+            <input type="text" name="fname" value="<%= user.user_metadata.given_name %>" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <label for="lname" class="text-dark">Last Name</label>
+            <input type="hidden" name="id" value="<%= user.user_id %>">
+            <input type="text" name="lname" value="<%= user.user_metadata.family_name %>" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <label for="company" class="text-dark">Company</label>
+            <input type="text" name="company" value="<%= user.user_metadata.family_name %>" placeholder="Company">
+        </div>
+        <div class="form-group">
+            <label for="title" class="text-dark">Title</label>
+            <input type="text" name="title" value="<%= user.user_metadata.title %>" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="Email" class="text-dark">Email</label>
+            <input type="text" name="email" value="<%= user.email%>" placeholder="user@email.com">
+        </div>
+        <div class="form-group">
+            <label for="access" class="text-dark">Access</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="access" value="Male" <%= user.app_metadata.access[0] == 'Brand' ? 'checked' : '' %>>
+                <label for="radio-2" class="radio-label">Brand</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="access" value="Operator"  <%= user.app_metadata.access[1] == 'Operator' ? 'checked' : '' %> >
+                <label for="radio-3" class="radio-label">Operator</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="role" class="text-dark">Role</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="role" value="User" <%= user.app_metadata.role == 'User' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">User</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="role" value="Admin" <%= user.app_metadata.role == 'Admin' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Admin</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Submit</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

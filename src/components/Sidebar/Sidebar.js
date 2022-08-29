@@ -25,40 +25,21 @@ import advanaTheme from "../../advanaTheme";
 import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
 const useStyles = makeStyles(styles);
-
 export default function Sidebar(props) {
   const classes = useStyles();
   let location = useLocation();
   let history = useHistory();
 
   // const [ isAdmin, setIsAdmin] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const access = "https://user.metadata.io/access";
-  const userAccess = `${user[access]}`
-  const isAdmin = userAccess.includes("Admin");
+  const roles = "https://user.metadata.io/roles";
+  const userRoles = `${user[roles]}`
+  const isAdmin = userRoles.includes("Admin");
 
   console.log("IS ADMIN: ", isAdmin);
-
-  // const access = ["https://user.metadata.io/access"];
-  // const userAccess = `${user[access][0]}`;
-
-  // async function scanUserRoles() {
-  //   const token = await getAccessTokenSilently();
-  //     const response = await axios.get("https://dev-tyofb4m1.us.auth0.com/userinfo", {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-
-  //   const userInfo = response.data;
-  //   const access = "https://user.metadata.io/access";
-  //   const userAccess = `${userInfo[access]}`
-  //   const isAdmin = userAccess.includes("Admin");
-
-  //   console.log("IS ADMIN: ", isAdmin);
-  // }
 
   useEffect(() => {
     // scanUserRoles();

@@ -3,7 +3,7 @@
 // Licensed under the MIT license.
 // ----------------------------------------------------------------------------
 
-let config = require(__dirname + "/config/config.json");
+let config = require("../config/config.json");
 
 function getAuthHeader(accessToken) {
   // Function to append Bearer against the Access Token
@@ -34,22 +34,6 @@ function validateConfig() {
     return "ClientId must be a Guid object. Please register your application as Native app in https://dev.powerbi.com/apps and fill Client Id in config.json.";
   }
 
-  if (!config.reportId) {
-    return "ReportId is empty. Please select a report you own and fill its Id in config.json.";
-  }
-
-  if (!guid.isGuid(config.reportId)) {
-    return "ReportId must be a Guid object. Please select a report you own and fill its Id in config.json.";
-  }
-
-  if (!config.workspaceId) {
-    return "WorkspaceId is empty. Please select a group you own and fill its Id in config.json.";
-  }
-
-  if (!guid.isGuid(config.workspaceId)) {
-    return "WorkspaceId must be a Guid object. Please select a workspace you own and fill its Id in config.json.";
-  }
-
   if (!config.authorityUri) {
     return "AuthorityUri is empty. Please fill valid AuthorityUri in config.json.";
   }
@@ -66,14 +50,14 @@ function validateConfig() {
     if (!config.clientSecret || !config.clientSecret.trim()) {
       return "ClientSecret is empty. Please fill Power BI ServicePrincipal ClientSecret in config.json.";
     }
+  }
 
-    if (!config.tenantId) {
-      return "TenantId is empty. Please fill the TenantId in config.json.";
-    }
+  if (!config.tenantId) {
+    return "TenantId is empty. Please fill the TenantId in config.json.";
+  }
 
-    if (!guid.isGuid(config.tenantId)) {
-      return "TenantId must be a Guid object. Please select a workspace you own and fill its Id in config.json.";
-    }
+  if (!guid.isGuid(config.tenantId)) {
+    return "TenantId must be a Guid object. Please select a workspace you own and fill its Id in config.json.";
   }
 }
 

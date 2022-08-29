@@ -1,0 +1,18 @@
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= users[i].user_metadata.given_name %></td>
+        <td><%= users[i].user_metadata.family_name %></td>
+        <td><%= users[i].app_metadata.manufacturer %></td>
+        <td><%= users[i].user_metadata.title %></td>
+        <td><%= users[i].email %></td>
+        <td>
+            <a href="/update-user?id=<%= users[i].user_id%>" class="btn update">
+                <span class="text-update"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn delete" data-id=<%= users[i].user_id%> >
+                <span class="text-delete"><i class="fas fa-trash"></i></span>
+            </a>
+        </td>
+    </tr>
+<% } %>

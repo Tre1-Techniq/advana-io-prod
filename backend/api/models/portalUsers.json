@@ -1,0 +1,242 @@
+[
+  {
+    "email": "carlos@advana.io",
+    "name": "Carlos",
+    "id": "auth0|62214c9e0d60040068e55567",
+    "user_metadata": {
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "family_name": "Anderson",
+      "given_name": "Carlos",
+      "bio": "Your favorite snacks. Our lifelong passion.",
+      "title": "Developer"
+    },
+    "app_metadata": {
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ],
+      "access": ["Brand", "Admin"]
+    }
+  },
+  {
+    "email": "derek@advana.io",
+    "name": "Derek",
+    "id": "auth0|6278dfdd0a77de00685ed53b",
+    "user_metadata": {
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "bio": "Never negotiate a deal you are not willing to walk away from.",
+      "family_name": "Myers",
+      "given_name": "Derek",
+      "title": "CEO/Chairman"
+    },
+    "app_metadata": {
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ],
+      "access": ["Brand", "Admin"]
+    }
+  },
+  {
+    "email": "4carlosanderson@gmail.com",
+    "name": "Carlos",
+    "id": "auth0|62eab69861c394177b813c1b",
+    "user_metadata": {
+      "bio": "One Byte at a time.",
+      "family_name": "Anderson",
+      "given_name": "Carlos",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/awake-logo.jpg",
+      "title": "Developer"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Awake",
+      "parent_company": "Awake Chocolate",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "33e46246-2f52-425f-8568-f5dac49abc7d",
+          "report_id": "d63571bf-4f8e-4645-a803-6db7657f03d2"
+        }
+      ]
+    }
+  },
+  {
+    "email": "richard.llado@pepsico.com",
+    "name": "Richard",
+    "id": "auth0|62ec3a2cc0c1bdc11b7ed6e1",
+    "user_metadata": {
+      "bio": "Richard Bio.",
+      "family_name": "Llado",
+      "given_name": "richard",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "title": "National Account Sales Manager"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ]
+    }
+  },
+  {
+    "email": "mike@advana.io",
+    "name": "Mike",
+    "id": "auth0|6274cc5db975460069218e0e",
+    "user_metadata": {
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/pepsi-logo.jpg",
+      "bio": "Code better.",
+      "family_name": "Stack",
+      "given_name": "Mike",
+      "title": "Data Engineer"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "PepsiCo",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ]
+    }
+  },
+  {
+    "email": "mikestack15@gmail.com",
+    "name": "Mike",
+    "id": "auth0|62ec11cb3665443c58c27176",
+    "user_metadata": {
+      "bio": "Mike Bio.",
+      "family_name": "Stack",
+      "given_name": "Mike",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/awake-logo.jpg",
+      "title": "Data Guru"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Awake",
+      "parent_company": "Awake Chocolate",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "33e46246-2f52-425f-8568-f5dac49abc7d",
+          "report_id": "d63571bf-4f8e-4645-a803-6db7657f03d2"
+        }
+      ]
+    }
+  },
+  {
+    "email": "stanley@advana.io",
+    "name": "Stanley",
+    "id": "auth0|62e99c27c232d668a440da53",
+    "user_metadata": {
+      "bio": "Hello, I am Stanley.",
+      "family_name": "Armstrong",
+      "given_name": "Stanley",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "title": "Data Engineer"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ]
+    }
+  },
+  {
+    "email": "advana-accounts@elyon.technology",
+    "name": "Accounts",
+    "id": "auth0|62e97c1fc0c1bdc11b7cc589",
+    "user_metadata": {
+      "bio": "Advana Accounts.",
+      "family_name": "Accounts",
+      "given_name": "Advana",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "title": "Account Manager"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ]
+    }
+  },
+  {
+    "email": "derek@nextactlabs.com",
+    "name": "Derek",
+    "id": "auth0|62e95cf1a854bde08ab59237",
+    "user_metadata": {
+      "bio": "The OTHER Derek.",
+      "family_name": "Myers",
+      "given_name": "Derek",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "title": "CEO/Chairman"
+    },
+    "app_metadata": {
+      "access": ["Brand"],
+      "manufacturer": "Awake",
+      "parent_company": "Awake Chocolate",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "33e46246-2f52-425f-8568-f5dac49abc7d",
+          "report_id": "d63571bf-4f8e-4645-a803-6db7657f03d2"
+        }
+      ]
+    }
+  },
+  {
+    "email": "nicole@advana.io",
+    "name": "Nicole",
+    "id": "auth0|6278eb554f0ad30068f4b79c",
+    "user_metadata": {
+      "bio": "Nicole Bio.",
+      "family_name": "Nicole",
+      "given_name": "Sprenger",
+      "picture": "https://advana-image-assets.s3.amazonaws.com/logos/frito-lay-logo.jpg",
+      "title": "Operations Manager"
+    },
+    "app_metadata": {
+      "access": ["Brand", "Admin"],
+      "manufacturer": "Frito-Lay",
+      "parent_company": "PepsiCo",
+      "products": [
+        {
+          "name": "PowerBiSentry",
+          "group_id": "c2b80212-481e-43c5-b7bb-509f5b1c0d23",
+          "report_id": "c69de0ff-8ad7-4551-b304-dcc86d310006"
+        }
+      ]
+    }
+  }
+]

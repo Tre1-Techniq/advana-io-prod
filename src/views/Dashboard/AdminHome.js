@@ -66,8 +66,8 @@ function AdminHome() {
 
   const { user, isLoading, getAccessTokenSilently } = useAuth0();
 
-  const manufacturer = "https://user.metadata.io/manufacturer";
-  const manufacturerName = `${user[manufacturer]}`;
+  const manufacturerUrl = "https://user.metadata.io/manufacturer";
+  const manuName = `${user[manufacturerUrl]}`;
 
   const classes = useStyles();
 
@@ -79,7 +79,7 @@ function AdminHome() {
   async function callHomeKpiApi() {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get("http://localhost:4040/homekpi", {
+      const response = await axios.get("http://localhost:4000/bq/homekpi", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -134,7 +134,7 @@ function AdminHome() {
   async function callTop5SkusApi() {
     try {
       const token = await getAccessTokenSilently();
-      const res = await axios.get("http://localhost:4040/top5skus", {
+      const res = await axios.get("http://localhost:4000/bq/top5skus", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -159,7 +159,7 @@ function AdminHome() {
   const UvGrowth = homeKpi.UvGrowth;
 
   // Top5 SKUs Local Copy
-  const top5SKUs = brandsTop5[manufacturerName].map((item, index) => (
+  const top5SKUs = brandsTop5[manuName].map((item, index) => (
     <ListItem
       className={classes.insightLI}
       key={`${item.rank}` * Math.random()}

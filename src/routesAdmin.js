@@ -25,13 +25,13 @@ const routesAdmin = [
     component: AdminHome,
     layout: "/admin",
   },
-  {
-    path: "/campaignadmin",
-    name: "Campaigns",
-    icon: CampaignIcon,
-    component: CampaignAdmin,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/campaignadmin",
+  //   name: "Campaigns",
+  //   icon: CampaignIcon,
+  //   component: CampaignAdmin,
+  //   layout: "/admin",
+  // },
   {
     path: "/sentry",
     name: "Sentry",
@@ -51,15 +51,7 @@ const routesAdmin = [
     name: "Admin Panel",
     icon: AdminIcon,
     component: AdminPanel,
-    layout: "/admin",
-    children: 
-    {
-        path: "/media",
-        name: "Media Library",
-        icon: MediaIcon,
-        component: Media,
-        layout: "/admin",
-    }
+    layout: "/admin"
   },
   // {
   //   path: "/media",

@@ -1,24 +1,46 @@
-const { Router } = require("express");
-const router = Router();
+const express = require("express");
+const router = express.Router();
+
+const { requiresAuth } = require("express-openid-connect");
+
 const userController = require("../controllers/userController");
 
-const { expressjwt: jwt } = require("express-jwt");
-const jwks = require("jwks-rsa");
+const services = require("../services/render");
 
-var verifyJwt = jwt({
-  secret: jwks.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: "https://auth.advana.io/.well-known/jwks.json",
-  }),
-  audience: "https://portal-users-api.io",
-  issuer: "https://auth.advana.io/",
-  algorithms: ["RS256"],
-});
+/**
+ *  @description Root Route
+ *  @method GET /
+ */
+router.get("/", services.homeRoutes);
 
-router.get("/", verifyJwt, userController.getUsers);
-router.get("/setConfig", verifyJwt, userController.setConfig);
-router.get("/getEmbedToken", verifyJwt, userController.getEmbedToken);
+/**
+ *  @description add users
+ *  @method GET /add-user
+ */
+router.get("/add-user", services.add_user);
+
+/**
+ *  @description for update user
+ *  @method GET /update-user
+ */
+router.get("/update-user", services.update_user);
+
+// API
+router.post(
+  "https://dev-tyofb4m1.us.auth0.com/api/v2/users",
+  userController.create
+);
+router.get(
+  "https://dev-tyofb4m1.us.auth0.com/api/v2/users",
+  userController.find
+);
+router.put(
+  "https://dev-tyofb4m1.us.auth0.com/api/v2/users/:id",
+  userController.update
+);
+router.delete(
+  "https://dev-tyofb4m1.us.auth0.com/api/v2/users/:id",
+  userController.delete
+);
 
 module.exports = router;
