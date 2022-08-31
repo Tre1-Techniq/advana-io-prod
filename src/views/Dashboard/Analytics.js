@@ -32,22 +32,22 @@ export default function Analytics() {
   const { user, isAuthenticated } = useAuth0();
   // const [ apiLoading, setApiLoading ] = useState(false);
 
-  // var reportUrl = "http://localhost:4000/pbi/sentry"
+  // var reportUrl = "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/pbi/sentry"
 
   const manufacturer = "https://user.metadata/manufacturer";
   const company = `${user[manufacturer]}`;
 
   switch (company) {
     case 'Frito-Lay':
-      var reportUrl = "http://localhost:4000/pbi/sentry/frito-lay";
+      var reportUrl = "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/pbi/sentry/frito-lay";
       break;
 
     case 'Awake':
-      var reportUrl = "http://localhost:4000/pbi/sentry/awake";
+      var reportUrl = "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/pbi/sentry/awake";
       break;
     
     default:
-      var reportUrl = "http://localhost:4000/pbi/sentry";
+      var reportUrl = "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/pbi/sentry";
   }
 
   // const postUser = async () => {
@@ -55,7 +55,7 @@ export default function Analytics() {
 
   //   let currentUser = [];
 
-  //  const response = await axios.post("http://localhost:4000/postUser", {
+  //  const response = await axios.post("https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/postUser", {
   //     headers: { "content-type": "application/json" },
   //     data: JSON.stringify(user),
   //     body: JSON.stringify(user),

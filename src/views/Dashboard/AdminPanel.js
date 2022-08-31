@@ -27,7 +27,7 @@ const AddUser = () => {
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const crudUrl = "http://localhost:4000/";
+  const crudUrl = "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/";
   const accessToken = getAccessTokenSilently();
   const reportData = axios.get(crudUrl, {
     headers: {

@@ -18,9 +18,6 @@ dotenv.config();
 const cors = require("cors");
 // Enable CORS for all methods
 const whitelist = [
-  "http://localhost:3000",
-  "http://localhost:4000",
-  "http://127.0.0.1:5500",
   "https://advana.io",
   "https://www.advana.io",
   "https://auth.advana.io",
@@ -82,62 +79,23 @@ var verifyJwt = jwt({
 
 const port = process.env.PORT || 4000;
 
-// get User Info
-// app.use("/userInfo", verifyJwt, async function (req, res) {
-//   try {
-//     const accessToken = req.headers.authorization.split([" "])[1];
-//     const response = await axios.get(
-//       "https://dev-tyofb4m1.us.auth0.com/userInfo",
-//       {
-//         headers: {
-//           authorization: `Bearer ${accessToken}`,
-//         },
-//       }
-//     );
-
-//     const userInfo = response.data;
-//     res.send(userInfo);
-//     // return userInfo;
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// });
-
-// app.use("/getUser", () => {
-//   // let sub = [];
-
-//   axios.get("http://localhost:4000/postUser");
-// });
-
-// app.use("/postUser", async (req, res) => {
-//   const userObj = await req.body.data;
-//   console.log("USER OBJ: ", await req.body.data);
-
-//   res.send(userObj);
-// });
-
-// app.use("/getUser", async (req, res) => {
-//   const url = "http://localhost:4000/postUser";
-//   const options = {
-//     method: "GET",
-//   };
-//   const response = await fetch(url, options)
-//     .then((req) => req.json())
-//     .catch((err) => {
-//       console.log(err.message);
-//     });
-//   console.log("RESPONSE: ", response);
-//   res.json(response.data);
-// });
-
 // User Routes
-app.use("/", userRoutes);
+app.use(
+  "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/",
+  userRoutes
+);
 
 // PowerBI Routes
-app.use("/pbi", pbiRoutes);
+app.use(
+  "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/pbi",
+  pbiRoutes
+);
 
 // BigQuery Routes
-app.use("/bq", bqRoutes);
+app.use(
+  "https://bigqueryapi-dot-advana-data-infra.uc.r.appspot.com/bq",
+  bqRoutes
+);
 
 app.use((req, res, next) => {
   const error = new Error("Not Found");
