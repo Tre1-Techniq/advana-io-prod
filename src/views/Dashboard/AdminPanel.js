@@ -27,9 +27,9 @@ const AddUser = () => {
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const reportUrl = "http://localhost:4000/";
+  const crudUrl = "http://localhost:4000/";
   const accessToken = getAccessTokenSilently();
-  const reportData = axios.get(reportUrl, {
+  const reportData = axios.get(crudUrl, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     }
@@ -44,7 +44,7 @@ const AddUser = () => {
     <ThemeProvider theme={advanaTheme}>
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
-          <Iframe url={reportUrl}
+          <Iframe url={crudUrl}
             width="100%"
             height="550px"
             frameBorder="0"

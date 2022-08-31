@@ -43,7 +43,7 @@ const UserSettings = () => {
     getAccessToken();
   },[]);
   
-  const namespace = 'https://user.metadata.io';
+  const namespace = 'https://user.metadata';
   const company = `${namespace}/manufacturer`;
   const fName= `${namespace}/givenname`;
   const lName= `${namespace}/familyname`;

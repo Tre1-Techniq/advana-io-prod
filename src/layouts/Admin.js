@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createRef } from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
+import axios from "axios";
+
 import { useAuth0 } from "@auth0/auth0-react";
 
 import LoadingAdmin from "../components/Auth/loading-admin.js";
@@ -62,7 +64,7 @@ function Admin({ ...rest }) {
         }
         return null;
       })}
-      <Redirect from="/admin" to="/admin/home" />
+      <Redirect from="/admin" to="/admin/admin-panel" />
     </Switch>
   );
 
@@ -78,21 +80,14 @@ function Admin({ ...rest }) {
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const roles = "https://user.metadata.io/roles";
-  const userRoles = `${user[roles]}`
-  const isAdmin = userRoles.includes("Admin");
+  const access = "https://user.metadata/access";
+  const userAccess = `${user[access]}`;
 
+  const isAdmin = userAccess === "Admin";
   console.log("IS ADMIN: ", isAdmin);
 
   // initialize and destroy the PerfectScrollbar plugin
   useEffect(() => {
-    // if(userRoles.includes("Admin")) {
-    //   setIsAdmin(true);
-    // }
-
-    console.log("USER: ", user);
-    console.log("USER ROLES: ", userRoles);
-
     window.addEventListener("resize", resizeFunction);
     // Specify how to clean up after this effect:
     return function cleanup() {

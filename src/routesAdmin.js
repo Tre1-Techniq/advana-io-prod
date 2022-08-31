@@ -18,13 +18,13 @@ import AdminPanel from "./views/Dashboard/AdminPanel";
 // import ViewUserDetails from "./views/Dashboard/Users/ViewUserDetails";
 
 const routesAdmin = [
-  {
-    path: "/home",
-    name: "Home",
-    icon: HomeIcon,
-    component: AdminHome,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/home",
+  //   name: "Home",
+  //   icon: HomeIcon,
+  //   component: AdminHome,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/campaignadmin",
   //   name: "Campaigns",

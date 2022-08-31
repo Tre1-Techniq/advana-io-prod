@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 
-const { auth } = require("express-openid-connect");
+const fetch = require("node-fetch");
 
-// const morgan = require("morgan");
+const axios = require("axios");
+
 const bodyParser = require("body-parser");
 let path = require("path");
 
@@ -42,9 +43,6 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-// log requests
-// app.use(morgan("tiny"));
-
 app.use(cors(corsOptions));
 
 // parse request to body-parser
@@ -67,18 +65,70 @@ app.use("/css", express.static(path.resolve(__dirname, "users/css")));
 app.use("/img", express.static(path.resolve(__dirname, "users/img")));
 app.use("/js", express.static(path.resolve(__dirname, "users/js")));
 
+const { expressjwt: jwt } = require("express-jwt");
+const jwks = require("jwks-rsa");
+
+var verifyJwt = jwt({
+  secret: jwks.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: "https://dev-tyofb4m1.us.auth0.com/.well-known/jwks.json",
+  }),
+  audience: "https://portal-users-api.io",
+  issuer: "https://dev-tyofb4m1.us.auth0.com/",
+  algorithms: ["RS256"],
+});
+
 const port = process.env.PORT || 4000;
 
-const config = {
-  authRequired: false,
-  auth0Logout: false,
-  issuerBaseURL: "https://dev-tyofb4m1.us.auth0.com",
-  baseURL: "http://localhost:4000",
-  clientID: process.env.AUTH0_MGMNT_CLIENT_ID,
-  secret: process.env.AUTH0_MGMNT_CLIENT_SECRET,
-};
+// get User Info
+// app.use("/userInfo", verifyJwt, async function (req, res) {
+//   try {
+//     const accessToken = req.headers.authorization.split([" "])[1];
+//     const response = await axios.get(
+//       "https://dev-tyofb4m1.us.auth0.com/userInfo",
+//       {
+//         headers: {
+//           authorization: `Bearer ${accessToken}`,
+//         },
+//       }
+//     );
 
-// app.use(auth(config));
+//     const userInfo = response.data;
+//     res.send(userInfo);
+//     // return userInfo;
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// });
+
+// app.use("/getUser", () => {
+//   // let sub = [];
+
+//   axios.get("http://localhost:4000/postUser");
+// });
+
+// app.use("/postUser", async (req, res) => {
+//   const userObj = await req.body.data;
+//   console.log("USER OBJ: ", await req.body.data);
+
+//   res.send(userObj);
+// });
+
+// app.use("/getUser", async (req, res) => {
+//   const url = "http://localhost:4000/postUser";
+//   const options = {
+//     method: "GET",
+//   };
+//   const response = await fetch(url, options)
+//     .then((req) => req.json())
+//     .catch((err) => {
+//       console.log(err.message);
+//     });
+//   console.log("RESPONSE: ", response);
+//   res.json(response.data);
+// });
 
 // User Routes
 app.use("/", userRoutes);

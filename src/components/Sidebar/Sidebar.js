@@ -35,10 +35,10 @@ export default function Sidebar(props) {
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const roles = "https://user.metadata.io/roles";
-  const userRoles = `${user[roles]}`
-  const isAdmin = userRoles.includes("Admin");
+  const access = "https://user.metadata/access";
+  const userAccess = `${user[access]}`;
 
+  const isAdmin = userAccess === "Admin";
   console.log("IS ADMIN: ", isAdmin);
 
   useEffect(() => {

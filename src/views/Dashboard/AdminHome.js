@@ -66,7 +66,7 @@ function AdminHome() {
 
   const { user, isLoading, getAccessTokenSilently } = useAuth0();
 
-  const manufacturerUrl = "https://user.metadata.io/manufacturer";
+  const manufacturerUrl = "https://user.metadata/manufacturer";
   const manuName = `${user[manufacturerUrl]}`;
 
   const classes = useStyles();

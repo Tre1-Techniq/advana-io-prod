@@ -3,13 +3,13 @@ const axios = require("axios");
 // Get Access Token
 var options = {
   method: "POST",
-  url: "https://auth.advana.io/oauth/token",
+  url: "https://dev-tyofb4m1.us.auth0.com/oauth/token",
   headers: { "content-type": "application/x-www-form-urlencoded" },
   data: new URLSearchParams({
     grant_type: "implicit",
     client_id: process.env.AUTH0_MGMNT_CLIENT_ID,
     client_secret: process.env.AUTH0_MGMNT_CLIENT_SECRET,
-    audience: "https://auth.advana.io/api/v2/",
+    audience: "https://dev-tyofb4m1.us.auth0.com/api/v2/",
   }),
 };
 
@@ -28,7 +28,7 @@ exports.create = (req, res) => {
 
     var opts = {
       method: "GET",
-      url: "https://auth.advana.io/api/v2/users",
+      url: "https://dev-tyofb4m1.us.auth0.com/api/v2/users",
       headers: {
         authorization: `Bearer ${accessToken}`,
         "content-type": "application/json",
@@ -63,7 +63,7 @@ exports.find = (req, res) => {
 
       var opts = {
         method: "GET",
-        url: "https://auth.advana.io/api/v2/users/user_id",
+        url: "https://dev-tyofb4m1.us.auth0.com/api/v2/users/user_id",
         headers: {
           authorization: `Bearer ${accessToken}`,
           "content-type": "application/json",
@@ -93,7 +93,7 @@ exports.find = (req, res) => {
 
       var opts = {
         method: "GET",
-        url: "https://auth.advana.io/api/v2/users/user_id",
+        url: "https://dev-tyofb4m1.us.auth0.com/api/v2/users/user_id",
         headers: {
           authorization: `Bearer ${accessToken}`,
           "content-type": "application/json",
@@ -125,7 +125,7 @@ exports.update = (req, res) => {
 
   var opts = {
     method: "GET",
-    url: "https://auth.advana.io/api/v2/users/user_id",
+    url: "https://dev-tyofb4m1.us.auth0.com/api/v2/users/user_id",
     headers: {
       authorization: `Bearer ${accessToken}`,
       "content-type": "application/json",
@@ -153,7 +153,7 @@ exports.delete = (req, res) => {
   const id = req.params.user_id;
 
   axios
-    .delete(`https://auth.advana.io/api/v2/users/${id}`)
+    .delete(`https://dev-tyofb4m1.us.auth0.com/api/v2/users/${id}`)
     .then((data) => {
       if (!data) {
         res
